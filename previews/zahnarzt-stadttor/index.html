@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zahnarztpraxen im Stadttor – Digitale Zahnarztpraxis – Düsseldorf Stadttor</title>
+  <style>
+    :root {
+      --primary: #00897B;
+      --secondary: #4DB6AC;
+      --dark: #0f172a;
+      --mid: #1e293b;
+      --light: #f8fafc;
+      --text: #334155;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; color: var(--text); }
+
+    nav {
+      position: fixed; top: 0; width: 100%; z-index: 100;
+      background: rgba(255,255,255,0.97); backdrop-filter: blur(10px);
+      padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+    .logo-area { display: flex; align-items: center; gap: 0.5rem; }
+    .logo-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--primary); }
+    .logo { font-size: 1.2rem; font-weight: 700; color: var(--dark); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { text-decoration: none; color: var(--text); font-size: 0.9rem; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--primary); }
+    .nav-cta {
+      background: var(--primary); color: white; padding: 0.55rem 1.3rem;
+      border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 0.875rem;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .nav-cta:hover { box-shadow: 0 4px 15px rgba(0,137,123,0.4); transform: translateY(-1px); }
+
+    /* Hero */
+    .hero {
+      min-height: 100vh; padding-top: 80px;
+      background: var(--dark);
+      display: flex; align-items: center;
+      position: relative; overflow: hidden;
+    }
+    .hero-blob {
+      position: absolute; top: -200px; right: -200px;
+      width: 800px; height: 800px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(0,137,123,0.12) 0%, transparent 70%);
+    }
+    .hero-blob2 {
+      position: absolute; bottom: -300px; left: -100px;
+      width: 600px; height: 600px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(77,182,172,0.08) 0%, transparent 70%);
+    }
+    .hero-inner { max-width: 1200px; margin: 0 auto; padding: 4rem 2rem; position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+    .hero-pill {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      border: 1px solid rgba(0,137,123,0.3); color: var(--primary);
+      background: rgba(0,137,123,0.08);
+      padding: 0.4rem 1rem; border-radius: 50px; font-size: 0.8rem; font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 { font-size: 3rem; font-weight: 800; color: white; line-height: 1.15; margin-bottom: 1.5rem; }
+    .hero h1 .gradient-text {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .hero p { color: rgba(255,255,255,0.65); font-size: 1.1rem; line-height: 1.75; margin-bottom: 2.5rem; }
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn-gradient {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white; padding: 0.9rem 2rem; border-radius: 50px;
+      text-decoration: none; font-weight: 700; font-size: 0.95rem;
+      box-shadow: 0 4px 15px rgba(0,137,123,0.4);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .btn-gradient:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0,137,123,0.5); }
+    .btn-ghost {
+      color: rgba(255,255,255,0.8); padding: 0.9rem 2rem; border-radius: 50px;
+      text-decoration: none; font-weight: 600; font-size: 0.95rem;
+      border: 1px solid rgba(255,255,255,0.2); transition: border-color 0.2s;
+    }
+    .btn-ghost:hover { border-color: rgba(255,255,255,0.5); }
+    .hero-card-grid { display: flex; flex-direction: column; gap: 1rem; }
+    .metric-card {
+      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px; padding: 1.5rem; backdrop-filter: blur(10px);
+      transition: background 0.2s;
+    }
+    .metric-card:hover { background: rgba(255,255,255,0.09); }
+    .metric-value { font-size: 2.5rem; font-weight: 900; color: white; }
+    .metric-value span {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .metric-label { color: rgba(255,255,255,0.55); font-size: 0.85rem; margin-top: 0.2rem; }
+    .metric-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+    /* Services */
+    .services { padding: 6rem 2rem; background: var(--light); }
+    .section-chip {
+      display: inline-block; background: rgba(0,137,123,0.1); color: var(--primary);
+      padding: 0.3rem 0.9rem; border-radius: 50px; font-size: 0.8rem; font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    .section-title { font-size: 2.2rem; font-weight: 800; color: var(--dark); margin-bottom: 0.8rem; }
+    .section-sub { color: #64748b; font-size: 1rem; max-width: 500px; }
+    .services-header { max-width: 1100px; margin: 0 auto 3rem; }
+    .services-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; }
+    .service-card {
+      background: white; border-radius: 16px; padding: 2rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 15px rgba(0,0,0,0.04);
+      transition: transform 0.2s, box-shadow 0.2s; position: relative; overflow: hidden;
+    }
+    .service-card::after {
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      transform: scaleX(0); transition: transform 0.3s; transform-origin: left;
+    }
+    .service-card:hover { transform: translateY(-4px); box-shadow: 0 4px 6px rgba(0,0,0,0.06), 0 10px 30px rgba(0,0,0,0.1); }
+    .service-card:hover::after { transform: scaleX(1); }
+    .service-icon {
+      width: 52px; height: 52px; border-radius: 12px;
+      background: linear-gradient(135deg, rgba(0,137,123,0.1), rgba(77,182,172,0.1));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem; margin-bottom: 1.2rem;
+    }
+    .service-card h3 { font-size: 1rem; font-weight: 700; color: var(--dark); margin-bottom: 0.6rem; }
+    .service-card p { color: #64748b; font-size: 0.875rem; line-height: 1.7; }
+
+    /* Process / Steps */
+    .steps { padding: 6rem 2rem; background: white; }
+    .steps-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+    .steps-grid { display: flex; flex-direction: column; gap: 1.5rem; }
+    .step-item { display: flex; gap: 1.2rem; align-items: flex-start; }
+    .step-num-badge {
+      width: 40px; height: 40px; border-radius: 10px; flex-shrink: 0;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white; display: flex; align-items: center; justify-content: center;
+      font-weight: 800; font-size: 0.9rem;
+    }
+    .step-item-text h4 { font-weight: 700; color: var(--dark); margin-bottom: 0.3rem; }
+    .step-item-text p { color: #64748b; font-size: 0.875rem; line-height: 1.6; }
+    .steps-visual {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      border-radius: 20px; padding: 3rem; color: white;
+    }
+    .steps-visual h3 { font-size: 1.5rem; font-weight: 800; margin-bottom: 0.5rem; }
+    .steps-visual .tagline { opacity: 0.85; font-size: 0.95rem; margin-bottom: 2rem; }
+    .highlight-box { background: rgba(255,255,255,0.15); border-radius: 10px; padding: 1.2rem; margin-bottom: 1rem; }
+    .highlight-box strong { font-size: 1.1rem; }
+    .highlight-box p { opacity: 0.85; font-size: 0.875rem; margin-top: 0.2rem; }
+
+    /* Testimonials */
+    .testimonials { padding: 6rem 2rem; background: var(--light); }
+    .testimonials-header { max-width: 1000px; margin: 0 auto 3rem; }
+    .testimonials-grid { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+    .testimonial-card {
+      background: white; border-radius: 16px; padding: 2rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 15px rgba(0,0,0,0.04);
+    }
+    .stars { font-size: 1rem; margin-bottom: 1rem; color: #f59e0b; }
+    .testimonial-card p { color: #475569; font-size: 0.9rem; line-height: 1.7; font-style: italic; }
+    .testimonial-author { display: flex; gap: 0.8rem; align-items: center; margin-top: 1.2rem; padding-top: 1rem; border-top: 1px solid #f1f5f9; }
+    .author-avatar {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white; display: flex; align-items: center; justify-content: center; font-weight: 700;
+    }
+    .author-name { font-weight: 700; font-size: 0.85rem; color: var(--dark); }
+    .author-role { color: #94a3b8; font-size: 0.75rem; }
+
+    /* CTA */
+    .cta-section { padding: 6rem 2rem; text-align: center; background: var(--dark); position: relative; overflow: hidden; }
+    .cta-blob { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(0,137,123,0.15) 0%, transparent 70%); }
+    .cta-section h2 { font-size: 2.5rem; font-weight: 800; color: white; margin-bottom: 1rem; position: relative; }
+    .cta-section p { color: rgba(255,255,255,0.65); font-size: 1.05rem; margin-bottom: 2.5rem; max-width: 450px; margin-left: auto; margin-right: auto; position: relative; }
+    .cta-section .btn-gradient { position: relative; }
+
+    /* Contact */
+    .contact { padding: 5rem 2rem; background: var(--light); }
+    .contact-inner { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+    .contact-info h3 { font-size: 1.4rem; font-weight: 800; color: var(--dark); margin-bottom: 1.5rem; }
+    .contact-item { display: flex; gap: 1rem; margin-bottom: 1.2rem; align-items: flex-start; }
+    .contact-icon {
+      width: 42px; height: 42px; border-radius: 10px; flex-shrink: 0;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white; display: flex; align-items: center; justify-content: center; font-size: 1rem;
+    }
+    .contact-item-text .label { font-size: 0.75rem; color: #94a3b8; text-transform: uppercase; letter-spacing: 1px; }
+    .contact-item-text .value { font-weight: 600; color: var(--dark); font-size: 0.9rem; }
+    .contact-form { background: white; border-radius: 16px; padding: 2rem; box-shadow: 0 2px 15px rgba(0,0,0,0.06); }
+    .contact-form h4 { font-weight: 700; color: var(--dark); margin-bottom: 1.5rem; }
+    .form-group { margin-bottom: 1rem; }
+    .form-group input, .form-group textarea, .form-group select {
+      width: 100%; padding: 0.75rem 1rem; border: 2px solid #e2e8f0;
+      border-radius: 10px; font-size: 0.875rem; transition: border-color 0.2s;
+      font-family: inherit; background: #f8fafc;
+    }
+    .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+      outline: none; border-color: var(--primary); background: white;
+    }
+    .form-group textarea { resize: vertical; min-height: 90px; }
+    .form-submit {
+      width: 100%; background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white; padding: 0.85rem; border: none; border-radius: 10px;
+      font-size: 0.95rem; font-weight: 700; cursor: pointer;
+    }
+
+    footer { background: var(--dark); color: rgba(255,255,255,0.4); padding: 1.5rem 2rem; text-align: center; font-size: 0.85rem; }
+    footer strong { color: rgba(255,255,255,0.7); }
+
+    @media (max-width: 768px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .metric-row .metric-card:last-child { display: none; }
+      .hero h1 { font-size: 2rem; }
+      .nav-links { display: none; }
+      .steps-inner { grid-template-columns: 1fr; }
+      .contact-inner { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="logo-area">
+    <div class="logo-dot"></div>
+    <div class="logo">Zahnarztpraxen im Stadttor</div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#leistungen">Leistungen</a></li>
+    <li><a href="#ablauf">Vorgehen</a></li>
+    <li><a href="#kontakt">Kontakt</a></li>
+  </ul>
+  <a href="#kontakt" class="nav-cta">Gespräch buchen</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-blob"></div>
+  <div class="hero-blob2"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-pill">✦ Digitale Zahnarztpraxis – Düsseldorf Stadttor</div>
+      <h1>Digitale Patientenbetreuung. Moderne Zahnmedizin.<br><span class="gradient-text">Zahnarztpraxen im Stadttor – Düsseldorf</span></h1>
+      <p>Wir denken Zahnarztpraxis neu: Online-Buchung, digitale Formulare und ein Patient Portal für Ihre Unterlagen – transparent, schnell und persönlich.</p>
+      <div class="hero-actions">
+        <a href="#kontakt" class="btn-gradient">Kostenlos beraten lassen →</a>
+        <a href="#leistungen" class="btn-ghost">Mehr erfahren</a>
+      </div>
+    </div>
+    <div class="hero-card-grid">
+      <div class="metric-card">
+        <div class="metric-value"><span>4.9★</span></div>
+        <div class="metric-label">Patientenbewertung</div>
+      </div>
+      <div class="metric-row">
+        <div class="metric-card">
+          <div class="metric-value"><span>3.200+</span></div>
+          <div class="metric-label">Aktive Patienten</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value"><span>100%</span></div>
+          <div class="metric-label">Digital & papierlos</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="leistungen">
+  <div class="services-header">
+    <span class="section-chip">Leistungen</span>
+    <h2 class="section-title">Was wir für Sie leisten</h2>
+    <p class="section-sub">Maßgeschneiderte Lösungen für Ihr Unternehmen – professionell und ergebnisorientiert.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">🎯</div>
+      <h3>Online-Buchung & Formulare</h3>
+      <p>Termin buchen, Anamnesebogen ausfüllen, Dokumente hochladen – alles digital, bevor Sie in die Praxis kommen.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">📈</div>
+      <h3>Patient Portal</h3>
+      <p>Ihr persönlicher Bereich: Befunde, Röntgenbilder, Behandlungspläne und Rechnungen – sicher online abrufbar.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">⚙️</div>
+      <h3>Prophylaxe & Vorsorge</h3>
+      <p>Individuelle Prophylaxe-Programme mit digitaler Erinnerungsfunktion – nie wieder einen Vorsorge-Termin vergessen.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🤝</div>
+      <h3>Ästhetische Zahnmedizin</h3>
+      <p>Bleaching, Veneers und moderne Kieferorthopädie – digitale Planung für vorhersagbare Ergebnisse.</p>
+    </div>
+  </div>
+</section>
+
+<section class="steps" id="ablauf">
+  <div class="steps-inner">
+    <div>
+      <span class="section-chip">Unser Vorgehen</span>
+      <h2 class="section-title" style="margin-bottom:2rem;">So arbeiten wir zusammen</h2>
+      <div class="steps-grid">
+        <div class="step-item">
+          <div class="step-num-badge">1</div>
+          <div class="step-item-text">
+            <h4>Erstgespräch & Analyse</h4>
+            <p>Wir hören zu, verstehen Ihre Ziele und analysieren den Ist-Zustand Ihres Unternehmens.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num-badge">2</div>
+          <div class="step-item-text">
+            <h4>Maßgeschneidertes Konzept</h4>
+            <p>Sie erhalten ein individuelles Angebot – kein Baukastensystem, sondern echte Lösungen.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num-badge">3</div>
+          <div class="step-item-text">
+            <h4>Umsetzung & Begleitung</h4>
+            <p>Wir setzen um, kommunizieren transparent und liefern messbare Ergebnisse.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num-badge">4</div>
+          <div class="step-item-text">
+            <h4>Langfristige Partnerschaft</h4>
+            <p>Wir bleiben an Ihrer Seite – für Optimierungen, Support und weiteres Wachstum.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="steps-visual">
+      <h3>Patienten nutzen unser Online-Portal</h3>
+      <p class="tagline">Digital first – weil Ihre Zeit und Ihre Gesundheit es wert sind.</p>
+      <div class="highlight-box">
+        <strong>Papierlose Praxis</strong>
+        <p>Keine langen Formulare im Wartezimmer – alles digital, sicher und DSGVO-konform.</p>
+      </div>
+      <div class="highlight-box">
+        <strong>Ihr Patient Portal</strong>
+        <p>Sicherer Online-Zugang zu all Ihren Behandlungsdaten – jederzeit und von überall.</p>
+      </div>
+      <div class="highlight-box">
+        <strong>Kurze Wartezeiten</strong>
+        <p>Pünktliche Termine durch digitale Voranmeldung und optimiertes Praxismanagement.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials">
+  <div class="testimonials-header">
+    <span class="section-chip">Referenzen</span>
+    <h2 class="section-title">Was Kunden über uns sagen</h2>
+  </div>
+  <div class="testimonials-grid">
+    <div class="testimonial-card">
+      <div class="stars">★★★★★</div>
+      <p>"Das Online-Portal ist fantastisch. Ich kann jederzeit meine Befunde einsehen und Termine buchen – einfach modern."</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">J</div>
+        <div>
+          <div class="author-name">Jana K.</div>
+          <div class="author-role">Patientin, Düsseldorf-Stadtmitte</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <div class="stars">★★★★★</div>
+      <p>"Endlich eine Praxis, die meine Zeit respektiert. Online anmelden, Formulare ausfüllen – kein Stress im Wartezimmer."</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">M</div>
+        <div>
+          <div class="author-name">Martin G.</div>
+          <div class="author-role">Patient, Düsseldorf</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <div class="stars">★★★★★</div>
+      <p>"Die digitalen Erinnerungen für Vorsorge-Termine sind super! Ich habe seit Jahren keinen Termin mehr vergessen."</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">C</div>
+        <div>
+          <div class="author-name">Christine M.</div>
+          <div class="author-role">Patientin seit 5 Jahren</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="cta-blob"></div>
+  <h2>Bereit für den nächsten Schritt?</h2>
+  <p>Buchen Sie Ihr kostenloses Erstgespräch – unverbindlich, 30 Minuten, direkt umsetzbare Erkenntnisse.</p>
+  <a href="#kontakt" class="btn-gradient">Jetzt Gespräch vereinbaren →</a>
+</section>
+
+<section class="contact" id="kontakt">
+  <div class="contact-inner">
+    <div class="contact-info">
+      <h3>Kontakt aufnehmen</h3>
+      <div class="contact-item">
+        <div class="contact-icon">📍</div>
+        <div class="contact-item-text">
+          <div class="label">Standort</div>
+          <div class="value">Stadttor 1, 40219 Düsseldorf</div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">📞</div>
+        <div class="contact-item-text">
+          <div class="label">Telefon</div>
+          <div class="value">+49 211 399 88 00</div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">✉️</div>
+        <div class="contact-item-text">
+          <div class="label">E-Mail</div>
+          <div class="value">termin@zahnarzt-stadttor.de</div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">🕐</div>
+        <div class="contact-item-text">
+          <div class="label">Erreichbarkeit</div>
+          <div class="value">Mo–Fr 8:00–19:00, Sa 9:00–14:00 Uhr</div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-form">
+      <h4>Schreiben Sie uns</h4>
+      <form>
+        <div class="form-group">
+          <input type="text" placeholder="Ihr Name" />
+        </div>
+        <div class="form-group">
+          <input type="email" placeholder="Ihre E-Mail" />
+        </div>
+        <div class="form-group">
+          <input type="tel" placeholder="Telefonnummer (optional)" />
+        </div>
+        <div class="form-group">
+          <select>
+            <option value="">Ihr Anliegen</option>
+            <option>Online-Buchung & Formulare</option>
+            <option>Patient Portal</option>
+            <option>Prophylaxe & Vorsorge</option>
+            <option>Ästhetische Zahnmedizin</option>
+            <option>Anderes Thema</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <textarea placeholder="Ihre Nachricht..."></textarea>
+        </div>
+        <button type="submit" class="form-submit">Nachricht senden →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 <strong>Zahnarztpraxen im Stadttor</strong> · Stadttor 1, 40219 Düsseldorf · <a href="mailto:termin@zahnarzt-stadttor.de" style="color:inherit;">termin@zahnarzt-stadttor.de</a></p>
+</footer>
+
+</body>
+</html>

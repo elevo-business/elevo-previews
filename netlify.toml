@@ -1,0 +1,17 @@
+[build]
+  publish = "previews"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+
+[[redirects]]
+  from = "/"
+  to = "/index.html"
+  status = 200
+
+# Each preview slug maps to its subfolder automatically via Netlify's static serving
+# preview.elevo.solutions/mueller-immobilien → previews/mueller-immobilien/index.html
