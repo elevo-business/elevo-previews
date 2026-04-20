@@ -1,0 +1,52 @@
+[
+  {
+    "firmenname": "Berlin Estate",
+    "firmenname_kurz": "Berlin",
+    "branche_typ": "immobilien",
+    "branche_bezeichnung": "Immobilienmakler",
+    "slug": "berlin-estate",
+    "email": "office@berlin-estate.de",
+    "tag": 5,
+    "kontakt_nr": 21
+  },
+  {
+    "firmenname": "Cologne Real Estate",
+    "firmenname_kurz": "Cologne",
+    "branche_typ": "immobilien",
+    "branche_bezeichnung": "Immobilienmakler",
+    "slug": "cologne-realestate",
+    "email": "kontakt@cologne-realestate.de",
+    "tag": 5,
+    "kontakt_nr": 22
+  },
+  {
+    "firmenname": "Munich Makler",
+    "firmenname_kurz": "Munich",
+    "branche_typ": "immobilien",
+    "branche_bezeichnung": "Immobilienmakler",
+    "slug": "munich-makler",
+    "email": "info@munich-makler.de",
+    "tag": 5,
+    "kontakt_nr": 23
+  },
+  {
+    "firmenname": "Rhineland Immobilien",
+    "firmenname_kurz": "Rhineland",
+    "branche_typ": "immobilien",
+    "branche_bezeichnung": "Immobilienmakler",
+    "slug": "rhineland-immobilien",
+    "email": "kontakt@rhineland-immobilien.de",
+    "tag": 5,
+    "kontakt_nr": 24
+  },
+  {
+    "firmenname": "North Real Estate",
+    "firmenname_kurz": "North",
+    "branche_typ": "immobilien",
+    "branche_bezeichnung": "Immobilienmakler",
+    "slug": "north-realestate",
+    "email": "office@north-realestate.de",
+    "tag": 5,
+    "kontakt_nr": 25
+  }
+]

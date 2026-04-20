@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Köln Immobilien – Ihr Immobilienexperte</title>
+  <style>
+    :root {
+      --primary: #1a5276;
+      --secondary: #2980b9;
+      --dark: #1a1a2e;
+      --light: #f8f9fa;
+      --text: #333;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; color: var(--text); }
+
+    /* Navigation */
+    nav {
+      position: fixed; top: 0; width: 100%; z-index: 100;
+      background: rgba(255,255,255,0.95); backdrop-filter: blur(10px);
+      padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+    }
+    .logo { font-size: 1.4rem; font-weight: 700; color: var(--primary); letter-spacing: -0.5px; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { text-decoration: none; color: var(--dark); font-weight: 500; font-size: 0.95rem; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--primary); }
+    .nav-cta {
+      background: var(--primary); color: white; padding: 0.6rem 1.4rem;
+      border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.9rem;
+      transition: opacity 0.2s;
+    }
+    .nav-cta:hover { opacity: 0.9; }
+
+    /* Hero */
+    .hero {
+      min-height: 100vh; padding-top: 80px;
+      background: linear-gradient(135deg, var(--dark) 0%, #16213e 50%, #0f3460 100%);
+      display: flex; align-items: center; position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute; top: -50%; right: -20%;
+      width: 600px; height: 600px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(26,82,118,0.15) 0%, transparent 70%);
+    }
+    .hero-inner { max-width: 1200px; margin: 0 auto; padding: 4rem 2rem; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+    .hero-badge {
+      display: inline-block; background: rgba(26,82,118,0.2); color: var(--primary);
+      padding: 0.4rem 1rem; border-radius: 50px; font-size: 0.85rem; font-weight: 600;
+      margin-bottom: 1.5rem; border: 1px solid rgba(26,82,118,0.3);
+    }
+    .hero h1 { font-size: 3rem; font-weight: 800; color: white; line-height: 1.15; margin-bottom: 1.5rem; }
+    .hero h1 span { color: var(--primary); }
+    .hero p { color: rgba(255,255,255,0.75); font-size: 1.15rem; line-height: 1.7; margin-bottom: 2.5rem; }
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--primary); color: white; padding: 1rem 2rem;
+      border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 1rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 15px rgba(26,82,118,0.4);
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(26,82,118,0.5); }
+    .btn-secondary {
+      background: transparent; color: white; padding: 1rem 2rem;
+      border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem;
+      border: 2px solid rgba(255,255,255,0.3); transition: border-color 0.2s;
+    }
+    .btn-secondary:hover { border-color: white; }
+    .hero-stats { display: flex; gap: 2rem; margin-top: 3rem; }
+    .stat { text-align: center; }
+    .stat-num { font-size: 2rem; font-weight: 800; color: var(--primary); }
+    .stat-label { color: rgba(255,255,255,0.6); font-size: 0.85rem; margin-top: 0.2rem; }
+    .hero-visual {
+      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 16px; padding: 2rem; backdrop-filter: blur(10px);
+    }
+    .property-card {
+      background: white; border-radius: 12px; overflow: hidden;
+      margin-bottom: 1rem; box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    }
+    .property-img {
+      height: 140px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 3rem;
+    }
+    .property-info { padding: 1rem; }
+    .property-info h3 { font-size: 1rem; color: var(--dark); margin-bottom: 0.25rem; }
+    .property-price { color: var(--primary); font-weight: 700; font-size: 1.1rem; }
+    .property-tags { display: flex; gap: 0.5rem; margin-top: 0.5rem; }
+    .tag { background: #f0f0f0; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; color: #666; }
+
+    /* Services */
+    .services { padding: 6rem 2rem; background: var(--light); }
+    .section-header { text-align: center; max-width: 600px; margin: 0 auto 4rem; }
+    .section-label { color: var(--primary); font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1rem; }
+    .section-title { font-size: 2.2rem; font-weight: 800; color: var(--dark); line-height: 1.2; }
+    .section-sub { color: #666; margin-top: 1rem; font-size: 1.05rem; line-height: 1.6; }
+    .services-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; }
+    .service-card {
+      background: white; border-radius: 12px; padding: 2rem;
+      box-shadow: 0 2px 15px rgba(0,0,0,0.06); transition: transform 0.2s, box-shadow 0.2s;
+      border: 1px solid rgba(0,0,0,0.04);
+    }
+    .service-card:hover { transform: translateY(-4px); box-shadow: 0 8px 30px rgba(0,0,0,0.1); }
+    .service-icon {
+      width: 56px; height: 56px; border-radius: 12px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.6rem; margin-bottom: 1.2rem;
+    }
+    .service-card h3 { font-size: 1.1rem; font-weight: 700; color: var(--dark); margin-bottom: 0.6rem; }
+    .service-card p { color: #666; font-size: 0.95rem; line-height: 1.6; }
+
+    /* USPs */
+    .usps { padding: 6rem 2rem; background: white; }
+    .usps-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+    .usp-text .section-label { text-align: left; }
+    .usp-text .section-title { text-align: left; }
+    .usp-list { margin-top: 2rem; display: flex; flex-direction: column; gap: 1.2rem; }
+    .usp-item { display: flex; gap: 1rem; align-items: flex-start; }
+    .usp-check {
+      width: 28px; height: 28px; border-radius: 50%;
+      background: var(--primary); color: white;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.8rem; flex-shrink: 0; margin-top: 2px;
+    }
+    .usp-item-text h4 { font-weight: 700; color: var(--dark); margin-bottom: 0.2rem; }
+    .usp-item-text p { color: #666; font-size: 0.9rem; }
+    .usp-visual {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      border-radius: 16px; padding: 3rem; color: white; text-align: center;
+    }
+    .usp-visual .big-num { font-size: 5rem; font-weight: 900; }
+    .usp-visual .big-label { font-size: 1.2rem; opacity: 0.9; margin-top: 0.5rem; }
+    .usp-visual .usp-divider { width: 40px; height: 3px; background: rgba(255,255,255,0.4); margin: 1.5rem auto; }
+    .usp-visual .usp-sub { opacity: 0.8; font-size: 0.95rem; }
+
+    /* Testimonials */
+    .testimonials { padding: 6rem 2rem; background: var(--light); }
+    .testimonials-grid { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+    .testimonial-card {
+      background: white; border-radius: 12px; padding: 2rem;
+      box-shadow: 0 2px 15px rgba(0,0,0,0.06);
+    }
+    .stars { color: #f59e0b; font-size: 1.1rem; margin-bottom: 1rem; }
+    .testimonial-card p { color: #555; font-size: 0.95rem; line-height: 1.7; font-style: italic; }
+    .testimonial-author { display: flex; gap: 0.8rem; align-items: center; margin-top: 1.2rem; padding-top: 1.2rem; border-top: 1px solid #f0f0f0; }
+    .author-avatar {
+      width: 42px; height: 42px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      display: flex; align-items: center; justify-content: center;
+      color: white; font-weight: 700;
+    }
+    .author-name { font-weight: 700; font-size: 0.9rem; color: var(--dark); }
+    .author-role { color: #999; font-size: 0.8rem; }
+
+    /* CTA */
+    .cta-section {
+      padding: 6rem 2rem;
+      background: linear-gradient(135deg, var(--dark), #16213e);
+      text-align: center;
+    }
+    .cta-section h2 { font-size: 2.5rem; font-weight: 800; color: white; margin-bottom: 1rem; }
+    .cta-section p { color: rgba(255,255,255,0.7); font-size: 1.1rem; margin-bottom: 2.5rem; max-width: 500px; margin-left: auto; margin-right: auto; }
+    .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+    /* Contact */
+    .contact { padding: 5rem 2rem; background: white; }
+    .contact-inner { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+    .contact-info h3 { font-size: 1.5rem; font-weight: 700; color: var(--dark); margin-bottom: 1.5rem; }
+    .contact-item { display: flex; gap: 1rem; margin-bottom: 1.2rem; align-items: center; }
+    .contact-icon {
+      width: 44px; height: 44px; border-radius: 10px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      display: flex; align-items: center; justify-content: center; color: white; font-size: 1.1rem;
+    }
+    .contact-item-text .label { font-size: 0.8rem; color: #999; text-transform: uppercase; letter-spacing: 1px; }
+    .contact-item-text .value { font-weight: 600; color: var(--dark); }
+    .contact-form { background: var(--light); border-radius: 12px; padding: 2rem; }
+    .form-group { margin-bottom: 1rem; }
+    .form-group input, .form-group textarea, .form-group select {
+      width: 100%; padding: 0.8rem 1rem; border: 2px solid #e5e7eb;
+      border-radius: 8px; font-size: 0.95rem; transition: border-color 0.2s;
+      font-family: inherit; background: white;
+    }
+    .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+      outline: none; border-color: var(--primary);
+    }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+    .form-submit {
+      width: 100%; background: var(--primary); color: white; padding: 0.9rem;
+      border: none; border-radius: 8px; font-size: 1rem; font-weight: 700;
+      cursor: pointer; transition: opacity 0.2s;
+    }
+    .form-submit:hover { opacity: 0.9; }
+
+    /* Footer */
+    footer { background: var(--dark); color: rgba(255,255,255,0.6); padding: 2rem; text-align: center; font-size: 0.9rem; }
+    footer strong { color: white; }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-visual { display: none; }
+      .hero h1 { font-size: 2rem; }
+      .nav-links { display: none; }
+      .usps-inner { grid-template-columns: 1fr; }
+      .contact-inner { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">Köln Immobilien</div>
+  <ul class="nav-links">
+    <li><a href="#leistungen">Leistungen</a></li>
+    <li><a href="#vorteile">Vorteile</a></li>
+    <li><a href="#kontakt">Kontakt</a></li>
+  </ul>
+  <a href="#kontakt" class="nav-cta">Kostenlos beraten lassen</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge">✦ Ihr Immobilienpartner in der Region</div>
+      <h1>Ihr Partner für Immobilienmakler</h1>
+      <p>Wir stehen für Qualität, Verlässlichkeit und persönliche Betreuung. Entdecken Sie, was Köln Immobilien für Sie leisten kann.</p>
+      <div class="hero-actions">
+        <a href="#kontakt" class="btn-primary">Jetzt Beratungsgespräch vereinbaren</a>
+        <a href="#leistungen" class="btn-secondary">Leistungen entdecken</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <div class="stat-num">15+</div>
+          <div class="stat-label">Jahre Erfahrung</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">500+</div>
+          <div class="stat-label">Zufriedene Kunden</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">4.9★</div>
+          <div class="stat-label">Google Bewertung</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="property-card">
+        <div class="property-img">🏡</div>
+        <div class="property-info">
+          <h3>Einfamilienhaus – Toplage</h3>
+          <div class="property-price">€ 485.000</div>
+          <div class="property-tags">
+            <span class="tag">142 m²</span>
+            <span class="tag">5 Zimmer</span>
+            <span class="tag">Garten</span>
+          </div>
+        </div>
+      </div>
+      <div class="property-card">
+        <div class="property-img">🏢</div>
+        <div class="property-info">
+          <h3>Moderne Stadtwohnung</h3>
+          <div class="property-price">€ 3.200 / Monat</div>
+          <div class="property-tags">
+            <span class="tag">98 m²</span>
+            <span class="tag">3 Zimmer</span>
+            <span class="tag">Balkon</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="leistungen">
+  <div class="section-header">
+    <div class="section-label">Unsere Leistungen</div>
+    <h2 class="section-title">Was wir für Sie tun</h2>
+    <p class="section-sub">Professionelle Immobiliendienstleistungen – von der ersten Beratung bis zur Schlüsselübergabe.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">🏠</div>
+      <h3>Kernleistung 1</h3>
+      <p>Professionelle Beratung und Umsetzung für Ihren Bedarf.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">💼</div>
+      <h3>Kernleistung 2</h3>
+      <p>Schnelle und zuverlässige Ausführung durch erfahrene Fachkräfte.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">📊</div>
+      <h3>Kernleistung 3</h3>
+      <p>Kompetente Begleitung von A bis Z.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🤝</div>
+      <h3>Kernleistung 4</h3>
+      <p>Langfristige Betreuung und Support für nachhaltigen Erfolg.</p>
+    </div>
+  </div>
+</section>
+
+<section class="usps" id="vorteile">
+  <div class="usps-inner">
+    <div class="usp-text">
+      <div class="section-label">Warum wir?</div>
+      <h2 class="section-title">Ihr Vorteil mit Köln Immobilien</h2>
+      <div class="usp-list">
+        <div class="usp-item">
+          <div class="usp-check">✓</div>
+          <div class="usp-item-text">
+            <h4>Erfahrung & Kompetenz</h4>
+            <p>Über 15 Jahre Branchenerfahrung und tiefes Fachwissen.</p>
+          </div>
+        </div>
+        <div class="usp-item">
+          <div class="usp-check">✓</div>
+          <div class="usp-item-text">
+            <h4>Transparente Preise</h4>
+            <p>Keine versteckten Kosten – klare Angebote vor Auftragserteilung.</p>
+          </div>
+        </div>
+        <div class="usp-item">
+          <div class="usp-check">✓</div>
+          <div class="usp-item-text">
+            <h4>Schnelle Reaktion</h4>
+            <p>Innerhalb von 24 Stunden erhalten Sie eine Rückmeldung.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="usp-visual">
+      <div class="big-num">98%</div>
+      <div class="big-label">Kundenzufriedenheit</div>
+      <div class="usp-divider"></div>
+      <div class="usp-sub">Unsere Kunden empfehlen uns weiter – das ist unser bester Beweis.</div>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials">
+  <div class="section-header">
+    <div class="section-label">Kundenstimmen</div>
+    <h2 class="section-title">Was unsere Kunden sagen</h2>
+  </div>
+  <div class="testimonials-grid">
+    <div class="testimonial-card">
+      <div class="stars">★★★★★</div>
+      <p>"Hervorragende Arbeit und absolut zuverlässig. Ich bin sehr zufrieden mit dem Ergebnis und werde definitiv wiederkommen."</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">K</div>
+        <div>
+          <div class="author-name">Klaus M.</div>
+          <div class="author-role">Privatperson</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <div class="stars">★★★★★</div>
+      <p>"Professionell, pünktlich und zu einem fairen Preis. Genau das, was ich gesucht habe."</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">S</div>
+        <div>
+          <div class="author-name">Sandra H.</div>
+          <div class="author-role">Unternehmerin</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <div class="stars">★★★★★</div>
+      <p>"Endlich jemand, der sich wirklich Zeit nimmt und die Arbeit mit Herzblut macht. Klare Empfehlung!"</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">T</div>
+        <div>
+          <div class="author-name">Thomas B.</div>
+          <div class="author-role">Geschäftsführer</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <h2>Bereit für Ihren nächsten Schritt?</h2>
+  <p>Kostenlose Erstberatung – unverbindlich und ohne versteckte Kosten.</p>
+  <div class="cta-buttons">
+    <a href="#kontakt" class="btn-primary">Jetzt Kontakt aufnehmen</a>
+    <a href="tel:+49 211 123456" class="btn-secondary">📞 +49 211 123456</a>
+  </div>
+</section>
+
+<section class="contact" id="kontakt">
+  <div class="contact-inner">
+    <div class="contact-info">
+      <h3>Kontakt</h3>
+      <div class="contact-item">
+        <div class="contact-icon">📍</div>
+        <div class="contact-item-text">
+          <div class="label">Adresse</div>
+          <div class="value">Musterstraße 1, 40000 Düsseldorf</div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">📞</div>
+        <div class="contact-item-text">
+          <div class="label">Telefon</div>
+          <div class="value">+49 211 123456</div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">✉️</div>
+        <div class="contact-item-text">
+          <div class="label">E-Mail</div>
+          <div class="value">info@koeln-immobilien.de</div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">🕐</div>
+        <div class="contact-item-text">
+          <div class="label">Öffnungszeiten</div>
+          <div class="value">Mo–Fr 8:00–18:00 Uhr</div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-form">
+      <form>
+        <div class="form-group">
+          <input type="text" placeholder="Ihr Name" />
+        </div>
+        <div class="form-group">
+          <input type="email" placeholder="Ihre E-Mail" />
+        </div>
+        <div class="form-group">
+          <input type="tel" placeholder="Ihre Telefonnummer" />
+        </div>
+        <div class="form-group">
+          <select>
+            <option value="">Ihr Anliegen</option>
+            <option>Immobilie kaufen</option>
+            <option>Immobilie verkaufen</option>
+            <option>Immobilie mieten</option>
+            <option>Immobilienbewertung</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <textarea placeholder="Ihre Nachricht..."></textarea>
+        </div>
+        <button type="submit" class="form-submit">Nachricht senden →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 <strong>Köln Immobilien</strong> · Musterstraße 1, 40000 Düsseldorf · <a href="mailto:info@koeln-immobilien.de" style="color:inherit;">info@koeln-immobilien.de</a></p>
+</footer>
+
+</body>
+</html>

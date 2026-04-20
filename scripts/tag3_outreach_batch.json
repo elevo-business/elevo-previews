@@ -1,0 +1,52 @@
+[
+  {
+    "firmenname": "Makler Kontakt 11",
+    "firmenname_kurz": "Makler 11",
+    "branche_typ": "immobilien",
+    "branche_bezeichnung": "Immobilienmakler",
+    "slug": "makler-kontakt-11",
+    "email": "kontakt@immobilienmakler12.de",
+    "tag": 3,
+    "kontakt_nr": 11
+  },
+  {
+    "firmenname": "Lammers Immobilien",
+    "firmenname_kurz": "Lammers",
+    "branche_typ": "immobilien",
+    "branche_bezeichnung": "Immobilienmakler",
+    "slug": "lammers-immobilien",
+    "email": "office@lammers-immobilien.de",
+    "tag": 3,
+    "kontakt_nr": 12
+  },
+  {
+    "firmenname": "Makler Hamburg",
+    "firmenname_kurz": "Hamburg Makler",
+    "branche_typ": "immobilien",
+    "branche_bezeichnung": "Immobilienmakler",
+    "slug": "makler-hamburg",
+    "email": "info@makler-hamburg.de",
+    "tag": 3,
+    "kontakt_nr": 13
+  },
+  {
+    "firmenname": "Real Estate Berlin",
+    "firmenname_kurz": "Real Estate",
+    "branche_typ": "immobilien",
+    "branche_bezeichnung": "Immobilienmakler",
+    "slug": "realestate-berlin",
+    "email": "kontakt@realestate-berlin.de",
+    "tag": 3,
+    "kontakt_nr": 14
+  },
+  {
+    "firmenname": "Köln Immobilien",
+    "firmenname_kurz": "Köln",
+    "branche_typ": "immobilien",
+    "branche_bezeichnung": "Immobilienmakler",
+    "slug": "koeln-immobilien",
+    "email": "info@koeln-immobilien.de",
+    "tag": 3,
+    "kontakt_nr": 15
+  }
+]

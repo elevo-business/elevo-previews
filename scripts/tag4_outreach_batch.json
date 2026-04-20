@@ -1,0 +1,52 @@
+[
+  {
+    "firmenname": "München Makler",
+    "firmenname_kurz": "München",
+    "branche_typ": "immobilien",
+    "branche_bezeichnung": "Immobilienmakler",
+    "slug": "muenchen-makler",
+    "email": "office@muenchen-makler.de",
+    "tag": 4,
+    "kontakt_nr": 16
+  },
+  {
+    "firmenname": "Frankfurt Immobilien",
+    "firmenname_kurz": "Frankfurt",
+    "branche_typ": "immobilien",
+    "branche_bezeichnung": "Immobilienmakler",
+    "slug": "frankfurt-immobilien",
+    "email": "kontakt@frankfurt-immobilien.de",
+    "tag": 4,
+    "kontakt_nr": 17
+  },
+  {
+    "firmenname": "Düsseldorf Real Estate",
+    "firmenname_kurz": "Düsseldorf",
+    "branche_typ": "immobilien",
+    "branche_bezeichnung": "Immobilienmakler",
+    "slug": "duesseldorf-real-estate",
+    "email": "info@duesseldorf-real-estate.de",
+    "tag": 4,
+    "kontakt_nr": 18
+  },
+  {
+    "firmenname": "Stuttgart Makler",
+    "firmenname_kurz": "Stuttgart",
+    "branche_typ": "immobilien",
+    "branche_bezeichnung": "Immobilienmakler",
+    "slug": "stuttgard-makler",
+    "email": "kontakt@stuttgard-makler.de",
+    "tag": 4,
+    "kontakt_nr": 19
+  },
+  {
+    "firmenname": "Hamburg Property",
+    "firmenname_kurz": "Hamburg",
+    "branche_typ": "immobilien",
+    "branche_bezeichnung": "Immobilienmakler",
+    "slug": "hamburg-property",
+    "email": "info@hamburg-property.de",
+    "tag": 4,
+    "kontakt_nr": 20
+  }
+]

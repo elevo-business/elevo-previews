@@ -1,0 +1,52 @@
+[
+  {
+    "firmenname": "Immobilia Deutschland",
+    "firmenname_kurz": "Immobilia",
+    "branche_typ": "immobilien",
+    "branche_bezeichnung": "Immobilienmakler - Düsseldorf",
+    "slug": "immobilia-deutschland",
+    "email": "contact@mein-immobilienmakler.de",
+    "tag": 2,
+    "kontakt_nr": 6
+  },
+  {
+    "firmenname": "CASA Immobilien",
+    "firmenname_kurz": "CASA",
+    "branche_typ": "immobilien",
+    "branche_bezeichnung": "Immobilienmakler - CASA",
+    "slug": "casa-immobilien",
+    "email": "info@casa-id.de",
+    "tag": 2,
+    "kontakt_nr": 7
+  },
+  {
+    "firmenname": "Appelhans Immobilien",
+    "firmenname_kurz": "Appelhans",
+    "branche_typ": "immobilien",
+    "branche_bezeichnung": "Immobilienmakler - Appelhans",
+    "slug": "appelhans-immobilien",
+    "email": "info@appelhansimmobilien.de",
+    "tag": 2,
+    "kontakt_nr": 8
+  },
+  {
+    "firmenname": "FREIESLEBEN GmbH",
+    "firmenname_kurz": "FREIESLEBEN",
+    "branche_typ": "immobilien",
+    "branche_bezeichnung": "Immobilienmakler - Münster",
+    "slug": "freiesleben-gmbh",
+    "email": "muenster@immobilienmakler12.de",
+    "tag": 2,
+    "kontakt_nr": 9
+  },
+  {
+    "firmenname": "Boenighausen Immobilien",
+    "firmenname_kurz": "Boenighausen",
+    "branche_typ": "immobilien",
+    "branche_bezeichnung": "Immobilienmakler - Boenighausen",
+    "slug": "boenighausen-immobilien",
+    "email": "info@boenighausen-immobilien.de",
+    "tag": 2,
+    "kontakt_nr": 10
+  }
+]
