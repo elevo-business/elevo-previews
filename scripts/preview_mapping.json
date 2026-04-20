@@ -1,0 +1,170 @@
+{
+  "tag2": [
+    {
+      "kontakt_nr": 6,
+      "firmenname": "Immobilia Deutschland",
+      "email": "contact@mein-immobilienmakler.de",
+      "preview_slug": "immobilia-deutschland",
+      "preview_url": "https://preview.llevo.de/immobilia-deutschland",
+      "status": "ready"
+    },
+    {
+      "kontakt_nr": 7,
+      "firmenname": "CASA Immobilien",
+      "email": "info@casa-id.de",
+      "preview_slug": "casa-immobilien",
+      "preview_url": "https://preview.llevo.de/casa-immobilien",
+      "status": "ready"
+    },
+    {
+      "kontakt_nr": 8,
+      "firmenname": "Appelhans Immobilien",
+      "email": "info@appelhansimmobilien.de",
+      "preview_slug": "appelhans-immobilien",
+      "preview_url": "https://preview.llevo.de/appelhans-immobilien",
+      "status": "ready"
+    },
+    {
+      "kontakt_nr": 9,
+      "firmenname": "FREIESLEBEN GmbH",
+      "email": "muenster@immobilienmakler12.de",
+      "preview_slug": "freiesleben-gmbh",
+      "preview_url": "https://preview.llevo.de/freiesleben-gmbh",
+      "status": "ready"
+    },
+    {
+      "kontakt_nr": 10,
+      "firmenname": "Boenighausen Immobilien",
+      "email": "info@boenighausen-immobilien.de",
+      "preview_slug": "boenighausen-immobilien",
+      "preview_url": "https://preview.llevo.de/boenighausen-immobilien",
+      "status": "ready"
+    }
+  ],
+  "tag3": [
+    {
+      "kontakt_nr": 11,
+      "firmenname": "Makler Kontakt 11",
+      "email": "kontakt@immobilienmakler12.de",
+      "preview_slug": "makler-kontakt-11",
+      "preview_url": "https://preview.llevo.de/makler-kontakt-11",
+      "status": "ready"
+    },
+    {
+      "kontakt_nr": 12,
+      "firmenname": "Lammers Immobilien",
+      "email": "office@lammers-immobilien.de",
+      "preview_slug": "lammers-immobilien",
+      "preview_url": "https://preview.llevo.de/lammers-immobilien",
+      "status": "ready"
+    },
+    {
+      "kontakt_nr": 13,
+      "firmenname": "Makler Hamburg",
+      "email": "info@makler-hamburg.de",
+      "preview_slug": "makler-hamburg",
+      "preview_url": "https://preview.llevo.de/makler-hamburg",
+      "status": "ready"
+    },
+    {
+      "kontakt_nr": 14,
+      "firmenname": "Real Estate Berlin",
+      "email": "kontakt@realestate-berlin.de",
+      "preview_slug": "realestate-berlin",
+      "preview_url": "https://preview.llevo.de/realestate-berlin",
+      "status": "ready"
+    },
+    {
+      "kontakt_nr": 15,
+      "firmenname": "Köln Immobilien",
+      "email": "info@koeln-immobilien.de",
+      "preview_slug": "koeln-immobilien",
+      "preview_url": "https://preview.llevo.de/koeln-immobilien",
+      "status": "ready"
+    }
+  ],
+  "tag4": [
+    {
+      "kontakt_nr": 16,
+      "firmenname": "München Makler",
+      "email": "office@muenchen-makler.de",
+      "preview_slug": "muenchen-makler",
+      "preview_url": "https://preview.llevo.de/muenchen-makler",
+      "status": "ready"
+    },
+    {
+      "kontakt_nr": 17,
+      "firmenname": "Frankfurt Immobilien",
+      "email": "kontakt@frankfurt-immobilien.de",
+      "preview_slug": "frankfurt-immobilien",
+      "preview_url": "https://preview.llevo.de/frankfurt-immobilien",
+      "status": "ready"
+    },
+    {
+      "kontakt_nr": 18,
+      "firmenname": "Düsseldorf Real Estate",
+      "email": "info@duesseldorf-real-estate.de",
+      "preview_slug": "duesseldorf-real-estate",
+      "preview_url": "https://preview.llevo.de/duesseldorf-real-estate",
+      "status": "ready"
+    },
+    {
+      "kontakt_nr": 19,
+      "firmenname": "Stuttgart Makler",
+      "email": "kontakt@stuttgard-makler.de",
+      "preview_slug": "stuttgard-makler",
+      "preview_url": "https://preview.llevo.de/stuttgard-makler",
+      "status": "ready"
+    },
+    {
+      "kontakt_nr": 20,
+      "firmenname": "Hamburg Property",
+      "email": "info@hamburg-property.de",
+      "preview_slug": "hamburg-property",
+      "preview_url": "https://preview.llevo.de/hamburg-property",
+      "status": "ready"
+    }
+  ],
+  "tag5": [
+    {
+      "kontakt_nr": 21,
+      "firmenname": "Berlin Estate",
+      "email": "office@berlin-estate.de",
+      "preview_slug": "berlin-estate",
+      "preview_url": "https://preview.llevo.de/berlin-estate",
+      "status": "ready"
+    },
+    {
+      "kontakt_nr": 22,
+      "firmenname": "Cologne Real Estate",
+      "email": "kontakt@cologne-realestate.de",
+      "preview_slug": "cologne-realestate",
+      "preview_url": "https://preview.llevo.de/cologne-realestate",
+      "status": "ready"
+    },
+    {
+      "kontakt_nr": 23,
+      "firmenname": "Munich Makler",
+      "email": "info@munich-makler.de",
+      "preview_slug": "munich-makler",
+      "preview_url": "https://preview.llevo.de/munich-makler",
+      "status": "ready"
+    },
+    {
+      "kontakt_nr": 24,
+      "firmenname": "Rhineland Immobilien",
+      "email": "kontakt@rhineland-immobilien.de",
+      "preview_slug": "rhineland-immobilien",
+      "preview_url": "https://preview.llevo.de/rhineland-immobilien",
+      "status": "ready"
+    },
+    {
+      "kontakt_nr": 25,
+      "firmenname": "North Real Estate",
+      "email": "office@north-realestate.de",
+      "preview_slug": "north-realestate",
+      "preview_url": "https://preview.llevo.de/north-realestate",
+      "status": "ready"
+    }
+  ]
+}
