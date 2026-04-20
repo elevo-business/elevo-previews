@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zahnärzte Kö55 – Zahnarztpraxis an zwei Standorten – Düsseldorf</title>
+  <title>Zahnärzte Kö55 – Zahnarztpraxis an zwei Standorten – Königsallee Düsseldorf</title>
   <style>
     :root {
       --primary: #546E7A;
@@ -210,6 +210,26 @@
     footer { background: var(--dark); color: rgba(255,255,255,0.4); padding: 1.5rem 2rem; text-align: center; font-size: 0.85rem; }
     footer strong { color: rgba(255,255,255,0.7); }
 
+    /* Logo image */
+    .logo-img { height: 38px; max-width: 180px; object-fit: contain; display: block; }
+    .logo-fallback { display: flex; align-items: center; gap: 0.5rem; }
+
+    /* Hero image */
+    .hero-img-container {
+      border-radius: 16px; overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+      margin-bottom: 1rem; position: relative;
+    }
+    .hero-img-container img {
+      width: 100%; height: 220px; object-fit: cover; display: block;
+      filter: brightness(0.88);
+    }
+    .hero-img-overlay {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      background: linear-gradient(transparent, rgba(0,0,0,0.5));
+      padding: 1rem;
+    }
+
     @media (max-width: 768px) {
       .hero-inner { grid-template-columns: 1fr; }
       .metric-row .metric-card:last-child { display: none; }
@@ -224,8 +244,7 @@
 
 <nav>
   <div class="logo-area">
-    <div class="logo-dot"></div>
-    <div class="logo">Zahnärzte Kö55</div>
+    <img src="https://www.zahnaerztekoe55.de/wp-content/uploads/Koe55_Logo.png" class="logo-img" alt="Zahnärzte Kö55" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="logo-fallback" style="display:none">Zahnärzte Kö55</div>
   </div>
   <ul class="nav-links">
     <li><a href="#leistungen">Leistungen</a></li>
@@ -240,18 +259,19 @@
   <div class="hero-blob2"></div>
   <div class="hero-inner">
     <div>
-      <div class="hero-pill">✦ Zahnarztpraxis an zwei Standorten – Düsseldorf</div>
-      <h1>Exzellente Zahnmedizin an zwei Standorten.<br><span class="gradient-text">Kö55 & Stadtmitte – Ihr Termin ist immer nah</span></h1>
-      <p>Zahnärzte Kö55 verbindet zwei erstklassige Praxen unter einem Dach: modernste Medizin, zentrale Lage und eine einzige Buchungsplattform für beide Standorte.</p>
+      <div class="hero-pill">✦ Zahnarztpraxis an zwei Standorten – Königsallee Düsseldorf</div>
+      <h1>Exzellente Zahnmedizin an zwei Standorten.<br><span class="gradient-text">Moderne Zahnmedizin für ein gesundes und strahlendes Lächeln</span></h1>
+      <p>Zahnärzte Kö55 verbindet zwei erstklassige Praxen auf der Königsallee: modernste Medizin, zentrale Lage und eine einzige Buchungsplattform für beide Standorte.</p>
       <div class="hero-actions">
         <a href="#kontakt" class="btn-gradient">Kostenlos beraten lassen →</a>
         <a href="#leistungen" class="btn-ghost">Mehr erfahren</a>
       </div>
     </div>
     <div class="hero-card-grid">
+      <div class="hero-img-container"><img src="https://www.zahnaerztekoe55.de/wp-content/uploads/Zahnaerzte-Koe_Header-Mobil.jpg" alt="" loading="lazy"></div>
       <div class="metric-card">
         <div class="metric-value"><span>2</span></div>
-        <div class="metric-label">Standorte in Düsseldorf</div>
+        <div class="metric-label">Standorte Kö55a & Kö60d</div>
       </div>
       <div class="metric-row">
         <div class="metric-card">
@@ -277,22 +297,22 @@
     <div class="service-card">
       <div class="service-icon">🎯</div>
       <h3>Zwei-Standort-Buchung</h3>
-      <p>Buchen Sie online bei unserem Standort Kö55 oder Stadtmitte – ein System, alle Verfügbarkeiten.</p>
+      <p>Buchen Sie online bei Kö55a oder Kö60d – ein System, alle Verfügbarkeiten beider Praxen.</p>
     </div>
     <div class="service-card">
       <div class="service-icon">📈</div>
-      <h3>Zahnästhetik & Bleaching</h3>
-      <p>Professionelles Bleaching und kosmetische Zahnkorrekturen für Ihr strahlendes Lächeln.</p>
+      <h3>Prophylaxe & Parodontologie</h3>
+      <p>Professionelle Zahnreinigung und individuelle Prophylaxe-Programme für langfristige Zahngesundheit.</p>
     </div>
     <div class="service-card">
       <div class="service-icon">⚙️</div>
-      <h3>Prophylaxe & Vorsorge</h3>
-      <p>Regelmäßige Reinigung und individuelle Prophylaxe-Programme für langfristige Zahngesundheit.</p>
+      <h3>Ästhetische Zahnmedizin</h3>
+      <p>Bleaching, Veneers und kosmetische Zahnkorrekturen für Ihr strahlendes Lächeln.</p>
     </div>
     <div class="service-card">
       <div class="service-icon">🤝</div>
-      <h3>Patient Stories</h3>
-      <p>Sehen Sie selbst, was unsere Patienten über ihre Behandlung bei Kö55 berichten – echt und unzensiert.</p>
+      <h3>Implantologie & Prothetik</h3>
+      <p>Hochwertige Implantate und Zahnersatz – von der Erstberatung bis zur Eingliederung.</p>
     </div>
   </div>
 </section>
@@ -338,15 +358,15 @@
       <p class="tagline">Zwei Standorte, eine Philosophie: Ihre Gesundheit und Ihr Lächeln stehen im Mittelpunkt.</p>
       <div class="highlight-box">
         <strong>Zwei Standorte – ein Team</strong>
-        <p>Gleiche Qualität, gleiche Ärzte, zwei Standorte: Flexibility für Ihre Termine.</p>
+        <p>Gleiche Qualität, gleiche Ärzte, zwei Standorte: Flexibilität für Ihre Termine.</p>
       </div>
       <div class="highlight-box">
-        <strong>Zentrale Online-Buchung</strong>
-        <p>Ein Account, alle Standorte – buchen Sie den nächsten freien Termin standortübergreifend.</p>
+        <strong>Lange Öffnungszeiten</strong>
+        <p>Mo–Do bis 20:00 Uhr – auch nach der Arbeit erreichbar. Kein Urlaubstag für Zahnarzttermine.</p>
       </div>
       <div class="highlight-box">
-        <strong>Bekannte Gesichter</strong>
-        <p>Dieselben Ärzte an beiden Standorten – für kontinuierliche und vertraute Betreuung.</p>
+        <strong>Zentral an der Kö</strong>
+        <p>Direkt an der Königsallee – perfekte Lage für Berufstätige in Düsseldorf-Mitte.</p>
       </div>
     </div>
   </div>
@@ -360,7 +380,7 @@
   <div class="testimonials-grid">
     <div class="testimonial-card">
       <div class="stars">★★★★★</div>
-      <p>"Super, dass ich zwischen Kö55 und Stadtmitte wählen kann – je nachdem, wo ich gerade bin. Einfach top!"</p>
+      <p>"Super, dass ich zwischen Kö55a und Kö60d wählen kann – je nachdem, wo ich gerade bin. Und bis 20 Uhr geöffnet ist ein echter Pluspunkt!"</p>
       <div class="testimonial-author">
         <div class="author-avatar">T</div>
         <div>
@@ -371,7 +391,7 @@
     </div>
     <div class="testimonial-card">
       <div class="stars">★★★★★</div>
-      <p>"Die Ärztin kennt meine Vorgeschichte, obwohl ich mal Standort gewechselt habe. Das ist wirklich klasse."</p>
+      <p>"Die Ärztin kennt meine Vorgeschichte, auch nach dem Standortwechsel. Das ist wirklich klasse."</p>
       <div class="testimonial-author">
         <div class="author-avatar">L</div>
         <div>
@@ -409,28 +429,28 @@
         <div class="contact-icon">📍</div>
         <div class="contact-item-text">
           <div class="label">Standort</div>
-          <div class="value">Königsallee 55, 40212 Düsseldorf</div>
+          <div class="value">Königsallee 55 a & 60 d, 40212 Düsseldorf</div>
         </div>
       </div>
       <div class="contact-item">
         <div class="contact-icon">📞</div>
         <div class="contact-item-text">
           <div class="label">Telefon</div>
-          <div class="value">+49 211 200 55 00</div>
+          <div class="value">0211 / 569 406 80</div>
         </div>
       </div>
       <div class="contact-item">
         <div class="contact-icon">✉️</div>
         <div class="contact-item-text">
           <div class="label">E-Mail</div>
-          <div class="value">info@zahnaerzte-koe55.de</div>
+          <div class="value">info@zahnaerztekoe.de</div>
         </div>
       </div>
       <div class="contact-item">
         <div class="contact-icon">🕐</div>
         <div class="contact-item-text">
           <div class="label">Erreichbarkeit</div>
-          <div class="value">Mo–Fr 8:00–19:00 Uhr</div>
+          <div class="value">Mo–Do 7:30–20:00, Fr 7:30–16:00 Uhr</div>
         </div>
       </div>
     </div>
@@ -450,9 +470,9 @@
           <select>
             <option value="">Ihr Anliegen</option>
             <option>Zwei-Standort-Buchung</option>
-            <option>Zahnästhetik & Bleaching</option>
-            <option>Prophylaxe & Vorsorge</option>
-            <option>Patient Stories</option>
+            <option>Prophylaxe & Parodontologie</option>
+            <option>Ästhetische Zahnmedizin</option>
+            <option>Implantologie & Prothetik</option>
             <option>Anderes Thema</option>
           </select>
         </div>
@@ -466,7 +486,7 @@
 </section>
 
 <footer>
-  <p>© 2026 <strong>Zahnärzte Kö55</strong> · Königsallee 55, 40212 Düsseldorf · <a href="mailto:info@zahnaerzte-koe55.de" style="color:inherit;">info@zahnaerzte-koe55.de</a></p>
+  <p>© 2026 <strong>Zahnärzte Kö55</strong> · Königsallee 55 a & 60 d, 40212 Düsseldorf · <a href="mailto:info@zahnaerztekoe.de" style="color:inherit;">info@zahnaerztekoe.de</a></p>
 </footer>
 
 </body>

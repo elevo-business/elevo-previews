@@ -123,13 +123,36 @@ def fill_template(html: str, variables: dict) -> str:
     return html
 
 
+def build_logo_html(config: dict) -> str:
+    logo_url = config.get("logo_url", "")
+    firmenname = config["firmenname"]
+    if logo_url:
+        return f'<img src="{logo_url}" class="logo-img" alt="{firmenname}" onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'flex\'">' \
+               f'<div class="logo-fallback" style="display:none">{firmenname}</div>'
+    return f'<div class="logo-fallback">{firmenname}</div>'
+
+
+def build_hero_image_html(config: dict, template_type: str) -> str:
+    img_url = config.get("hero_image_url", "")
+    if not img_url:
+        if template_type == "immobilien":
+            return '<div class="property-img">🏡</div>'
+        return ""
+    if template_type == "immobilien":
+        return f'<div class="property-img-photo"><img src="{img_url}" alt="Immobilie" loading="lazy"></div>'
+    return f'<div class="hero-img-container"><img src="{img_url}" alt="" loading="lazy"></div>'
+
+
 def build_variables(config: dict) -> dict:
     branche_typ = config["branche_typ"]
     farben = BRANCHE_FARBEN.get(branche_typ, BRANCHE_FARBEN["dienstleister_allgemein"])
     jahr = datetime.now().year
+    template_type = TEMPLATE_MAP.get(branche_typ, "dienstleister")
 
     vars = {
         "FIRMENNAME": config["firmenname"],
+        "LOGO_HTML": build_logo_html(config),
+        "HERO_IMAGE_HTML": build_hero_image_html(config, template_type),
         "FIRMENNAME_KURZ": config.get("firmenname_kurz", config["firmenname"].split()[0]),
         "BRANCHE_BEZEICHNUNG": config.get("branche_bezeichnung", branche_typ.replace("_", " ").title()),
         "GRUENDUNGSJAHR": config.get("gruendungsjahr", "2010"),

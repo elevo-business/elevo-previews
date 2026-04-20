@@ -6,8 +6,8 @@
   <title>SPORMANN REAL ESTATE – Ihr Immobilienexperte</title>
   <style>
     :root {
-      --primary: #1A237E;
-      --secondary: #FFC107;
+      --primary: #1A1A1A;
+      --secondary: #C9A84C;
       --dark: #1a1a2e;
       --light: #f8f9fa;
       --text: #333;
@@ -42,13 +42,13 @@
     .hero::before {
       content: ''; position: absolute; top: -50%; right: -20%;
       width: 600px; height: 600px; border-radius: 50%;
-      background: radial-gradient(circle, rgba(26,35,126,0.15) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(26,26,26,0.15) 0%, transparent 70%);
     }
     .hero-inner { max-width: 1200px; margin: 0 auto; padding: 4rem 2rem; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
     .hero-badge {
-      display: inline-block; background: rgba(26,35,126,0.2); color: var(--primary);
+      display: inline-block; background: rgba(26,26,26,0.2); color: var(--primary);
       padding: 0.4rem 1rem; border-radius: 50px; font-size: 0.85rem; font-weight: 600;
-      margin-bottom: 1.5rem; border: 1px solid rgba(26,35,126,0.3);
+      margin-bottom: 1.5rem; border: 1px solid rgba(26,26,26,0.3);
     }
     .hero h1 { font-size: 3rem; font-weight: 800; color: white; line-height: 1.15; margin-bottom: 1.5rem; }
     .hero h1 span { color: var(--primary); }
@@ -58,9 +58,9 @@
       background: var(--primary); color: white; padding: 1rem 2rem;
       border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 1rem;
       transition: transform 0.2s, box-shadow 0.2s;
-      box-shadow: 0 4px 15px rgba(26,35,126,0.4);
+      box-shadow: 0 4px 15px rgba(26,26,26,0.4);
     }
-    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(26,35,126,0.5); }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(26,26,26,0.5); }
     .btn-secondary {
       background: transparent; color: white; padding: 1rem 2rem;
       border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem;
@@ -200,6 +200,14 @@
     footer { background: var(--dark); color: rgba(255,255,255,0.6); padding: 2rem; text-align: center; font-size: 0.9rem; }
     footer strong { color: white; }
 
+    /* Logo image */
+    .logo-img { height: 38px; max-width: 180px; object-fit: contain; display: block; }
+    .logo-fallback { font-size: 1.4rem; font-weight: 700; color: var(--primary); letter-spacing: -0.5px; }
+
+    /* Hero property image */
+    .property-img-photo { height: 140px; overflow: hidden; }
+    .property-img-photo img { width: 100%; height: 140px; object-fit: cover; display: block; }
+
     /* Responsive */
     @media (max-width: 768px) {
       .hero-inner { grid-template-columns: 1fr; }
@@ -214,7 +222,7 @@
 <body>
 
 <nav>
-  <div class="logo">SPORMANN REAL ESTATE</div>
+  <img src="https://www.spormann-realestate.com/images/1-Spormann-Logo-schwarz-klein-quer-400x96.png" class="logo-img" alt="SPORMANN REAL ESTATE" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="logo-fallback" style="display:none">SPORMANN REAL ESTATE</div>
   <ul class="nav-links">
     <li><a href="#leistungen">Leistungen</a></li>
     <li><a href="#vorteile">Vorteile</a></li>
@@ -227,30 +235,30 @@
   <div class="hero-inner">
     <div>
       <div class="hero-badge">✦ Ihr Immobilienpartner in der Region</div>
-      <h1>Premium-Immobilien. Präzise Vermittlung.</h1>
-      <p>SPORMANN REAL ESTATE steht für exklusives Immobilien-Portfolio, professionelles Lead-Management und diskrete Abwicklung für anspruchsvolle Kunden in Düsseldorf.</p>
+      <h1>Professionell. Marktgerecht. Erfahren.</h1>
+      <p>SPORMANN REAL ESTATE steht für präzise Immobilienvermittlung an der Königsallee – mit 4.9★ auf Google, ImmobilienScout24 Gold-Partner-Status und über 17 Jahren Marktpräsenz.</p>
       <div class="hero-actions">
         <a href="#kontakt" class="btn-primary">Jetzt Beratungsgespräch vereinbaren</a>
         <a href="#leistungen" class="btn-secondary">Leistungen entdecken</a>
       </div>
       <div class="hero-stats">
         <div class="stat">
-          <div class="stat-num">450+</div>
-          <div class="stat-label">Premium-Objekte vermittelt</div>
+          <div class="stat-num">4.9★</div>
+          <div class="stat-label">Google – 198 Bewertungen</div>
         </div>
         <div class="stat">
-          <div class="stat-num">17</div>
-          <div class="stat-label">Jahre Marktpräsenz</div>
+          <div class="stat-num">Gold</div>
+          <div class="stat-label">ImmobilienScout24 Partner</div>
         </div>
         <div class="stat">
-          <div class="stat-num">Top 3</div>
-          <div class="stat-label">Düsseldorf Premium-Makler</div>
+          <div class="stat-num">17+</div>
+          <div class="stat-label">Jahre Erfahrung</div>
         </div>
       </div>
     </div>
     <div class="hero-visual">
       <div class="property-card">
-        <div class="property-img">🏡</div>
+        <div class="property-img-photo"><img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80&fit=crop" alt="Immobilie" loading="lazy"></div>
         <div class="property-info">
           <h3>Einfamilienhaus – Toplage</h3>
           <div class="property-price">€ 485.000</div>
@@ -292,12 +300,12 @@
     <div class="service-card">
       <div class="service-icon">💼</div>
       <h3>Erweiterte Objektsuche</h3>
-      <p>Filtern Sie nach Preis, Typ und Lage – unser System zeigt nur Objekte, die wirklich zu Ihnen passen.</p>
+      <p>Filtern nach Preis, Typ und Lage – unser System zeigt nur Objekte, die wirklich zu Ihnen passen.</p>
     </div>
     <div class="service-card">
       <div class="service-icon">📊</div>
       <h3>Client Dashboard</h3>
-      <p>Exklusiver Kundenbereich mit Ihrem Suchprofil, gespeicherten Objekten und direktem Kontakt zu Ihrem Berater.</p>
+      <p>Exklusiver Kundenbereich mit Suchprofil, gespeicherten Objekten und direktem Kontakt zu Ihrem Berater.</p>
     </div>
     <div class="service-card">
       <div class="service-icon">🤝</div>
@@ -323,8 +331,8 @@
         <div class="usp-item">
           <div class="usp-check">✓</div>
           <div class="usp-item-text">
-            <h4>Lead-Scoring System</h4>
-            <p>Qualifizierte Käuferanfragen durch professionelles Lead-Management – kein Zeitverlust durch unqualifizierte Interessenten.</p>
+            <h4>ImmobilienScout24 Gold-Partner</h4>
+            <p>Maximale Sichtbarkeit und qualifizierte Käufer durch Gold-Partner-Status auf Deutschlands führendem Immobilienportal.</p>
           </div>
         </div>
         <div class="usp-item">
@@ -337,8 +345,8 @@
       </div>
     </div>
     <div class="usp-visual">
-      <div class="big-num">450+</div>
-      <div class="big-label">Exklusiv vermittelte Premium-Objekte</div>
+      <div class="big-num">4.9★</div>
+      <div class="big-label">198 verifizierte Google-Bewertungen</div>
       <div class="usp-divider"></div>
       <div class="usp-sub">Marktführer im Düsseldorfer Premium-Segment seit 2008 – Vertrauen durch Ergebnis.</div>
     </div>
@@ -392,7 +400,7 @@
   <p>Kostenlose Erstberatung – unverbindlich und ohne versteckte Kosten.</p>
   <div class="cta-buttons">
     <a href="#kontakt" class="btn-primary">Jetzt Kontakt aufnehmen</a>
-    <a href="tel:+49 211 550 66 00" class="btn-secondary">📞 +49 211 550 66 00</a>
+    <a href="tel:0211 94 19 39 29" class="btn-secondary">📞 0211 94 19 39 29</a>
   </div>
 </section>
 
@@ -404,21 +412,21 @@
         <div class="contact-icon">📍</div>
         <div class="contact-item-text">
           <div class="label">Adresse</div>
-          <div class="value">Königsallee 92, 40212 Düsseldorf</div>
+          <div class="value">Königsallee 80, 40212 Düsseldorf</div>
         </div>
       </div>
       <div class="contact-item">
         <div class="contact-icon">📞</div>
         <div class="contact-item-text">
           <div class="label">Telefon</div>
-          <div class="value">+49 211 550 66 00</div>
+          <div class="value">0211 94 19 39 29</div>
         </div>
       </div>
       <div class="contact-item">
         <div class="contact-icon">✉️</div>
         <div class="contact-item-text">
           <div class="label">E-Mail</div>
-          <div class="value">anfrage@spormann-realestate.de</div>
+          <div class="value">info@spormann-realestate.com</div>
         </div>
       </div>
       <div class="contact-item">
@@ -459,7 +467,7 @@
 </section>
 
 <footer>
-  <p>© 2026 <strong>SPORMANN REAL ESTATE</strong> · Königsallee 92, 40212 Düsseldorf · <a href="mailto:anfrage@spormann-realestate.de" style="color:inherit;">anfrage@spormann-realestate.de</a></p>
+  <p>© 2026 <strong>SPORMANN REAL ESTATE</strong> · Königsallee 80, 40212 Düsseldorf · <a href="mailto:info@spormann-realestate.com" style="color:inherit;">info@spormann-realestate.com</a></p>
 </footer>
 
 </body>

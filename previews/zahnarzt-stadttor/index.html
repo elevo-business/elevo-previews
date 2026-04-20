@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zahnarztpraxen im Stadttor – Digitale Zahnarztpraxis – Düsseldorf Stadttor</title>
+  <title>Zahnarztpraxen im Stadttor – Digitale Zahnarztpraxis im Düsseldorfer Medienhafen</title>
   <style>
     :root {
       --primary: #00897B;
@@ -210,6 +210,26 @@
     footer { background: var(--dark); color: rgba(255,255,255,0.4); padding: 1.5rem 2rem; text-align: center; font-size: 0.85rem; }
     footer strong { color: rgba(255,255,255,0.7); }
 
+    /* Logo image */
+    .logo-img { height: 38px; max-width: 180px; object-fit: contain; display: block; }
+    .logo-fallback { display: flex; align-items: center; gap: 0.5rem; }
+
+    /* Hero image */
+    .hero-img-container {
+      border-radius: 16px; overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+      margin-bottom: 1rem; position: relative;
+    }
+    .hero-img-container img {
+      width: 100%; height: 220px; object-fit: cover; display: block;
+      filter: brightness(0.88);
+    }
+    .hero-img-overlay {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      background: linear-gradient(transparent, rgba(0,0,0,0.5));
+      padding: 1rem;
+    }
+
     @media (max-width: 768px) {
       .hero-inner { grid-template-columns: 1fr; }
       .metric-row .metric-card:last-child { display: none; }
@@ -224,8 +244,7 @@
 
 <nav>
   <div class="logo-area">
-    <div class="logo-dot"></div>
-    <div class="logo">Zahnarztpraxen im Stadttor</div>
+    <img src="https://za-stadttor.de/wp-content/uploads/2019/06/Zahnaerzte-Stadttor-horiz.png" class="logo-img" alt="Zahnarztpraxen im Stadttor" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="logo-fallback" style="display:none">Zahnarztpraxen im Stadttor</div>
   </div>
   <ul class="nav-links">
     <li><a href="#leistungen">Leistungen</a></li>
@@ -240,15 +259,16 @@
   <div class="hero-blob2"></div>
   <div class="hero-inner">
     <div>
-      <div class="hero-pill">✦ Digitale Zahnarztpraxis – Düsseldorf Stadttor</div>
-      <h1>Digitale Patientenbetreuung. Moderne Zahnmedizin.<br><span class="gradient-text">Zahnarztpraxen im Stadttor – Düsseldorf</span></h1>
-      <p>Wir denken Zahnarztpraxis neu: Online-Buchung, digitale Formulare und ein Patient Portal für Ihre Unterlagen – transparent, schnell und persönlich.</p>
+      <div class="hero-pill">✦ Digitale Zahnarztpraxis im Düsseldorfer Medienhafen</div>
+      <h1>Digitale Patientenbetreuung. Moderne Zahnmedizin.<br><span class="gradient-text">Zahnarztpraxen im Stadttor – Medienhafen Düsseldorf</span></h1>
+      <p>Wir denken Zahnarztpraxis neu: Online-Buchung, digitale Formulare und ein Patient Portal für Ihre Unterlagen – transparent, schnell und persönlich. Mo–Fr bis 22:00 Uhr.</p>
       <div class="hero-actions">
         <a href="#kontakt" class="btn-gradient">Kostenlos beraten lassen →</a>
         <a href="#leistungen" class="btn-ghost">Mehr erfahren</a>
       </div>
     </div>
     <div class="hero-card-grid">
+      <div class="hero-img-container"><img src="https://za-stadttor.de/wp-content/uploads/2019/06/iStock-1394844054.jpg" alt="" loading="lazy"></div>
       <div class="metric-card">
         <div class="metric-value"><span>4.9★</span></div>
         <div class="metric-label">Patientenbewertung</div>
@@ -259,8 +279,8 @@
           <div class="metric-label">Aktive Patienten</div>
         </div>
         <div class="metric-card">
-          <div class="metric-value"><span>100%</span></div>
-          <div class="metric-label">Digital & papierlos</div>
+          <div class="metric-value"><span>7:30–22:00</span></div>
+          <div class="metric-label">Öffnungszeiten Mo–Fr</div>
         </div>
       </div>
     </div>
@@ -345,8 +365,8 @@
         <p>Sicherer Online-Zugang zu all Ihren Behandlungsdaten – jederzeit und von überall.</p>
       </div>
       <div class="highlight-box">
-        <strong>Kurze Wartezeiten</strong>
-        <p>Pünktliche Termine durch digitale Voranmeldung und optimiertes Praxismanagement.</p>
+        <strong>Lange Öffnungszeiten</strong>
+        <p>Mo–Fr bis 22:00 Uhr und Sa bis 19:00 Uhr – Düsseldorfs flexibelste Zahnarztpraxis.</p>
       </div>
     </div>
   </div>
@@ -416,21 +436,21 @@
         <div class="contact-icon">📞</div>
         <div class="contact-item-text">
           <div class="label">Telefon</div>
-          <div class="value">+49 211 399 88 00</div>
+          <div class="value">+49 211 730 69 400</div>
         </div>
       </div>
       <div class="contact-item">
         <div class="contact-icon">✉️</div>
         <div class="contact-item-text">
           <div class="label">E-Mail</div>
-          <div class="value">termin@zahnarzt-stadttor.de</div>
+          <div class="value">telefonie@za-stadttor.de</div>
         </div>
       </div>
       <div class="contact-item">
         <div class="contact-icon">🕐</div>
         <div class="contact-item-text">
           <div class="label">Erreichbarkeit</div>
-          <div class="value">Mo–Fr 8:00–19:00, Sa 9:00–14:00 Uhr</div>
+          <div class="value">Mo–Fr 7:30–22:00, Sa 9:00–19:00 Uhr</div>
         </div>
       </div>
     </div>
@@ -466,7 +486,7 @@
 </section>
 
 <footer>
-  <p>© 2026 <strong>Zahnarztpraxen im Stadttor</strong> · Stadttor 1, 40219 Düsseldorf · <a href="mailto:termin@zahnarzt-stadttor.de" style="color:inherit;">termin@zahnarzt-stadttor.de</a></p>
+  <p>© 2026 <strong>Zahnarztpraxen im Stadttor</strong> · Stadttor 1, 40219 Düsseldorf · <a href="mailto:telefonie@za-stadttor.de" style="color:inherit;">telefonie@za-stadttor.de</a></p>
 </footer>
 
 </body>

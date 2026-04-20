@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Apollonia Praxisklinik – Ihre Zahnarztpraxis in Düsseldorf</title>
+  <title>Apollonia Praxisklinik – Zahnarztpraxis Düsseldorf – 23 Ärzte, über 4.9★</title>
   <style>
     :root {
-      --primary: #00ACC1;
-      --secondary: #00838F;
+      --primary: #0066CC;
+      --secondary: #0099FF;
       --dark: #0f172a;
       --mid: #1e293b;
       --light: #f8fafc;
@@ -33,7 +33,7 @@
       border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 0.875rem;
       transition: box-shadow 0.2s, transform 0.2s;
     }
-    .nav-cta:hover { box-shadow: 0 4px 15px rgba(0,172,193,0.4); transform: translateY(-1px); }
+    .nav-cta:hover { box-shadow: 0 4px 15px rgba(0,102,204,0.4); transform: translateY(-1px); }
 
     /* Hero */
     .hero {
@@ -45,18 +45,18 @@
     .hero-blob {
       position: absolute; top: -200px; right: -200px;
       width: 800px; height: 800px; border-radius: 50%;
-      background: radial-gradient(circle, rgba(0,172,193,0.12) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(0,102,204,0.12) 0%, transparent 70%);
     }
     .hero-blob2 {
       position: absolute; bottom: -300px; left: -100px;
       width: 600px; height: 600px; border-radius: 50%;
-      background: radial-gradient(circle, rgba(0,131,143,0.08) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(0,153,255,0.08) 0%, transparent 70%);
     }
     .hero-inner { max-width: 1200px; margin: 0 auto; padding: 4rem 2rem; position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
     .hero-pill {
       display: inline-flex; align-items: center; gap: 0.5rem;
-      border: 1px solid rgba(0,172,193,0.3); color: var(--primary);
-      background: rgba(0,172,193,0.08);
+      border: 1px solid rgba(0,102,204,0.3); color: var(--primary);
+      background: rgba(0,102,204,0.08);
       padding: 0.4rem 1rem; border-radius: 50px; font-size: 0.8rem; font-weight: 600;
       margin-bottom: 1.5rem;
     }
@@ -71,10 +71,10 @@
       background: linear-gradient(135deg, var(--primary), var(--secondary));
       color: white; padding: 0.9rem 2rem; border-radius: 50px;
       text-decoration: none; font-weight: 700; font-size: 0.95rem;
-      box-shadow: 0 4px 15px rgba(0,172,193,0.4);
+      box-shadow: 0 4px 15px rgba(0,102,204,0.4);
       transition: transform 0.2s, box-shadow 0.2s;
     }
-    .btn-gradient:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0,172,193,0.5); }
+    .btn-gradient:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0,102,204,0.5); }
     .btn-ghost {
       color: rgba(255,255,255,0.8); padding: 0.9rem 2rem; border-radius: 50px;
       text-decoration: none; font-weight: 600; font-size: 0.95rem;
@@ -99,7 +99,7 @@
     /* Services */
     .services { padding: 6rem 2rem; background: var(--light); }
     .section-chip {
-      display: inline-block; background: rgba(0,172,193,0.1); color: var(--primary);
+      display: inline-block; background: rgba(0,102,204,0.1); color: var(--primary);
       padding: 0.3rem 0.9rem; border-radius: 50px; font-size: 0.8rem; font-weight: 700;
       margin-bottom: 1rem;
     }
@@ -121,7 +121,7 @@
     .service-card:hover::after { transform: scaleX(1); }
     .service-icon {
       width: 52px; height: 52px; border-radius: 12px;
-      background: linear-gradient(135deg, rgba(0,172,193,0.1), rgba(0,131,143,0.1));
+      background: linear-gradient(135deg, rgba(0,102,204,0.1), rgba(0,153,255,0.1));
       display: flex; align-items: center; justify-content: center;
       font-size: 1.5rem; margin-bottom: 1.2rem;
     }
@@ -172,7 +172,7 @@
 
     /* CTA */
     .cta-section { padding: 6rem 2rem; text-align: center; background: var(--dark); position: relative; overflow: hidden; }
-    .cta-blob { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(0,172,193,0.15) 0%, transparent 70%); }
+    .cta-blob { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(0,102,204,0.15) 0%, transparent 70%); }
     .cta-section h2 { font-size: 2.5rem; font-weight: 800; color: white; margin-bottom: 1rem; position: relative; }
     .cta-section p { color: rgba(255,255,255,0.65); font-size: 1.05rem; margin-bottom: 2.5rem; max-width: 450px; margin-left: auto; margin-right: auto; position: relative; }
     .cta-section .btn-gradient { position: relative; }
@@ -210,6 +210,26 @@
     footer { background: var(--dark); color: rgba(255,255,255,0.4); padding: 1.5rem 2rem; text-align: center; font-size: 0.85rem; }
     footer strong { color: rgba(255,255,255,0.7); }
 
+    /* Logo image */
+    .logo-img { height: 38px; max-width: 180px; object-fit: contain; display: block; }
+    .logo-fallback { display: flex; align-items: center; gap: 0.5rem; }
+
+    /* Hero image */
+    .hero-img-container {
+      border-radius: 16px; overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+      margin-bottom: 1rem; position: relative;
+    }
+    .hero-img-container img {
+      width: 100%; height: 220px; object-fit: cover; display: block;
+      filter: brightness(0.88);
+    }
+    .hero-img-overlay {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      background: linear-gradient(transparent, rgba(0,0,0,0.5));
+      padding: 1rem;
+    }
+
     @media (max-width: 768px) {
       .hero-inner { grid-template-columns: 1fr; }
       .metric-row .metric-card:last-child { display: none; }
@@ -224,8 +244,7 @@
 
 <nav>
   <div class="logo-area">
-    <div class="logo-dot"></div>
-    <div class="logo">Apollonia Praxisklinik</div>
+    <img src="https://www.apollonia-praxisklinik.de/wp-content/uploads/2025/08/logo_apollonia.svg" class="logo-img" alt="Apollonia Praxisklinik" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="logo-fallback" style="display:none">Apollonia Praxisklinik</div>
   </div>
   <ul class="nav-links">
     <li><a href="#leistungen">Leistungen</a></li>
@@ -240,23 +259,24 @@
   <div class="hero-blob2"></div>
   <div class="hero-inner">
     <div>
-      <div class="hero-pill">✦ Ihre Zahnarztpraxis in Düsseldorf</div>
-      <h1>Ihr Lächeln – unsere Leidenschaft.<br><span class="gradient-text">Zahnarztpraxis Apollonia in Düsseldorf</span></h1>
-      <p>Moderne Zahnmedizin mit Herz: Wir verbinden neueste Technik mit persönlicher Betreuung. Jetzt unkompliziert online buchen – in 60 Sekunden zum Wunschtermin.</p>
+      <div class="hero-pill">✦ Zahnarztpraxis Düsseldorf – 23 Ärzte, über 4.9★</div>
+      <h1>Moderne Zahnmedizin mit persönlicher Betreuung.<br><span class="gradient-text">Apollonia Praxisklinik Düsseldorf</span></h1>
+      <p>23 erfahrene Zahnärzte, über 160 Mitarbeiter und eine 4.9★-Bewertung auf Google: Apollonia steht für Qualität, die man spürt. Jetzt unkompliziert online buchen.</p>
       <div class="hero-actions">
         <a href="#kontakt" class="btn-gradient">Kostenlos beraten lassen →</a>
         <a href="#leistungen" class="btn-ghost">Mehr erfahren</a>
       </div>
     </div>
     <div class="hero-card-grid">
+      <div class="hero-img-container"><img src="https://www.apollonia-praxisklinik.de/wp-content/uploads/2025/09/Apollonia_Praxisklinik_Zahnarzt_Duesseldorf.jpg" alt="" loading="lazy"></div>
       <div class="metric-card">
         <div class="metric-value"><span>4.9★</span></div>
         <div class="metric-label">Google Bewertung</div>
       </div>
       <div class="metric-row">
         <div class="metric-card">
-          <div class="metric-value"><span>2.500+</span></div>
-          <div class="metric-label">Zufriedene Patienten</div>
+          <div class="metric-value"><span>23</span></div>
+          <div class="metric-label">Zahnärzte im Team</div>
         </div>
         <div class="metric-card">
           <div class="metric-value"><span>Online</span></div>
@@ -335,10 +355,10 @@
     </div>
     <div class="steps-visual">
       <h3>Patienten weiterempfehlen uns</h3>
-      <p class="tagline">Höchste Patientenzufriedenheit – dank moderner Medizin und echtem Vertrauen.</p>
+      <p class="tagline">4.9★ auf Google – höchste Zufriedenheit dank moderner Medizin und echtem Vertrauen.</p>
       <div class="highlight-box">
-        <strong>Erfahrenes Team</strong>
-        <p>Unser eingespieltes Praxisteam begleitet Sie von der Erstberatung bis zur Nachsorge.</p>
+        <strong>23 Zahnärzte unter einem Dach</strong>
+        <p>Alle Fachrichtungen in einer Praxis – von Prophylaxe bis Implantologie ohne Überweisung.</p>
       </div>
       <div class="highlight-box">
         <strong>Modernste Technologie</strong>
@@ -371,7 +391,7 @@
     </div>
     <div class="testimonial-card">
       <div class="stars">★★★★★</div>
-      <p>"Die Behandlung war schmerzlos und das Ergebnis perfekt. Ich komme nur noch zur Apollonia."</p>
+      <p>"Die Behandlung war schmerzlos und das Ergebnis perfekt. Mit 23 Ärzten findet man immer schnell einen Termin."</p>
       <div class="testimonial-author">
         <div class="author-avatar">K</div>
         <div>
@@ -409,21 +429,21 @@
         <div class="contact-icon">📍</div>
         <div class="contact-item-text">
           <div class="label">Standort</div>
-          <div class="value">Apolloplatz 1, 40213 Düsseldorf</div>
+          <div class="value">Rostocker Straße 18, 40595 Düsseldorf</div>
         </div>
       </div>
       <div class="contact-item">
         <div class="contact-icon">📞</div>
         <div class="contact-item-text">
           <div class="label">Telefon</div>
-          <div class="value">+49 211 123 456 0</div>
+          <div class="value">0211 2109 5000</div>
         </div>
       </div>
       <div class="contact-item">
         <div class="contact-icon">✉️</div>
         <div class="contact-item-text">
           <div class="label">E-Mail</div>
-          <div class="value">info@apollonia-zahnarzt.de</div>
+          <div class="value">info@apollonia-praxisklinik.de</div>
         </div>
       </div>
       <div class="contact-item">
@@ -466,7 +486,7 @@
 </section>
 
 <footer>
-  <p>© 2026 <strong>Apollonia Praxisklinik</strong> · Apolloplatz 1, 40213 Düsseldorf · <a href="mailto:info@apollonia-zahnarzt.de" style="color:inherit;">info@apollonia-zahnarzt.de</a></p>
+  <p>© 2026 <strong>Apollonia Praxisklinik</strong> · Rostocker Straße 18, 40595 Düsseldorf · <a href="mailto:info@apollonia-praxisklinik.de" style="color:inherit;">info@apollonia-praxisklinik.de</a></p>
 </footer>
 
 </body>

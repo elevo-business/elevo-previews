@@ -200,6 +200,14 @@
     footer { background: var(--dark); color: rgba(255,255,255,0.6); padding: 2rem; text-align: center; font-size: 0.9rem; }
     footer strong { color: white; }
 
+    /* Logo image */
+    .logo-img { height: 38px; max-width: 180px; object-fit: contain; display: block; }
+    .logo-fallback { font-size: 1.4rem; font-weight: 700; color: var(--primary); letter-spacing: -0.5px; }
+
+    /* Hero property image */
+    .property-img-photo { height: 140px; overflow: hidden; }
+    .property-img-photo img { width: 100%; height: 140px; object-fit: cover; display: block; }
+
     /* Responsive */
     @media (max-width: 768px) {
       .hero-inner { grid-template-columns: 1fr; }
@@ -214,7 +222,7 @@
 <body>
 
 <nav>
-  <div class="logo">Düsselraum Immobilien</div>
+  <div class="logo-fallback">Düsselraum Immobilien</div>
   <ul class="nav-links">
     <li><a href="#leistungen">Leistungen</a></li>
     <li><a href="#vorteile">Vorteile</a></li>
@@ -228,7 +236,7 @@
     <div>
       <div class="hero-badge">✦ Ihr Immobilienpartner in der Region</div>
       <h1>Düsseldorf. Gefunden. Ihr neues Zuhause.</h1>
-      <p>Düsselraum verbindet Suchende und Verkäufer mit smarter Technologie: virtuellen Touren, automatisierten Besichtigungsanfragen und nahtlosem Lead-Management.</p>
+      <p>Düsselraum verbindet Suchende und Verkäufer mit smarter Technologie: virtuelle Touren, automatisierte Besichtigungsanfragen und nahtloses Lead-Management.</p>
       <div class="hero-actions">
         <a href="#kontakt" class="btn-primary">Jetzt Beratungsgespräch vereinbaren</a>
         <a href="#leistungen" class="btn-secondary">Leistungen entdecken</a>
@@ -250,7 +258,7 @@
     </div>
     <div class="hero-visual">
       <div class="property-card">
-        <div class="property-img">🏡</div>
+        <div class="property-img-photo"><img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80&fit=crop" alt="Immobilie" loading="lazy"></div>
         <div class="property-info">
           <h3>Einfamilienhaus – Toplage</h3>
           <div class="property-price">€ 485.000</div>
@@ -287,7 +295,7 @@
     <div class="service-card">
       <div class="service-icon">🏠</div>
       <h3>Immobiliensuche & Portfolio</h3>
-      <p>Durchstöbern Sie unser umfangreiches Portfolio mit Häusern, Wohnungen und Grundstücken – mit komfortabler Suchfunktion.</p>
+      <p>Durchsuchen Sie unser umfangreiches Portfolio mit Häusern, Wohnungen und Grundstücken – mit komfortabler Suchfunktion.</p>
     </div>
     <div class="service-card">
       <div class="service-icon">💼</div>
@@ -302,7 +310,7 @@
     <div class="service-card">
       <div class="service-icon">🤝</div>
       <h3>Lead-Capture & CRM</h3>
-      <p>Für Eigentümer: Ihr Objekt wird digital vermarktet und Anfragen systematisch für Sie aufbereitet.</p>
+      <p>Für Eigentümer: Ihr Objekt wird digital vermarktet und Anfragen systematisch aufbereitet.</p>
     </div>
   </div>
 </section>
@@ -418,7 +426,7 @@
         <div class="contact-icon">✉️</div>
         <div class="contact-item-text">
           <div class="label">E-Mail</div>
-          <div class="value">info@duesselraum-immobilien.de</div>
+          <div class="value">info@duesselraum.de</div>
         </div>
       </div>
       <div class="contact-item">
@@ -459,7 +467,7 @@
 </section>
 
 <footer>
-  <p>© 2026 <strong>Düsselraum Immobilien</strong> · Immermannstraße 14, 40210 Düsseldorf · <a href="mailto:info@duesselraum-immobilien.de" style="color:inherit;">info@duesselraum-immobilien.de</a></p>
+  <p>© 2026 <strong>Düsselraum Immobilien</strong> · Immermannstraße 14, 40210 Düsseldorf · <a href="mailto:info@duesselraum.de" style="color:inherit;">info@duesselraum.de</a></p>
 </footer>
 
 </body>

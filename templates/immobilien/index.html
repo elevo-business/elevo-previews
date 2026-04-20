@@ -200,6 +200,14 @@
     footer { background: var(--dark); color: rgba(255,255,255,0.6); padding: 2rem; text-align: center; font-size: 0.9rem; }
     footer strong { color: white; }
 
+    /* Logo image */
+    .logo-img { height: 38px; max-width: 180px; object-fit: contain; display: block; }
+    .logo-fallback { font-size: 1.4rem; font-weight: 700; color: var(--primary); letter-spacing: -0.5px; }
+
+    /* Hero property image */
+    .property-img-photo { height: 140px; overflow: hidden; }
+    .property-img-photo img { width: 100%; height: 140px; object-fit: cover; display: block; }
+
     /* Responsive */
     @media (max-width: 768px) {
       .hero-inner { grid-template-columns: 1fr; }
@@ -214,7 +222,7 @@
 <body>
 
 <nav>
-  <div class="logo">{{FIRMENNAME}}</div>
+  {{LOGO_HTML}}
   <ul class="nav-links">
     <li><a href="#leistungen">Leistungen</a></li>
     <li><a href="#vorteile">Vorteile</a></li>
@@ -250,7 +258,7 @@
     </div>
     <div class="hero-visual">
       <div class="property-card">
-        <div class="property-img">🏡</div>
+        {{HERO_IMAGE_HTML}}
         <div class="property-info">
           <h3>Einfamilienhaus – Toplage</h3>
           <div class="property-price">€ 485.000</div>

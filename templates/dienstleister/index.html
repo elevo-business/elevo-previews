@@ -210,6 +210,26 @@
     footer { background: var(--dark); color: rgba(255,255,255,0.4); padding: 1.5rem 2rem; text-align: center; font-size: 0.85rem; }
     footer strong { color: rgba(255,255,255,0.7); }
 
+    /* Logo image */
+    .logo-img { height: 38px; max-width: 180px; object-fit: contain; display: block; }
+    .logo-fallback { display: flex; align-items: center; gap: 0.5rem; }
+
+    /* Hero image */
+    .hero-img-container {
+      border-radius: 16px; overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+      margin-bottom: 1rem; position: relative;
+    }
+    .hero-img-container img {
+      width: 100%; height: 220px; object-fit: cover; display: block;
+      filter: brightness(0.88);
+    }
+    .hero-img-overlay {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      background: linear-gradient(transparent, rgba(0,0,0,0.5));
+      padding: 1rem;
+    }
+
     @media (max-width: 768px) {
       .hero-inner { grid-template-columns: 1fr; }
       .metric-row .metric-card:last-child { display: none; }
@@ -224,8 +244,7 @@
 
 <nav>
   <div class="logo-area">
-    <div class="logo-dot"></div>
-    <div class="logo">{{FIRMENNAME}}</div>
+    {{LOGO_HTML}}
   </div>
   <ul class="nav-links">
     <li><a href="#leistungen">Leistungen</a></li>
@@ -249,6 +268,7 @@
       </div>
     </div>
     <div class="hero-card-grid">
+      {{HERO_IMAGE_HTML}}
       <div class="metric-card">
         <div class="metric-value"><span>{{STAT_1_NUM}}</span></div>
         <div class="metric-label">{{STAT_1_LABEL}}</div>
