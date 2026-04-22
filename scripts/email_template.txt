@@ -1,26 +1,19 @@
-Subject: Exposé-Erstellung bei Ihnen: Das müssen Sie schneller haben
+Subject: Website-Entwurf für {{FIRMENNAME}} — kostenlos erstellt
 
 Body:
 ---
 
-Hallo {{FIRMENNAME}},
+Hallo,
 
-Ihre Website ist noch nicht optimiert für Exposé-Erstellung und Kundenakquisition.
+wir haben uns die Website von {{FIRMENNAME}} angeschaut und einen konkreten Verbesserungsvorschlag als Website-Entwurf umgesetzt — kostenlos, ohne Verpflichtung.
 
-Wir haben einen kostenlosen Website-Entwurf für {{FIRMENNAME}} erstellt – basierend auf Ihrer aktuellen Website und Best Practices Ihrer Branche.
-
-🔍 Schauen Sie sich an, was möglich ist:
+Hier können Sie sich den Entwurf ansehen:
 {{PREVIEW_LINK}}
 
-⏱️ Dieser Entwurf zeigt:
-- Moderne Design & UX
-- Optimierte Exposé-Präsentation
-- Mobile-first Darstellung
-- Call-to-Action für Kundenakquisition
+Der Entwurf zeigt, wie {{BRANCHENNUTZEN}}. Alles basiert auf Ihrer bestehenden Website und Ihrem Branding.
 
-Das ist selbstverständlich nur ein Entwurf. Wir passen jede Website vollständig nach Ihren individuellen Anforderungen und Geschäftszielen an.
+Wenn der Entwurf in die richtige Richtung geht, sprechen wir gern kurz darüber, wie eine Umsetzung aussehen könnte.
 
-Feedback? Fragen? Einfach antworten – wir sind hier! 👋
-
-Beste Grüße,
-Elevo Outreach
+Beste Grüße
+Team ELEVO
+www.elevo.solutions
