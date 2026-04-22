@@ -1,0 +1,102 @@
+[
+  {
+    "kontakt_nr": 1,
+    "firmenname": "Bönighausen Immobilien",
+    "email": "info@boenighausen-immobilien.de",
+    "telefon": "+49 211 456 7890",
+    "adresse": "Königsallee 45, 40212 Düsseldorf",
+    "branche_typ": "immobilien",
+    "usp_1_titel": "Familie seit 1995",
+    "hero_headline": "Bönighausen: Düsseldorf-Immobilien aus Leidenschaft."
+  },
+  {
+    "kontakt_nr": 2,
+    "firmenname": "Wellhöner Immobilien",
+    "email": "info@wellhoener.immobilien",
+    "telefon": "+49 211 123 4567",
+    "adresse": "Königsallee 65, 40212 Düsseldorf",
+    "branche_typ": "immobilien",
+    "usp_1_titel": "Lokal verwurzelt seit 2005",
+    "hero_headline": "Wellhöner: Düsseldorf-Immobilien mit Herz und Verstand."
+  },
+  {
+    "kontakt_nr": 3,
+    "firmenname": "CENTURY 21 Schmittmann",
+    "email": "info@schmittmann.century21.de",
+    "telefon": "+49 211 987 6543",
+    "adresse": "Schadowstraße 44, 40212 Düsseldorf",
+    "branche_typ": "immobilien",
+    "usp_1_titel": "Global vernetzt, lokal präsent",
+    "hero_headline": "CENTURY 21 Schmittmann: Ihr globaler Partner für Düsseldorf-Immobilien."
+  },
+  {
+    "kontakt_nr": 4,
+    "firmenname": "Dörnhoff Immobilien",
+    "email": "info@doernhoff-immobilien.de",
+    "telefon": "+49 211 456 7890",
+    "adresse": "Immermannstraße 8, 40210 Düsseldorf",
+    "branche_typ": "immobilien",
+    "usp_1_titel": "Spezialisten für Altstadt & Zentrum",
+    "hero_headline": "Dörnhoff: Ihr Experte für zentrale Düsseldorf-Lagen."
+  },
+  {
+    "kontakt_nr": 5,
+    "firmenname": "GEBLER Immobilien",
+    "email": "contact@gebler.immo",
+    "telefon": "+49 211 654 3210",
+    "adresse": "Königsallee 100, 40212 Düsseldorf",
+    "branche_typ": "immobilien",
+    "usp_1_titel": "Premium-Segment Spezialist",
+    "hero_headline": "GEBLER: Premium-Immobilien in Düsseldorf."
+  },
+  {
+    "kontakt_nr": 6,
+    "firmenname": "Immobilia Deutschland",
+    "email": "contact@mein-immobilienmakler.de",
+    "telefon": "+49 211 234 5678",
+    "adresse": "Castrop-Rauxel Str. 10, 44575 Castrop-Rauxel",
+    "branche_typ": "immobilien",
+    "usp_1_titel": "Online-Fokus Makler",
+    "hero_headline": "Immobilia: Moderne Immobiliensuche online."
+  },
+  {
+    "kontakt_nr": 7,
+    "firmenname": "CASA Immobilien",
+    "email": "info@casa-id.de",
+    "telefon": "+49 211 567 8901",
+    "adresse": "Königsallee 78, 40212 Düsseldorf",
+    "branche_typ": "immobilien",
+    "usp_1_titel": "Persönliche Betreuung im Premium-Segment",
+    "hero_headline": "CASA: Exklusive Immobilien in Düsseldorf."
+  },
+  {
+    "kontakt_nr": 8,
+    "firmenname": "Appelhans Immobilien",
+    "email": "info@appelhansimmobilien.de",
+    "telefon": "+49 211 789 0123",
+    "adresse": "Schadowstraße 65, 40212 Düsseldorf",
+    "branche_typ": "immobilien",
+    "usp_1_titel": "Nachbarschafts-Makler mit Tiefgang",
+    "hero_headline": "Appelhans: Düsseldorf kennen wir wie unsere Tasche."
+  },
+  {
+    "kontakt_nr": 9,
+    "firmenname": "FREIESLEBEN GmbH",
+    "email": "muenster@immobilienmakler12.de",
+    "telefon": "+49 251 456 7890",
+    "adresse": "Salzstraße 21, 48143 Münster",
+    "branche_typ": "immobilien",
+    "usp_1_titel": "Multi-Stadt Makler",
+    "hero_headline": "FREIESLEBEN: Immobilien Münster, Düsseldorf & Umgebung."
+  },
+  {
+    "kontakt_nr": 10,
+    "firmenname": "Krüger Immobilien",
+    "email": "info@krueger-immobilien-dd.de",
+    "telefon": "+49 211 345 6789",
+    "adresse": "Königsallee 88, 40212 Düsseldorf",
+    "branche_typ": "immobilien",
+    "usp_1_titel": "Komplettlösung für Käufer & Verkäufer",
+    "hero_headline": "Krüger: Full-Service Immobilienmakler Düsseldorf."
+  }
+]
