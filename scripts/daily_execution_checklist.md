@@ -40,10 +40,36 @@
 
 ## Tag 3: 2026-04-22 (Dienstag)
 
-**Parallel zu Tag 2 Follow-Ups:**
-- [ ] Tag 2 Contacts: Follow-Up 1 versenden (5 Emails)
-- [ ] Tag 3 Contacts: Initial Emails versenden (5 Emails)
-- [ ] Tagesreport: 10 Emails gesamt, 5 Follow-Ups aktiv
+### 08:00 - Vorbereitung
+- [ ] Preview-Links für Tag 3 Kontakte prüfen (5 Links)
+- [ ] Neues Email-Template verwenden: `email_templates_by_vertical.md` Vorlage A (Immobilien)
+- [ ] Kontaktdaten validieren
+
+### 08:45 - Email-Versand (5 neue + 5 Follow-Ups)
+**Neue Emails (Tag 3 Contacts):**
+- [ ] Contact 11: kontakt@immobilienmakler12.de (Makler Kontakt 11)
+- [ ] Contact 12: office@lammers-immobilien.de (Lammers Immobilien)
+- [ ] Contact 13: info@makler-hamburg.de (Makler Hamburg)
+- [ ] Contact 14: kontakt@realestate-berlin.de (Real Estate Berlin)
+- [ ] Contact 15: info@koeln-immobilien.de (Köln Immobilien)
+
+**Follow-Up 1 (Tag 2 Contacts - falls bereits versendet):**
+- [ ] Contact 6: contact@mein-immobilienmakler.de (Immobilia)
+- [ ] Contact 7: info@casa-id.de (CASA)
+- [ ] Contact 8: info@appelhansimmobilien.de (Appelhans)
+- [ ] Contact 9: muenster@immobilienmakler12.de (FREIESLEBEN)
+- [ ] Contact 10: info@boenighausen-immobilien.de (Boenighausen)
+
+### 09:00 - Pipedrive Setup
+- [ ] 5 neue Deals anlegen (Stage 7: "New Lead")
+- [ ] Deal-Owner: Outreach Lead
+- [ ] Expected-Close-Date: 2026-04-29 (7 Tage)
+
+### 16:00 - Tagesreport
+- [ ] Neue Emails versendet: 5/5
+- [ ] Follow-Ups versendet: 5/5
+- [ ] Deals erstellt: 5/5
+- [ ] Gesamt aktive Sequenzen: 10
 
 ---
 
