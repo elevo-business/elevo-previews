@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DENVITA Dentalzentrum – Zahnmedizin auf höchstem Niveau in Köln</title>
+  <title>DENVITA Dentalzentrum &ndash; Zahnmedizin auf h&ouml;chstem Niveau in K&ouml;ln</title>
   <style>
     :root {
       --primary: #2B4B8C;
@@ -14,8 +14,10 @@
       --text: #334155;
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; color: var(--text); }
 
+    /* ── Navigation ── */
     nav {
       position: fixed; top: 0; width: 100%; z-index: 100;
       background: rgba(255,255,255,0.97); backdrop-filter: blur(10px);
@@ -37,6 +39,7 @@
     }
     .nav-cta:hover { box-shadow: 0 4px 15px rgba(43,75,140,0.4); transform: translateY(-1px); }
 
+    /* ── Hero ── */
     .hero {
       min-height: 100vh; padding-top: 80px;
       background: var(--dark);
@@ -53,7 +56,11 @@
       width: 600px; height: 600px; border-radius: 50%;
       background: radial-gradient(circle, rgba(91,127,192,0.08) 0%, transparent 70%);
     }
-    .hero-inner { max-width: 1200px; margin: 0 auto; padding: 4rem 2rem; position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+    .hero-inner {
+      max-width: 1200px; margin: 0 auto; padding: 4rem 2rem;
+      position: relative; z-index: 1;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
+    }
     .hero-pill {
       display: inline-flex; align-items: center; gap: 0.5rem;
       border: 1px solid rgba(43,75,140,0.3); color: var(--primary);
@@ -106,11 +113,26 @@
       filter: brightness(0.88);
     }
     .hero-img-placeholder {
-      width: 100%; height: 220px; background: linear-gradient(135deg, rgba(43,75,140,0.3), rgba(91,127,192,0.2));
+      width: 100%; height: 220px;
+      background: linear-gradient(135deg, rgba(43,75,140,0.3), rgba(91,127,192,0.2));
       display: flex; align-items: center; justify-content: center; font-size: 3rem;
     }
 
-    .services { padding: 6rem 2rem; background: var(--light); }
+    /* ── Stats Banner ── */
+    .stats-banner {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      padding: 2.5rem 2rem;
+    }
+    .stats-banner-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem;
+      text-align: center;
+    }
+    .stat-item { color: white; }
+    .stat-value { font-size: 1.8rem; font-weight: 900; margin-bottom: 0.3rem; }
+    .stat-label { font-size: 0.85rem; opacity: 0.85; font-weight: 500; }
+
+    /* ── Shared section styles ── */
     .section-chip {
       display: inline-block; background: rgba(43,75,140,0.1); color: var(--primary);
       padding: 0.3rem 0.9rem; border-radius: 50px; font-size: 0.8rem; font-weight: 700;
@@ -118,8 +140,14 @@
     }
     .section-title { font-size: 2.2rem; font-weight: 800; color: var(--dark); margin-bottom: 0.8rem; }
     .section-sub { color: #64748b; font-size: 1rem; max-width: 500px; }
+
+    /* ── Services ── */
+    .services { padding: 6rem 2rem; background: var(--light); }
     .services-header { max-width: 1100px; margin: 0 auto 3rem; }
-    .services-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; }
+    .services-grid {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem;
+    }
     .service-card {
       background: white; border-radius: 16px; padding: 2rem;
       box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 15px rgba(0,0,0,0.04);
@@ -141,8 +169,53 @@
     .service-card h3 { font-size: 1rem; font-weight: 700; color: var(--dark); margin-bottom: 0.6rem; }
     .service-card p { color: #64748b; font-size: 0.875rem; line-height: 1.7; }
 
-    .steps { padding: 6rem 2rem; background: white; }
-    .steps-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+    /* ── About / Ueber die Praxis ── */
+    .about { padding: 6rem 2rem; background: white; }
+    .about-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
+    }
+    .about-text p { color: #64748b; font-size: 0.95rem; line-height: 1.8; margin-bottom: 1.5rem; }
+    .about-features { list-style: none; display: flex; flex-direction: column; gap: 0.8rem; }
+    .about-features li {
+      display: flex; align-items: center; gap: 0.75rem;
+      font-size: 0.9rem; font-weight: 600; color: var(--dark);
+    }
+    .about-features li .check-icon {
+      width: 28px; height: 28px; border-radius: 8px; flex-shrink: 0;
+      background: linear-gradient(135deg, rgba(43,75,140,0.1), rgba(91,127,192,0.1));
+      color: var(--primary); display: flex; align-items: center; justify-content: center;
+      font-size: 0.85rem; font-weight: 700;
+    }
+    .about-visual {
+      background: var(--light); border-radius: 20px; padding: 2.5rem;
+      border: 1px solid #e2e8f0;
+    }
+    .about-visual-header {
+      display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;
+    }
+    .about-visual-icon {
+      width: 56px; height: 56px; border-radius: 14px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white; display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem;
+    }
+    .about-visual-header h3 { font-size: 1.2rem; font-weight: 800; color: var(--dark); }
+    .about-visual-header p { font-size: 0.8rem; color: #64748b; }
+    .about-detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .about-detail {
+      background: white; border-radius: 12px; padding: 1.2rem;
+      border: 1px solid #e2e8f0;
+    }
+    .about-detail strong { font-size: 0.85rem; color: var(--dark); display: block; margin-bottom: 0.2rem; }
+    .about-detail span { font-size: 0.8rem; color: #64748b; }
+
+    /* ── Steps ── */
+    .steps { padding: 6rem 2rem; background: var(--light); }
+    .steps-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
+    }
     .steps-grid { display: flex; flex-direction: column; gap: 1.5rem; }
     .step-item { display: flex; gap: 1.2rem; align-items: flex-start; }
     .step-num-badge {
@@ -163,16 +236,50 @@
     .highlight-box strong { font-size: 1.1rem; }
     .highlight-box p { opacity: 0.85; font-size: 0.875rem; margin-top: 0.2rem; }
 
+    /* ── Technology ── */
+    .technology { padding: 6rem 2rem; background: white; }
+    .technology-header { max-width: 1100px; margin: 0 auto 3rem; }
+    .tech-grid {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem;
+    }
+    .tech-card {
+      background: var(--light); border-radius: 16px; padding: 2rem;
+      border: 1px solid #e2e8f0;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .tech-card:hover { transform: translateY(-4px); box-shadow: 0 8px 30px rgba(0,0,0,0.08); }
+    .tech-card-icon {
+      width: 52px; height: 52px; border-radius: 12px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white; display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem; margin-bottom: 1.2rem;
+    }
+    .tech-card h3 { font-size: 1rem; font-weight: 700; color: var(--dark); margin-bottom: 0.6rem; }
+    .tech-card p { color: #64748b; font-size: 0.875rem; line-height: 1.7; }
+    .tech-badge {
+      display: inline-block; margin-top: 1rem;
+      background: rgba(43,75,140,0.08); color: var(--primary);
+      padding: 0.25rem 0.7rem; border-radius: 50px; font-size: 0.75rem; font-weight: 600;
+    }
+
+    /* ── Testimonials ── */
     .testimonials { padding: 6rem 2rem; background: var(--light); }
     .testimonials-header { max-width: 1000px; margin: 0 auto 3rem; }
-    .testimonials-grid { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+    .testimonials-grid {
+      max-width: 1000px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;
+    }
     .testimonial-card {
       background: white; border-radius: 16px; padding: 2rem;
       box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 15px rgba(0,0,0,0.04);
     }
     .stars { font-size: 1rem; margin-bottom: 1rem; color: #f59e0b; }
     .testimonial-card p { color: #475569; font-size: 0.9rem; line-height: 1.7; font-style: italic; }
-    .testimonial-author { display: flex; gap: 0.8rem; align-items: center; margin-top: 1.2rem; padding-top: 1rem; border-top: 1px solid #f1f5f9; }
+    .testimonial-author {
+      display: flex; gap: 0.8rem; align-items: center;
+      margin-top: 1.2rem; padding-top: 1rem; border-top: 1px solid #f1f5f9;
+    }
     .author-avatar {
       width: 40px; height: 40px; border-radius: 50%;
       background: linear-gradient(135deg, var(--primary), var(--secondary));
@@ -181,13 +288,89 @@
     .author-name { font-weight: 700; font-size: 0.85rem; color: var(--dark); }
     .author-role { color: #94a3b8; font-size: 0.75rem; }
 
-    .cta-section { padding: 6rem 2rem; text-align: center; background: var(--dark); position: relative; overflow: hidden; }
-    .cta-blob { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(43,75,140,0.15) 0%, transparent 70%); }
+    /* ── FAQ ── */
+    .faq { padding: 6rem 2rem; background: white; }
+    .faq-inner { max-width: 800px; margin: 0 auto; }
+    .faq-header { margin-bottom: 3rem; }
+    .faq-item {
+      border: 1px solid #e2e8f0; border-radius: 16px;
+      margin-bottom: 1rem; overflow: hidden;
+      transition: box-shadow 0.2s;
+    }
+    .faq-item:hover { box-shadow: 0 4px 15px rgba(0,0,0,0.06); }
+    .faq-question {
+      width: 100%; padding: 1.3rem 1.5rem;
+      background: var(--light); border: none; cursor: pointer;
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 0.95rem; font-weight: 700; color: var(--dark);
+      font-family: inherit; text-align: left;
+      transition: background 0.2s;
+    }
+    .faq-question:hover { background: #eef2f7; }
+    .faq-icon {
+      width: 28px; height: 28px; border-radius: 50%; flex-shrink: 0;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white; display: flex; align-items: center; justify-content: center;
+      font-size: 1rem; font-weight: 700;
+      transition: transform 0.3s;
+    }
+    .faq-item.active .faq-icon { transform: rotate(45deg); }
+    .faq-answer {
+      max-height: 0; overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.35s ease;
+    }
+    .faq-item.active .faq-answer { max-height: 300px; }
+    .faq-answer-inner {
+      padding: 0 1.5rem 1.5rem;
+      color: #64748b; font-size: 0.9rem; line-height: 1.75;
+    }
+
+    /* ── CTA ── */
+    .cta-section {
+      padding: 6rem 2rem; text-align: center;
+      background: var(--dark); position: relative; overflow: hidden;
+    }
+    .cta-blob {
+      position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+      width: 600px; height: 600px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(43,75,140,0.15) 0%, transparent 70%);
+    }
     .cta-section h2 { font-size: 2.5rem; font-weight: 800; color: white; margin-bottom: 1rem; position: relative; }
-    .cta-section p { color: rgba(255,255,255,0.65); font-size: 1.05rem; margin-bottom: 2.5rem; max-width: 450px; margin-left: auto; margin-right: auto; position: relative; }
+    .cta-section p {
+      color: rgba(255,255,255,0.65); font-size: 1.05rem; margin-bottom: 2.5rem;
+      max-width: 450px; margin-left: auto; margin-right: auto; position: relative;
+    }
     .cta-section .btn-gradient { position: relative; }
 
-    .contact { padding: 5rem 2rem; background: var(--light); }
+    /* ── Directions ── */
+    .directions { padding: 5rem 2rem; background: var(--light); }
+    .directions-inner { max-width: 1100px; margin: 0 auto; }
+    .directions-header { margin-bottom: 3rem; }
+    .directions-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+    .direction-card {
+      background: white; border-radius: 16px; padding: 1.8rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 15px rgba(0,0,0,0.04);
+      display: flex; gap: 1rem; align-items: flex-start;
+    }
+    .direction-icon {
+      width: 44px; height: 44px; border-radius: 12px; flex-shrink: 0;
+      background: linear-gradient(135deg, rgba(43,75,140,0.1), rgba(91,127,192,0.1));
+      color: var(--primary); display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem;
+    }
+    .direction-card h4 { font-size: 0.9rem; font-weight: 700; color: var(--dark); margin-bottom: 0.3rem; }
+    .direction-card p { font-size: 0.85rem; color: #64748b; line-height: 1.6; }
+    .directions-map {
+      width: 100%; height: 280px; border-radius: 16px; overflow: hidden;
+      border: 1px solid #e2e8f0;
+    }
+    .directions-map iframe { width: 100%; height: 100%; border: 0; }
+
+    /* ── Contact ── */
+    .contact { padding: 5rem 2rem; background: white; }
     .contact-inner { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
     .contact-info h3 { font-size: 1.4rem; font-weight: 800; color: var(--dark); margin-bottom: 1.5rem; }
     .contact-item { display: flex; gap: 1rem; margin-bottom: 1.2rem; align-items: flex-start; }
@@ -198,13 +381,16 @@
     }
     .contact-item-text .label { font-size: 0.75rem; color: #94a3b8; text-transform: uppercase; letter-spacing: 1px; }
     .contact-item-text .value { font-weight: 600; color: var(--dark); font-size: 0.9rem; }
-    .contact-form { background: white; border-radius: 16px; padding: 2rem; box-shadow: 0 2px 15px rgba(0,0,0,0.06); }
+    .contact-form {
+      background: var(--light); border-radius: 16px; padding: 2rem;
+      box-shadow: 0 2px 15px rgba(0,0,0,0.06);
+    }
     .contact-form h4 { font-weight: 700; color: var(--dark); margin-bottom: 1.5rem; }
     .form-group { margin-bottom: 1rem; }
     .form-group input, .form-group textarea, .form-group select {
       width: 100%; padding: 0.75rem 1rem; border: 2px solid #e2e8f0;
       border-radius: 10px; font-size: 0.875rem; transition: border-color 0.2s;
-      font-family: inherit; background: #f8fafc;
+      font-family: inherit; background: white;
     }
     .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
       outline: none; border-color: var(--primary); background: white;
@@ -214,68 +400,107 @@
       width: 100%; background: linear-gradient(135deg, var(--primary), var(--secondary));
       color: white; padding: 0.85rem; border: none; border-radius: 10px;
       font-size: 0.95rem; font-weight: 700; cursor: pointer;
+      transition: box-shadow 0.2s, transform 0.2s;
     }
+    .form-submit:hover { box-shadow: 0 4px 15px rgba(43,75,140,0.4); transform: translateY(-1px); }
 
-    footer { background: var(--dark); color: rgba(255,255,255,0.4); padding: 1.5rem 2rem; text-align: center; font-size: 0.85rem; }
+    /* ── Footer ── */
+    footer {
+      background: var(--dark); color: rgba(255,255,255,0.4);
+      padding: 1.5rem 2rem; text-align: center; font-size: 0.85rem;
+    }
     footer a { color: inherit; }
     footer strong { color: rgba(255,255,255,0.7); }
 
-    .elevo-dot { position: fixed; bottom: 24px; right: 24px; z-index: 9999; width: 52px; height: 52px; border-radius: 50%; background: linear-gradient(135deg, #1E3A5F 0%, #0A0E1A 100%); border: 2px solid rgba(59,130,246,.35); display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(0,0,0,.2), 0 0 12px rgba(59,130,246,.1); cursor: pointer; transition: transform .2s, box-shadow .2s; text-decoration: none; }
-    .elevo-dot:hover { transform: scale(1.1); box-shadow: 0 6px 24px rgba(0,0,0,.3), 0 0 20px rgba(59,130,246,.15); }
+    /* ── ELEVO Dot ── */
+    .elevo-dot {
+      position: fixed; bottom: 24px; right: 24px; z-index: 9999;
+      width: 52px; height: 52px; border-radius: 50%;
+      background: linear-gradient(135deg, #1E3A5F 0%, #0A0E1A 100%);
+      border: 2px solid rgba(59,130,246,.35);
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 16px rgba(0,0,0,.2), 0 0 12px rgba(59,130,246,.1);
+      cursor: pointer; transition: transform .2s, box-shadow .2s; text-decoration: none;
+    }
+    .elevo-dot:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 24px rgba(0,0,0,.3), 0 0 20px rgba(59,130,246,.15);
+    }
 
+    /* ── Mobile ── */
     @media (max-width: 768px) {
       .hero-inner { grid-template-columns: 1fr; }
       .metric-row .metric-card:last-child { display: none; }
       .hero h1 { font-size: 2rem; }
       .nav-links { display: none; }
+      .stats-banner-inner { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+      .about-inner { grid-template-columns: 1fr; }
       .steps-inner { grid-template-columns: 1fr; }
+      .tech-grid { grid-template-columns: 1fr; }
       .contact-inner { grid-template-columns: 1fr; }
+      .directions-grid { grid-template-columns: 1fr; }
+      .cta-section h2 { font-size: 1.8rem; }
     }
   </style>
 </head>
 <body>
 
+<!-- ════════════════════════════════════════════════════════════════
+     NAVIGATION
+     ════════════════════════════════════════════════════════════════ -->
 <nav>
   <div class="logo-area">
-    <img src="https://www.denvita.de/wp-content/uploads/logo-denvita.svg" class="logo-img" alt="DENVITA Dentalzentrum" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-    <div class="logo-fallback" style="display:none"><div class="logo-dot"></div><span class="logo-text">DENVITA</span></div>
+    <img src="https://www.denvita.de/wp-content/uploads/logo-denvita.svg"
+         class="logo-img" alt="DENVITA Dentalzentrum"
+         onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+    <div class="logo-fallback" style="display:none">
+      <div class="logo-dot"></div><span class="logo-text">DENVITA</span>
+    </div>
   </div>
   <ul class="nav-links">
     <li><a href="#leistungen">Leistungen</a></li>
+    <li><a href="#praxis">Praxis</a></li>
     <li><a href="#ablauf">Vorgehen</a></li>
+    <li><a href="#technologie">Technologie</a></li>
+    <li><a href="#faq">FAQ</a></li>
     <li><a href="#kontakt">Kontakt</a></li>
   </ul>
   <a href="#kontakt" class="nav-cta">Termin buchen</a>
 </nav>
 
+<!-- ════════════════════════════════════════════════════════════════
+     HERO
+     ════════════════════════════════════════════════════════════════ -->
 <section class="hero">
   <div class="hero-blob"></div>
   <div class="hero-blob2"></div>
   <div class="hero-inner">
     <div>
-      <div class="hero-pill">✦ Dentalzentrum Köln Innenstadt – 700m², 7 Tage geöffnet</div>
-      <h1>Zahnmedizin auf über 700 m².<br><span class="gradient-text">DENVITA – Ihr Dentalzentrum in Kölns Altstadt</span></h1>
-      <p>DENVITA ist Kölns modernes Dentalzentrum direkt in der Altstadt-Nord: über 700 Quadratmeter, praxiseigenes Labor, Implantologie, Oralchirurgie und Online-Buchung – Mo–Sa geöffnet.</p>
+      <div class="hero-pill">&#10022; Dentalzentrum K&ouml;ln Innenstadt &ndash; 700m&sup2;, eigenes Labor, Mo&ndash;Sa ge&ouml;ffnet</div>
+      <h1>Zahnmedizin auf &uuml;ber 700&nbsp;m&sup2;.<br><span class="gradient-text">DENVITA &ndash; Ihr Dentalzentrum in K&ouml;lns Altstadt</span></h1>
+      <p>DENVITA ist K&ouml;lns modernes Dentalzentrum direkt in der Altstadt-Nord: &uuml;ber 700&nbsp;Quadratmeter, praxiseigenes Labor, Implantologie, Oralchirurgie und Online-Buchung &ndash; Mo&ndash;Sa ge&ouml;ffnet.</p>
       <div class="hero-actions">
-        <a href="#kontakt" class="btn-gradient">Jetzt Termin buchen →</a>
+        <a href="#kontakt" class="btn-gradient">Jetzt Termin buchen &rarr;</a>
         <a href="#leistungen" class="btn-ghost">Mehr erfahren</a>
       </div>
     </div>
     <div class="hero-card-grid">
       <div class="hero-img-container">
-        <img src="https://www.denvita.de/wp-content/uploads/hero-praxis-koeln.jpg" alt="DENVITA Dentalzentrum Köln Praxisräume" loading="lazy" onerror="this.parentElement.innerHTML='<div class=\'hero-img-placeholder\'>🦷</div>'">
+        <img src="https://www.denvita.de/wp-content/uploads/hero-praxis-koeln.jpg"
+             alt="DENVITA Dentalzentrum K&ouml;ln Praxisr&auml;ume" loading="lazy"
+             onerror="this.parentElement.innerHTML='<div class=\'hero-img-placeholder\'>&#x1F9B7;</div>'">
       </div>
       <div class="metric-card">
-        <div class="metric-value"><span>700m²</span></div>
-        <div class="metric-label">Praxisfläche</div>
+        <div class="metric-value"><span>700m&sup2;</span></div>
+        <div class="metric-label">Praxisfl&auml;che</div>
       </div>
       <div class="metric-row">
         <div class="metric-card">
-          <div class="metric-value"><span>Mo–Sa</span></div>
-          <div class="metric-label">7:30–20:00 Uhr geöffnet</div>
+          <div class="metric-value"><span>Mo&ndash;Sa</span></div>
+          <div class="metric-label">7:30&ndash;20:00 Uhr ge&ouml;ffnet</div>
         </div>
         <div class="metric-card">
-          <div class="metric-value"><span>4.2★</span></div>
+          <div class="metric-value"><span>4.2&#9733;</span></div>
           <div class="metric-label">Google Bewertung</div>
         </div>
       </div>
@@ -283,36 +508,123 @@
   </div>
 </section>
 
-<section class="services" id="leistungen">
-  <div class="services-header">
-    <span class="section-chip">Leistungen</span>
-    <h2 class="section-title">Was wir für Sie leisten</h2>
-    <p class="section-sub">Implantologie, Oralchirurgie und Ästhetik auf 700m² mit praxiseigenem Labor – direkt in Kölns Altstadt.</p>
-  </div>
-  <div class="services-grid">
-    <div class="service-card">
-      <div class="service-icon">🔬</div>
-      <h3>Eigenes Dentallabor</h3>
-      <p>Unser praxiseigenes Labor ermöglicht schnellere Fertigung, perfekte Passform und höchste Qualität bei Kronen, Brücken und Zahnersatz – alles aus einer Hand.</p>
+<!-- ════════════════════════════════════════════════════════════════
+     STATS BANNER
+     ════════════════════════════════════════════════════════════════ -->
+<section class="stats-banner">
+  <div class="stats-banner-inner">
+    <div class="stat-item">
+      <div class="stat-value">700 m&sup2;</div>
+      <div class="stat-label">Praxisfl&auml;che in der Altstadt</div>
     </div>
-    <div class="service-card">
-      <div class="service-icon">🦷</div>
-      <h3>Implantologie & Oralchirurgie</h3>
-      <p>Von der Sofortimplantation bis zu komplexen oralchirurgischen Eingriffen – unser erfahrenes Team begleitet Sie sicher durch jeden Schritt Ihrer Behandlung.</p>
+    <div class="stat-item">
+      <div class="stat-value">Eigenes Labor</div>
+      <div class="stat-label">Zahnersatz direkt vor Ort</div>
     </div>
-    <div class="service-card">
-      <div class="service-icon">📱</div>
-      <h3>Online-Terminbuchung</h3>
-      <p>Buchen Sie Ihren Wunschtermin bequem online – rund um die Uhr, ohne Warteschleife. Einfach, schnell und unkompliziert direkt auf unserer Website.</p>
+    <div class="stat-item">
+      <div class="stat-value">Mo&ndash;Sa ge&ouml;ffnet</div>
+      <div class="stat-label">Auch samstags f&uuml;r Sie da</div>
     </div>
-    <div class="service-card">
-      <div class="service-icon">✨</div>
-      <h3>Ästhetische Zahnmedizin</h3>
-      <p>Veneers, Bleaching und ästhetische Korrekturen – wir gestalten Ihr strahlendes Lächeln mit modernsten Methoden und höchstem ästhetischen Anspruch.</p>
+    <div class="stat-item">
+      <div class="stat-value">Seit 2008</div>
+      <div class="stat-label">Erfahrung in K&ouml;ln</div>
     </div>
   </div>
 </section>
 
+<!-- ════════════════════════════════════════════════════════════════
+     LEISTUNGEN / SERVICES
+     ════════════════════════════════════════════════════════════════ -->
+<section class="services" id="leistungen">
+  <div class="services-header">
+    <span class="section-chip">Leistungen</span>
+    <h2 class="section-title">Was wir f&uuml;r Sie leisten</h2>
+    <p class="section-sub">Implantologie, Oralchirurgie und &Auml;sthetik auf 700m&sup2; mit praxiseigenem Labor &ndash; direkt in K&ouml;lns Altstadt.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">&#x1F52C;</div>
+      <h3>Eigenes Dentallabor</h3>
+      <p>Unser praxiseigenes Labor erm&ouml;glicht schnellere Fertigung, perfekte Passform und h&ouml;chste Qualit&auml;t bei Kronen, Br&uuml;cken und Zahnersatz &ndash; alles aus einer Hand.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">&#x1F9B7;</div>
+      <h3>Implantologie &amp; Oralchirurgie</h3>
+      <p>Von der Sofortimplantation bis zu komplexen oralchirurgischen Eingriffen &ndash; unser erfahrenes Team begleitet Sie sicher durch jeden Schritt Ihrer Behandlung.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">&#x1F4F1;</div>
+      <h3>Online-Terminbuchung</h3>
+      <p>Buchen Sie Ihren Wunschtermin bequem online &ndash; rund um die Uhr, ohne Warteschleife. Einfach, schnell und unkompliziert direkt auf unserer Website.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">&#x2728;</div>
+      <h3>&Auml;sthetische Zahnmedizin</h3>
+      <p>Veneers, Bleaching und &auml;sthetische Korrekturen &ndash; wir gestalten Ihr strahlendes L&auml;cheln mit modernsten Methoden und h&ouml;chstem &auml;sthetischen Anspruch.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════════
+     UEBER DIE PRAXIS
+     ════════════════════════════════════════════════════════════════ -->
+<section class="about" id="praxis">
+  <div class="about-inner">
+    <div class="about-text">
+      <span class="section-chip">&Uuml;ber die Praxis</span>
+      <h2 class="section-title">DENVITA Dentalzentrum K&ouml;ln</h2>
+      <p>Seit 2008 ist DENVITA das Dentalzentrum im Herzen von K&ouml;ln. Auf &uuml;ber 700&nbsp;Quadratmetern in der Antonsgasse&nbsp;1, direkt in der Altstadt-Nord, vereinen wir alle zahnmedizinischen Disziplinen unter einem Dach &ndash; von der Prophylaxe &uuml;ber Implantologie und Oralchirurgie bis zur &auml;sthetischen Zahnmedizin.</p>
+      <p>Unser besonderer Vorteil: Ein hauseigenes Dentallabor, das Zahnersatz direkt vor Ort fertigt. Das bedeutet k&uuml;rzere Wartezeiten, perfekte Abstimmung zwischen Behandler und Techniker und eine Qualit&auml;t, die wir vollst&auml;ndig kontrollieren. Dazu kommen gro&szlig;z&uuml;gige &Ouml;ffnungszeiten von Montag bis Samstag.</p>
+      <ul class="about-features">
+        <li><span class="check-icon">&#x2713;</span> Eigenes Dentallabor im Haus</li>
+        <li><span class="check-icon">&#x2713;</span> &Uuml;ber 700&nbsp;m&sup2; moderne Praxisfl&auml;che</li>
+        <li><span class="check-icon">&#x2713;</span> Mo&ndash;Fr 7:30&ndash;20:00, Sa 9:00&ndash;14:30</li>
+        <li><span class="check-icon">&#x2713;</span> Zentrale Lage in der K&ouml;lner Altstadt</li>
+        <li><span class="check-icon">&#x2713;</span> Alle Fachbereiche unter einem Dach</li>
+        <li><span class="check-icon">&#x2713;</span> &Uuml;ber 15 Jahre Erfahrung in K&ouml;ln</li>
+      </ul>
+    </div>
+    <div class="about-visual">
+      <div class="about-visual-header">
+        <div class="about-visual-icon">&#x1F3E5;</div>
+        <div>
+          <h3>Praxis-Profil</h3>
+          <p>DENVITA Dentalzentrum K&ouml;ln</p>
+        </div>
+      </div>
+      <div class="about-detail-grid">
+        <div class="about-detail">
+          <strong>Gegr&uuml;ndet</strong>
+          <span>2008</span>
+        </div>
+        <div class="about-detail">
+          <strong>Standort</strong>
+          <span>K&ouml;ln Altstadt-Nord</span>
+        </div>
+        <div class="about-detail">
+          <strong>Praxisfl&auml;che</strong>
+          <span>&Uuml;ber 700 m&sup2;</span>
+        </div>
+        <div class="about-detail">
+          <strong>Bewertung</strong>
+          <span>4.2 &#9733; auf Google</span>
+        </div>
+        <div class="about-detail">
+          <strong>Besonderheit</strong>
+          <span>Hauseigenes Dentallabor</span>
+        </div>
+        <div class="about-detail">
+          <strong>&Ouml;ffnungszeiten</strong>
+          <span>Mo&ndash;Sa, auch samstags</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════════
+     VORGEHEN / STEPS
+     ════════════════════════════════════════════════════════════════ -->
 <section class="steps" id="ablauf">
   <div class="steps-inner">
     <div>
@@ -322,61 +634,107 @@
         <div class="step-item">
           <div class="step-num-badge">1</div>
           <div class="step-item-text">
-            <h4>Termin buchen – Mo bis Sa</h4>
-            <p>Auch samstags bis 14:30 Uhr: Online-Buchung für alle Behandlungen in einem System.</p>
+            <h4>Termin buchen &ndash; Mo bis Sa</h4>
+            <p>Auch samstags bis 14:30 Uhr: Online-Buchung f&uuml;r alle Behandlungen in einem System.</p>
           </div>
         </div>
         <div class="step-item">
           <div class="step-num-badge">2</div>
           <div class="step-item-text">
-            <h4>Diagnose & Planung</h4>
-            <p>Ausführlicher Befund, transparente Kostenplanung und direkter Draht zum eigenen Labor.</p>
+            <h4>Diagnose &amp; Planung</h4>
+            <p>Ausf&uuml;hrlicher Befund, transparente Kostenplanung und direkter Draht zum eigenen Labor.</p>
           </div>
         </div>
         <div class="step-item">
           <div class="step-num-badge">3</div>
           <div class="step-item-text">
             <h4>Behandlung mit Labor-Vorteil</h4>
-            <p>Praxiseigenes Labor: schnellere Restaurationen, bessere Passform, höchste Qualität.</p>
+            <p>Praxiseigenes Labor: schnellere Restaurationen, bessere Passform, h&ouml;chste Qualit&auml;t.</p>
           </div>
         </div>
         <div class="step-item">
           <div class="step-num-badge">4</div>
           <div class="step-item-text">
-            <h4>Nachsorge & Kontrolle</h4>
-            <p>Regelmäßige Prophylaxe und Recall sichern den langfristigen Erfolg Ihrer Behandlung.</p>
+            <h4>Nachsorge &amp; Kontrolle</h4>
+            <p>Regelm&auml;&szlig;ige Prophylaxe und Recall sichern den langfristigen Erfolg Ihrer Behandlung.</p>
           </div>
         </div>
       </div>
     </div>
     <div class="steps-visual">
-      <h3>Patienten schätzen unsere Flexibilität</h3>
-      <p class="tagline">Kölns Dentalzentrum mit eigenem Labor – Qualität ohne Kompromisse, zentral und flexibel.</p>
+      <h3>Patienten sch&auml;tzen unsere Flexibilit&auml;t</h3>
+      <p class="tagline">K&ouml;lns Dentalzentrum mit eigenem Labor &ndash; Qualit&auml;t ohne Kompromisse, zentral und flexibel.</p>
       <div class="highlight-box">
         <strong>Praxiseigenes Labor</strong>
-        <p>Schnellere Versorgung, bessere Ergebnisse – direkt vor Ort in Kölns Altstadt-Nord.</p>
+        <p>Schnellere Versorgung, bessere Ergebnisse &ndash; direkt vor Ort in K&ouml;lns Altstadt-Nord.</p>
       </div>
       <div class="highlight-box">
-        <strong>Zentrum Kölner Altstadt</strong>
-        <p>Fußläufig vom Kölner Dom – ideal erreichbar mit ÖPNV, zu Fuß oder per Rad.</p>
+        <strong>Zentrum K&ouml;lner Altstadt</strong>
+        <p>Fu&szlig;l&auml;ufig vom K&ouml;lner Dom &ndash; ideal erreichbar mit &Ouml;PNV, zu Fu&szlig; oder per Rad.</p>
       </div>
       <div class="highlight-box">
-        <strong>Mo–Sa geöffnet</strong>
-        <p>Flexible Öffnungszeiten von 7:30 bis 20:00 Uhr – auch samstags für Sie da.</p>
+        <strong>Mo&ndash;Sa ge&ouml;ffnet</strong>
+        <p>Flexible &Ouml;ffnungszeiten von 7:30 bis 20:00 Uhr &ndash; auch samstags f&uuml;r Sie da.</p>
       </div>
     </div>
   </div>
 </section>
 
+<!-- ════════════════════════════════════════════════════════════════
+     TECHNOLOGIE & AUSSTATTUNG
+     ════════════════════════════════════════════════════════════════ -->
+<section class="technology" id="technologie">
+  <div class="technology-header">
+    <span class="section-chip">Technologie &amp; Ausstattung</span>
+    <h2 class="section-title">Modernste Technik auf 700&nbsp;m&sup2;</h2>
+    <p class="section-sub">Hochpr&auml;zise Diagnostik und Behandlung dank hauseigenem Labor und digitaler Workflows.</p>
+  </div>
+  <div class="tech-grid">
+    <div class="tech-card">
+      <div class="tech-card-icon">&#x1F52C;</div>
+      <h3>Hauseigenes Dentallabor</h3>
+      <p>Kronen, Br&uuml;cken und Prothesen werden direkt in unserer Praxis gefertigt. Das garantiert k&uuml;rzeste Wartezeiten, perfekte Farbabstimmung und die direkte Kommunikation zwischen Behandler und Techniker.</p>
+      <span class="tech-badge">Alles aus einer Hand</span>
+    </div>
+    <div class="tech-card">
+      <div class="tech-card-icon">&#x1F4E1;</div>
+      <h3>DVT 3D-R&ouml;ntgen</h3>
+      <p>Dreidimensionale Aufnahmen des Kiefers f&uuml;r pr&auml;zise Diagnostik bei Implantationen und chirurgischen Eingriffen. Geringere Strahlenbelastung als herk&ouml;mmliches CT, h&ouml;here Aufl&ouml;sung.</p>
+      <span class="tech-badge">3D-Diagnostik</span>
+    </div>
+    <div class="tech-card">
+      <div class="tech-card-icon">&#x26A1;</div>
+      <h3>CEREC-System</h3>
+      <p>Computergesteuerte Fertigung von Keramik-Restaurationen in einer Sitzung. Der digitale Scan ersetzt den Abdruck, das Ergebnis wird direkt vor Ort gefr&auml;st und eingesetzt.</p>
+      <span class="tech-badge">Same-Day Versorgung</span>
+    </div>
+    <div class="tech-card">
+      <div class="tech-card-icon">&#x1F50D;</div>
+      <h3>OP-Mikroskop</h3>
+      <p>Bis zu 25-fache Vergr&ouml;&szlig;erung f&uuml;r h&ouml;chste Pr&auml;zision bei Wurzelbehandlungen und mikrochirurgischen Eingriffen. Bessere Sicht bedeutet schonendere Behandlung und bessere Ergebnisse.</p>
+      <span class="tech-badge">Mikrochirurgie</span>
+    </div>
+    <div class="tech-card">
+      <div class="tech-card-icon">&#x1F4BB;</div>
+      <h3>Digitale Abformung</h3>
+      <p>Statt unangenehmer Abdruckmasse scannen wir Ihre Z&auml;hne ber&uuml;hrungslos in 3D. Die Daten gehen direkt ins hauseigene Labor &ndash; schneller, pr&auml;ziser, komfortabler f&uuml;r Sie.</p>
+      <span class="tech-badge">Abdruckfrei</span>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════════
+     TESTIMONIALS
+     ════════════════════════════════════════════════════════════════ -->
 <section class="testimonials">
   <div class="testimonials-header">
     <span class="section-chip">Patientenstimmen</span>
-    <h2 class="section-title">Was Patienten über uns sagen</h2>
+    <h2 class="section-title">Was Patienten &uuml;ber uns sagen</h2>
   </div>
   <div class="testimonials-grid">
     <div class="testimonial-card">
-      <div class="stars">★★★★★</div>
-      <p>"Ich bin seit Jahren Patientin bei DENVITA und kann die Praxis wärmstens empfehlen. Das eigene Labor ist ein riesiger Vorteil – meine neue Krone war schneller fertig als erwartet und sitzt perfekt."</p>
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p>&bdquo;Ich bin seit Jahren Patientin bei DENVITA und kann die Praxis w&auml;rmstens empfehlen. Das eigene Labor ist ein riesiger Vorteil &ndash; meine neue Krone war schneller fertig als erwartet und sitzt perfekt.&ldquo;</p>
       <div class="testimonial-author">
         <div class="author-avatar">R</div>
         <div>
@@ -386,8 +744,8 @@
       </div>
     </div>
     <div class="testimonial-card">
-      <div class="stars">★★★★★</div>
-      <p>"Top Lage, top Team. Ich konnte direkt nach der Arbeit einen Abendtermin buchen – das ist in Köln keine Selbstverständlichkeit. Die Implantologie-Behandlung war professionell und schmerzfrei."</p>
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p>&bdquo;Top Lage, top Team. Ich konnte direkt nach der Arbeit einen Abendtermin buchen &ndash; das ist in K&ouml;ln keine Selbstverst&auml;ndlichkeit. Die Implantologie-Behandlung war professionell und schmerzfrei.&ldquo;</p>
       <div class="testimonial-author">
         <div class="author-avatar">S</div>
         <div>
@@ -397,56 +755,175 @@
       </div>
     </div>
     <div class="testimonial-card">
-      <div class="stars">★★★★☆</div>
-      <p>"Die Online-Buchung ist wirklich praktisch und die Praxis ist sehr modern eingerichtet. Das Team nimmt sich Zeit für jeden Patienten. Ich komme gerne wieder – mitten in der Kölner Altstadt ist es kaum bequemer."</p>
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+      <p>&bdquo;Die Online-Buchung ist wirklich praktisch und die Praxis ist sehr modern eingerichtet. Das Team nimmt sich Zeit f&uuml;r jeden Patienten. Ich komme gerne wieder &ndash; mitten in der K&ouml;lner Altstadt ist es kaum bequemer.&ldquo;</p>
       <div class="testimonial-author">
         <div class="author-avatar">M</div>
         <div>
           <div class="author-name">Maria C.</div>
-          <div class="author-role">Patientin, Ästhetische Zahnmedizin</div>
+          <div class="author-role">Patientin, &Auml;sthetische Zahnmedizin</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="cta-section">
-  <div class="cta-blob"></div>
-  <h2>Kölns Dentalzentrum – heute noch Termin buchen</h2>
-  <p>Mo–Sa geöffnet, praxiseigenes Labor, zentrale Lage – Zahnmedizin auf höchstem Niveau.</p>
-  <a href="#kontakt" class="btn-gradient">Jetzt Termin buchen →</a>
+<!-- ════════════════════════════════════════════════════════════════
+     FAQ
+     ════════════════════════════════════════════════════════════════ -->
+<section class="faq" id="faq">
+  <div class="faq-inner">
+    <div class="faq-header">
+      <span class="section-chip">H&auml;ufige Fragen</span>
+      <h2 class="section-title">H&auml;ufig gestellte Fragen</h2>
+      <p class="section-sub">Alles Wichtige rund um Ihren Besuch im DENVITA Dentalzentrum K&ouml;ln.</p>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+        Welchen Vorteil hat das praxiseigene Dentallabor?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          Unser hauseigenes Labor erm&ouml;glicht eine deutlich schnellere Fertigung von Zahnersatz &ndash; oft in wenigen Tagen statt Wochen. Behandler und Zahntechniker arbeiten T&uuml;r an T&uuml;r, k&ouml;nnen Farbe und Passform direkt abstimmen und bei Bedarf sofort nachbessern. Das Ergebnis: h&ouml;chste Qualit&auml;t, perfekte &Auml;sthetik und weniger Termine f&uuml;r Sie.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+        Haben Sie auch samstags ge&ouml;ffnet?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          Ja, wir sind auch samstags von 9:00 bis 14:30 Uhr f&uuml;r Sie da. Unter der Woche haben wir Montag bis Freitag von 7:30 bis 20:00 Uhr ge&ouml;ffnet. So finden auch Berufst&auml;tige und Familien problemlos einen passenden Termin &ndash; auch au&szlig;erhalb der &uuml;blichen Praxiszeiten.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+        Welche oralchirurgischen Eingriffe bieten Sie an?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          Unser erfahrenes Chirurgie-Team f&uuml;hrt ein breites Spektrum oralchirurgischer Eingriffe durch: Weisheitszahnentfernungen, Knochenaufbau f&uuml;r Implantate, Wurzelspitzenresektionen, Zysten-Operationen und die Freilegung verlagerter Z&auml;hne. Dank DVT-3D-Diagnostik und OP-Mikroskop arbeiten wir besonders pr&auml;zise und schonend.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+        Bieten Sie Behandlungen unter Narkose oder Sedierung an?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          Ja, f&uuml;r umfangreiche Eingriffe oder f&uuml;r Patienten mit starker Zahnarztangst bieten wir Behandlungen unter Sedierung (D&auml;mmerschlaf) an. In Zusammenarbeit mit erfahrenen An&auml;sthesisten k&ouml;nnen auch Eingriffe unter Vollnarkose durchgef&uuml;hrt werden. Sprechen Sie uns im Beratungsgespr&auml;ch darauf an &ndash; wir finden die richtige L&ouml;sung f&uuml;r Sie.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+        Gibt es Parkm&ouml;glichkeiten in der N&auml;he?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          In unmittelbarer N&auml;he befinden sich mehrere Parkh&auml;user, darunter das Parkhaus am Dom und das Parkhaus Gro&szlig; St.&nbsp;Martin. Beide sind nur wenige Gehminuten von unserer Praxis entfernt. Alternativ ist unsere Praxis hervorragend mit den &ouml;ffentlichen Verkehrsmitteln erreichbar &ndash; die Haltestellen Dom/Hauptbahnhof und Heumarkt liegen in direkter N&auml;he.
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
+<!-- ════════════════════════════════════════════════════════════════
+     CTA
+     ════════════════════════════════════════════════════════════════ -->
+<section class="cta-section">
+  <div class="cta-blob"></div>
+  <h2>K&ouml;lns Dentalzentrum &ndash; heute noch Termin buchen</h2>
+  <p>Mo&ndash;Sa ge&ouml;ffnet, praxiseigenes Labor, zentrale Lage &ndash; Zahnmedizin auf h&ouml;chstem Niveau.</p>
+  <a href="#kontakt" class="btn-gradient">Jetzt Termin buchen &rarr;</a>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════════
+     SO FINDEN SIE UNS / DIRECTIONS
+     ════════════════════════════════════════════════════════════════ -->
+<section class="directions" id="anfahrt">
+  <div class="directions-inner">
+    <div class="directions-header">
+      <span class="section-chip">Anfahrt</span>
+      <h2 class="section-title">So finden Sie uns</h2>
+      <p class="section-sub">DENVITA Dentalzentrum &ndash; mitten in der K&ouml;lner Altstadt, bestens erreichbar.</p>
+    </div>
+    <div class="directions-grid">
+      <div class="direction-card">
+        <div class="direction-icon">&#x1F687;</div>
+        <div>
+          <h4>Mit der Bahn</h4>
+          <p>Haltestelle Dom/Hauptbahnhof (alle S-Bahn- und Regionallinien) oder Heumarkt (KVB-Linien 1, 5, 7, 9) &ndash; jeweils nur 5&nbsp;Gehminuten.</p>
+        </div>
+      </div>
+      <div class="direction-card">
+        <div class="direction-icon">&#x1F697;</div>
+        <div>
+          <h4>Mit dem Auto</h4>
+          <p>Parkh&auml;user am Dom und Gro&szlig; St.&nbsp;Martin in direkter N&auml;he. &Uuml;ber die A57 oder A4 Richtung K&ouml;ln-Zentrum, Ausfahrt Innenstadt.</p>
+        </div>
+      </div>
+      <div class="direction-card">
+        <div class="direction-icon">&#x1F6B6;</div>
+        <div>
+          <h4>Zu Fu&szlig;</h4>
+          <p>Vom K&ouml;lner Dom nur 4&nbsp;Minuten zu Fu&szlig; &uuml;ber die Hohe Stra&szlig;e und Antonsgasse. Vom Heumarkt &uuml;ber die Schildergasse in 3&nbsp;Minuten erreichbar.</p>
+        </div>
+      </div>
+    </div>
+    <div class="directions-map">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2515.4!2d6.956!3d50.940!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sAntonsgasse+1%2C+50667+K%C3%B6ln!5e0!3m2!1sde!2sde!4v1"
+              allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════════
+     KONTAKT
+     ════════════════════════════════════════════════════════════════ -->
 <section class="contact" id="kontakt">
   <div class="contact-inner">
     <div class="contact-info">
       <h3>Kontakt aufnehmen</h3>
       <div class="contact-item">
-        <div class="contact-icon">📍</div>
+        <div class="contact-icon">&#x1F4CD;</div>
         <div class="contact-item-text">
           <div class="label">Standort</div>
-          <div class="value">Antonsgasse 1, 50667 Köln<br>Altstadt-Nord</div>
+          <div class="value">Antonsgasse 1, 50667 K&ouml;ln<br>Altstadt-Nord</div>
         </div>
       </div>
       <div class="contact-item">
-        <div class="contact-icon">📞</div>
+        <div class="contact-icon">&#x1F4DE;</div>
         <div class="contact-item-text">
           <div class="label">Telefon</div>
           <div class="value">0221 27243400</div>
         </div>
       </div>
       <div class="contact-item">
-        <div class="contact-icon">✉️</div>
+        <div class="contact-icon">&#x2709;&#xFE0F;</div>
         <div class="contact-item-text">
           <div class="label">E-Mail</div>
           <div class="value">info@denvita.de</div>
         </div>
       </div>
       <div class="contact-item">
-        <div class="contact-icon">🕐</div>
+        <div class="contact-icon">&#x1F550;</div>
         <div class="contact-item-text">
-          <div class="label">Öffnungszeiten</div>
-          <div class="value">Mo–Fr 7:30–20:00 Uhr<br>Sa 9:00–14:30 Uhr</div>
+          <div class="label">&Ouml;ffnungszeiten</div>
+          <div class="value">Mo&ndash;Fr 7:30&ndash;20:00 Uhr<br>Sa 9:00&ndash;14:30 Uhr</div>
         </div>
       </div>
     </div>
@@ -461,24 +938,30 @@
             <option value="">Ihr Anliegen</option>
             <option>Online-Terminbuchung</option>
             <option>Professionelle Zahnreinigung</option>
-            <option>Ästhetische Zahnmedizin</option>
-            <option>Implantologie & Oralchirurgie</option>
+            <option>&Auml;sthetische Zahnmedizin</option>
+            <option>Implantologie &amp; Oralchirurgie</option>
             <option>Zahnersatz aus dem Labor</option>
           </select>
         </div>
         <div class="form-group"><textarea placeholder="Ihre Nachricht..."></textarea></div>
-        <button type="submit" class="form-submit">Termin anfragen →</button>
+        <button type="submit" class="form-submit">Termin anfragen &rarr;</button>
       </form>
     </div>
   </div>
 </section>
 
+<!-- ════════════════════════════════════════════════════════════════
+     FOOTER
+     ════════════════════════════════════════════════════════════════ -->
 <footer>
-  <p>© 2026 <strong>DENVITA Dentalzentrum</strong> · Antonsgasse 1, 50667 Köln · <a href="mailto:info@denvita.de">info@denvita.de</a></p>
+  <p>&copy; 2026 <strong>DENVITA Dentalzentrum</strong> &middot; Antonsgasse 1, 50667 K&ouml;ln &middot; <a href="mailto:info@denvita.de">info@denvita.de</a></p>
 </footer>
 
+<!-- ELEVO Dot -->
 <a href="https://elevo.solutions" target="_blank" rel="noopener" class="elevo-dot" title="Erstellt von ELEVO">
-  <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><text x="6" y="21" font-size="19" font-weight="800" font-family="Arial,sans-serif" fill="white">E</text></svg>
+  <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <text x="6" y="21" font-size="19" font-weight="800" font-family="Arial,sans-serif" fill="white">E</text>
+  </svg>
 </a>
 
 </body>

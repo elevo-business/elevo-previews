@@ -6,8 +6,8 @@
   <title>Zahnarztpraxen im Stadttor – Digitale Zahnarztpraxis im Düsseldorfer Medienhafen</title>
   <style>
     :root {
-      --primary: #00897B;
-      --secondary: #4DB6AC;
+      --primary: #0E8A7B;
+      --secondary: #12B5A0;
       --dark: #0f172a;
       --mid: #1e293b;
       --light: #f8fafc;
@@ -33,7 +33,7 @@
       border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 0.875rem;
       transition: box-shadow 0.2s, transform 0.2s;
     }
-    .nav-cta:hover { box-shadow: 0 4px 15px rgba(0,137,123,0.4); transform: translateY(-1px); }
+    .nav-cta:hover { box-shadow: 0 4px 15px rgba(14,138,123,0.4); transform: translateY(-1px); }
 
     /* Hero */
     .hero {
@@ -45,18 +45,18 @@
     .hero-blob {
       position: absolute; top: -200px; right: -200px;
       width: 800px; height: 800px; border-radius: 50%;
-      background: radial-gradient(circle, rgba(0,137,123,0.12) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(14,138,123,0.12) 0%, transparent 70%);
     }
     .hero-blob2 {
       position: absolute; bottom: -300px; left: -100px;
       width: 600px; height: 600px; border-radius: 50%;
-      background: radial-gradient(circle, rgba(77,182,172,0.08) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(18,181,160,0.08) 0%, transparent 70%);
     }
     .hero-inner { max-width: 1200px; margin: 0 auto; padding: 4rem 2rem; position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
     .hero-pill {
       display: inline-flex; align-items: center; gap: 0.5rem;
-      border: 1px solid rgba(0,137,123,0.3); color: var(--primary);
-      background: rgba(0,137,123,0.08);
+      border: 1px solid rgba(14,138,123,0.3); color: var(--primary);
+      background: rgba(14,138,123,0.08);
       padding: 0.4rem 1rem; border-radius: 50px; font-size: 0.8rem; font-weight: 600;
       margin-bottom: 1.5rem;
     }
@@ -71,10 +71,10 @@
       background: linear-gradient(135deg, var(--primary), var(--secondary));
       color: white; padding: 0.9rem 2rem; border-radius: 50px;
       text-decoration: none; font-weight: 700; font-size: 0.95rem;
-      box-shadow: 0 4px 15px rgba(0,137,123,0.4);
+      box-shadow: 0 4px 15px rgba(14,138,123,0.4);
       transition: transform 0.2s, box-shadow 0.2s;
     }
-    .btn-gradient:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0,137,123,0.5); }
+    .btn-gradient:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(14,138,123,0.5); }
     .btn-ghost {
       color: rgba(255,255,255,0.8); padding: 0.9rem 2rem; border-radius: 50px;
       text-decoration: none; font-weight: 600; font-size: 0.95rem;
@@ -96,10 +96,30 @@
     .metric-label { color: rgba(255,255,255,0.55); font-size: 0.85rem; margin-top: 0.2rem; }
     .metric-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
 
+    /* Stats Banner */
+    .stats-banner {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      padding: 3rem 2rem;
+    }
+    .stats-banner-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;
+    }
+    .stat-box {
+      background: rgba(255,255,255,0.15); backdrop-filter: blur(8px);
+      border-radius: 16px; padding: 1.8rem 1.5rem; text-align: center;
+      border: 1px solid rgba(255,255,255,0.2);
+      transition: transform 0.2s, background 0.2s;
+    }
+    .stat-box:hover { transform: translateY(-3px); background: rgba(255,255,255,0.22); }
+    .stat-box .stat-icon { font-size: 1.6rem; margin-bottom: 0.6rem; }
+    .stat-box .stat-value { font-size: 1.6rem; font-weight: 900; color: white; margin-bottom: 0.3rem; }
+    .stat-box .stat-label { color: rgba(255,255,255,0.85); font-size: 0.82rem; font-weight: 500; }
+
     /* Services */
     .services { padding: 6rem 2rem; background: var(--light); }
     .section-chip {
-      display: inline-block; background: rgba(0,137,123,0.1); color: var(--primary);
+      display: inline-block; background: rgba(14,138,123,0.1); color: var(--primary);
       padding: 0.3rem 0.9rem; border-radius: 50px; font-size: 0.8rem; font-weight: 700;
       margin-bottom: 1rem;
     }
@@ -121,12 +141,40 @@
     .service-card:hover::after { transform: scaleX(1); }
     .service-icon {
       width: 52px; height: 52px; border-radius: 12px;
-      background: linear-gradient(135deg, rgba(0,137,123,0.1), rgba(77,182,172,0.1));
+      background: linear-gradient(135deg, rgba(14,138,123,0.1), rgba(18,181,160,0.1));
       display: flex; align-items: center; justify-content: center;
       font-size: 1.5rem; margin-bottom: 1.2rem;
     }
     .service-card h3 { font-size: 1rem; font-weight: 700; color: var(--dark); margin-bottom: 0.6rem; }
     .service-card p { color: #64748b; font-size: 0.875rem; line-height: 1.7; }
+
+    /* About / Ueber die Praxis */
+    .about-praxis { padding: 6rem 2rem; background: white; }
+    .about-praxis-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 4rem; align-items: start;
+    }
+    .about-text h2 { font-size: 2.2rem; font-weight: 800; color: var(--dark); margin-bottom: 1.5rem; }
+    .about-text p { color: #475569; font-size: 0.95rem; line-height: 1.8; margin-bottom: 1.2rem; }
+    .about-features {
+      background: var(--light); border-radius: 16px; padding: 2.5rem;
+      border: 1px solid #e2e8f0;
+    }
+    .about-features h3 { font-size: 1.2rem; font-weight: 700; color: var(--dark); margin-bottom: 1.5rem; }
+    .about-feature-item {
+      display: flex; gap: 0.8rem; align-items: flex-start;
+      margin-bottom: 1.2rem; padding-bottom: 1.2rem;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    .about-feature-item:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+    .about-feature-icon {
+      width: 36px; height: 36px; border-radius: 8px; flex-shrink: 0;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white; display: flex; align-items: center; justify-content: center;
+      font-size: 0.9rem;
+    }
+    .about-feature-text { font-weight: 600; color: var(--dark); font-size: 0.9rem; line-height: 1.5; }
+    .about-feature-text span { display: block; font-weight: 400; color: #64748b; font-size: 0.82rem; margin-top: 0.15rem; }
 
     /* Process / Steps */
     .steps { padding: 6rem 2rem; background: white; }
@@ -151,17 +199,46 @@
     .highlight-box strong { font-size: 1.1rem; }
     .highlight-box p { opacity: 0.85; font-size: 0.875rem; margin-top: 0.2rem; }
 
+    /* Technology */
+    .technologie { padding: 6rem 2rem; background: var(--light); }
+    .technologie-header { max-width: 1100px; margin: 0 auto 3rem; }
+    .tech-grid {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem;
+    }
+    .tech-card {
+      background: white; border-radius: 16px; padding: 2.2rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 15px rgba(0,0,0,0.04);
+      border: 1px solid #e2e8f0;
+      transition: transform 0.2s, box-shadow 0.2s;
+      position: relative;
+    }
+    .tech-card:hover { transform: translateY(-4px); box-shadow: 0 8px 30px rgba(0,0,0,0.1); }
+    .tech-card-icon {
+      width: 56px; height: 56px; border-radius: 14px;
+      background: linear-gradient(135deg, rgba(14,138,123,0.08), rgba(18,181,160,0.12));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.6rem; margin-bottom: 1.2rem;
+    }
+    .tech-card h3 { font-size: 1.05rem; font-weight: 700; color: var(--dark); margin-bottom: 0.6rem; }
+    .tech-card p { color: #64748b; font-size: 0.85rem; line-height: 1.7; }
+    .tech-card-badge {
+      display: inline-block; margin-top: 1rem;
+      background: rgba(14,138,123,0.08); color: var(--primary);
+      padding: 0.25rem 0.7rem; border-radius: 50px; font-size: 0.72rem; font-weight: 700;
+    }
+
     /* Testimonials */
-    .testimonials { padding: 6rem 2rem; background: var(--light); }
+    .testimonials { padding: 6rem 2rem; background: white; }
     .testimonials-header { max-width: 1000px; margin: 0 auto 3rem; }
     .testimonials-grid { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
     .testimonial-card {
-      background: white; border-radius: 16px; padding: 2rem;
+      background: var(--light); border-radius: 16px; padding: 2rem;
       box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 15px rgba(0,0,0,0.04);
     }
     .stars { font-size: 1rem; margin-bottom: 1rem; color: #f59e0b; }
     .testimonial-card p { color: #475569; font-size: 0.9rem; line-height: 1.7; font-style: italic; }
-    .testimonial-author { display: flex; gap: 0.8rem; align-items: center; margin-top: 1.2rem; padding-top: 1rem; border-top: 1px solid #f1f5f9; }
+    .testimonial-author { display: flex; gap: 0.8rem; align-items: center; margin-top: 1.2rem; padding-top: 1rem; border-top: 1px solid #e2e8f0; }
     .author-avatar {
       width: 40px; height: 40px; border-radius: 50%;
       background: linear-gradient(135deg, var(--primary), var(--secondary));
@@ -170,12 +247,73 @@
     .author-name { font-weight: 700; font-size: 0.85rem; color: var(--dark); }
     .author-role { color: #94a3b8; font-size: 0.75rem; }
 
+    /* FAQ */
+    .faq { padding: 6rem 2rem; background: var(--light); }
+    .faq-header { max-width: 800px; margin: 0 auto 3rem; }
+    .faq-list { max-width: 800px; margin: 0 auto; }
+    .faq-item {
+      background: white; border-radius: 16px; margin-bottom: 1rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 2px 8px rgba(0,0,0,0.03);
+      border: 1px solid #e2e8f0;
+      overflow: hidden; transition: box-shadow 0.2s;
+    }
+    .faq-item:hover { box-shadow: 0 2px 6px rgba(0,0,0,0.06), 0 4px 15px rgba(0,0,0,0.06); }
+    .faq-question {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.4rem 1.8rem; cursor: pointer; user-select: none;
+      font-weight: 700; color: var(--dark); font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+    .faq-question:hover { color: var(--primary); }
+    .faq-toggle {
+      width: 28px; height: 28px; border-radius: 50%; flex-shrink: 0;
+      background: rgba(14,138,123,0.08); color: var(--primary);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem; font-weight: 700;
+      transition: transform 0.3s, background 0.2s;
+    }
+    .faq-item.active .faq-toggle { transform: rotate(45deg); background: rgba(14,138,123,0.15); }
+    .faq-answer {
+      max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.35s ease;
+    }
+    .faq-item.active .faq-answer { max-height: 300px; }
+    .faq-answer-inner {
+      padding: 0 1.8rem 1.6rem 1.8rem;
+      color: #475569; font-size: 0.9rem; line-height: 1.75;
+    }
+
     /* CTA */
     .cta-section { padding: 6rem 2rem; text-align: center; background: var(--dark); position: relative; overflow: hidden; }
-    .cta-blob { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(0,137,123,0.15) 0%, transparent 70%); }
+    .cta-blob { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(14,138,123,0.15) 0%, transparent 70%); }
     .cta-section h2 { font-size: 2.5rem; font-weight: 800; color: white; margin-bottom: 1rem; position: relative; }
     .cta-section p { color: rgba(255,255,255,0.65); font-size: 1.05rem; margin-bottom: 2.5rem; max-width: 450px; margin-left: auto; margin-right: auto; position: relative; }
     .cta-section .btn-gradient { position: relative; }
+
+    /* Directions */
+    .directions { padding: 6rem 2rem; background: white; }
+    .directions-inner { max-width: 1100px; margin: 0 auto; }
+    .directions-content {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 3rem; align-items: start;
+    }
+    .directions-map {
+      border-radius: 16px; overflow: hidden; height: 340px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+    .directions-map iframe { width: 100%; height: 100%; border: 0; }
+    .directions-info { display: flex; flex-direction: column; gap: 1.2rem; }
+    .direction-card {
+      display: flex; gap: 1rem; align-items: flex-start;
+      background: var(--light); border-radius: 12px; padding: 1.3rem;
+      border: 1px solid #e2e8f0;
+    }
+    .direction-card-icon {
+      width: 38px; height: 38px; border-radius: 8px; flex-shrink: 0;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white; display: flex; align-items: center; justify-content: center;
+      font-size: 0.95rem;
+    }
+    .direction-card h4 { font-weight: 700; color: var(--dark); font-size: 0.9rem; margin-bottom: 0.2rem; }
+    .direction-card p { color: #64748b; font-size: 0.82rem; line-height: 1.6; }
 
     /* Contact */
     .contact { padding: 5rem 2rem; background: var(--light); }
@@ -235,8 +373,13 @@
       .metric-row .metric-card:last-child { display: none; }
       .hero h1 { font-size: 2rem; }
       .nav-links { display: none; }
+      .stats-banner-inner { grid-template-columns: repeat(2, 1fr); }
+      .about-praxis-inner { grid-template-columns: 1fr; }
       .steps-inner { grid-template-columns: 1fr; }
+      .tech-grid { grid-template-columns: 1fr; }
+      .directions-content { grid-template-columns: 1fr; }
       .contact-inner { grid-template-columns: 1fr; }
+      .philosophy div[style*="grid-template-columns: repeat(3"] { grid-template-columns: 1fr !important; }
     }
   </style>
 </head>
@@ -248,7 +391,10 @@
   </div>
   <ul class="nav-links">
     <li><a href="#leistungen">Leistungen</a></li>
+    <li><a href="#praxis">Praxis</a></li>
     <li><a href="#ablauf">Vorgehen</a></li>
+    <li><a href="#technologie">Technologie</a></li>
+    <li><a href="#faq">FAQ</a></li>
     <li><a href="#kontakt">Kontakt</a></li>
   </ul>
   <a href="#kontakt" class="nav-cta">Termin buchen</a>
@@ -260,8 +406,8 @@
   <div class="hero-inner">
     <div>
       <div class="hero-pill">✦ Digitale Zahnarztpraxis im Düsseldorfer Medienhafen</div>
-      <h1>Digitale Patientenbetreuung. Moderne Zahnmedizin.<br><span class="gradient-text">Zahnarztpraxen im Stadttor – Medienhafen Düsseldorf</span></h1>
-      <p>Wir denken Zahnarztpraxis neu: Online-Buchung, digitale Formulare und ein Patient Portal für Ihre Unterlagen – transparent, schnell und persönlich. Mo–Fr bis 22:00 Uhr.</p>
+      <h1>Ihre Zähne in besten Händen.<br><span class="gradient-text">Zahnarztpraxen im Stadttor – Medienhafen Düsseldorf</span></h1>
+      <p>Im ikonischen Stadttor-Gebäude verbinden wir modernste Zahnmedizin mit persönlicher Betreuung. Implantologie, Parodontologie und ästhetische Zahnheilkunde – digital geplant, präzise umgesetzt.</p>
       <div class="hero-actions">
         <a href="#kontakt" class="btn-gradient">Jetzt Termin buchen →</a>
         <a href="#leistungen" class="btn-ghost">Mehr erfahren</a>
@@ -270,19 +416,45 @@
     <div class="hero-card-grid">
       <div class="hero-img-container"><img src="https://za-stadttor.de/wp-content/uploads/2019/06/iStock-1394844054.jpg" alt="" loading="lazy"></div>
       <div class="metric-card">
-        <div class="metric-value"><span>4.9★</span></div>
-        <div class="metric-label">Patientenbewertung</div>
+        <div class="metric-value"><span>4.7★</span></div>
+        <div class="metric-label">Google Bewertung</div>
       </div>
       <div class="metric-row">
         <div class="metric-card">
-          <div class="metric-value"><span>3.200+</span></div>
-          <div class="metric-label">Aktive Patienten</div>
+          <div class="metric-value"><span>Seit 2008</span></div>
+          <div class="metric-label">Im Medienhafen</div>
         </div>
         <div class="metric-card">
-          <div class="metric-value"><span>7:30–22:00</span></div>
-          <div class="metric-label">Öffnungszeiten Mo–Fr</div>
+          <div class="metric-value"><span>Mo–Fr</span></div>
+          <div class="metric-label">8:00–18:00 Uhr</div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- Stats Banner -->
+<section class="stats-banner">
+  <div class="stats-banner-inner">
+    <div class="stat-box">
+      <div class="stat-icon">📍</div>
+      <div class="stat-value">Top-Lage</div>
+      <div class="stat-label">Medienhafen Düsseldorf</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-icon">⭐</div>
+      <div class="stat-value">4.7★</div>
+      <div class="stat-label">Google Bewertung</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-icon">🔬</div>
+      <div class="stat-value">Modernste</div>
+      <div class="stat-label">Digitale Technik</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-icon">🏥</div>
+      <div class="stat-value">Seit 2008</div>
+      <div class="stat-label">Erfahrung & Kompetenz</div>
     </div>
   </div>
 </section>
@@ -290,29 +462,81 @@
 <section class="services" id="leistungen">
   <div class="services-header">
     <span class="section-chip">Leistungen</span>
-    <h2 class="section-title">Was wir für Sie leisten</h2>
-    <p class="section-sub">Modernste digitale Zahnarztpraxis im Medienhafen – papierlos, pünktlich, Mo–Fr bis 22 Uhr geöffnet.</p>
+    <h2 class="section-title">Unser Behandlungsspektrum</h2>
+    <p class="section-sub">Umfassende Zahnmedizin unter einem Dach – von Implantologie bis Prophylaxe, digital geplant und schonend umgesetzt.</p>
   </div>
   <div class="services-grid">
     <div class="service-card">
-      <div class="service-icon">🎯</div>
-      <h3>Online-Buchung & Formulare</h3>
-      <p>Termin buchen, Anamnesebogen ausfüllen, Dokumente hochladen – alles digital, bevor Sie in die Praxis kommen.</p>
+      <div class="service-icon">🦷</div>
+      <h3>Implantologie</h3>
+      <p>Navigierte Implantation mit 3D-Planung für höchste Präzision. Festsitzender Zahnersatz, der sich wie eigene Zähne anfühlt.</p>
     </div>
     <div class="service-card">
-      <div class="service-icon">📈</div>
-      <h3>Patient Portal</h3>
-      <p>Ihr persönlicher Bereich: Befunde, Röntgenbilder, Behandlungspläne und Rechnungen – sicher online abrufbar.</p>
+      <div class="service-icon">🩺</div>
+      <h3>Parodontologie</h3>
+      <p>Schonende Zahnfleischbehandlung mit moderner Laser-Technologie. Wir stoppen Parodontitis nachhaltig und erhalten Ihre Zähne.</p>
     </div>
     <div class="service-card">
-      <div class="service-icon">⚙️</div>
-      <h3>Prophylaxe & Vorsorge</h3>
-      <p>Individuelle Prophylaxe-Programme mit digitaler Erinnerungsfunktion – nie wieder einen Vorsorge-Termin vergessen.</p>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">🤝</div>
+      <div class="service-icon">✨</div>
       <h3>Ästhetische Zahnmedizin</h3>
-      <p>Bleaching, Veneers und moderne Kieferorthopädie – digitale Planung für vorhersagbare Ergebnisse.</p>
+      <p>Veneers, Bleaching und unsichtbare Korrekturen – für ein Lächeln, das natürlich wirkt und Selbstbewusstsein schenkt.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🛡️</div>
+      <h3>Prophylaxe & Vorsorge</h3>
+      <p>Individuelle Prophylaxe-Programme mit professioneller Zahnreinigung. Vorsorge statt Nachsorge – für langfristig gesunde Zähne.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Ueber die Praxis -->
+<section class="about-praxis" id="praxis">
+  <div class="about-praxis-inner">
+    <div class="about-text">
+      <span class="section-chip">Unsere Praxis</span>
+      <h2>Über die Zahnarztpraxen im Stadttor</h2>
+      <p>Seit 2008 stehen die Zahnarztpraxen im Stadttor für moderne, patientenorientierte Zahnmedizin im Herzen des Düsseldorfer Medienhafens. In einem der markantesten Gebäude der Stadt – dem Stadttor – bieten wir Ihnen ein Praxiserlebnis, das Funktionalität und Ästhetik verbindet.</p>
+      <p>Unser Schwerpunkt liegt auf Implantologie, Parodontologie und ästhetischer Zahnmedizin. Dabei setzen wir konsequent auf digitale Diagnostik und computergestützte Behandlungsplanung. Jede Therapie wird individuell auf Ihre Bedürfnisse abgestimmt – denn kein Gebiss ist wie das andere.</p>
+      <p>Die Lage im Medienhafen macht uns nicht nur gut erreichbar, sondern bietet Ihnen auch ein angenehmes Umfeld: helle Behandlungsräume mit Blick über den Hafen, kurze Wartezeiten und ein Team, das Zahnmedizin mit Leidenschaft lebt.</p>
+      <p>Ob Sie einen einzelnen Zahn ersetzen lassen möchten, eine umfangreiche Parodontose-Behandlung benötigen oder einfach eine zuverlässige Prophylaxe suchen – bei uns erhalten Sie alles aus einer Hand. Wir koordinieren Ihre Behandlung praxisintern, sodass Sie nicht zwischen verschiedenen Spezialisten pendeln müssen.</p>
+    </div>
+    <div class="about-features">
+      <h3>Warum Patienten uns wählen</h3>
+      <div class="about-feature-item">
+        <div class="about-feature-icon">📍</div>
+        <div class="about-feature-text">
+          Ikonische Lage im Stadttor
+          <span>Düsseldorfer Medienhafen – modern, zentral, gut erreichbar</span>
+        </div>
+      </div>
+      <div class="about-feature-item">
+        <div class="about-feature-icon">🔬</div>
+        <div class="about-feature-text">
+          Digitale Diagnostik & 3D-Planung
+          <span>DVT, digitale Abformung und navigierte Chirurgie</span>
+        </div>
+      </div>
+      <div class="about-feature-item">
+        <div class="about-feature-icon">👥</div>
+        <div class="about-feature-text">
+          Erfahrenes Fachärzte-Team
+          <span>Spezialisten für Implantologie und Parodontologie</span>
+        </div>
+      </div>
+      <div class="about-feature-item">
+        <div class="about-feature-icon">⏰</div>
+        <div class="about-feature-text">
+          Flexible Sprechzeiten
+          <span>Mo–Do 8–18 Uhr, Fr 8–13 Uhr</span>
+        </div>
+      </div>
+      <div class="about-feature-item">
+        <div class="about-feature-icon">🤝</div>
+        <div class="about-feature-text">
+          Ganzheitliche Betreuung
+          <span>Von der Erstberatung bis zur langfristigen Nachsorge</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -320,67 +544,129 @@
 <section class="steps" id="ablauf">
   <div class="steps-inner">
     <div>
-      <span class="section-chip">Unser Vorgehen</span>
-      <h2 class="section-title" style="margin-bottom:2rem;">Ihr digitaler Praxisbesuch – in 4 Schritten</h2>
+      <span class="section-chip">Ihr Besuch</span>
+      <h2 class="section-title" style="margin-bottom:2rem;">So läuft Ihr erster Termin bei uns ab</h2>
       <div class="steps-grid">
         <div class="step-item">
           <div class="step-num-badge">1</div>
           <div class="step-item-text">
-            <h4>Online buchen – in 60 Sekunden</h4>
-            <p>Termin reservieren, Anamnese digital ausfüllen – alles vor dem Besuch. Kein Wartezimmer-Stress.</p>
+            <h4>Termin vereinbaren</h4>
+            <p>Rufen Sie uns an unter 0211 / 303 77 39 oder schreiben Sie uns eine E-Mail. Wir finden zeitnah einen passenden Termin.</p>
           </div>
         </div>
         <div class="step-item">
           <div class="step-num-badge">2</div>
           <div class="step-item-text">
-            <h4>Papierloser Ankunfts-Check-in</h4>
-            <p>Ihre Daten sind bereits digital hinterlegt. Einfach ankommen – kein Ausfüllen mehr vor Ort nötig.</p>
+            <h4>Erstuntersuchung & Diagnostik</h4>
+            <p>Gründliche Befundaufnahme mit digitaler Röntgendiagnostik und 3D-Scan. Wir nehmen uns Zeit für eine ausführliche Beratung.</p>
           </div>
         </div>
         <div class="step-item">
           <div class="step-num-badge">3</div>
           <div class="step-item-text">
-            <h4>Behandlung & digitale Doku</h4>
-            <p>Modernste Methoden mit sofortiger Dokumentation – Befunde, Röntgen und Pläne in Ihrem Portal.</p>
+            <h4>Individueller Behandlungsplan</h4>
+            <p>Sie erhalten einen transparenten Plan mit allen Optionen, Kosten und Zeitrahmen – verständlich erklärt, ohne Fachjargon.</p>
           </div>
         </div>
         <div class="step-item">
           <div class="step-num-badge">4</div>
           <div class="step-item-text">
-            <h4>Follow-up & Recall-Erinnerung</h4>
-            <p>Automatische Erinnerungen, digitale Rezepte und Online-Buchung für den nächsten Termin.</p>
+            <h4>Schonende Behandlung & Nachsorge</h4>
+            <p>Modernste Technik für minimal-invasive Eingriffe. Regelmäßige Kontrollen und Prophylaxe sichern den langfristigen Erfolg.</p>
           </div>
         </div>
       </div>
     </div>
     <div class="steps-visual">
-      <h3>Patienten nutzen unser Online-Portal</h3>
-      <p class="tagline">Digital first – weil Ihre Zeit und Ihre Gesundheit es wert sind.</p>
+      <h3>Qualität, der Sie vertrauen können</h3>
+      <p class="tagline">Über 15 Jahre Erfahrung im Düsseldorfer Medienhafen.</p>
       <div class="highlight-box">
-        <strong>Papierlose Praxis</strong>
-        <p>Keine langen Formulare im Wartezimmer – alles digital, sicher und DSGVO-konform.</p>
+        <strong>Digitale Präzision</strong>
+        <p>3D-Diagnostik und computernavigierte Implantologie für vorhersagbare Ergebnisse.</p>
       </div>
       <div class="highlight-box">
-        <strong>Ihr Patient Portal</strong>
-        <p>Sicherer Online-Zugang zu all Ihren Behandlungsdaten – jederzeit und von überall.</p>
+        <strong>Transparente Beratung</strong>
+        <p>Verständliche Behandlungspläne, faire Kostenkalkulation und keine versteckten Überraschungen.</p>
       </div>
       <div class="highlight-box">
-        <strong>Lange Öffnungszeiten</strong>
-        <p>Mo–Fr bis 22:00 Uhr und Sa bis 19:00 Uhr – Düsseldorfs flexibelste Zahnarztpraxis.</p>
+        <strong>Persönliche Betreuung</strong>
+        <p>Feste Ansprechpartner, kurze Wartezeiten und ein Team, das sich an Sie erinnert.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- Behandlungsphilosophie -->
+<section class="philosophy" style="padding: 5rem 2rem; background: var(--dark); position: relative; overflow: hidden;">
+  <div style="position: absolute; top: -100px; right: -100px; width: 500px; height: 500px; border-radius: 50%; background: radial-gradient(circle, rgba(14,138,123,0.1) 0%, transparent 70%);"></div>
+  <div style="max-width: 900px; margin: 0 auto; text-align: center; position: relative; z-index: 1;">
+    <span class="section-chip" style="background: rgba(14,138,123,0.15); color: var(--secondary);">Unsere Philosophie</span>
+    <h2 style="font-size: 2.2rem; font-weight: 800; color: white; margin-bottom: 1.5rem; line-height: 1.3;">Zahnmedizin, die den Menschen<br>in den Mittelpunkt stellt</h2>
+    <p style="color: rgba(255,255,255,0.65); font-size: 1rem; line-height: 1.8; margin-bottom: 2rem;">Wir glauben, dass gute Zahnmedizin mehr ist als technische Perfektion. Es geht um Vertrauen, Transparenz und das Gefühl, in guten Händen zu sein. Deshalb nehmen wir uns Zeit für jeden Patienten – für eine ehrliche Beratung, eine verständliche Erklärung und eine Behandlung, die zu Ihnen passt.</p>
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; text-align: left;">
+      <div style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.8rem;">
+        <div style="font-size: 1.4rem; margin-bottom: 0.8rem;">🔍</div>
+        <h4 style="color: white; font-weight: 700; margin-bottom: 0.5rem; font-size: 0.95rem;">Ehrliche Diagnostik</h4>
+        <p style="color: rgba(255,255,255,0.55); font-size: 0.85rem; line-height: 1.7;">Wir behandeln nur, was behandelt werden muss. Keine unnötigen Eingriffe, keine übertriebenen Therapievorschläge.</p>
+      </div>
+      <div style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.8rem;">
+        <div style="font-size: 1.4rem; margin-bottom: 0.8rem;">💬</div>
+        <h4 style="color: white; font-weight: 700; margin-bottom: 0.5rem; font-size: 0.95rem;">Klare Kommunikation</h4>
+        <p style="color: rgba(255,255,255,0.55); font-size: 0.85rem; line-height: 1.7;">Befunde, Alternativen und Kosten werden verständlich erklärt – bevor eine Entscheidung fällt.</p>
+      </div>
+      <div style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.8rem;">
+        <div style="font-size: 1.4rem; margin-bottom: 0.8rem;">🏆</div>
+        <h4 style="color: white; font-weight: 700; margin-bottom: 0.5rem; font-size: 0.95rem;">Langfristiger Erfolg</h4>
+        <p style="color: rgba(255,255,255,0.55); font-size: 0.85rem; line-height: 1.7;">Unsere Behandlungen sind auf Nachhaltigkeit ausgelegt – für Ergebnisse, die jahrelang halten.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Technologie -->
+<section class="technologie" id="technologie">
+  <div class="technologie-header">
+    <span class="section-chip">Technologie</span>
+    <h2 class="section-title">Technologie & Ausstattung</h2>
+    <p class="section-sub">Investition in modernste Technik bedeutet für Sie: präzisere Diagnostik, schonendere Behandlung, bessere Ergebnisse.</p>
+  </div>
+  <div class="tech-grid">
+    <div class="tech-card">
+      <div class="tech-card-icon">📐</div>
+      <h3>DVT / 3D-Diagnostik</h3>
+      <p>Dreidimensionale Röntgenaufnahmen ermöglichen die exakte Beurteilung von Knochenstruktur, Nervenverlauf und Zahnwurzeln – strahlungsarm und hochauflösend.</p>
+      <span class="tech-card-badge">Digitale Bildgebung</span>
+    </div>
+    <div class="tech-card">
+      <div class="tech-card-icon">🖥️</div>
+      <h3>Digitale Abformung</h3>
+      <p>Kein Abdruck mit Silikonmasse mehr: Der Intraoral-Scanner erstellt einen präzisen 3D-Abdruck Ihres Gebisses in wenigen Minuten – komfortabel und genau.</p>
+      <span class="tech-card-badge">Abdruckfrei</span>
+    </div>
+    <div class="tech-card">
+      <div class="tech-card-icon">🎯</div>
+      <h3>Navigierte Implantologie</h3>
+      <p>Computergestützte Planung und schablonengeführte Implantation sorgen für millimetergenaue Positionierung – minimal-invasiv und sicher.</p>
+      <span class="tech-card-badge">Guided Surgery</span>
+    </div>
+    <div class="tech-card">
+      <div class="tech-card-icon">💡</div>
+      <h3>Laser-Parodontologie</h3>
+      <p>Schmerzarme Zahnfleischbehandlung mit Dental-Laser. Bakterien werden gezielt eliminiert, gesundes Gewebe bleibt geschont – schnellere Heilung, weniger Beschwerden.</p>
+      <span class="tech-card-badge">Minimalinvasiv</span>
     </div>
   </div>
 </section>
 
 <section class="testimonials">
   <div class="testimonials-header">
-    <span class="section-chip">Referenzen</span>
-    <h2 class="section-title">Was Kunden über uns sagen</h2>
+    <span class="section-chip">Patientenstimmen</span>
+    <h2 class="section-title">Was Patienten über uns sagen</h2>
   </div>
   <div class="testimonials-grid">
     <div class="testimonial-card">
       <div class="stars">★★★★★</div>
-      <p>"Das Online-Portal ist fantastisch. Ich kann jederzeit meine Befunde einsehen und Termine buchen – einfach modern."</p>
+      <p>"Mein Implantat wurde perfekt geplant und eingesetzt. Die 3D-Diagnostik hat mir vorab genau gezeigt, wie das Ergebnis aussehen wird. Absolute Empfehlung."</p>
       <div class="testimonial-author">
         <div class="author-avatar">J</div>
         <div>
@@ -391,24 +677,108 @@
     </div>
     <div class="testimonial-card">
       <div class="stars">★★★★★</div>
-      <p>"Endlich eine Praxis, die meine Zeit respektiert. Online anmelden, Formulare ausfüllen – kein Stress im Wartezimmer."</p>
+      <p>"Endlich eine Praxis, die meine Parodontose ernst nimmt. Die Laserbehandlung war nahezu schmerzfrei und das Ergebnis spricht für sich. Mein Zahnfleisch ist deutlich besser."</p>
       <div class="testimonial-author">
         <div class="author-avatar">M</div>
         <div>
           <div class="author-name">Martin G.</div>
-          <div class="author-role">Patient, Düsseldorf</div>
+          <div class="author-role">Patient, Düsseldorf-Oberkassel</div>
         </div>
       </div>
     </div>
     <div class="testimonial-card">
       <div class="stars">★★★★★</div>
-      <p>"Die digitalen Erinnerungen für Vorsorge-Termine sind super! Ich habe seit Jahren keinen Termin mehr vergessen."</p>
+      <p>"Die Lage im Stadttor ist fantastisch, aber das Team ist noch besser. Kompetent, freundlich und immer pünktlich. Ich fahre extra aus Essen hierher."</p>
       <div class="testimonial-author">
         <div class="author-avatar">C</div>
         <div>
           <div class="author-name">Christine M.</div>
-          <div class="author-role">Patientin seit 5 Jahren</div>
+          <div class="author-role">Patientin seit 2015</div>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="faq-header">
+    <span class="section-chip">Häufige Fragen</span>
+    <h2 class="section-title">Häufig gestellte Fragen</h2>
+    <p class="section-sub">Antworten auf die wichtigsten Fragen rund um Ihren Besuch bei uns im Medienhafen.</p>
+  </div>
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+        <span>Gibt es Parkplätze am Medienhafen?</span>
+        <div class="faq-toggle">+</div>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">Ja, direkt im Stadttor-Gebäude befindet sich ein Parkhaus mit über 400 Stellplätzen. Alternativ gibt es weitere Parkmöglichkeiten im Medienhafen. Die Anfahrt über die Parlamentsufer-Straße ist gut ausgeschildert. Auch mit der Straßenbahn (Haltestelle Stadttor) und dem Bus sind wir hervorragend erreichbar.</div>
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+        <span>Wie läuft die erste Untersuchung ab?</span>
+        <div class="faq-toggle">+</div>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">Bei Ihrem ersten Besuch nehmen wir uns rund 45–60 Minuten Zeit. Nach einer gründlichen Anamnese folgt die klinische Untersuchung und bei Bedarf eine digitale Röntgendiagnostik. Anschließend besprechen wir gemeinsam die Befunde und erstellen einen individuellen Behandlungsplan. Bringen Sie bitte Ihre Versichertenkarte und, falls vorhanden, aktuelle Röntgenbilder mit.</div>
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+        <span>Wie ist der Ablauf einer Implantat-Behandlung?</span>
+        <div class="faq-toggle">+</div>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">Eine Implantatversorgung durchläuft mehrere Phasen: Zunächst erstellen wir eine 3D-Diagnostik (DVT) und planen die optimale Position des Implantats am Computer. Der Eingriff selbst erfolgt unter lokaler Betäubung und dauert je nach Umfang 30–90 Minuten. Nach einer Einheilphase von 8–12 Wochen wird die endgültige Krone befestigt. Sie werden über den gesamten Prozess eng begleitet.</div>
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+        <span>Was hilft bei Zahnfleischerkrankungen?</span>
+        <div class="faq-toggle">+</div>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">Parodontitis ist eine der häufigsten Erkrankungen im Mundraum und wird oft unterschätzt. In unserer Praxis behandeln wir Zahnfleischerkrankungen mit modernster Laser-Technologie: schonend, schmerzarm und effektiv. Entscheidend ist eine frühzeitige Diagnose und die regelmäßige Nachsorge. Bei ersten Anzeichen wie Zahnfleischbluten oder Mundgeruch sollten Sie zeitnah einen Termin vereinbaren.</div>
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+        <span>Kann ich Termine auch online buchen?</span>
+        <div class="faq-toggle">+</div>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">Aktuell vereinbaren wir Termine bevorzugt telefonisch unter 0211 / 303 77 39 oder per E-Mail an telefonie@za-stadttor.de. So können wir sicherstellen, dass wir den passenden Termin und die richtige Behandlungszeit für Ihr Anliegen finden. Telefonisch erreichen Sie uns Mo–Do von 8:00 bis 18:00 Uhr und Fr von 8:00 bis 13:00 Uhr.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Zahlen & Fakten -->
+<section style="padding: 4rem 2rem; background: white;">
+  <div style="max-width: 1100px; margin: 0 auto;">
+    <div style="text-align: center; margin-bottom: 3rem;">
+      <span class="section-chip">Auf einen Blick</span>
+      <h2 class="section-title">Zahnarztpraxen im Stadttor – Zahlen & Fakten</h2>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
+      <div style="text-align: center; padding: 1.5rem;">
+        <div style="font-size: 2.5rem; font-weight: 900; background: linear-gradient(135deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">15+</div>
+        <div style="color: #64748b; font-size: 0.85rem; margin-top: 0.3rem;">Jahre Erfahrung</div>
+      </div>
+      <div style="text-align: center; padding: 1.5rem;">
+        <div style="font-size: 2.5rem; font-weight: 900; background: linear-gradient(135deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">4</div>
+        <div style="color: #64748b; font-size: 0.85rem; margin-top: 0.3rem;">Fachbereiche</div>
+      </div>
+      <div style="text-align: center; padding: 1.5rem;">
+        <div style="font-size: 2.5rem; font-weight: 900; background: linear-gradient(135deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">3D</div>
+        <div style="color: #64748b; font-size: 0.85rem; margin-top: 0.3rem;">Digitale Diagnostik</div>
+      </div>
+      <div style="text-align: center; padding: 1.5rem;">
+        <div style="font-size: 2.5rem; font-weight: 900; background: linear-gradient(135deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">4.7★</div>
+        <div style="color: #64748b; font-size: 0.85rem; margin-top: 0.3rem;">Google Bewertung</div>
       </div>
     </div>
   </div>
@@ -416,9 +786,53 @@
 
 <section class="cta-section">
   <div class="cta-blob"></div>
-  <h2>Termin buchen – auch noch um 21 Uhr</h2>
-  <p>Moderne Zahnmedizin im Medienhafen: Online buchen, digital ankommen, pünktlich behandelt werden.</p>
+  <h2>Vereinbaren Sie Ihren Termin</h2>
+  <p>Modernste Zahnmedizin im Düsseldorfer Medienhafen. Rufen Sie uns an oder schreiben Sie uns.</p>
   <a href="#kontakt" class="btn-gradient">Jetzt Termin buchen →</a>
+</section>
+
+<!-- So finden Sie uns -->
+<section class="directions" id="anfahrt">
+  <div class="directions-inner">
+    <span class="section-chip">Anfahrt</span>
+    <h2 class="section-title">So finden Sie uns</h2>
+    <p class="section-sub">Zahnarztpraxen im Stadttor – Stadttor 1, 40219 Düsseldorf, direkt im Düsseldorfer Medienhafen.</p>
+    <div class="directions-content">
+      <div class="directions-map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2498.6!2d6.7584!3d51.2167!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b8ca1b5c4e2c7d%3A0x0!2sStadttor+1%2C+40219+D%C3%BCsseldorf!5e0!3m2!1sde!2sde!4v1" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <div class="directions-info">
+        <div class="direction-card">
+          <div class="direction-card-icon">🚗</div>
+          <div>
+            <h4>Mit dem Auto</h4>
+            <p>Über die A46/B1 Richtung Medienhafen. Parkhaus direkt im Stadttor-Gebäude mit über 400 Stellplätzen. Einfahrt über die Straße Am Handelshafen.</p>
+          </div>
+        </div>
+        <div class="direction-card">
+          <div class="direction-card-icon">🚊</div>
+          <div>
+            <h4>Mit Bus & Bahn</h4>
+            <p>Straßenbahn-Linien 704, 709 bis Haltestelle "Stadttor". Von dort sind es nur 2 Gehminuten. Vom Hauptbahnhof erreichen Sie uns in ca. 10 Minuten.</p>
+          </div>
+        </div>
+        <div class="direction-card">
+          <div class="direction-card-icon">🚶</div>
+          <div>
+            <h4>Zu Fuß vom Medienhafen</h4>
+            <p>Das Stadttor-Gebäude ist das markante Torgebäude am Eingang des Medienhafens. Unsere Praxis befindet sich im Gebäude – einfach dem Wegweiser folgen.</p>
+          </div>
+        </div>
+        <div class="direction-card">
+          <div class="direction-card-icon">♿</div>
+          <div>
+            <h4>Barrierefreier Zugang</h4>
+            <p>Das Stadttor-Gebäude ist vollständig barrierefrei zugänglich. Aufzüge und breite Durchgänge sorgen für einen komfortablen Besuch – auch mit Rollstuhl oder Kinderwagen.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <section class="contact" id="kontakt">
@@ -436,7 +850,7 @@
         <div class="contact-icon">📞</div>
         <div class="contact-item-text">
           <div class="label">Telefon</div>
-          <div class="value">+49 211 730 69 400</div>
+          <div class="value">0211 / 303 77 39</div>
         </div>
       </div>
       <div class="contact-item">
@@ -449,8 +863,8 @@
       <div class="contact-item">
         <div class="contact-icon">🕐</div>
         <div class="contact-item-text">
-          <div class="label">Erreichbarkeit</div>
-          <div class="value">Mo–Fr 7:30–22:00, Sa 9:00–19:00 Uhr</div>
+          <div class="label">Öffnungszeiten</div>
+          <div class="value">Mo–Do 8:00–18:00, Fr 8:00–13:00 Uhr</div>
         </div>
       </div>
     </div>
@@ -469,10 +883,11 @@
         <div class="form-group">
           <select>
             <option value="">Ihr Anliegen</option>
-            <option>Online-Buchung & Formulare</option>
-            <option>Patient Portal</option>
-            <option>Prophylaxe & Vorsorge</option>
+            <option>Implantologie</option>
+            <option>Parodontologie</option>
             <option>Ästhetische Zahnmedizin</option>
+            <option>Prophylaxe & Vorsorge</option>
+            <option>Erstuntersuchung</option>
             <option>Anderes Thema</option>
           </select>
         </div>

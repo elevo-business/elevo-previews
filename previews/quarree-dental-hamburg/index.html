@@ -1,486 +1,951 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quarree Dental – Ihr Zahnarzt in Hamburg-Wandsbek seit 30 Jahren</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quarree Dental Hamburg – Zahnarzt im Quarree-Center Wandsbek</title>
   <style>
     :root {
-      --primary: #1A3D5C;
-      --secondary: #4A8FAF;
-      --dark: #0f172a;
-      --mid: #1e293b;
-      --light: #f8fafc;
-      --text: #334155;
+      --primary: #0E7490;
+      --primary-dark: #0c6478;
+      --secondary: #0891B2;
+      --accent: #06B6D4;
+      --light: #F0F9FF;
+      --gray-50: #F8FAFC;
+      --gray-100: #F1F5F9;
+      --gray-200: #E2E8F0;
+      --gray-400: #94A3B8;
+      --gray-600: #475569;
+      --gray-700: #334155;
+      --gray-900: #0F172A;
+      --white: #FFFFFF;
+      --font: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      --radius: 12px;
+      --shadow: 0 4px 24px rgba(14,116,144,0.12);
     }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; color: var(--text); }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font); color: var(--gray-700); background: var(--white); line-height: 1.7; font-size: 16px; }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+    .container { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
 
     nav {
-      position: fixed; top: 0; width: 100%; z-index: 100;
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
       background: rgba(255,255,255,0.97); backdrop-filter: blur(10px);
-      padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center;
-      border-bottom: 1px solid rgba(0,0,0,0.06);
+      border-bottom: 1px solid var(--gray-200); height: 68px; display: flex; align-items: center;
     }
-    .logo-area { display: flex; align-items: center; gap: 0.5rem; }
-    .logo-img { height: 38px; max-width: 180px; object-fit: contain; display: block; }
-    .logo-fallback { display: flex; align-items: center; gap: 0.5rem; }
-    .logo-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--primary); }
-    .logo-text { font-size: 1.2rem; font-weight: 700; color: #0f172a; }
-    .nav-links { display: flex; gap: 2rem; list-style: none; }
-    .nav-links a { text-decoration: none; color: var(--text); font-size: 0.9rem; transition: color 0.2s; }
+    .nav-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      width: 100%; max-width: 1160px; margin: 0 auto; padding: 0 24px;
+    }
+    .logo { display: flex; align-items: center; gap: 8px; font-size: 1.25rem; font-weight: 700; color: var(--gray-900); }
+    .logo-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--primary); flex-shrink: 0; }
+    .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+    .nav-links a { font-size: 0.9rem; font-weight: 500; color: var(--gray-600); transition: color 0.2s; }
     .nav-links a:hover { color: var(--primary); }
-    .nav-cta {
-      background: var(--primary); color: white; padding: 0.55rem 1.3rem;
-      border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 0.875rem;
-      transition: box-shadow 0.2s, transform 0.2s;
-    }
-    .nav-cta:hover { box-shadow: 0 4px 15px rgba(26,61,92,0.4); transform: translateY(-1px); }
 
-    .hero {
-      min-height: 100vh; padding-top: 80px;
-      background: var(--dark);
-      display: flex; align-items: center;
-      position: relative; overflow: hidden;
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 10px 22px; border-radius: 8px; font-size: 0.9rem; font-weight: 600;
+      cursor: pointer; transition: all 0.2s; border: none; font-family: var(--font);
     }
-    .hero-blob {
-      position: absolute; top: -200px; right: -200px;
-      width: 800px; height: 800px; border-radius: 50%;
-      background: radial-gradient(circle, rgba(26,61,92,0.12) 0%, transparent 70%);
+    .btn-primary { background: var(--primary); color: var(--white); }
+    .btn-primary:hover { background: var(--primary-dark); transform: translateY(-1px); box-shadow: 0 4px 16px rgba(14,116,144,0.35); }
+    .btn-outline { background: transparent; color: var(--white); border: 2px solid rgba(255,255,255,0.5); }
+    .btn-outline:hover { background: rgba(255,255,255,0.1); border-color: var(--white); }
+
+    #hero {
+      background: linear-gradient(135deg, #083d4f 0%, #0E7490 55%, #0891B2 100%);
+      padding: 120px 0 80px; overflow: hidden; position: relative;
     }
-    .hero-blob2 {
-      position: absolute; bottom: -300px; left: -100px;
-      width: 600px; height: 600px; border-radius: 50%;
-      background: radial-gradient(circle, rgba(74,143,175,0.08) 0%, transparent 70%);
+    #hero::before {
+      content: ''; position: absolute; top: -120px; right: -120px;
+      width: 560px; height: 560px; border-radius: 50%;
+      background: rgba(255,255,255,0.04); pointer-events: none;
     }
-    .hero-inner { max-width: 1200px; margin: 0 auto; padding: 4rem 2rem; position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
-    .hero-pill {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      border: 1px solid rgba(74,143,175,0.4); color: #4A8FAF;
-      background: rgba(26,61,92,0.08);
-      padding: 0.4rem 1rem; border-radius: 50px; font-size: 0.8rem; font-weight: 600;
-      margin-bottom: 1.5rem;
+    .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; position: relative; z-index: 1; }
+    .trust-pill {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 100px; padding: 6px 16px; font-size: 0.8rem; color: rgba(255,255,255,0.9); margin-bottom: 20px;
     }
-    .hero h1 { font-size: 3rem; font-weight: 800; color: white; line-height: 1.15; margin-bottom: 1.5rem; }
-    .hero h1 .gradient-text {
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-    }
-    .hero p { color: rgba(255,255,255,0.65); font-size: 1.1rem; line-height: 1.75; margin-bottom: 2.5rem; }
-    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
-    .btn-gradient {
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      color: white; padding: 0.9rem 2rem; border-radius: 50px;
-      text-decoration: none; font-weight: 700; font-size: 0.95rem;
-      box-shadow: 0 4px 15px rgba(26,61,92,0.4);
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .btn-gradient:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(26,61,92,0.5); }
-    .btn-ghost {
-      color: rgba(255,255,255,0.8); padding: 0.9rem 2rem; border-radius: 50px;
-      text-decoration: none; font-weight: 600; font-size: 0.95rem;
-      border: 1px solid rgba(255,255,255,0.2); transition: border-color 0.2s;
-    }
-    .btn-ghost:hover { border-color: rgba(255,255,255,0.5); }
-    .hero-card-grid { display: flex; flex-direction: column; gap: 1rem; }
+    .trust-pill-dot { width: 7px; height: 7px; border-radius: 50%; background: #4ADE80; animation: glow 2s infinite; }
+    @keyframes glow { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.7; transform: scale(1.3); } }
+    .hero-headline { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; color: var(--white); line-height: 1.2; margin-bottom: 20px; }
+    .hero-headline span { color: var(--accent); }
+    .hero-desc { font-size: 1.05rem; color: rgba(255,255,255,0.8); margin-bottom: 32px; max-width: 480px; }
+    .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 40px; }
+    .metric-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
     .metric-card {
-      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 12px; padding: 1.5rem; backdrop-filter: blur(10px);
-      transition: background 0.2s;
+      background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 10px; padding: 16px 18px;
     }
-    .metric-card:hover { background: rgba(255,255,255,0.09); }
-    .metric-value { font-size: 2.5rem; font-weight: 900; color: white; }
-    .metric-value span {
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    .metric-value { font-size: 1.6rem; font-weight: 800; color: var(--white); line-height: 1; }
+    .metric-label { font-size: 0.78rem; color: rgba(255,255,255,0.6); margin-top: 4px; }
+    .hero-image-wrap { position: relative; }
+    .hero-img { width: 100%; height: 420px; object-fit: cover; border-radius: 16px; box-shadow: 0 24px 64px rgba(0,0,0,0.4); }
+    .hero-badge {
+      position: absolute; bottom: -20px; left: 50%; transform: translateX(-50%);
+      background: var(--white); border-radius: 12px; padding: 14px 24px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.2); display: flex; align-items: center; gap: 12px; white-space: nowrap;
     }
-    .metric-label { color: rgba(255,255,255,0.55); font-size: 0.85rem; margin-top: 0.2rem; }
-    .metric-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-    .hero-img-container {
-      border-radius: 16px; overflow: hidden;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
-      margin-bottom: 1rem; position: relative;
-    }
-    .hero-img-container img {
-      width: 100%; height: 220px; object-fit: cover; display: block;
-      filter: brightness(0.88);
-    }
-    .hero-img-placeholder {
-      width: 100%; height: 220px; display: flex; align-items: center; justify-content: center;
-      background: linear-gradient(135deg, rgba(26,61,92,0.4), rgba(74,143,175,0.2));
-      font-size: 3rem;
-    }
+    .badge-stars { color: #F59E0B; font-size: 1rem; }
+    .badge-text strong { display: block; font-size: 0.9rem; color: var(--gray-900); }
+    .badge-text span { font-size: 0.75rem; color: var(--gray-400); }
 
-    .services { padding: 6rem 2rem; background: var(--light); }
-    .section-chip {
-      display: inline-block; background: rgba(26,61,92,0.1); color: var(--primary);
-      padding: 0.3rem 0.9rem; border-radius: 50px; font-size: 0.8rem; font-weight: 700;
-      margin-bottom: 1rem;
+    #trust-bar {
+      background: var(--gray-100); border-bottom: 1px solid var(--gray-200);
+      padding: 48px 0; margin-top: 20px;
     }
-    .section-title { font-size: 2.2rem; font-weight: 800; color: var(--dark); margin-bottom: 0.8rem; }
-    .section-sub { color: #64748b; font-size: 1rem; max-width: 500px; }
-    .services-header { max-width: 1100px; margin: 0 auto 3rem; }
-    .services-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; }
+    .trust-bar-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
+    .trust-bar-item { text-align: center; padding: 16px 24px; border-right: 1px solid var(--gray-200); }
+    .trust-bar-item:last-child { border-right: none; }
+    .trust-num { font-size: 2.2rem; font-weight: 800; color: var(--primary); display: block; }
+    .trust-label { font-size: 0.82rem; color: var(--gray-600); margin-top: 4px; }
+
+    section { padding: 88px 0; }
+    .section-tag {
+      display: inline-block; background: var(--light); color: var(--primary);
+      font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 4px 14px; border-radius: 100px; margin-bottom: 14px;
+    }
+    .section-title { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; color: var(--gray-900); line-height: 1.25; margin-bottom: 16px; }
+    .section-sub { font-size: 1rem; color: var(--gray-600); max-width: 560px; }
+    .section-header { margin-bottom: 48px; }
+
+    #about { background: var(--white); }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+    .about-text p { color: var(--gray-600); margin-bottom: 20px; font-size: 0.97rem; line-height: 1.75; }
+    .about-highlights { display: flex; flex-direction: column; gap: 14px; }
+    .highlight-item {
+      display: flex; gap: 14px; align-items: flex-start;
+      background: var(--gray-50); border-radius: 10px; padding: 16px 18px;
+      border: 1px solid var(--gray-200);
+    }
+    .highlight-icon { font-size: 1.4rem; flex-shrink: 0; margin-top: 1px; }
+    .highlight-content strong { display: block; font-size: 0.9rem; color: var(--gray-900); margin-bottom: 3px; font-weight: 700; }
+    .highlight-content span { font-size: 0.83rem; color: var(--gray-600); }
+
+    #services { background: var(--gray-50); }
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
     .service-card {
-      background: white; border-radius: 16px; padding: 2rem;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 15px rgba(0,0,0,0.04);
-      transition: transform 0.2s, box-shadow 0.2s; position: relative; overflow: hidden;
+      background: var(--white); border-radius: var(--radius); padding: 28px 24px;
+      border: 1px solid var(--gray-200); transition: all 0.25s; position: relative; overflow: hidden;
     }
-    .service-card::after {
-      content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
-      background: linear-gradient(90deg, var(--primary), var(--secondary));
-      transform: scaleX(0); transition: transform 0.3s; transform-origin: left;
+    .service-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--primary), var(--accent)); opacity: 0; transition: opacity 0.25s;
     }
-    .service-card:hover { transform: translateY(-4px); box-shadow: 0 4px 6px rgba(0,0,0,0.06), 0 10px 30px rgba(0,0,0,0.1); }
-    .service-card:hover::after { transform: scaleX(1); }
-    .service-icon {
-      width: 52px; height: 52px; border-radius: 12px;
-      background: linear-gradient(135deg, rgba(26,61,92,0.1), rgba(74,143,175,0.1));
+    .service-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); border-color: transparent; }
+    .service-card:hover::before { opacity: 1; }
+    .service-icon { font-size: 2rem; margin-bottom: 14px; }
+    .service-title { font-size: 1rem; font-weight: 700; color: var(--gray-900); margin-bottom: 10px; }
+    .service-price {
+      display: inline-block; background: var(--light); color: var(--primary);
+      font-size: 0.78rem; font-weight: 700; padding: 3px 10px; border-radius: 100px; margin-bottom: 12px;
+    }
+    .service-desc { font-size: 0.88rem; color: var(--gray-600); line-height: 1.7; }
+
+    #process { background: linear-gradient(135deg, #083d4f 0%, #0E7490 100%); padding: 88px 0; }
+    #process .section-title { color: var(--white); }
+    #process .section-tag { background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.9); }
+    #process .section-sub { color: rgba(255,255,255,0.7); }
+    .process-steps {
+      display: grid; grid-template-columns: repeat(5, 1fr);
+      position: relative; margin-top: 48px;
+    }
+    .process-steps::before {
+      content: ''; position: absolute; top: 27px; left: 10%; right: 10%;
+      height: 2px; background: rgba(255,255,255,0.18); z-index: 0;
+    }
+    .process-step { text-align: center; padding: 0 10px; position: relative; z-index: 1; }
+    .step-num {
+      width: 56px; height: 56px; border-radius: 50%;
+      background: rgba(255,255,255,0.1); border: 2px solid rgba(255,255,255,0.25);
       display: flex; align-items: center; justify-content: center;
-      font-size: 1.5rem; margin-bottom: 1.2rem;
+      font-size: 1.2rem; font-weight: 800; color: var(--white); margin: 0 auto 16px;
     }
-    .service-card h3 { font-size: 1rem; font-weight: 700; color: var(--dark); margin-bottom: 0.6rem; }
-    .service-card p { color: #64748b; font-size: 0.875rem; line-height: 1.7; }
+    .process-step.active .step-num {
+      background: var(--white); color: var(--primary); border-color: var(--white);
+      box-shadow: 0 0 0 6px rgba(255,255,255,0.15);
+    }
+    .step-title { font-size: 0.88rem; font-weight: 700; color: var(--white); margin-bottom: 8px; }
+    .step-desc { font-size: 0.78rem; color: rgba(255,255,255,0.62); line-height: 1.55; }
 
-    .steps { padding: 6rem 2rem; background: white; }
-    .steps-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
-    .steps-grid { display: flex; flex-direction: column; gap: 1.5rem; }
-    .step-item { display: flex; gap: 1.2rem; align-items: flex-start; }
-    .step-num-badge {
-      width: 40px; height: 40px; border-radius: 10px; flex-shrink: 0;
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      color: white; display: flex; align-items: center; justify-content: center;
-      font-weight: 800; font-size: 0.9rem;
+    #team { background: var(--white); }
+    .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+    .team-card {
+      background: var(--gray-50); border-radius: var(--radius); padding: 32px 24px;
+      text-align: center; border: 1px solid var(--gray-200); transition: all 0.25s;
     }
-    .step-item-text h4 { font-weight: 700; color: var(--dark); margin-bottom: 0.3rem; }
-    .step-item-text p { color: #64748b; font-size: 0.875rem; line-height: 1.6; }
-    .steps-visual {
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      border-radius: 20px; padding: 3rem; color: white;
+    .team-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+    .team-avatar {
+      width: 72px; height: 72px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem; font-weight: 800; color: var(--white);
+      margin: 0 auto 16px; box-shadow: 0 6px 20px rgba(14,116,144,0.3);
     }
-    .steps-visual h3 { font-size: 1.5rem; font-weight: 800; margin-bottom: 0.5rem; }
-    .steps-visual .tagline { opacity: 0.85; font-size: 0.95rem; margin-bottom: 2rem; }
-    .highlight-box { background: rgba(255,255,255,0.15); border-radius: 10px; padding: 1.2rem; margin-bottom: 1rem; }
-    .highlight-box strong { font-size: 1.1rem; }
-    .highlight-box p { opacity: 0.85; font-size: 0.875rem; margin-top: 0.2rem; }
+    .team-name { font-size: 1.05rem; font-weight: 700; color: var(--gray-900); margin-bottom: 4px; }
+    .team-role { font-size: 0.82rem; color: var(--primary); font-weight: 600; margin-bottom: 14px; }
+    .team-quote {
+      font-size: 0.85rem; color: var(--gray-600); font-style: italic; line-height: 1.65;
+      border-top: 1px solid var(--gray-200); padding-top: 16px;
+    }
 
-    .testimonials { padding: 6rem 2rem; background: var(--light); }
-    .testimonials-header { max-width: 1000px; margin: 0 auto 3rem; }
-    .testimonials-grid { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+    #testimonials { background: var(--gray-50); }
+    .testimonials-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
     .testimonial-card {
-      background: white; border-radius: 16px; padding: 2rem;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 15px rgba(0,0,0,0.04);
+      background: var(--white); border-radius: var(--radius); padding: 28px;
+      border: 1px solid var(--gray-200); position: relative;
     }
-    .stars { font-size: 1rem; margin-bottom: 1rem; color: #f59e0b; }
-    .testimonial-card p { color: #475569; font-size: 0.9rem; line-height: 1.7; font-style: italic; }
-    .testimonial-author { display: flex; gap: 0.8rem; align-items: center; margin-top: 1.2rem; padding-top: 1rem; border-top: 1px solid #f1f5f9; }
-    .author-avatar {
+    .testimonial-card::before {
+      content: '\201C'; position: absolute; top: 12px; right: 20px;
+      font-size: 4.5rem; color: var(--gray-200); font-family: Georgia, serif; line-height: 1; pointer-events: none;
+    }
+    .testi-stars { color: #F59E0B; font-size: 0.85rem; margin-bottom: 12px; }
+    .testi-text { font-size: 0.9rem; color: var(--gray-600); line-height: 1.75; margin-bottom: 18px; }
+    .testi-author { display: flex; align-items: center; gap: 10px; }
+    .testi-initials {
       width: 40px; height: 40px; border-radius: 50%;
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      color: white; display: flex; align-items: center; justify-content: center; font-weight: 700;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.75rem; font-weight: 700; color: var(--white); flex-shrink: 0;
     }
-    .author-name { font-weight: 700; font-size: 0.85rem; color: var(--dark); }
-    .author-role { color: #94a3b8; font-size: 0.75rem; }
+    .testi-name { font-size: 0.88rem; font-weight: 700; color: var(--gray-900); }
+    .testi-role { font-size: 0.75rem; color: var(--gray-400); }
 
-    .cta-section { padding: 6rem 2rem; text-align: center; background: var(--dark); position: relative; overflow: hidden; }
-    .cta-blob { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(26,61,92,0.15) 0%, transparent 70%); }
-    .cta-section h2 { font-size: 2.5rem; font-weight: 800; color: white; margin-bottom: 1rem; position: relative; }
-    .cta-section p { color: rgba(255,255,255,0.65); font-size: 1.05rem; margin-bottom: 2.5rem; max-width: 450px; margin-left: auto; margin-right: auto; position: relative; }
-    .cta-section .btn-gradient { position: relative; }
+    #faq { background: var(--white); }
+    .faq-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .faq-item {
+      background: var(--gray-50); border-radius: var(--radius); padding: 24px;
+      border: 1px solid var(--gray-200);
+    }
+    .faq-q {
+      font-size: 0.95rem; font-weight: 700; color: var(--gray-900);
+      margin-bottom: 10px; display: flex; align-items: flex-start; gap: 10px;
+    }
+    .faq-q-icon {
+      width: 22px; height: 22px; border-radius: 50%; background: var(--primary); color: var(--white);
+      font-size: 0.72rem; font-weight: 800; display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; margin-top: 1px;
+    }
+    .faq-a { font-size: 0.87rem; color: var(--gray-600); line-height: 1.72; padding-left: 32px; }
 
-    .contact { padding: 5rem 2rem; background: var(--light); }
-    .contact-inner { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
-    .contact-info h3 { font-size: 1.4rem; font-weight: 800; color: var(--dark); margin-bottom: 1.5rem; }
-    .contact-item { display: flex; gap: 1rem; margin-bottom: 1.2rem; align-items: flex-start; }
+    #contact { background: var(--gray-50); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 56px; align-items: start; }
+    .contact-info h3 { font-size: 1.1rem; font-weight: 700; color: var(--gray-900); margin-bottom: 24px; }
+    .contact-item { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 20px; }
     .contact-icon {
-      width: 42px; height: 42px; border-radius: 10px; flex-shrink: 0;
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      color: white; display: flex; align-items: center; justify-content: center; font-size: 1rem;
+      width: 40px; height: 40px; border-radius: 10px; background: var(--primary); color: var(--white);
+      display: flex; align-items: center; justify-content: center; font-size: 1.05rem; flex-shrink: 0;
     }
-    .contact-item-text .label { font-size: 0.75rem; color: #94a3b8; text-transform: uppercase; letter-spacing: 1px; }
-    .contact-item-text .value { font-weight: 600; color: var(--dark); font-size: 0.9rem; }
-    .contact-form { background: white; border-radius: 16px; padding: 2rem; box-shadow: 0 2px 15px rgba(0,0,0,0.06); }
-    .contact-form h4 { font-weight: 700; color: var(--dark); margin-bottom: 1.5rem; }
-    .form-group { margin-bottom: 1rem; }
-    .form-group input, .form-group textarea, .form-group select {
-      width: 100%; padding: 0.75rem 1rem; border: 2px solid #e2e8f0;
-      border-radius: 10px; font-size: 0.875rem; transition: border-color 0.2s;
-      font-family: inherit; background: #f8fafc;
+    .contact-label {
+      font-size: 0.75rem; font-weight: 600; text-transform: uppercase;
+      letter-spacing: 0.06em; color: var(--gray-400); margin-bottom: 2px;
     }
-    .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
-      outline: none; border-color: var(--primary); background: white;
+    .contact-value { font-size: 0.92rem; color: var(--gray-700); font-weight: 500; line-height: 1.55; }
+    .contact-form {
+      background: var(--white); border-radius: var(--radius); padding: 36px;
+      border: 1px solid var(--gray-200); box-shadow: var(--shadow);
     }
-    .form-group textarea { resize: vertical; min-height: 90px; }
-    .form-submit {
-      width: 100%; background: linear-gradient(135deg, var(--primary), var(--secondary));
-      color: white; padding: 0.85rem; border: none; border-radius: 10px;
-      font-size: 0.95rem; font-weight: 700; cursor: pointer;
+    .contact-form h3 { font-size: 1.1rem; font-weight: 700; color: var(--gray-900); margin-bottom: 24px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .form-group { margin-bottom: 16px; }
+    .form-group label { display: block; font-size: 0.8rem; font-weight: 600; color: var(--gray-700); margin-bottom: 6px; }
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%; padding: 10px 14px; border: 1px solid var(--gray-200); border-radius: 8px;
+      font-size: 0.9rem; font-family: var(--font); color: var(--gray-700); background: var(--gray-50);
+      transition: border-color 0.2s, box-shadow 0.2s; outline: none;
     }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+      border-color: var(--primary); box-shadow: 0 0 0 3px rgba(14,116,144,0.1); background: var(--white);
+    }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+    .form-note { font-size: 0.75rem; color: var(--gray-400); margin-top: 12px; text-align: center; }
 
-    footer { background: var(--dark); color: rgba(255,255,255,0.4); padding: 1.5rem 2rem; text-align: center; font-size: 0.85rem; }
-    footer a { color: inherit; }
-    footer strong { color: rgba(255,255,255,0.7); }
+    footer { background: var(--gray-900); color: rgba(255,255,255,0.55); padding: 40px 0 24px; }
+    .footer-inner {
+      display: flex; align-items: center; justify-content: space-between; gap: 24px;
+      flex-wrap: wrap; padding-bottom: 24px; border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 20px;
+    }
+    .footer-logo { display: flex; align-items: center; gap: 8px; font-size: 1.1rem; font-weight: 700; color: var(--white); }
+    .footer-logo-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--accent); }
+    .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+    .footer-links a { font-size: 0.82rem; color: rgba(255,255,255,0.45); transition: color 0.2s; }
+    .footer-links a:hover { color: var(--white); }
+    .footer-copy { font-size: 0.78rem; text-align: center; }
 
-    .elevo-dot { position: fixed; bottom: 24px; right: 24px; z-index: 9999; width: 52px; height: 52px; border-radius: 50%; background: linear-gradient(135deg, #1E3A5F 0%, #0A0E1A 100%); border: 2px solid rgba(59,130,246,.35); display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(0,0,0,.2), 0 0 12px rgba(59,130,246,.1); cursor: pointer; transition: transform .2s, box-shadow .2s; text-decoration: none; }
-    .elevo-dot:hover { transform: scale(1.1); box-shadow: 0 6px 24px rgba(0,0,0,.3), 0 0 20px rgba(59,130,246,.15); }
+    .elevo-dot { position: fixed; bottom: 28px; right: 28px; z-index: 9999; }
+    .elevo-dot a {
+      display: flex; align-items: center; gap: 8px; background: var(--gray-900); color: var(--white);
+      font-size: 0.75rem; font-weight: 700; padding: 10px 16px; border-radius: 100px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3); transition: all 0.2s; border: 1px solid rgba(255,255,255,0.1);
+    }
+    .elevo-dot a:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,0,0,0.35); }
+    .elevo-pulse { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); animation: glow 2s infinite; }
 
-    @media (max-width: 768px) {
-      .hero-inner { grid-template-columns: 1fr; }
-      .metric-row .metric-card:last-child { display: none; }
-      .hero h1 { font-size: 2rem; }
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+      .about-grid { grid-template-columns: 1fr; }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .process-steps { grid-template-columns: repeat(3, 1fr); gap: 24px; }
+      .process-steps::before { display: none; }
+      .team-grid { grid-template-columns: repeat(2, 1fr); }
+      .contact-grid { grid-template-columns: 1fr; }
+      .trust-bar-grid { grid-template-columns: repeat(2, 1fr); }
+      .trust-bar-item { border-right: none; border-bottom: 1px solid var(--gray-200); }
+      .trust-bar-item:nth-child(odd) { border-right: 1px solid var(--gray-200); }
+      .faq-grid { grid-template-columns: 1fr; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
       .nav-links { display: none; }
-      .steps-inner { grid-template-columns: 1fr; }
-      .contact-inner { grid-template-columns: 1fr; }
+      .services-grid { grid-template-columns: 1fr; }
+      .team-grid { grid-template-columns: 1fr; }
+      .process-steps { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .hero-ctas { flex-direction: column; align-items: flex-start; }
+      .metric-cards { grid-template-columns: repeat(2, 1fr); }
     }
   </style>
 </head>
 <body>
 
+<!-- NAV -->
 <nav>
-  <div class="logo-area">
-    <img src="https://quarree-dental.de/wp-content/uploads/logo-quarree-dental.png" class="logo-img" alt="Quarree Dental" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-    <div class="logo-fallback" style="display:none"><div class="logo-dot"></div><span class="logo-text">Quarree Dental</span></div>
+  <div class="nav-inner">
+    <div class="logo">
+      <span class="logo-dot"></span>
+      Quarree Dental
+    </div>
+    <ul class="nav-links">
+      <li><a href="#about">Über uns</a></li>
+      <li><a href="#services">Leistungen</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#contact">Kontakt</a></li>
+    </ul>
+    <a href="tel:04069458810" class="btn btn-primary">&#9742; 040 69 45 88 10</a>
   </div>
-  <ul class="nav-links">
-    <li><a href="#leistungen">Leistungen</a></li>
-    <li><a href="#ablauf">Vorgehen</a></li>
-    <li><a href="#kontakt">Kontakt</a></li>
-  </ul>
-  <a href="#kontakt" class="nav-cta">Termin buchen</a>
 </nav>
 
-<section class="hero">
-  <div class="hero-blob"></div>
-  <div class="hero-blob2"></div>
-  <div class="hero-inner">
-    <div>
-      <div class="hero-pill">✦ Zahnarztpraxis Hamburg-Wandsbek – 30 Jahre Erfahrung, 5.0★</div>
-      <h1>30 Jahre Vertrauen. Ein Lächeln für alle.<br><span class="gradient-text">Quarree Dental – Ihr Zahnarzt in Hamburg-Wandsbek</span></h1>
-      <p>Seit über 30 Jahren bieten wir moderne Zahnmedizin mit persönlicher Betreuung: Prophylaxe, Implantologie und ästhetische Zahnheilkunde. 5.0★ auf Google – Hamburg-Wandsbeks meistempfohlene Zahnarztpraxis.</p>
-      <div class="hero-actions">
-        <a href="#kontakt" class="btn-gradient">Jetzt Termin buchen →</a>
-        <a href="#leistungen" class="btn-ghost">Mehr erfahren</a>
-      </div>
-    </div>
-    <div class="hero-card-grid">
-      <div class="hero-img-container">
-        <img src="https://quarree-dental.de/wp-content/uploads/header-praxis.jpg" alt="Quarree Dental Hamburg" loading="lazy" onerror="this.parentElement.innerHTML='<div class=\'hero-img-placeholder\'>🦷</div>'">
-      </div>
-      <div class="metric-card">
-        <div class="metric-value"><span>5.0★</span></div>
-        <div class="metric-label">Google Bewertung</div>
-      </div>
-      <div class="metric-row">
-        <div class="metric-card">
-          <div class="metric-value"><span>30+</span></div>
-          <div class="metric-label">Jahre Erfahrung</div>
+<!-- HERO -->
+<section id="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <div class="trust-pill">
+          <span class="trust-pill-dot"></span>
+          Jetzt Termin verfügbar – oft noch heute
         </div>
-        <div class="metric-card">
-          <div class="metric-value"><span>Seit 1998</span></div>
-          <div class="metric-label">Implantologie-Expertise</div>
+        <h1 class="hero-headline">
+          Ihr Zahnarzt<br>
+          <span>direkt im Quarree</span><br>
+          Wandsbek
+        </h1>
+        <p class="hero-desc">
+          Mitten im Quarree-Einkaufszentrum – parken, einkaufen und Zahnarzttermin erledigen in einem.
+          Moderne Zahnmedizin für die ganze Familie, Mo–Sa mit langen Öffnungszeiten.
+        </p>
+        <div class="hero-ctas">
+          <a href="#contact" class="btn btn-primary" style="padding:12px 28px;font-size:0.95rem;">Termin vereinbaren</a>
+          <a href="tel:04069458810" class="btn btn-outline" style="padding:12px 28px;font-size:0.95rem;">040 69 45 88 10</a>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="services" id="leistungen">
-  <div class="services-header">
-    <span class="section-chip">Leistungen</span>
-    <h2 class="section-title">Was wir für Sie leisten</h2>
-    <p class="section-sub">Implantologie, Ästhetik und Prophylaxe – seit 30 Jahren Ihr verlässlicher Partner für gesunde Zähne.</p>
-  </div>
-  <div class="services-grid">
-    <div class="service-card">
-      <div class="service-icon">🔬</div>
-      <h3>Implantologie</h3>
-      <p>Hochwertige Zahnimplantate mit über 25 Jahren Erfahrung – dauerhafter Zahnersatz, der wie echte Zähne aussieht und sich anfühlt.</p>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">✨</div>
-      <h3>Ästhetische Zahnmedizin</h3>
-      <p>Bleaching, Veneers und kosmetische Korrekturen – wir bringen Ihr Lächeln zum Strahlen mit modernsten ästhetischen Verfahren.</p>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">🛡️</div>
-      <h3>Prophylaxe & Zahnreinigung</h3>
-      <p>Professionelle Zahnreinigung und individuelle Vorsorge – für langfristig gesunde Zähne und frischen Atem.</p>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">🦷</div>
-      <h3>Zahnersatz & Prothetik</h3>
-      <p>Kronen, Brücken und Prothesen in höchster Qualität – maßgefertigter Zahnersatz, der perfekt sitzt und natürlich wirkt.</p>
-    </div>
-  </div>
-</section>
-
-<section class="steps" id="ablauf">
-  <div class="steps-inner">
-    <div>
-      <span class="section-chip">Unser Vorgehen</span>
-      <h2 class="section-title" style="margin-bottom:2rem;">Ihre persönliche Behandlung bei Quarree Dental</h2>
-      <div class="steps-grid">
-        <div class="step-item">
-          <div class="step-num-badge">1</div>
-          <div class="step-item-text">
-            <h4>Termin online buchen</h4>
-            <p>Bequem über unser Online-Formular oder telefonisch – wir finden gemeinsam den passenden Termin für Sie.</p>
+        <div class="metric-cards">
+          <div class="metric-card">
+            <div class="metric-value">6.000+</div>
+            <div class="metric-label">Zufriedene Patienten</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-value">4.6 &#9733;</div>
+            <div class="metric-label">Google-Bewertung</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-value">3</div>
+            <div class="metric-label">Erfahrene Zahnärzte</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-value">Seit 2015</div>
+            <div class="metric-label">In Wandsbek</div>
           </div>
         </div>
-        <div class="step-item">
-          <div class="step-num-badge">2</div>
-          <div class="step-item-text">
-            <h4>Persönlicher Befund</h4>
-            <p>Ausführliche Untersuchung und individuelle Beratung – wir erklären alles verständlich und planen gemeinsam Ihre Behandlung.</p>
-          </div>
-        </div>
-        <div class="step-item">
-          <div class="step-num-badge">3</div>
-          <div class="step-item-text">
-            <h4>Vertraute Behandlung</h4>
-            <p>30 Jahre Erfahrung, modernes Equipment und ein eingespieltes Team – Ihre Behandlung in besten Händen.</p>
-          </div>
-        </div>
-        <div class="step-item">
-          <div class="step-num-badge">4</div>
-          <div class="step-item-text">
-            <h4>Langfristige Betreuung</h4>
-            <p>Regelmäßige Kontrolltermine und Prophylaxe sichern den langfristigen Erfolg Ihrer Behandlung.</p>
+      </div>
+      <div class="hero-image-wrap">
+        <img
+          class="hero-img"
+          src="https://images.unsplash.com/photo-1588776814546-1ffbf0e4cc42?w=800&q=80"
+          alt="Quarree Dental Praxisräume"
+          onerror="this.src='https://placehold.co/800x420/0E7490/ffffff?text=Quarree+Dental'"
+        />
+        <div class="hero-badge">
+          <span class="badge-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <div class="badge-text">
+            <strong>4.6 von 5 Sternen</strong>
+            <span>Google-Bewertungen · Hamburg Wandsbek</span>
           </div>
         </div>
       </div>
     </div>
-    <div class="steps-visual">
-      <h3>Patienten empfehlen uns</h3>
-      <p class="tagline">5.0★ auf Google – drei Jahrzehnte Qualität und Vertrauen in Wandsbek.</p>
-      <div class="highlight-box">
-        <strong>30+ Jahre Erfahrung</strong>
-        <p>Seit den 1990er-Jahren behandeln wir Familien in Hamburg-Wandsbek – Generationenvertrauen, das Sie spüren.</p>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<section id="trust-bar">
+  <div class="container">
+    <div class="trust-bar-grid">
+      <div class="trust-bar-item">
+        <span class="trust-num">6.000+</span>
+        <div class="trust-label">Behandelte Patienten</div>
       </div>
-      <div class="highlight-box">
-        <strong>Implantologie seit 1998</strong>
-        <p>Spezialisierte Implantologie-Kompetenz über mehr als 25 Jahre – Hunderte erfolgreiche Implantate sprechen für sich.</p>
+      <div class="trust-bar-item">
+        <span class="trust-num">3</span>
+        <div class="trust-label">Zahnärzte im Team</div>
       </div>
-      <div class="highlight-box">
-        <strong>Persönliche Betreuung</strong>
-        <p>Kein Fließbandbetrieb: Wir nehmen uns Zeit für Sie, erklären jeden Schritt und begleiten Sie dauerhaft.</p>
+      <div class="trust-bar-item">
+        <span class="trust-num">4.6 &#9733;</span>
+        <div class="trust-label">Google Bewertung</div>
+      </div>
+      <div class="trust-bar-item">
+        <span class="trust-num">Wandsbek</span>
+        <div class="trust-label">Im Quarree-Center</div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="testimonials">
-  <div class="testimonials-header">
-    <span class="section-chip">Patientenstimmen</span>
-    <h2 class="section-title">Was Patienten über uns sagen</h2>
-  </div>
-  <div class="testimonials-grid">
-    <div class="testimonial-card">
-      <div class="stars">★★★★★</div>
-      <p>"Seit über 10 Jahren meine Stammpraxis. Das Team ist immer herzlich, die Behandlung top. Die Implantate, die ich vor Jahren bekommen habe, sitzen noch perfekt. Einfach verlässlich!"</p>
-      <div class="testimonial-author">
-        <div class="author-avatar">B</div>
-        <div>
-          <div class="author-name">Birgit H.</div>
-          <div class="author-role">Patientin seit 2014</div>
-        </div>
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text">
+        <div class="section-tag">Über Quarree Dental</div>
+        <h2 class="section-title">Zahnmedizin, die ins Leben passt</h2>
+        <p>
+          Quarree Dental ist keine gewöhnliche Zahnarztpraxis – sie liegt direkt im Quarree-Einkaufszentrum
+          an der Wandsbeker Marktstraße, einem der meistbesuchten Einkaufszentren Hamburgs. Das bedeutet:
+          Sie parken einmal und verbinden Ihren Zahnarzttermin ganz selbstverständlich mit Ihrem Alltag.
+          Einkaufen, Besorgungen erledigen und die Zähne kontrollieren lassen – alles unter einem Dach,
+          ohne separaten Umweg und ohne lästige Parkplatzsuche in der Innenstadt.
+        </p>
+        <p>
+          Dr. Markus Haverkamp gründete die Praxis 2015 mit einer klaren Idee: Zahnmedizin soll nicht
+          als lästige Pflicht erlebt werden, sondern als selbstverständlicher Teil des Tages. Dazu gehören
+          kurze Wartezeiten, ein herzliches Team und eine Praxis, die man auch spontan aufsuchen kann –
+          Bestandspatienten erhalten bei akuten Beschwerden in der Regel noch am selben Tag einen Termin.
+        </p>
+        <p>
+          Das Behandlungsspektrum reicht von der täglichen Routineversorgung bis hin zu Implantaten und
+          ästhetischer Zahnmedizin. Besonders wichtig ist dem Team die Kinderzahnheilkunde: Mit viel Geduld,
+          spielerischen Ansätzen und einer kinderfreundlichen Atmosphäre werden die kleinsten Patienten
+          behutsam und ohne Druck an regelmäßige Zahnarztbesuche herangeführt.
+        </p>
       </div>
-    </div>
-    <div class="testimonial-card">
-      <div class="stars">★★★★★</div>
-      <p>"Als älterer Patient schätze ich besonders die Ruhe und Geduld des Teams. Alles wird erklärt, nichts überstürzt. Meine Prothese sitzt perfekt. Sehr empfehlenswert für jeden in Wandsbek."</p>
-      <div class="testimonial-author">
-        <div class="author-avatar">G</div>
-        <div>
-          <div class="author-name">Günter M.</div>
-          <div class="author-role">Patient seit 2017</div>
+      <div class="about-highlights">
+        <div class="highlight-item">
+          <span class="highlight-icon">&#127978;</span>
+          <div class="highlight-content">
+            <strong>Direkt im Quarree-Center</strong>
+            <span>Zentrale Lage mit eigenem Parkhaus – kein separater Weg nötig</span>
+          </div>
         </div>
-      </div>
-    </div>
-    <div class="testimonial-card">
-      <div class="stars">★★★★★</div>
-      <p>"Die professionelle Zahnreinigung hier ist einfach die beste. Nach jedem Termin fühlen sich die Zähne an wie neu. Und das Bleaching-Ergebnis war sensationell. Absolut 5 Sterne!"</p>
-      <div class="testimonial-author">
-        <div class="author-avatar">I</div>
-        <div>
-          <div class="author-name">Ina S.</div>
-          <div class="author-role">Patientin seit 2020</div>
+        <div class="highlight-item">
+          <span class="highlight-icon">&#128336;</span>
+          <div class="highlight-content">
+            <strong>Lange Öffnungszeiten</strong>
+            <span>Mo–Fr bis 19:00 Uhr, Sa bis 14:00 Uhr – auch nach der Arbeit erreichbar</span>
+          </div>
+        </div>
+        <div class="highlight-item">
+          <span class="highlight-icon">&#128106;</span>
+          <div class="highlight-content">
+            <strong>Familienpraxis für alle Altersgruppen</strong>
+            <span>Von der ersten Milchzahnkontrolle bis zur Seniorenversorgung</span>
+          </div>
+        </div>
+        <div class="highlight-item">
+          <span class="highlight-icon">&#9889;</span>
+          <div class="highlight-content">
+            <strong>Schnelle Terminvergabe</strong>
+            <span>Bestandspatienten oft noch am gleichen Tag – kein langes Warten</span>
+          </div>
+        </div>
+        <div class="highlight-item">
+          <span class="highlight-icon">&#128179;</span>
+          <div class="highlight-content">
+            <strong>GKV, PKV &amp; Selbstzahler willkommen</strong>
+            <span>Transparente Kostenaufklärung vor jeder Behandlung</span>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="cta-section">
-  <div class="cta-blob"></div>
-  <h2>30 Jahre Qualität – jetzt Ihren Termin buchen</h2>
-  <p>Hamburgs meistempfohlene Zahnarztpraxis ist nur einen Klick entfernt.</p>
-  <a href="#kontakt" class="btn-gradient">Jetzt Termin buchen →</a>
+<!-- SERVICES -->
+<section id="services">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">Leistungen</div>
+      <h2 class="section-title">Was wir für Sie tun können</h2>
+      <p class="section-sub">Von der Prophylaxe bis zum Implantat – umfassende Zahnmedizin für alle Altersgruppen unter einem Dach.</p>
+    </div>
+    <div class="services-grid">
+
+      <div class="service-card">
+        <div class="service-icon">&#129463;</div>
+        <h3 class="service-title">Allgemeine Zahnheilkunde &amp; Notfallversorgung</h3>
+        <span class="service-price">GKV &amp; PKV</span>
+        <p class="service-desc">
+          Vom Routinetermin bis zur Notfallversorgung bei akuten Zahnschmerzen sind wir Ihre erste Anlaufstelle.
+          Füllungen, Extraktionen und Wurzelkanalbehandlungen führen wir mit moderner Technik und lokaler
+          Betäubung so schmerzarm wie möglich durch. Notfallpatienten werden bevorzugt behandelt und erhalten
+          in der Regel noch am selben Tag einen Termin.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">&#128102;</div>
+        <h3 class="service-title">Kinderzahnheilkunde &amp; Kinder-Prophylaxe</h3>
+        <span class="service-price">Prophylaxe ab 39 €</span>
+        <p class="service-desc">
+          Kinder brauchen beim Zahnarzt ein eigenes Tempo und viel Verständnis. Unser Team nimmt sich die Zeit,
+          auch ängstliche Kinder spielerisch und ohne Druck an die Behandlung heranzuführen. Die Kinder-Prophylaxe
+          ab 39 € beinhaltet professionelle Reinigung, Fluoridierung und kindgerechte Pflegetipps für zu Hause.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">&#10024;</div>
+        <h3 class="service-title">Professionelle Zahnreinigung (PZR)</h3>
+        <span class="service-price">ab 79 €</span>
+        <p class="service-desc">
+          Die professionelle Zahnreinigung entfernt hartnäckige Beläge und Verfärbungen, die selbst mit
+          bester Zahnbürste nicht erreichbar sind. Sie schützt effektiv vor Karies und Parodontitis und
+          erhält das natürliche Erscheinungsbild Ihrer Zähne dauerhaft. Wir empfehlen die PZR zweimal jährlich.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">&#128142;</div>
+        <h3 class="service-title">Ästhetik: Bleaching &amp; Veneers</h3>
+        <span class="service-price">Bleaching ab 249 €</span>
+        <p class="service-desc">
+          Mit professionellem Bleaching erzielen wir in einer einzigen Sitzung deutlich weißere Zähne –
+          sicher, schonend und dauerhafter als Apothekenpräparate. Für tiefgreifendere Korrekturen von Farbe
+          und Form bieten wir individuelle Keramik-Veneers an, die hauchdünn aufgeklebt sofortige
+          Ergebnisse liefern.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">&#128297;</div>
+        <h3 class="service-title">Implantologie</h3>
+        <span class="service-price">ab 1.650 €</span>
+        <p class="service-desc">
+          Zahnimplantate ersetzen fehlende Zähne so natürlich, dass man sie von echten Zähnen kaum
+          unterscheiden kann – weder optisch noch funktional. ZA Ibrahim Yilmaz ist unser Spezialist
+          für schonende Implantologie und plant jeden Eingriff modern und präzise. Sie erhalten vorab
+          einen verbindlichen Kostenplan ohne versteckte Zusatzkosten.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">&#128300;</div>
+        <h3 class="service-title">Parodontologie &amp; Zahnfleischtherapie</h3>
+        <span class="service-price">GKV &amp; PKV</span>
+        <p class="service-desc">
+          Entzündetes oder zurückgehendes Zahnfleisch ist mehr als ein Schönheitsproblem – unbehandelte
+          Parodontitis ist eine der häufigsten Ursachen von Zahnverlust im Erwachsenenalter. Wir
+          diagnostizieren frühzeitig und begleiten Sie durch eine strukturierte Therapie, die Ihre
+          natürlichen Zähne langfristig erhält und Entzündungen nachhaltig behandelt.
+        </p>
+      </div>
+
+    </div>
+  </div>
 </section>
 
-<section class="contact" id="kontakt">
-  <div class="contact-inner">
-    <div class="contact-info">
-      <h3>Kontakt aufnehmen</h3>
-      <div class="contact-item">
-        <div class="contact-icon">📍</div>
-        <div class="contact-item-text">
-          <div class="label">Standort</div>
-          <div class="value">Quarree 4, 22041 Hamburg-Wandsbek</div>
+<!-- PROCESS -->
+<section id="process">
+  <div class="container">
+    <div class="section-header" style="text-align:center;">
+      <div class="section-tag">Behandlungsablauf</div>
+      <h2 class="section-title">In 5 Schritten zu Ihrer Behandlung</h2>
+      <p class="section-sub" style="margin:0 auto;">Von der Erstberatung bis zur Nachsorge – transparent, strukturiert und ohne Überraschungen.</p>
+    </div>
+    <div class="process-steps">
+      <div class="process-step active">
+        <div class="step-num">1</div>
+        <h4 class="step-title">Erstbesuch</h4>
+        <p class="step-desc">Persönliche Anamnese und Kennenlernen – wir nehmen uns Zeit und hören zu, bevor wir handeln.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">2</div>
+        <h4 class="step-title">Diagnose</h4>
+        <p class="step-desc">Digitales Röntgen, Parodontalstatus und genaue Befunderhebung mit moderner Messtechnik.</p>
+      </div>
+      <div class="process-step active">
+        <div class="step-num">3</div>
+        <h4 class="step-title">Behandlungsplan</h4>
+        <p class="step-desc">Klares Gespräch über alle Optionen, Kosten und Zeitrahmen – Sie entscheiden informiert und in Ruhe.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">4</div>
+        <h4 class="step-title">Behandlung</h4>
+        <p class="step-desc">Schonende Durchführung mit moderner Ausstattung und auf Wunsch Betäubung für maximalen Komfort.</p>
+      </div>
+      <div class="process-step active">
+        <div class="step-num">5</div>
+        <h4 class="step-title">Nachsorge</h4>
+        <p class="step-desc">Kontrolltermine, individuelle Reinigungsintervalle und Pflegetipps für langfristig gesunde Zähne.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section id="team">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">Unser Team</div>
+      <h2 class="section-title">Die Zahnärzte der Quarree Dental</h2>
+      <p class="section-sub">Drei erfahrene Spezialisten, die gemeinsam für Ihre Mundgesundheit da sind.</p>
+    </div>
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-avatar">MH</div>
+        <div class="team-name">Dr. Markus Haverkamp</div>
+        <div class="team-role">Gründer · Allgemeine Zahnheilkunde</div>
+        <p class="team-quote">
+          „Ich habe Quarree Dental gegründet, weil ich glaube, dass ein Zahnarztbesuch kein notwendiges
+          Übel sein muss. Wenn Patienten entspannt zu uns kommen und lächelnd die Praxis verlassen,
+          weiß ich, dass wir alles richtig machen."
+        </p>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">AS</div>
+        <div class="team-name">ZÄ Anna-Lena Struck</div>
+        <div class="team-role">Zahnärztin · Kinderzahnheilkunde</div>
+        <p class="team-quote">
+          „Kinder brauchen Vertrauen, bevor sie die Praxis als sicheren Ort akzeptieren. Mein Ziel ist,
+          dass jedes Kind den Zahnarzt kennenlernt, bevor Angst entsteht – und dann mit echtem Mut
+          zum nächsten Termin wiederkommt."
+        </p>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">IY</div>
+        <div class="team-name">ZA Ibrahim Yilmaz</div>
+        <div class="team-role">Zahnarzt · Implantologie &amp; Parodontologie</div>
+        <p class="team-quote">
+          „Implantate und Parodontaltherapie erfordern Vertrauen und vollständige Transparenz. Ich erkläre
+          jeden Schritt so, dass Patienten genau wissen, was auf sie zukommt – und plane so, dass die
+          Ergebnisse auch in zehn Jahren noch überzeugen."
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">Patientenstimmen</div>
+      <h2 class="section-title">Was unsere Patienten sagen</h2>
+      <p class="section-sub">Ehrliche Erfahrungen aus dem Praxisalltag – direkt und ungefiltert.</p>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="testi-text">
+          „Die Lage im Quarree ist unschlagbar praktisch – ich parke einmal, erledige den Zahnarzttermin
+          und gehe danach noch kurz einkaufen. Dr. Haverkamp hat sich für den Ersttermin wirklich Zeit
+          genommen und alle meine Fragen geduldig beantwortet, ohne mich zu hetzen."
+        </p>
+        <div class="testi-author">
+          <div class="testi-initials">KM</div>
+          <div>
+            <div class="testi-name">Katrin M.</div>
+            <div class="testi-role">Patientin seit 2019, Hamburg-Wandsbek</div>
+          </div>
         </div>
       </div>
-      <div class="contact-item">
-        <div class="contact-icon">📞</div>
-        <div class="contact-item-text">
-          <div class="label">Telefon</div>
-          <div class="value">040 68913400</div>
+      <div class="testimonial-card">
+        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="testi-text">
+          „Meine Tochter war früher bei jedem Zahnarzttermin in Panik. Seit wir zu ZÄ Struck wechselten,
+          kommt sie sogar freiwillig mit und fragt, wann wir wieder hinfahren. Das Team hat wirklich einen
+          Unterschied gemacht – geduldig, einfühlsam und nie unter Zeitdruck."
+        </p>
+        <div class="testi-author">
+          <div class="testi-initials">TL</div>
+          <div>
+            <div class="testi-name">Thomas L.</div>
+            <div class="testi-role">Vater von zwei Töchtern, Wandsbek</div>
+          </div>
         </div>
       </div>
-      <div class="contact-item">
-        <div class="contact-icon">✉️</div>
-        <div class="contact-item-text">
-          <div class="label">E-Mail</div>
-          <div class="value">praxis@quarree-dental.de</div>
+      <div class="testimonial-card">
+        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+        <p class="testi-text">
+          „Das Implantat von ZA Yilmaz sitzt perfekt – ich merke im Alltag überhaupt nicht mehr,
+          dass da einmal ein Zahn gefehlt hat. Der Ablauf war von Anfang bis Ende sehr transparent,
+          und die Kosten stimmten exakt mit dem vorab besprochenen Kostenplan überein."
+        </p>
+        <div class="testi-author">
+          <div class="testi-initials">RP</div>
+          <div>
+            <div class="testi-name">Ralf P.</div>
+            <div class="testi-role">Selbstständiger Unternehmer, Bramfeld</div>
+          </div>
         </div>
       </div>
-      <div class="contact-item">
-        <div class="contact-icon">🕐</div>
-        <div class="contact-item-text">
-          <div class="label">Öffnungszeiten</div>
-          <div class="value">Mo–Do 8:00–18:00, Fr 8:00–14:00 Uhr</div>
+      <div class="testimonial-card">
+        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="testi-text">
+          „Ich rief morgens mit starken Zahnschmerzen an und hatte noch am gleichen Nachmittag
+          einen Termin – das hatte ich wirklich nicht erwartet. Das anschließende Bleaching hat mich
+          dann nochmal positiv überrascht: Das Ergebnis ist besser als alles, was ich bisher ausprobiert hatte."
+        </p>
+        <div class="testi-author">
+          <div class="testi-initials">SB</div>
+          <div>
+            <div class="testi-name">Sandra B.</div>
+            <div class="testi-role">Lehrerin, Hamburg-Nord</div>
+          </div>
         </div>
       </div>
     </div>
-    <div class="contact-form">
-      <h4>Termin anfragen</h4>
-      <form>
-        <div class="form-group"><input type="text" placeholder="Ihr Name" /></div>
-        <div class="form-group"><input type="email" placeholder="Ihre E-Mail" /></div>
-        <div class="form-group"><input type="tel" placeholder="Telefonnummer (optional)" /></div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">Häufige Fragen</div>
+      <h2 class="section-title">Fragen &amp; Antworten</h2>
+      <p class="section-sub">Die häufigsten Fragen unserer Patienten – klar und direkt beantwortet.</p>
+    </div>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="faq-q-icon">?</span>
+          Wie finde ich die Praxis im Quarree-Center?
+        </div>
+        <p class="faq-a">
+          Quarree Dental liegt direkt im Quarree Einkaufszentrum, Wandsbeker Marktstraße 1 in 22041 Hamburg.
+          Die Wegweiser im Center führen Sie zu unserer gut ausgeschilderten Praxis. Die U-Bahn-Station
+          Wandsbek Markt (U1) ist nur wenige Gehminuten entfernt, und auch mehrere Buslinien halten
+          direkt am Quarree.
+        </p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="faq-q-icon">?</span>
+          Gibt es Parkplätze am Quarree-Center?
+        </div>
+        <p class="faq-a">
+          Das Quarree-Center verfügt über ein eigenes Parkhaus mit mehreren hundert Stellplätzen. Als Patient
+          können Sie Ihr Parkticket in der Praxis validieren lassen, sodass die ersten 90 Minuten kostenfrei
+          sind. Die Einfahrt zum Parkhaus ist von der Wandsbeker Marktstraße aus gut ausgeschildert und
+          barrierefrei zugänglich.
+        </p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="faq-q-icon">?</span>
+          Behandeln Sie auch Kleinkinder und Babys?
+        </div>
+        <p class="faq-a">
+          Ja, wir behandeln Kinder bereits ab dem Durchbruch des ersten Milchzahns. ZÄ Anna-Lena Struck
+          ist spezialisiert auf Kinderzahnheilkunde und geht mit besonderer Ruhe auf kleine Patienten ein.
+          Wir empfehlen den ersten Besuch frühzeitig, damit Kinder die Praxis als vertrauten Ort
+          kennenlernen, bevor Beschwerden entstehen.
+        </p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="faq-q-icon">?</span>
+          Nehmen Sie Kassenpatienten an?
+        </div>
+        <p class="faq-a">
+          Selbstverständlich behandeln wir alle gesetzlich versicherten Patienten (GKV) genauso wie
+          Privatpatienten (PKV) und Selbstzahler. Die gesetzlichen Grundleistungen werden vollständig
+          über Ihre Krankenkasse abgerechnet. Bei Wunschleistungen oder Zuzahlungen klären wir Sie
+          vorab transparent und ohne Druck über anfallende Kosten auf.
+        </p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="faq-q-icon">?</span>
+          Was kostet ein professionelles Bleaching?
+        </div>
+        <p class="faq-a">
+          Das professionelle Zahnaufhellen beginnt bei uns ab 249 €, je nach gewählter Methode und dem
+          Ausgangszustand Ihrer Zähne. Im kostenlosen Vorgespräch klären wir, welche Variante für Sie
+          sinnvoll ist und welches Ergebnis realistisch erwartet werden kann. Vorab empfehlen wir immer
+          eine professionelle Reinigung, um das optimale Ergebnis zu erzielen.
+        </p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="faq-q-icon">?</span>
+          Wie schnell bekomme ich einen Termin?
+        </div>
+        <p class="faq-a">
+          Bestandspatienten erhalten bei Beschwerden oder Notfällen oft noch am selben oder nächsten
+          Werktag einen Termin. Neupatienten bekommen in der Regel innerhalb von 5–7 Werktagen einen
+          Ersttermin. Am schnellsten läuft die Terminvereinbarung telefonisch unter 040 69 45 88 10 –
+          wir sind Mo–Fr bis 19:00 Uhr für Sie erreichbar.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">Kontakt &amp; Anfahrt</div>
+      <h2 class="section-title">Termin vereinbaren</h2>
+      <p class="section-sub">Rufen Sie uns an oder schreiben Sie uns – wir antworten innerhalb von 24 Stunden.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>Praxisinformationen</h3>
+        <div class="contact-item">
+          <div class="contact-icon">&#128205;</div>
+          <div>
+            <div class="contact-label">Adresse</div>
+            <div class="contact-value">
+              Wandsbeker Marktstraße 1<br>
+              (Quarree-Center), 22041 Hamburg
+            </div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">&#128222;</div>
+          <div>
+            <div class="contact-label">Telefon</div>
+            <div class="contact-value">
+              <a href="tel:04069458810" style="color:var(--primary);font-weight:700;">040 69 45 88 10</a>
+            </div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">&#9993;</div>
+          <div>
+            <div class="contact-label">E-Mail</div>
+            <div class="contact-value">
+              <a href="mailto:kontakt@quarree-dental.de" style="color:var(--primary);font-weight:700;">kontakt@quarree-dental.de</a>
+            </div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">&#128336;</div>
+          <div>
+            <div class="contact-label">Öffnungszeiten</div>
+            <div class="contact-value">
+              Montag – Freitag: 08:00 – 19:00 Uhr<br>
+              Samstag: 09:00 – 14:00 Uhr<br>
+              Sonntag: geschlossen
+            </div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">&#128652;</div>
+          <div>
+            <div class="contact-label">Öffentliche Verkehrsmittel</div>
+            <div class="contact-value">
+              U1 Wandsbek Markt (3 Min. Fußweg)<br>
+              Bus 261, 263 · Haltestelle Quarree
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form">
+        <h3>Terminanfrage senden</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Vorname *</label>
+            <input type="text" placeholder="Max" />
+          </div>
+          <div class="form-group">
+            <label>Nachname *</label>
+            <input type="text" placeholder="Mustermann" />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Telefon *</label>
+            <input type="tel" placeholder="040 1234 5678" />
+          </div>
+          <div class="form-group">
+            <label>E-Mail</label>
+            <input type="email" placeholder="max@beispiel.de" />
+          </div>
+        </div>
         <div class="form-group">
+          <label>Leistung / Anliegen</label>
           <select>
-            <option value="">Ihr Anliegen</option>
-            <option>Online-Terminbuchung</option>
-            <option>Professionelle Zahnreinigung</option>
-            <option>Ästhetische Zahnmedizin</option>
-            <option>Implantologie Beratung</option>
-            <option>Zahnersatz & Prothetik</option>
+            <option value="">Bitte wählen...</option>
+            <option>Ersttermin / Allgemeine Kontrolle</option>
+            <option>Professionelle Zahnreinigung (PZR)</option>
+            <option>Kinderzahnheilkunde</option>
+            <option>Bleaching / Ästhetische Zahnmedizin</option>
+            <option>Implantologieberatung</option>
+            <option>Parodontologische Behandlung</option>
+            <option>Notfall / Akute Zahnschmerzen</option>
+            <option>Sonstiges</option>
           </select>
         </div>
-        <div class="form-group"><textarea placeholder="Ihre Nachricht..."></textarea></div>
-        <button type="submit" class="form-submit">Termin anfragen →</button>
-      </form>
+        <div class="form-group">
+          <label>Wunschtermin &amp; Nachricht (optional)</label>
+          <textarea placeholder="z.B. lieber nachmittags, bevorzugt Mo oder Mi..."></textarea>
+        </div>
+        <button class="btn btn-primary" style="width:100%;justify-content:center;padding:13px;font-size:0.95rem;">
+          Terminanfrage absenden &#8594;
+        </button>
+        <p class="form-note">Wir melden uns innerhalb von 24 Stunden. Ihre Daten werden vertraulich behandelt.</p>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
-  <p>© 2026 <strong>Quarree Dental</strong> · Quarree 4, 22041 Hamburg-Wandsbek · <a href="mailto:praxis@quarree-dental.de">praxis@quarree-dental.de</a></p>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <span class="footer-logo-dot"></span>
+        Quarree Dental
+      </div>
+      <div class="footer-links">
+        <a href="#">Impressum</a>
+        <a href="#">Datenschutz</a>
+        <a href="#">Barrierefreiheit</a>
+        <a href="#contact">Kontakt</a>
+        <a href="#services">Leistungen</a>
+      </div>
+    </div>
+    <p class="footer-copy">
+      &copy; 2025 Quarree Dental Hamburg &middot; Wandsbeker Marktstraße 1 (Quarree-Center), 22041 Hamburg &middot; Alle Rechte vorbehalten
+    </p>
+  </div>
 </footer>
 
-<a href="https://elevo.solutions" target="_blank" rel="noopener" class="elevo-dot" title="Erstellt von ELEVO">
-  <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><text x="6" y="21" font-size="19" font-weight="800" font-family="Arial,sans-serif" fill="white">E</text></svg>
-</a>
+<!-- ELEVO DOT -->
+<div class="elevo-dot">
+  <a href="https://elevo.solutions" target="_blank" rel="noopener noreferrer">
+    <span class="elevo-pulse"></span>
+    powered by ELEVO
+  </a>
+</div>
 
 </body>
 </html>

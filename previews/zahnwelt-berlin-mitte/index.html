@@ -1,486 +1,984 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ZahnWelt Berlin – Ihr Implantologe in Berlin Mitte seit 1998</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ZahnWelt Berlin Mitte – Moderne Zahnarztpraxis am Gendarmenmarkt</title>
   <style>
     :root {
-      --primary: #006D5B;
-      --secondary: #4CAF99;
-      --dark: #0f172a;
-      --mid: #1e293b;
-      --light: #f8fafc;
-      --text: #334155;
+      --primary: #7C3AED;
+      --primary-dark: #6d28d9;
+      --secondary: #8B5CF6;
+      --accent: #A78BFA;
+      --light: #F5F3FF;
+      --gray-50: #F8FAFC;
+      --gray-100: #F1F5F9;
+      --gray-200: #E2E8F0;
+      --gray-400: #94A3B8;
+      --gray-600: #475569;
+      --gray-700: #334155;
+      --gray-900: #0F172A;
+      --white: #FFFFFF;
+      --font: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      --radius: 12px;
+      --shadow: 0 4px 24px rgba(124,58,237,0.12);
     }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; color: var(--text); }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font); color: var(--gray-700); background: var(--white); line-height: 1.7; font-size: 16px; }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+    .container { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
 
     nav {
-      position: fixed; top: 0; width: 100%; z-index: 100;
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
       background: rgba(255,255,255,0.97); backdrop-filter: blur(10px);
-      padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center;
-      border-bottom: 1px solid rgba(0,0,0,0.06);
+      border-bottom: 1px solid var(--gray-200); height: 68px; display: flex; align-items: center;
     }
-    .logo-area { display: flex; align-items: center; gap: 0.5rem; }
-    .logo-img { height: 38px; max-width: 180px; object-fit: contain; display: block; }
-    .logo-fallback { display: flex; align-items: center; gap: 0.5rem; }
-    .logo-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--primary); }
-    .logo-text { font-size: 1.2rem; font-weight: 700; color: #0f172a; }
-    .nav-links { display: flex; gap: 2rem; list-style: none; }
-    .nav-links a { text-decoration: none; color: var(--text); font-size: 0.9rem; transition: color 0.2s; }
+    .nav-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      width: 100%; max-width: 1160px; margin: 0 auto; padding: 0 24px;
+    }
+    .logo { display: flex; align-items: center; gap: 8px; font-size: 1.25rem; font-weight: 700; color: var(--gray-900); }
+    .logo-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--primary); flex-shrink: 0; }
+    .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+    .nav-links a { font-size: 0.9rem; font-weight: 500; color: var(--gray-600); transition: color 0.2s; }
     .nav-links a:hover { color: var(--primary); }
-    .nav-cta {
-      background: var(--primary); color: white; padding: 0.55rem 1.3rem;
-      border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 0.875rem;
-      transition: box-shadow 0.2s, transform 0.2s;
-    }
-    .nav-cta:hover { box-shadow: 0 4px 15px rgba(0,109,91,0.4); transform: translateY(-1px); }
 
-    .hero {
-      min-height: 100vh; padding-top: 80px;
-      background: var(--dark);
-      display: flex; align-items: center;
-      position: relative; overflow: hidden;
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 10px 22px; border-radius: 8px; font-size: 0.9rem; font-weight: 600;
+      cursor: pointer; transition: all 0.2s; border: none; font-family: var(--font);
     }
-    .hero-blob {
-      position: absolute; top: -200px; right: -200px;
-      width: 800px; height: 800px; border-radius: 50%;
-      background: radial-gradient(circle, rgba(0,109,91,0.12) 0%, transparent 70%);
+    .btn-primary { background: var(--primary); color: var(--white); }
+    .btn-primary:hover { background: var(--primary-dark); transform: translateY(-1px); box-shadow: 0 4px 16px rgba(124,58,237,0.35); }
+    .btn-outline { background: transparent; color: var(--white); border: 2px solid rgba(255,255,255,0.5); }
+    .btn-outline:hover { background: rgba(255,255,255,0.1); border-color: var(--white); }
+
+    #hero {
+      background: linear-gradient(135deg, #3b0764 0%, #7C3AED 55%, #8B5CF6 100%);
+      padding: 120px 0 80px; overflow: hidden; position: relative;
     }
-    .hero-blob2 {
-      position: absolute; bottom: -300px; left: -100px;
+    #hero::before {
+      content: ''; position: absolute; top: -100px; right: -100px;
       width: 600px; height: 600px; border-radius: 50%;
-      background: radial-gradient(circle, rgba(76,175,153,0.08) 0%, transparent 70%);
+      background: rgba(255,255,255,0.04); pointer-events: none;
     }
-    .hero-inner { max-width: 1200px; margin: 0 auto; padding: 4rem 2rem; position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
-    .hero-pill {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      border: 1px solid rgba(76,175,153,0.4); color: #4CAF99;
-      background: rgba(0,109,91,0.08);
-      padding: 0.4rem 1rem; border-radius: 50px; font-size: 0.8rem; font-weight: 600;
-      margin-bottom: 1.5rem;
+    #hero::after {
+      content: ''; position: absolute; bottom: -80px; left: -60px;
+      width: 350px; height: 350px; border-radius: 50%;
+      background: rgba(255,255,255,0.03); pointer-events: none;
     }
-    .hero h1 { font-size: 3rem; font-weight: 800; color: white; line-height: 1.15; margin-bottom: 1.5rem; }
-    .hero h1 .gradient-text {
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; position: relative; z-index: 1; }
+    .trust-pill {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 100px; padding: 6px 16px; font-size: 0.8rem; color: rgba(255,255,255,0.9); margin-bottom: 20px;
     }
-    .hero p { color: rgba(255,255,255,0.65); font-size: 1.1rem; line-height: 1.75; margin-bottom: 2.5rem; }
-    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
-    .btn-gradient {
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      color: white; padding: 0.9rem 2rem; border-radius: 50px;
-      text-decoration: none; font-weight: 700; font-size: 0.95rem;
-      box-shadow: 0 4px 15px rgba(0,109,91,0.4);
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .btn-gradient:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0,109,91,0.5); }
-    .btn-ghost {
-      color: rgba(255,255,255,0.8); padding: 0.9rem 2rem; border-radius: 50px;
-      text-decoration: none; font-weight: 600; font-size: 0.95rem;
-      border: 1px solid rgba(255,255,255,0.2); transition: border-color 0.2s;
-    }
-    .btn-ghost:hover { border-color: rgba(255,255,255,0.5); }
-    .hero-card-grid { display: flex; flex-direction: column; gap: 1rem; }
+    .trust-pill-dot { width: 7px; height: 7px; border-radius: 50%; background: #4ADE80; animation: glow 2s infinite; }
+    @keyframes glow { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.7; transform: scale(1.3); } }
+    .hero-headline { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; color: var(--white); line-height: 1.2; margin-bottom: 20px; }
+    .hero-headline span { color: var(--accent); }
+    .hero-desc { font-size: 1.05rem; color: rgba(255,255,255,0.8); margin-bottom: 32px; max-width: 480px; }
+    .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 40px; }
+    .metric-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
     .metric-card {
-      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 12px; padding: 1.5rem; backdrop-filter: blur(10px);
-      transition: background 0.2s;
+      background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 10px; padding: 16px 18px;
     }
-    .metric-card:hover { background: rgba(255,255,255,0.09); }
-    .metric-value { font-size: 2.5rem; font-weight: 900; color: white; }
-    .metric-value span {
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    .metric-value { font-size: 1.6rem; font-weight: 800; color: var(--white); line-height: 1; }
+    .metric-label { font-size: 0.78rem; color: rgba(255,255,255,0.6); margin-top: 4px; }
+    .hero-image-wrap { position: relative; }
+    .hero-img { width: 100%; height: 420px; object-fit: cover; border-radius: 16px; box-shadow: 0 24px 64px rgba(0,0,0,0.4); }
+    .hero-badge {
+      position: absolute; bottom: -20px; left: 50%; transform: translateX(-50%);
+      background: var(--white); border-radius: 12px; padding: 14px 24px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.2); display: flex; align-items: center; gap: 12px; white-space: nowrap;
     }
-    .metric-label { color: rgba(255,255,255,0.55); font-size: 0.85rem; margin-top: 0.2rem; }
-    .metric-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-    .hero-img-container {
-      border-radius: 16px; overflow: hidden;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
-      margin-bottom: 1rem; position: relative;
-    }
-    .hero-img-container img {
-      width: 100%; height: 220px; object-fit: cover; display: block;
-      filter: brightness(0.88);
-    }
-    .hero-img-placeholder {
-      width: 100%; height: 220px; display: flex; align-items: center; justify-content: center;
-      background: linear-gradient(135deg, rgba(0,109,91,0.4), rgba(76,175,153,0.2));
-      font-size: 3rem;
-    }
+    .badge-stars { color: #F59E0B; font-size: 1rem; }
+    .badge-text strong { display: block; font-size: 0.9rem; color: var(--gray-900); }
+    .badge-text span { font-size: 0.75rem; color: var(--gray-400); }
 
-    .services { padding: 6rem 2rem; background: var(--light); }
-    .section-chip {
-      display: inline-block; background: rgba(0,109,91,0.1); color: var(--primary);
-      padding: 0.3rem 0.9rem; border-radius: 50px; font-size: 0.8rem; font-weight: 700;
-      margin-bottom: 1rem;
+    #trust-bar {
+      background: var(--gray-100); border-bottom: 1px solid var(--gray-200);
+      padding: 48px 0; margin-top: 20px;
     }
-    .section-title { font-size: 2.2rem; font-weight: 800; color: var(--dark); margin-bottom: 0.8rem; }
-    .section-sub { color: #64748b; font-size: 1rem; max-width: 500px; }
-    .services-header { max-width: 1100px; margin: 0 auto 3rem; }
-    .services-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; }
+    .trust-bar-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
+    .trust-bar-item { text-align: center; padding: 16px 24px; border-right: 1px solid var(--gray-200); }
+    .trust-bar-item:last-child { border-right: none; }
+    .trust-num { font-size: 2.2rem; font-weight: 800; color: var(--primary); display: block; }
+    .trust-label { font-size: 0.82rem; color: var(--gray-600); margin-top: 4px; }
+
+    section { padding: 88px 0; }
+    .section-tag {
+      display: inline-block; background: var(--light); color: var(--primary);
+      font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 4px 14px; border-radius: 100px; margin-bottom: 14px;
+    }
+    .section-title { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; color: var(--gray-900); line-height: 1.25; margin-bottom: 16px; }
+    .section-sub { font-size: 1rem; color: var(--gray-600); max-width: 560px; }
+    .section-header { margin-bottom: 48px; }
+
+    #about { background: var(--white); }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+    .about-text p { color: var(--gray-600); margin-bottom: 20px; font-size: 0.97rem; line-height: 1.75; }
+    .about-highlights { display: flex; flex-direction: column; gap: 14px; }
+    .highlight-item {
+      display: flex; gap: 14px; align-items: flex-start;
+      background: var(--gray-50); border-radius: 10px; padding: 16px 18px;
+      border: 1px solid var(--gray-200);
+    }
+    .highlight-icon { font-size: 1.4rem; flex-shrink: 0; margin-top: 1px; }
+    .highlight-content strong { display: block; font-size: 0.9rem; color: var(--gray-900); margin-bottom: 3px; font-weight: 700; }
+    .highlight-content span { font-size: 0.83rem; color: var(--gray-600); }
+
+    #services { background: var(--gray-50); }
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
     .service-card {
-      background: white; border-radius: 16px; padding: 2rem;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 15px rgba(0,0,0,0.04);
-      transition: transform 0.2s, box-shadow 0.2s; position: relative; overflow: hidden;
+      background: var(--white); border-radius: var(--radius); padding: 28px 24px;
+      border: 1px solid var(--gray-200); transition: all 0.25s; position: relative; overflow: hidden;
     }
-    .service-card::after {
-      content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
-      background: linear-gradient(90deg, var(--primary), var(--secondary));
-      transform: scaleX(0); transition: transform 0.3s; transform-origin: left;
+    .service-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--primary), var(--accent)); opacity: 0; transition: opacity 0.25s;
     }
-    .service-card:hover { transform: translateY(-4px); box-shadow: 0 4px 6px rgba(0,0,0,0.06), 0 10px 30px rgba(0,0,0,0.1); }
-    .service-card:hover::after { transform: scaleX(1); }
-    .service-icon {
-      width: 52px; height: 52px; border-radius: 12px;
-      background: linear-gradient(135deg, rgba(0,109,91,0.1), rgba(76,175,153,0.1));
+    .service-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); border-color: transparent; }
+    .service-card:hover::before { opacity: 1; }
+    .service-icon { font-size: 2rem; margin-bottom: 14px; }
+    .service-title { font-size: 1rem; font-weight: 700; color: var(--gray-900); margin-bottom: 10px; }
+    .service-price {
+      display: inline-block; background: var(--light); color: var(--primary);
+      font-size: 0.78rem; font-weight: 700; padding: 3px 10px; border-radius: 100px; margin-bottom: 12px;
+    }
+    .service-desc { font-size: 0.88rem; color: var(--gray-600); line-height: 1.7; }
+
+    #process { background: linear-gradient(135deg, #3b0764 0%, #7C3AED 100%); padding: 88px 0; }
+    #process .section-title { color: var(--white); }
+    #process .section-tag { background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.9); }
+    #process .section-sub { color: rgba(255,255,255,0.7); }
+    .process-steps {
+      display: grid; grid-template-columns: repeat(5, 1fr);
+      position: relative; margin-top: 48px;
+    }
+    .process-steps::before {
+      content: ''; position: absolute; top: 27px; left: 10%; right: 10%;
+      height: 2px; background: rgba(255,255,255,0.18); z-index: 0;
+    }
+    .process-step { text-align: center; padding: 0 10px; position: relative; z-index: 1; }
+    .step-num {
+      width: 56px; height: 56px; border-radius: 50%;
+      background: rgba(255,255,255,0.1); border: 2px solid rgba(255,255,255,0.25);
       display: flex; align-items: center; justify-content: center;
-      font-size: 1.5rem; margin-bottom: 1.2rem;
+      font-size: 1.2rem; font-weight: 800; color: var(--white); margin: 0 auto 16px;
     }
-    .service-card h3 { font-size: 1rem; font-weight: 700; color: var(--dark); margin-bottom: 0.6rem; }
-    .service-card p { color: #64748b; font-size: 0.875rem; line-height: 1.7; }
+    .process-step.active .step-num {
+      background: var(--white); color: var(--primary); border-color: var(--white);
+      box-shadow: 0 0 0 6px rgba(255,255,255,0.15);
+    }
+    .step-title { font-size: 0.88rem; font-weight: 700; color: var(--white); margin-bottom: 8px; }
+    .step-desc { font-size: 0.78rem; color: rgba(255,255,255,0.62); line-height: 1.55; }
 
-    .steps { padding: 6rem 2rem; background: white; }
-    .steps-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
-    .steps-grid { display: flex; flex-direction: column; gap: 1.5rem; }
-    .step-item { display: flex; gap: 1.2rem; align-items: flex-start; }
-    .step-num-badge {
-      width: 40px; height: 40px; border-radius: 10px; flex-shrink: 0;
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      color: white; display: flex; align-items: center; justify-content: center;
-      font-weight: 800; font-size: 0.9rem;
+    #team { background: var(--white); }
+    .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+    .team-card {
+      background: var(--gray-50); border-radius: var(--radius); padding: 32px 24px;
+      text-align: center; border: 1px solid var(--gray-200); transition: all 0.25s;
     }
-    .step-item-text h4 { font-weight: 700; color: var(--dark); margin-bottom: 0.3rem; }
-    .step-item-text p { color: #64748b; font-size: 0.875rem; line-height: 1.6; }
-    .steps-visual {
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      border-radius: 20px; padding: 3rem; color: white;
+    .team-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+    .team-avatar {
+      width: 72px; height: 72px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem; font-weight: 800; color: var(--white);
+      margin: 0 auto 16px; box-shadow: 0 6px 20px rgba(124,58,237,0.3);
     }
-    .steps-visual h3 { font-size: 1.5rem; font-weight: 800; margin-bottom: 0.5rem; }
-    .steps-visual .tagline { opacity: 0.85; font-size: 0.95rem; margin-bottom: 2rem; }
-    .highlight-box { background: rgba(255,255,255,0.15); border-radius: 10px; padding: 1.2rem; margin-bottom: 1rem; }
-    .highlight-box strong { font-size: 1.1rem; }
-    .highlight-box p { opacity: 0.85; font-size: 0.875rem; margin-top: 0.2rem; }
+    .team-name { font-size: 1.05rem; font-weight: 700; color: var(--gray-900); margin-bottom: 4px; }
+    .team-role { font-size: 0.82rem; color: var(--primary); font-weight: 600; margin-bottom: 14px; }
+    .team-quote {
+      font-size: 0.85rem; color: var(--gray-600); font-style: italic; line-height: 1.65;
+      border-top: 1px solid var(--gray-200); padding-top: 16px;
+    }
 
-    .testimonials { padding: 6rem 2rem; background: var(--light); }
-    .testimonials-header { max-width: 1000px; margin: 0 auto 3rem; }
-    .testimonials-grid { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+    #testimonials { background: var(--gray-50); }
+    .testimonials-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
     .testimonial-card {
-      background: white; border-radius: 16px; padding: 2rem;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 15px rgba(0,0,0,0.04);
+      background: var(--white); border-radius: var(--radius); padding: 28px;
+      border: 1px solid var(--gray-200); position: relative;
     }
-    .stars { font-size: 1rem; margin-bottom: 1rem; color: #f59e0b; }
-    .testimonial-card p { color: #475569; font-size: 0.9rem; line-height: 1.7; font-style: italic; }
-    .testimonial-author { display: flex; gap: 0.8rem; align-items: center; margin-top: 1.2rem; padding-top: 1rem; border-top: 1px solid #f1f5f9; }
-    .author-avatar {
+    .testimonial-card::before {
+      content: '\201C'; position: absolute; top: 12px; right: 20px;
+      font-size: 4.5rem; color: var(--gray-200); font-family: Georgia, serif; line-height: 1; pointer-events: none;
+    }
+    .testi-stars { color: #F59E0B; font-size: 0.85rem; margin-bottom: 12px; }
+    .testi-text { font-size: 0.9rem; color: var(--gray-600); line-height: 1.75; margin-bottom: 18px; }
+    .testi-author { display: flex; align-items: center; gap: 10px; }
+    .testi-initials {
       width: 40px; height: 40px; border-radius: 50%;
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      color: white; display: flex; align-items: center; justify-content: center; font-weight: 700;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.75rem; font-weight: 700; color: var(--white); flex-shrink: 0;
     }
-    .author-name { font-weight: 700; font-size: 0.85rem; color: var(--dark); }
-    .author-role { color: #94a3b8; font-size: 0.75rem; }
+    .testi-name { font-size: 0.88rem; font-weight: 700; color: var(--gray-900); }
+    .testi-role { font-size: 0.75rem; color: var(--gray-400); }
 
-    .cta-section { padding: 6rem 2rem; text-align: center; background: var(--dark); position: relative; overflow: hidden; }
-    .cta-blob { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(0,109,91,0.15) 0%, transparent 70%); }
-    .cta-section h2 { font-size: 2.5rem; font-weight: 800; color: white; margin-bottom: 1rem; position: relative; }
-    .cta-section p { color: rgba(255,255,255,0.65); font-size: 1.05rem; margin-bottom: 2.5rem; max-width: 450px; margin-left: auto; margin-right: auto; position: relative; }
-    .cta-section .btn-gradient { position: relative; }
+    #faq { background: var(--white); }
+    .faq-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .faq-item {
+      background: var(--gray-50); border-radius: var(--radius); padding: 24px;
+      border: 1px solid var(--gray-200);
+    }
+    .faq-q {
+      font-size: 0.95rem; font-weight: 700; color: var(--gray-900);
+      margin-bottom: 10px; display: flex; align-items: flex-start; gap: 10px;
+    }
+    .faq-q-icon {
+      width: 22px; height: 22px; border-radius: 50%; background: var(--primary); color: var(--white);
+      font-size: 0.72rem; font-weight: 800; display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; margin-top: 1px;
+    }
+    .faq-a { font-size: 0.87rem; color: var(--gray-600); line-height: 1.72; padding-left: 32px; }
 
-    .contact { padding: 5rem 2rem; background: var(--light); }
-    .contact-inner { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
-    .contact-info h3 { font-size: 1.4rem; font-weight: 800; color: var(--dark); margin-bottom: 1.5rem; }
-    .contact-item { display: flex; gap: 1rem; margin-bottom: 1.2rem; align-items: flex-start; }
+    #contact { background: var(--gray-50); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 56px; align-items: start; }
+    .contact-info h3 { font-size: 1.1rem; font-weight: 700; color: var(--gray-900); margin-bottom: 24px; }
+    .contact-item { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 20px; }
     .contact-icon {
-      width: 42px; height: 42px; border-radius: 10px; flex-shrink: 0;
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      color: white; display: flex; align-items: center; justify-content: center; font-size: 1rem;
+      width: 40px; height: 40px; border-radius: 10px; background: var(--primary); color: var(--white);
+      display: flex; align-items: center; justify-content: center; font-size: 1.05rem; flex-shrink: 0;
     }
-    .contact-item-text .label { font-size: 0.75rem; color: #94a3b8; text-transform: uppercase; letter-spacing: 1px; }
-    .contact-item-text .value { font-weight: 600; color: var(--dark); font-size: 0.9rem; }
-    .contact-form { background: white; border-radius: 16px; padding: 2rem; box-shadow: 0 2px 15px rgba(0,0,0,0.06); }
-    .contact-form h4 { font-weight: 700; color: var(--dark); margin-bottom: 1.5rem; }
-    .form-group { margin-bottom: 1rem; }
-    .form-group input, .form-group textarea, .form-group select {
-      width: 100%; padding: 0.75rem 1rem; border: 2px solid #e2e8f0;
-      border-radius: 10px; font-size: 0.875rem; transition: border-color 0.2s;
-      font-family: inherit; background: #f8fafc;
+    .contact-label {
+      font-size: 0.75rem; font-weight: 600; text-transform: uppercase;
+      letter-spacing: 0.06em; color: var(--gray-400); margin-bottom: 2px;
     }
-    .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
-      outline: none; border-color: var(--primary); background: white;
+    .contact-value { font-size: 0.92rem; color: var(--gray-700); font-weight: 500; line-height: 1.55; }
+    .contact-form {
+      background: var(--white); border-radius: var(--radius); padding: 36px;
+      border: 1px solid var(--gray-200); box-shadow: var(--shadow);
     }
-    .form-group textarea { resize: vertical; min-height: 90px; }
-    .form-submit {
-      width: 100%; background: linear-gradient(135deg, var(--primary), var(--secondary));
-      color: white; padding: 0.85rem; border: none; border-radius: 10px;
-      font-size: 0.95rem; font-weight: 700; cursor: pointer;
+    .contact-form h3 { font-size: 1.1rem; font-weight: 700; color: var(--gray-900); margin-bottom: 24px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .form-group { margin-bottom: 16px; }
+    .form-group label { display: block; font-size: 0.8rem; font-weight: 600; color: var(--gray-700); margin-bottom: 6px; }
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%; padding: 10px 14px; border: 1px solid var(--gray-200); border-radius: 8px;
+      font-size: 0.9rem; font-family: var(--font); color: var(--gray-700); background: var(--gray-50);
+      transition: border-color 0.2s, box-shadow 0.2s; outline: none;
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+      border-color: var(--primary); box-shadow: 0 0 0 3px rgba(124,58,237,0.1); background: var(--white);
+    }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+    .form-note { font-size: 0.75rem; color: var(--gray-400); margin-top: 12px; text-align: center; }
+
+    .lang-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--light); color: var(--primary);
+      font-size: 0.78rem; font-weight: 700; padding: 4px 12px;
+      border-radius: 100px; border: 1px solid rgba(124,58,237,0.2);
     }
 
-    footer { background: var(--dark); color: rgba(255,255,255,0.4); padding: 1.5rem 2rem; text-align: center; font-size: 0.85rem; }
-    footer a { color: inherit; }
-    footer strong { color: rgba(255,255,255,0.7); }
+    footer { background: var(--gray-900); color: rgba(255,255,255,0.55); padding: 40px 0 24px; }
+    .footer-inner {
+      display: flex; align-items: center; justify-content: space-between; gap: 24px;
+      flex-wrap: wrap; padding-bottom: 24px; border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 20px;
+    }
+    .footer-logo { display: flex; align-items: center; gap: 8px; font-size: 1.1rem; font-weight: 700; color: var(--white); }
+    .footer-logo-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--accent); }
+    .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+    .footer-links a { font-size: 0.82rem; color: rgba(255,255,255,0.45); transition: color 0.2s; }
+    .footer-links a:hover { color: var(--white); }
+    .footer-copy { font-size: 0.78rem; text-align: center; }
 
-    .elevo-dot { position: fixed; bottom: 24px; right: 24px; z-index: 9999; width: 52px; height: 52px; border-radius: 50%; background: linear-gradient(135deg, #1E3A5F 0%, #0A0E1A 100%); border: 2px solid rgba(59,130,246,.35); display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(0,0,0,.2), 0 0 12px rgba(59,130,246,.1); cursor: pointer; transition: transform .2s, box-shadow .2s; text-decoration: none; }
-    .elevo-dot:hover { transform: scale(1.1); box-shadow: 0 6px 24px rgba(0,0,0,.3), 0 0 20px rgba(59,130,246,.15); }
+    .elevo-dot { position: fixed; bottom: 28px; right: 28px; z-index: 9999; }
+    .elevo-dot a {
+      display: flex; align-items: center; gap: 8px; background: var(--gray-900); color: var(--white);
+      font-size: 0.75rem; font-weight: 700; padding: 10px 16px; border-radius: 100px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3); transition: all 0.2s; border: 1px solid rgba(255,255,255,0.1);
+    }
+    .elevo-dot a:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,0,0,0.35); }
+    .elevo-pulse { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); animation: glow 2s infinite; }
 
-    @media (max-width: 768px) {
-      .hero-inner { grid-template-columns: 1fr; }
-      .metric-row .metric-card:last-child { display: none; }
-      .hero h1 { font-size: 2rem; }
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+      .about-grid { grid-template-columns: 1fr; }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .process-steps { grid-template-columns: repeat(3, 1fr); gap: 24px; }
+      .process-steps::before { display: none; }
+      .team-grid { grid-template-columns: repeat(2, 1fr); }
+      .contact-grid { grid-template-columns: 1fr; }
+      .trust-bar-grid { grid-template-columns: repeat(2, 1fr); }
+      .trust-bar-item { border-right: none; border-bottom: 1px solid var(--gray-200); }
+      .trust-bar-item:nth-child(odd) { border-right: 1px solid var(--gray-200); }
+      .faq-grid { grid-template-columns: 1fr; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
       .nav-links { display: none; }
-      .steps-inner { grid-template-columns: 1fr; }
-      .contact-inner { grid-template-columns: 1fr; }
+      .services-grid { grid-template-columns: 1fr; }
+      .team-grid { grid-template-columns: 1fr; }
+      .process-steps { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .hero-ctas { flex-direction: column; align-items: flex-start; }
+      .metric-cards { grid-template-columns: repeat(2, 1fr); }
     }
   </style>
 </head>
 <body>
 
+<!-- NAV -->
 <nav>
-  <div class="logo-area">
-    <img src="https://zahnwelt-berlin.com/wp-content/uploads/logo-zahnwelt.png" class="logo-img" alt="ZahnWelt Berlin" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-    <div class="logo-fallback" style="display:none"><div class="logo-dot"></div><span class="logo-text">ZahnWelt</span></div>
+  <div class="nav-inner">
+    <div class="logo">
+      <span class="logo-dot"></span>
+      ZahnWelt
+    </div>
+    <ul class="nav-links">
+      <li><a href="#about">Über uns</a></li>
+      <li><a href="#services">Leistungen</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#contact">Kontakt</a></li>
+    </ul>
+    <a href="tel:03020859200" class="btn btn-primary">&#9742; 030 20 85 92 00</a>
   </div>
-  <ul class="nav-links">
-    <li><a href="#leistungen">Leistungen</a></li>
-    <li><a href="#ablauf">Vorgehen</a></li>
-    <li><a href="#kontakt">Kontakt</a></li>
-  </ul>
-  <a href="#kontakt" class="nav-cta">Termin buchen</a>
 </nav>
 
-<section class="hero">
-  <div class="hero-blob"></div>
-  <div class="hero-blob2"></div>
-  <div class="hero-inner">
-    <div>
-      <div class="hero-pill">✦ Zahnarztpraxis Berlin Mitte – Implantologie & Ästhetik seit 1998</div>
-      <h1>Ihr Implantologe in Berlin Mitte.<br><span class="gradient-text">ZahnWelt Berlin – Qualität seit 1998</span></h1>
-      <p>ZahnWelt Berlin vereint Implantologie, Ästhetik und Parodontologie unter einem Dach – zentral am Alexanderplatz, mit langen Öffnungszeiten bis 20:00 Uhr und über 25 Jahren Erfahrung.</p>
-      <div class="hero-actions">
-        <a href="#kontakt" class="btn-gradient">Jetzt Termin buchen →</a>
-        <a href="#leistungen" class="btn-ghost">Mehr erfahren</a>
-      </div>
-    </div>
-    <div class="hero-card-grid">
-      <div class="hero-img-container">
-        <img src="https://zahnwelt-berlin.com/wp-content/uploads/praxis-hero.jpg" alt="ZahnWelt Berlin Mitte" loading="lazy" onerror="this.parentElement.innerHTML='<div class=\'hero-img-placeholder\'>🦷</div>'">
-      </div>
-      <div class="metric-card">
-        <div class="metric-value"><span>25+</span></div>
-        <div class="metric-label">Jahre Erfahrung</div>
-      </div>
-      <div class="metric-row">
-        <div class="metric-card">
-          <div class="metric-value"><span>Bis 20 Uhr</span></div>
-          <div class="metric-label">Mo–Do geöffnet</div>
+<!-- HERO -->
+<section id="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <div class="trust-pill">
+          <span class="trust-pill-dot"></span>
+          Abend-Sprechstunde bis 20:00 Uhr
         </div>
-        <div class="metric-card">
-          <div class="metric-value"><span>Mitte</span></div>
-          <div class="metric-label">Direkt am Alexanderplatz</div>
+        <h1 class="hero-headline">
+          Moderne Zahnmedizin<br>
+          <span>im Herzen von</span><br>
+          Berlin Mitte
+        </h1>
+        <p class="hero-desc">
+          Fünf Zahnärzte, Abendsprechstunden bis 20:00 Uhr, mehrsprachiges Team –
+          ZahnWelt Berlin Mitte ist die Zahnarztpraxis für Berliner, die keine Kompromisse machen möchten.
+        </p>
+        <div class="hero-ctas">
+          <a href="#contact" class="btn btn-primary" style="padding:12px 28px;font-size:0.95rem;">Termin vereinbaren</a>
+          <a href="tel:03020859200" class="btn btn-outline" style="padding:12px 28px;font-size:0.95rem;">030 20 85 92 00</a>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="services" id="leistungen">
-  <div class="services-header">
-    <span class="section-chip">Leistungen</span>
-    <h2 class="section-title">Was wir für Sie leisten</h2>
-    <p class="section-sub">Implantologie, Ästhetik und Parodontologie aus einer Hand – seit 1998 Berlins Spezialist am Alexanderplatz.</p>
-  </div>
-  <div class="services-grid">
-    <div class="service-card">
-      <div class="service-icon">🔬</div>
-      <h3>Implantologie</h3>
-      <p>Mehr als 25 Jahre Implantologie-Erfahrung am Alexanderplatz – präzise 3D-Planung und hochwertige Implantate für ein dauerhaftes Lächeln.</p>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">✨</div>
-      <h3>Ästhetische Zahnmedizin</h3>
-      <p>Veneers, Bleaching und Smile-Design – wir gestalten Ihr Lächeln individuell und natürlich mit modernsten Materialien und Methoden.</p>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">🦷</div>
-      <h3>Parodontologie</h3>
-      <p>Professionelle Behandlung von Zahnfleischerkrankungen – schonende Therapie, nachhaltige Ergebnisse und langfristiger Schutz Ihrer Zähne.</p>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">📱</div>
-      <h3>Online-Terminbuchung</h3>
-      <p>Buchen Sie rund um die Uhr Ihren Wunschtermin – auch Abendtermine bis 20 Uhr, direkt online und ohne Wartezeit.</p>
-    </div>
-  </div>
-</section>
-
-<section class="steps" id="ablauf">
-  <div class="steps-inner">
-    <div>
-      <span class="section-chip">Unser Vorgehen</span>
-      <h2 class="section-title" style="margin-bottom:2rem;">Ihr Weg zum perfekten Lächeln bei ZahnWelt</h2>
-      <div class="steps-grid">
-        <div class="step-item">
-          <div class="step-num-badge">1</div>
-          <div class="step-item-text">
-            <h4>Online buchen bis 20 Uhr</h4>
-            <p>Abendtermin sichern: Mo–Do bis 20 Uhr – auch nach der Arbeit bequem online buchen.</p>
+        <div class="metric-cards">
+          <div class="metric-card">
+            <div class="metric-value">10.000+</div>
+            <div class="metric-label">Zufriedene Patienten</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-value">4.7 &#9733;</div>
+            <div class="metric-label">Google-Bewertung</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-value">5</div>
+            <div class="metric-label">Zahnärzte im Team</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-value">Bis 20:00</div>
+            <div class="metric-label">Abend-Sprechstunde</div>
           </div>
         </div>
-        <div class="step-item">
-          <div class="step-num-badge">2</div>
-          <div class="step-item-text">
-            <h4>Diagnostik & Planung</h4>
-            <p>3D-Diagnostik und digitale Behandlungsplanung für präzise Implantologie und optimale Ergebnisse.</p>
-          </div>
-        </div>
-        <div class="step-item">
-          <div class="step-num-badge">3</div>
-          <div class="step-item-text">
-            <h4>Spezialisierte Behandlung</h4>
-            <p>25 Jahre Erfahrung in Implantologie – Ihr Lächeln ist in besten Händen, mit modernster Technik und Präzision.</p>
-          </div>
-        </div>
-        <div class="step-item">
-          <div class="step-num-badge">4</div>
-          <div class="step-item-text">
-            <h4>Nachsorge & Kontrolle</h4>
-            <p>Regelmäßige Kontrolle und Prophylaxe sichern den langfristigen Erfolg Ihrer Implantate und Behandlungen.</p>
+      </div>
+      <div class="hero-image-wrap">
+        <img
+          class="hero-img"
+          src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=800&q=80"
+          alt="ZahnWelt Berlin Mitte Praxisräume"
+          onerror="this.src='https://placehold.co/800x420/7C3AED/ffffff?text=ZahnWelt+Berlin'"
+        />
+        <div class="hero-badge">
+          <span class="badge-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <div class="badge-text">
+            <strong>4.7 von 5 Sternen</strong>
+            <span>Google-Bewertungen · Berlin Mitte</span>
           </div>
         </div>
       </div>
     </div>
-    <div class="steps-visual">
-      <h3>Patienten vertrauen uns seit 1998</h3>
-      <p class="tagline">Berlins etablierter Implantologie-Spezialist – Qualität, die man sieht und spürt.</p>
-      <div class="highlight-box">
-        <strong>Zentral am Alex</strong>
-        <p>Direkt am Alexanderplatz – optimal erreichbar mit S-Bahn, U-Bahn und Bus aus ganz Berlin und Umgebung.</p>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<section id="trust-bar">
+  <div class="container">
+    <div class="trust-bar-grid">
+      <div class="trust-bar-item">
+        <span class="trust-num">10.000+</span>
+        <div class="trust-label">Behandelte Patienten</div>
       </div>
-      <div class="highlight-box">
-        <strong>Abendtermine bis 20 Uhr</strong>
-        <p>Mo–Do bis 20 Uhr geöffnet – Ihre Zahngesundheit passt sich Ihrem Alltag an, nicht umgekehrt.</p>
+      <div class="trust-bar-item">
+        <span class="trust-num">5</span>
+        <div class="trust-label">Zahnärzte im Team</div>
       </div>
-      <div class="highlight-box">
-        <strong>25 Jahre Spezialisierung</strong>
-        <p>Seit 1998 fokussiert auf Implantologie, Ästhetik und Parodontologie – Spezialistenwissen, das Generationen vertrauen.</p>
+      <div class="trust-bar-item">
+        <span class="trust-num">4.7 &#9733;</span>
+        <div class="trust-label">Google Bewertung</div>
+      </div>
+      <div class="trust-bar-item">
+        <span class="trust-num">Berlin Mitte</span>
+        <div class="trust-label">Friedrichstraße 102</div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="testimonials">
-  <div class="testimonials-header">
-    <span class="section-chip">Patientenstimmen</span>
-    <h2 class="section-title">Was Patienten über uns sagen</h2>
-  </div>
-  <div class="testimonials-grid">
-    <div class="testimonial-card">
-      <div class="stars">★★★★★</div>
-      <p>"Nach Jahren mit Angst vor dem Zahnarzt habe ich endlich eine Praxis gefunden, der ich vertraue. Das Implantat sitzt perfekt, die Beratung war transparent und das Ergebnis übertrifft alle Erwartungen."</p>
-      <div class="testimonial-author">
-        <div class="author-avatar">M</div>
-        <div>
-          <div class="author-name">Markus T.</div>
-          <div class="author-role">Patient seit 2019</div>
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text">
+        <div class="section-tag">Über ZahnWelt Berlin</div>
+        <h2 class="section-title">Die Zahnarztpraxis für das moderne Berlin</h2>
+        <p>
+          ZahnWelt Berlin Mitte liegt an der Friedrichstraße 102, nur wenige Schritte vom Checkpoint Charlie
+          und dem Gendarmenmarkt entfernt – im Herzen eines der lebendigsten Bezirke der Hauptstadt.
+          Die Praxis wurde 2016 von Dr. Evelyn Krause gegründet, die zuvor mehrere Jahre als Zahnärztin
+          an der Berliner Charité gearbeitet hat und dort ihre Leidenschaft für minimalinvasive Zahnmedizin
+          entwickelt hat.
+        </p>
+        <p>
+          Für Berlinerinnen und Berliner, die tagsüber im Büro sind, bietet ZahnWelt einen entscheidenden
+          Vorteil: Die Abend-Sprechstunde ist Mo–Fr bis 20:00 Uhr geöffnet. Sie müssen keinen
+          Urlaubstag nehmen, um Ihre Zähne behandeln zu lassen. Das Team aus fünf Zahnärztinnen und
+          Zahnärzten ist auf verschiedene Schwerpunkte spezialisiert und spricht Deutsch, Englisch
+          und Russisch – ideal für Berlins internationale Bevölkerung.
+        </p>
+        <p>
+          Die Praxis ist modern ausgestattet mit separaten Behandlungszimmern für maximale Diskretion,
+          digitaler Röntgentechnik und 3D-Implantatplanung. Sowohl GKV- als auch PKV-Patienten erhalten
+          hier dieselbe hochwertige Behandlung. Dr. Krause legt besonderen Wert auf schonende Techniken –
+          das bedeutet weniger Substanzabtrag, kürzere Heilungszeiten und mehr erhaltene Zahnsubstanz.
+        </p>
+        <div style="display:flex;gap:10px;margin-top:8px;flex-wrap:wrap;">
+          <span class="lang-badge">&#127465;&#127466; Deutsch</span>
+          <span class="lang-badge">&#127468;&#127463; English</span>
+          <span class="lang-badge">&#127479;&#127482; Русский</span>
         </div>
       </div>
-    </div>
-    <div class="testimonial-card">
-      <div class="stars">★★★★★</div>
-      <p>"Die Abendtermine bis 20 Uhr sind ein echter Gamechanger für Berufstätige. Ich musste nie Urlaub nehmen. Das Team ist hochkompetent und das Ergebnis meiner Behandlung ist wunderschön."</p>
-      <div class="testimonial-author">
-        <div class="author-avatar">J</div>
-        <div>
-          <div class="author-name">Julia W.</div>
-          <div class="author-role">Patientin seit 2021</div>
+      <div class="about-highlights">
+        <div class="highlight-item">
+          <span class="highlight-icon">&#127751;</span>
+          <div class="highlight-content">
+            <strong>Abend-Sprechstunde bis 20:00 Uhr</strong>
+            <span>Kein Urlaubstag nötig – Mo–Fr auch nach der Arbeit erreichbar</span>
+          </div>
         </div>
-      </div>
-    </div>
-    <div class="testimonial-card">
-      <div class="stars">★★★★★</div>
-      <p>"Die 3D-Planung für mein Implantat war faszinierend – man konnte alles vorab sehen. Das Ergebnis war exakt wie besprochen. Absolut empfehlenswert für jeden, der hochwertige Implantologie sucht."</p>
-      <div class="testimonial-author">
-        <div class="author-avatar">A</div>
-        <div>
-          <div class="author-name">Andreas B.</div>
-          <div class="author-role">Patient seit 2020</div>
+        <div class="highlight-item">
+          <span class="highlight-icon">&#127760;</span>
+          <div class="highlight-content">
+            <strong>Mehrsprachig: DE · EN · RU</strong>
+            <span>Internationales Team für Berlins diverse Patientschaft</span>
+          </div>
+        </div>
+        <div class="highlight-item">
+          <span class="highlight-icon">&#127968;</span>
+          <div class="highlight-content">
+            <strong>Private Behandlungszimmer</strong>
+            <span>Diskrete Atmosphäre, moderne Ausstattung auf PKV-Niveau</span>
+          </div>
+        </div>
+        <div class="highlight-item">
+          <span class="highlight-icon">&#128301;</span>
+          <div class="highlight-content">
+            <strong>Minimalinvasive Zahnmedizin</strong>
+            <span>Schonende Techniken – mehr Zahnsubstanz erhalten, weniger Eingriff</span>
+          </div>
+        </div>
+        <div class="highlight-item">
+          <span class="highlight-icon">&#128203;</span>
+          <div class="highlight-content">
+            <strong>GKV &amp; PKV gleichermaßen</strong>
+            <span>Alle Versicherungen willkommen, transparente Kostenpläne</span>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="cta-section">
-  <div class="cta-blob"></div>
-  <h2>Ihr Implantologe in Berlin Mitte – jetzt Termin buchen</h2>
-  <p>Mo–Do bis 20 Uhr geöffnet – buchen Sie online, auch nach der Arbeit.</p>
-  <a href="#kontakt" class="btn-gradient">Jetzt Termin buchen →</a>
+<!-- SERVICES -->
+<section id="services">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">Leistungen</div>
+      <h2 class="section-title">Unsere Behandlungsschwerpunkte</h2>
+      <p class="section-sub">Von der Vorsorge bis zur ästhetischen Komplettbehandlung – alles unter einem Dach in Berlin Mitte.</p>
+    </div>
+    <div class="services-grid">
+
+      <div class="service-card">
+        <div class="service-icon">&#127763;</div>
+        <h3 class="service-title">Abend-Sprechstunde bis 20:00 Uhr</h3>
+        <span class="service-price">Mo – Fr bis 20:00</span>
+        <p class="service-desc">
+          Unsere Abendsprechstunde ist kein Notfallsonderdienst – sie ist fester Bestandteil unseres
+          regulären Praxisalltags. Von Montag bis Freitag können Sie Ihre Behandlung nach der Arbeit
+          planen, ohne auf Leistungen verzichten zu müssen. Alle Untersuchungen, Behandlungen und
+          Prophylaxe-Termine sind auch abends verfügbar.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">&#10024;</div>
+        <h3 class="service-title">Prophylaxe &amp; Professionelle Zahnreinigung</h3>
+        <span class="service-price">ab 89 €</span>
+        <p class="service-desc">
+          Unsere professionelle Zahnreinigung geht über das Standardprogramm hinaus – mit individueller
+          Risikoanalyse, selektivem Polieren und abschließender Fluoridierung. ZÄ Mia Westermann ist
+          Spezialistin für Prophylaxe und erstellt für jeden Patienten einen persönlichen Recall-Plan
+          basierend auf individuellen Risikofaktoren wie Parodontitisneigung oder Kariesaktivität.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">&#128142;</div>
+        <h3 class="service-title">Ästhetische Zahnmedizin: Veneers &amp; Bleaching</h3>
+        <span class="service-price">Veneers ab 920 € | Bleaching ab 299 €</span>
+        <p class="service-desc">
+          Individuelle Keramik-Veneers beginnen bei 920 € pro Zahn und ermöglichen dramatische
+          Veränderungen in Farbe, Form und Ausrichtung – mit minimalem Substanzabtrag dank
+          Dr. Krauses minimalinvasivem Ansatz. Das professionelle Bleaching ab 299 € ergibt
+          in einer Sitzung natürlich wirkende, deutlich hellere Zähne mit langfristigem Effekt.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">&#129520;</div>
+        <h3 class="service-title">Implantologie mit 3D-Planung</h3>
+        <span class="service-price">ab 1.750 €</span>
+        <p class="service-desc">
+          ZA Stefan Nowak ist unser Implantologe mit Schwerpunkt auf computergestützter 3D-Planung –
+          das bedeutet präzisere Positionierung, kürzere Operationszeit und schnellere Einheilung.
+          Jede Implantatbehandlung beginnt mit einer dreidimensionalen Diagnostik und einem
+          detaillierten Kostenplan, dem Sie zustimmen, bevor wir mit der Behandlung beginnen.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">&#128481;</div>
+        <h3 class="service-title">Invisalign &amp; Aligner-Therapie</h3>
+        <span class="service-price">Individuelle Beratung</span>
+        <p class="service-desc">
+          Zahnfehlstellungen lassen sich heute ohne sichtbare Metallspangen korrigieren – mit
+          transparenten, herausnehmbaren Alignern. Wir erstellen zunächst eine digitale Simulation
+          des geplanten Ergebnisses, sodass Sie bereits vor Behandlungsbeginn sehen, wie Ihr
+          Lächeln aussehen wird. Ideal für Erwachsene, die Wert auf Diskretion legen.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">&#128300;</div>
+        <h3 class="service-title">Parodontologie &amp; Peri-Implantitis-Behandlung</h3>
+        <span class="service-price">GKV &amp; PKV</span>
+        <p class="service-desc">
+          Parodontitis und Peri-Implantitis – Entzündungen um Zähne und Implantate – sind stille
+          Erkrankungen, die oft lange unbemerkt bleiben. Unsere Parodontologen führen eine gründliche
+          Statuserhebung durch und begleiten Sie durch ein strukturiertes Behandlungskonzept,
+          das Entzündungen stoppt und das Zahnfleisch langfristig stabilisiert.
+        </p>
+      </div>
+
+    </div>
+  </div>
 </section>
 
-<section class="contact" id="kontakt">
-  <div class="contact-inner">
-    <div class="contact-info">
-      <h3>Kontakt aufnehmen</h3>
-      <div class="contact-item">
-        <div class="contact-icon">📍</div>
-        <div class="contact-item-text">
-          <div class="label">Standort</div>
-          <div class="value">Rathausstraße 7, 10178 Berlin</div>
+<!-- PROCESS -->
+<section id="process">
+  <div class="container">
+    <div class="section-header" style="text-align:center;">
+      <div class="section-tag">Behandlungsablauf</div>
+      <h2 class="section-title">Von der Anmeldung bis zur Nachsorge</h2>
+      <p class="section-sub" style="margin:0 auto;">Strukturiert, transparent und ohne Überraschungen – so läuft Ihre Behandlung bei ZahnWelt ab.</p>
+    </div>
+    <div class="process-steps">
+      <div class="process-step active">
+        <div class="step-num">1</div>
+        <h4 class="step-title">Erstbesuch</h4>
+        <p class="step-desc">Anamnese, Kennenlernen des Teams und erste Bestandsaufnahme Ihrer Mundgesundheit.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">2</div>
+        <h4 class="step-title">Diagnose</h4>
+        <p class="step-desc">Digitales Röntgen, ggf. 3D-Scan, Parodontalstatus – moderne Messtechnik für genaue Befunde.</p>
+      </div>
+      <div class="process-step active">
+        <div class="step-num">3</div>
+        <h4 class="step-title">Behandlungsplan</h4>
+        <p class="step-desc">Ausführliches Gespräch über alle Optionen, Kosten und Alternativen – ohne Zeitdruck.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">4</div>
+        <h4 class="step-title">Behandlung</h4>
+        <p class="step-desc">Minimalinvasive Durchführung mit modernster Ausstattung und auf Wunsch Betäubung.</p>
+      </div>
+      <div class="process-step active">
+        <div class="step-num">5</div>
+        <h4 class="step-title">Nachsorge</h4>
+        <p class="step-desc">Kontrolltermine, individueller Recall-Plan und persönliche Pflegeempfehlungen für zu Hause.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section id="team">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">Unser Team</div>
+      <h2 class="section-title">Die Zahnärzte der ZahnWelt Berlin</h2>
+      <p class="section-sub">Fünf Spezialisten mit klaren Schwerpunkten – für eine Rundum-Versorgung auf höchstem Niveau.</p>
+    </div>
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-avatar">EK</div>
+        <div class="team-name">Dr. Evelyn Krause</div>
+        <div class="team-role">Gründerin · Minimalinvasive Zahnmedizin</div>
+        <p class="team-quote">
+          „Nach Jahren an der Charité war mir klar: Die beste Behandlung ist die, bei der so wenig
+          wie nötig eingegriffen wird. Minimalinvasiv zu arbeiten bedeutet, vorhandene Zahnsubstanz
+          zu respektieren und für die Zukunft zu erhalten."
+        </p>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">SN</div>
+        <div class="team-name">ZA Stefan Nowak</div>
+        <div class="team-role">Zahnarzt · Implantologie &amp; 3D-Planung</div>
+        <p class="team-quote">
+          „3D-Planung ist kein Luxus – es ist der Standard, den ich für jeden Patienten erwarte.
+          Wenn ich weiß, was mich erwartet, bevor ich operiere, ist das Ergebnis präziser,
+          der Eingriff kürzer und die Einheilung schneller."
+        </p>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">MW</div>
+        <div class="team-name">ZÄ Mia Westermann</div>
+        <div class="team-role">Zahnärztin · Prophylaxe &amp; Kinderzahnheilkunde</div>
+        <p class="team-quote">
+          „Vorsorge ist immer besser als Nachsorge – das klingt banal, aber es stimmt. Meine Aufgabe
+          ist, gemeinsam mit Ihnen einen persönlichen Schutzplan zu entwickeln, damit Sie so wenige
+          Behandlungen wie möglich brauchen."
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">Patientenstimmen</div>
+      <h2 class="section-title">Was unsere Patienten sagen</h2>
+      <p class="section-sub">Ehrliche Rückmeldungen – von Berlinern für Berliner.</p>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="testi-text">
+          „Die Abendsprechstunde hat mein Leben verändert – ich muss keinen Urlaubstag mehr nehmen.
+          Dr. Krause hat sich bei meinem Ersttermin fast eine Stunde Zeit genommen, obwohl es ein
+          normaler Kontrolltermin war. Das Niveau hier ist wirklich besonders."
+        </p>
+        <div class="testi-author">
+          <div class="testi-initials">JH</div>
+          <div>
+            <div class="testi-name">Julia H.</div>
+            <div class="testi-role">Unternehmensberaterin, Berlin Mitte</div>
+          </div>
         </div>
       </div>
-      <div class="contact-item">
-        <div class="contact-icon">📞</div>
-        <div class="contact-item-text">
-          <div class="label">Telefon</div>
-          <div class="value">+49 30 28045443</div>
+      <div class="testimonial-card">
+        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="testi-text">
+          „Als Expat war es für mich entscheidend, dass das Team auch Englisch spricht. Bei ZahnWelt
+          wurde ich von Anfang an vollständig auf Englisch betreut – von der Terminvereinbarung bis
+          zum Kostenplan. ZA Nowak hat das Implantat perfekt gesetzt, ich bin begeistert."
+        </p>
+        <div class="testi-author">
+          <div class="testi-initials">MC</div>
+          <div>
+            <div class="testi-name">Michael C.</div>
+            <div class="testi-role">Software Engineer, originally from Dublin</div>
+          </div>
         </div>
       </div>
-      <div class="contact-item">
-        <div class="contact-icon">✉️</div>
-        <div class="contact-item-text">
-          <div class="label">E-Mail</div>
-          <div class="value">implantologie@zahnwelt-berlin.com</div>
+      <div class="testimonial-card">
+        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="testi-text">
+          „Die Veneers von Dr. Krause sind absolut natürlich geworden. Ich hatte Angst, dass meine
+          Zähne danach zu weiß oder zu künstlich aussehen – das Gegenteil ist eingetreten.
+          Ich bekomme ständig Komplimente und die wenigsten glauben, dass es Veneers sind."
+        </p>
+        <div class="testi-author">
+          <div class="testi-initials">LP</div>
+          <div>
+            <div class="testi-name">Lena P.</div>
+            <div class="testi-role">Fotografin, Prenzlauer Berg</div>
+          </div>
         </div>
       </div>
-      <div class="contact-item">
-        <div class="contact-icon">🕐</div>
-        <div class="contact-item-text">
-          <div class="label">Öffnungszeiten</div>
-          <div class="value">Mo–Do 8:00–20:00, Fr 8:00–15:00 Uhr</div>
+      <div class="testimonial-card">
+        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+        <p class="testi-text">
+          „Ich war jahrelang mit meinem Zahnarzt unzufrieden, aber zu bequem zu wechseln. Der Wechsel
+          zu ZahnWelt war die richtige Entscheidung: ZÄ Westermann hat bei meiner Prophylaxe Befunde
+          entdeckt, die mein alter Zahnarzt übersehen hatte. Gründlich, kompetent, empfehlenswert."
+        </p>
+        <div class="testi-author">
+          <div class="testi-initials">TK</div>
+          <div>
+            <div class="testi-name">Thomas K.</div>
+            <div class="testi-role">Architekt, Charlottenburg</div>
+          </div>
         </div>
       </div>
     </div>
-    <div class="contact-form">
-      <h4>Termin anfragen</h4>
-      <form>
-        <div class="form-group"><input type="text" placeholder="Ihr Name" /></div>
-        <div class="form-group"><input type="email" placeholder="Ihre E-Mail" /></div>
-        <div class="form-group"><input type="tel" placeholder="Telefonnummer (optional)" /></div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">Häufige Fragen</div>
+      <h2 class="section-title">Fragen &amp; Antworten</h2>
+      <p class="section-sub">Hier beantworten wir die Fragen, die uns am häufigsten gestellt werden.</p>
+    </div>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="faq-q-icon">?</span>
+          Kann ich auch nach 18:00 Uhr kommen?
+        </div>
+        <p class="faq-a">
+          Ja – unsere Abend-Sprechstunde ist Montag bis Freitag regulär bis 20:00 Uhr geöffnet.
+          Das sind keine Notfalltermine, sondern vollwertige Behandlungstermine inklusive Prophylaxe,
+          Kontrolluntersuchungen und allen operativen Leistungen. Termine abends sind genauso
+          gut verfügbar wie am Vormittag – einfach online oder telefonisch buchen.
+        </p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="faq-q-icon">?</span>
+          Sprechen Sie Englisch oder andere Sprachen?
+        </div>
+        <p class="faq-a">
+          Ja, unser Team spricht fließend Deutsch, Englisch und Russisch. Für englischsprachige Patienten
+          stehen alle Unterlagen, Kostenvoranschläge und Behandlungsgespräche auf Englisch zur Verfügung.
+          Das gilt auch für russischsprachige Patienten. Wir sind stolz darauf, ein echtes internationales
+          Praxisteam zu sein.
+        </p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="faq-q-icon">?</span>
+          Nehmen Sie neue Kassenpatienten an?
+        </div>
+        <p class="faq-a">
+          Ja, wir nehmen neue GKV-Patienten auf. Wir behandeln gesetzlich und privat versicherte Patienten
+          auf demselben Qualitätsniveau. Für Kassenpatienten werden alle Pflichtleistungen vollständig
+          abgerechnet. Wunschleistungen, die über den GKV-Katalog hinausgehen, klären wir vorab
+          transparent in einem Kostenplan.
+        </p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="faq-q-icon">?</span>
+          Was bedeutet minimalinvasive Zahnmedizin?
+        </div>
+        <p class="faq-a">
+          Minimalinvasiv bedeutet: so wenig Zahnsubstanz wie möglich entfernen, so viel wie nötig behandeln.
+          Dr. Krause setzt auf frühe Diagnostik, präventive Maßnahmen und schonende Techniken,
+          die den natürlichen Zahn möglichst erhalten. Das führt zu kürzeren Behandlungen, weniger
+          Schmerzen und langfristig gesünderen Zähnen ohne unnötige Eingriffe.
+        </p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="faq-q-icon">?</span>
+          Wie lange dauert eine Implantat-Behandlung?
+        </div>
+        <p class="faq-a">
+          Von der Erstuntersuchung bis zur Eingliederung der Krone dauert eine Implantatbehandlung
+          typischerweise 3–6 Monate. Nach dem chirurgischen Einsetzen braucht das Implantat ca. 8–12 Wochen
+          zum Einheilen, bevor die Krone aufgesetzt wird. Dank unserer 3D-Planung ist der operative
+          Eingriff selbst oft deutlich kürzer als bei konventionellen Methoden.
+        </p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="faq-q-icon">?</span>
+          Können auch Kinder behandelt werden?
+        </div>
+        <p class="faq-a">
+          Ja, ZÄ Mia Westermann betreut auch Kinder und Jugendliche in unserer Praxis. Wir empfehlen
+          den ersten Besuch bereits ab dem zweiten Lebensjahr, damit Kinder die Praxis kennenlernen,
+          bevor Behandlungen nötig werden. Die Kinder-Prophylaxe ist ein wichtiger Baustein,
+          um Karies von Anfang an zu verhindern.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">Kontakt &amp; Anfahrt</div>
+      <h2 class="section-title">Termin vereinbaren</h2>
+      <p class="section-sub">Rufen Sie uns an, schreiben Sie uns oder buchen Sie direkt online – wir antworten innerhalb von 24 Stunden.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>Praxisinformationen</h3>
+        <div class="contact-item">
+          <div class="contact-icon">&#128205;</div>
+          <div>
+            <div class="contact-label">Adresse</div>
+            <div class="contact-value">
+              Friedrichstraße 102<br>
+              10117 Berlin Mitte
+            </div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">&#128222;</div>
+          <div>
+            <div class="contact-label">Telefon</div>
+            <div class="contact-value">
+              <a href="tel:03020859200" style="color:var(--primary);font-weight:700;">030 20 85 92 00</a>
+            </div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">&#9993;</div>
+          <div>
+            <div class="contact-label">E-Mail</div>
+            <div class="contact-value">
+              <a href="mailto:info@zahnwelt-berlin.de" style="color:var(--primary);font-weight:700;">info@zahnwelt-berlin.de</a>
+            </div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">&#128336;</div>
+          <div>
+            <div class="contact-label">Öffnungszeiten</div>
+            <div class="contact-value">
+              Montag – Freitag: 08:00 – 20:00 Uhr<br>
+              Samstag: 09:00 – 15:00 Uhr<br>
+              Sonntag: geschlossen
+            </div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">&#128652;</div>
+          <div>
+            <div class="contact-label">Öffentliche Verkehrsmittel</div>
+            <div class="contact-value">
+              U6 Stadtmitte (3 Min.)<br>
+              S1, S2, S25 Friedrichstraße (7 Min.)<br>
+              Tram M1 · Bus 147
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form">
+        <h3>Terminanfrage senden</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Vorname *</label>
+            <input type="text" placeholder="Max" />
+          </div>
+          <div class="form-group">
+            <label>Nachname *</label>
+            <input type="text" placeholder="Mustermann" />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Telefon *</label>
+            <input type="tel" placeholder="030 1234 5678" />
+          </div>
+          <div class="form-group">
+            <label>E-Mail</label>
+            <input type="email" placeholder="max@beispiel.de" />
+          </div>
+        </div>
         <div class="form-group">
+          <label>Bevorzugte Sprache</label>
           <select>
-            <option value="">Ihr Anliegen</option>
-            <option>Online-Terminbuchung</option>
-            <option>Professionelle Zahnreinigung</option>
-            <option>Ästhetische Zahnmedizin</option>
-            <option>Implantologie Beratung</option>
-            <option>Parodontologie Behandlung</option>
+            <option value="">Bitte wählen...</option>
+            <option>Deutsch</option>
+            <option>English</option>
+            <option>Русский</option>
           </select>
         </div>
-        <div class="form-group"><textarea placeholder="Ihre Nachricht..."></textarea></div>
-        <button type="submit" class="form-submit">Termin anfragen →</button>
-      </form>
+        <div class="form-group">
+          <label>Leistung / Anliegen</label>
+          <select>
+            <option value="">Bitte wählen...</option>
+            <option>Ersttermin / Allgemeine Kontrolle</option>
+            <option>Prophylaxe &amp; Professionelle Zahnreinigung</option>
+            <option>Abendtermin (nach 17:00 Uhr)</option>
+            <option>Ästhetische Zahnmedizin (Veneers / Bleaching)</option>
+            <option>Implantologieberatung</option>
+            <option>Invisalign / Aligner</option>
+            <option>Parodontologische Behandlung</option>
+            <option>Kinderzahnheilkunde</option>
+            <option>Notfall / Akute Zahnschmerzen</option>
+            <option>Sonstiges</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Wunschtermin &amp; Nachricht (optional)</label>
+          <textarea placeholder="z.B. Abendtermin bevorzugt, Di oder Do nach 17 Uhr..."></textarea>
+        </div>
+        <button class="btn btn-primary" style="width:100%;justify-content:center;padding:13px;font-size:0.95rem;">
+          Terminanfrage absenden &#8594;
+        </button>
+        <p class="form-note">Wir antworten innerhalb von 24 Stunden auf Deutsch, Englisch oder Russisch.</p>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
-  <p>© 2026 <strong>ZahnWelt Berlin</strong> · Rathausstraße 7, 10178 Berlin · <a href="mailto:implantologie@zahnwelt-berlin.com">implantologie@zahnwelt-berlin.com</a></p>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <span class="footer-logo-dot"></span>
+        ZahnWelt Berlin Mitte
+      </div>
+      <div class="footer-links">
+        <a href="#">Impressum</a>
+        <a href="#">Datenschutz</a>
+        <a href="#">Barrierefreiheit</a>
+        <a href="#contact">Kontakt</a>
+        <a href="#services">Leistungen</a>
+      </div>
+    </div>
+    <p class="footer-copy">
+      &copy; 2025 ZahnWelt Berlin Mitte &middot; Friedrichstraße 102, 10117 Berlin &middot; Alle Rechte vorbehalten<br>
+      Zahnarztpraxis im Herzen von Berlin Mitte · nahe Checkpoint Charlie &amp; Gendarmenmarkt
+    </p>
+  </div>
 </footer>
 
-<a href="https://elevo.solutions" target="_blank" rel="noopener" class="elevo-dot" title="Erstellt von ELEVO">
-  <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><text x="6" y="21" font-size="19" font-weight="800" font-family="Arial,sans-serif" fill="white">E</text></svg>
-</a>
+<!-- ELEVO DOT -->
+<div class="elevo-dot">
+  <a href="https://elevo.solutions" target="_blank" rel="noopener noreferrer">
+    <span class="elevo-pulse"></span>
+    powered by ELEVO
+  </a>
+</div>
 
 </body>
 </html>

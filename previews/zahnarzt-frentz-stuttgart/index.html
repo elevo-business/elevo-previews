@@ -1,485 +1,623 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dr. Frentz & Kollegen – Ihr Zahnarzt am Stuttgarter Hauptbahnhof</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zahnarztpraxis Dr. Frentz &ndash; Stuttgart Stadtmitte</title>
   <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --primary: #1D3557;
-      --secondary: #457B9D;
-      --dark: #0f172a;
-      --mid: #1e293b;
-      --light: #f8fafc;
-      --text: #334155;
+      --green: #15803D;
+      --green-light: #16A34A;
+      --green-pale: #DCFCE7;
+      --green-ultra: #F0FDF4;
+      --dark: #111827;
+      --dark2: #1F2937;
+      --gray: #6B7280;
+      --gray-light: #F3F4F6;
+      --gray-border: #E5E7EB;
+      --white: #FFFFFF;
+      --font: 'Segoe UI', system-ui, -apple-system, sans-serif;
     }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; color: var(--text); }
-
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font); color: var(--dark); background: var(--white); line-height: 1.6; }
     nav {
-      position: fixed; top: 0; width: 100%; z-index: 100;
-      background: rgba(255,255,255,0.97); backdrop-filter: blur(10px);
-      padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center;
-      border-bottom: 1px solid rgba(0,0,0,0.06);
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(255,255,255,0.97); border-bottom: 1px solid var(--gray-border);
+      backdrop-filter: blur(8px); padding: 0 5%;
+      display: flex; align-items: center; justify-content: space-between; height: 68px;
     }
-    .logo-area { display: flex; align-items: center; gap: 0.5rem; }
-    .logo-img { height: 38px; max-width: 180px; object-fit: contain; display: block; }
-    .logo-fallback { display: flex; align-items: center; gap: 0.5rem; }
-    .logo-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--primary); }
-    .logo-text { font-size: 1.2rem; font-weight: 700; color: #0f172a; }
-    .nav-links { display: flex; gap: 2rem; list-style: none; }
-    .nav-links a { text-decoration: none; color: var(--text); font-size: 0.9rem; transition: color 0.2s; }
-    .nav-links a:hover { color: var(--primary); }
-    .nav-cta {
-      background: var(--primary); color: white; padding: 0.55rem 1.3rem;
-      border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 0.875rem;
-      transition: box-shadow 0.2s, transform 0.2s;
-    }
-    .nav-cta:hover { box-shadow: 0 4px 15px rgba(29,53,87,0.4); transform: translateY(-1px); }
-
-    .hero {
-      min-height: 100vh; padding-top: 80px;
-      background: var(--dark);
-      display: flex; align-items: center;
-      position: relative; overflow: hidden;
-    }
-    .hero-blob {
-      position: absolute; top: -200px; right: -200px;
-      width: 800px; height: 800px; border-radius: 50%;
-      background: radial-gradient(circle, rgba(29,53,87,0.12) 0%, transparent 70%);
-    }
-    .hero-blob2 {
-      position: absolute; bottom: -300px; left: -100px;
-      width: 600px; height: 600px; border-radius: 50%;
-      background: radial-gradient(circle, rgba(69,123,157,0.08) 0%, transparent 70%);
-    }
-    .hero-inner { max-width: 1200px; margin: 0 auto; padding: 4rem 2rem; position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
-    .hero-pill {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      border: 1px solid rgba(29,53,87,0.3); color: var(--secondary);
-      background: rgba(29,53,87,0.08);
-      padding: 0.4rem 1rem; border-radius: 50px; font-size: 0.8rem; font-weight: 600;
-      margin-bottom: 1.5rem;
-    }
-    .hero h1 { font-size: 3rem; font-weight: 800; color: white; line-height: 1.15; margin-bottom: 1.5rem; }
-    .hero h1 .gradient-text {
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-    }
-    .hero p { color: rgba(255,255,255,0.65); font-size: 1.1rem; line-height: 1.75; margin-bottom: 2.5rem; }
-    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
-    .btn-gradient {
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      color: white; padding: 0.9rem 2rem; border-radius: 50px;
-      text-decoration: none; font-weight: 700; font-size: 0.95rem;
-      box-shadow: 0 4px 15px rgba(29,53,87,0.4);
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .btn-gradient:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(29,53,87,0.5); }
-    .btn-ghost {
-      color: rgba(255,255,255,0.8); padding: 0.9rem 2rem; border-radius: 50px;
-      text-decoration: none; font-weight: 600; font-size: 0.95rem;
-      border: 1px solid rgba(255,255,255,0.2); transition: border-color 0.2s;
-    }
-    .btn-ghost:hover { border-color: rgba(255,255,255,0.5); }
-    .hero-card-grid { display: flex; flex-direction: column; gap: 1rem; }
-    .metric-card {
-      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 12px; padding: 1.5rem; backdrop-filter: blur(10px);
-      transition: background 0.2s;
-    }
-    .metric-card:hover { background: rgba(255,255,255,0.09); }
-    .metric-value { font-size: 2.5rem; font-weight: 900; color: white; }
-    .metric-value span {
-      background: linear-gradient(135deg, var(--secondary), #a8d5ef);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-    }
-    .metric-label { color: rgba(255,255,255,0.55); font-size: 0.85rem; margin-top: 0.2rem; }
-    .metric-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-    .hero-img-container {
-      border-radius: 16px; overflow: hidden;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
-      margin-bottom: 1rem; position: relative;
-    }
-    .hero-img-container img {
-      width: 100%; height: 220px; object-fit: cover; display: block;
-      filter: brightness(0.88);
-    }
-    .hero-img-placeholder {
-      width: 100%; height: 220px; background: linear-gradient(135deg, rgba(29,53,87,0.3), rgba(69,123,157,0.2));
-      display: flex; align-items: center; justify-content: center; font-size: 3rem;
-    }
-
-    .services { padding: 6rem 2rem; background: var(--light); }
-    .section-chip {
-      display: inline-block; background: rgba(29,53,87,0.1); color: var(--primary);
-      padding: 0.3rem 0.9rem; border-radius: 50px; font-size: 0.8rem; font-weight: 700;
-      margin-bottom: 1rem;
-    }
-    .section-title { font-size: 2.2rem; font-weight: 800; color: var(--dark); margin-bottom: 0.8rem; }
-    .section-sub { color: #64748b; font-size: 1rem; max-width: 500px; }
-    .services-header { max-width: 1100px; margin: 0 auto 3rem; }
-    .services-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; }
-    .service-card {
-      background: white; border-radius: 16px; padding: 2rem;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 15px rgba(0,0,0,0.04);
-      transition: transform 0.2s, box-shadow 0.2s; position: relative; overflow: hidden;
-    }
-    .service-card::after {
-      content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
-      background: linear-gradient(90deg, var(--primary), var(--secondary));
-      transform: scaleX(0); transition: transform 0.3s; transform-origin: left;
-    }
-    .service-card:hover { transform: translateY(-4px); box-shadow: 0 4px 6px rgba(0,0,0,0.06), 0 10px 30px rgba(0,0,0,0.1); }
-    .service-card:hover::after { transform: scaleX(1); }
-    .service-icon {
-      width: 52px; height: 52px; border-radius: 12px;
-      background: linear-gradient(135deg, rgba(29,53,87,0.1), rgba(69,123,157,0.1));
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.5rem; margin-bottom: 1.2rem;
-    }
-    .service-card h3 { font-size: 1rem; font-weight: 700; color: var(--dark); margin-bottom: 0.6rem; }
-    .service-card p { color: #64748b; font-size: 0.875rem; line-height: 1.7; }
-
-    .steps { padding: 6rem 2rem; background: white; }
-    .steps-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
-    .steps-grid { display: flex; flex-direction: column; gap: 1.5rem; }
-    .step-item { display: flex; gap: 1.2rem; align-items: flex-start; }
-    .step-num-badge {
-      width: 40px; height: 40px; border-radius: 10px; flex-shrink: 0;
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      color: white; display: flex; align-items: center; justify-content: center;
-      font-weight: 800; font-size: 0.9rem;
-    }
-    .step-item-text h4 { font-weight: 700; color: var(--dark); margin-bottom: 0.3rem; }
-    .step-item-text p { color: #64748b; font-size: 0.875rem; line-height: 1.6; }
-    .steps-visual {
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      border-radius: 20px; padding: 3rem; color: white;
-    }
-    .steps-visual h3 { font-size: 1.5rem; font-weight: 800; margin-bottom: 0.5rem; }
-    .steps-visual .tagline { opacity: 0.85; font-size: 0.95rem; margin-bottom: 2rem; }
-    .highlight-box { background: rgba(255,255,255,0.15); border-radius: 10px; padding: 1.2rem; margin-bottom: 1rem; }
-    .highlight-box strong { font-size: 1.1rem; }
-    .highlight-box p { opacity: 0.85; font-size: 0.875rem; margin-top: 0.2rem; }
-
-    .testimonials { padding: 6rem 2rem; background: var(--light); }
-    .testimonials-header { max-width: 1000px; margin: 0 auto 3rem; }
-    .testimonials-grid { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
-    .testimonial-card {
-      background: white; border-radius: 16px; padding: 2rem;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 15px rgba(0,0,0,0.04);
-    }
-    .stars { font-size: 1rem; margin-bottom: 1rem; color: #f59e0b; }
-    .testimonial-card p { color: #475569; font-size: 0.9rem; line-height: 1.7; font-style: italic; }
-    .testimonial-author { display: flex; gap: 0.8rem; align-items: center; margin-top: 1.2rem; padding-top: 1rem; border-top: 1px solid #f1f5f9; }
-    .author-avatar {
-      width: 40px; height: 40px; border-radius: 50%;
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      color: white; display: flex; align-items: center; justify-content: center; font-weight: 700;
-    }
-    .author-name { font-weight: 700; font-size: 0.85rem; color: var(--dark); }
-    .author-role { color: #94a3b8; font-size: 0.75rem; }
-
-    .cta-section { padding: 6rem 2rem; text-align: center; background: var(--dark); position: relative; overflow: hidden; }
-    .cta-blob { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(29,53,87,0.15) 0%, transparent 70%); }
-    .cta-section h2 { font-size: 2.5rem; font-weight: 800; color: white; margin-bottom: 1rem; position: relative; }
-    .cta-section p { color: rgba(255,255,255,0.65); font-size: 1.05rem; margin-bottom: 2.5rem; max-width: 450px; margin-left: auto; margin-right: auto; position: relative; }
-    .cta-section .btn-gradient { position: relative; }
-
-    .contact { padding: 5rem 2rem; background: var(--light); }
-    .contact-inner { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
-    .contact-info h3 { font-size: 1.4rem; font-weight: 800; color: var(--dark); margin-bottom: 1.5rem; }
-    .contact-item { display: flex; gap: 1rem; margin-bottom: 1.2rem; align-items: flex-start; }
-    .contact-icon {
-      width: 42px; height: 42px; border-radius: 10px; flex-shrink: 0;
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      color: white; display: flex; align-items: center; justify-content: center; font-size: 1rem;
-    }
-    .contact-item-text .label { font-size: 0.75rem; color: #94a3b8; text-transform: uppercase; letter-spacing: 1px; }
-    .contact-item-text .value { font-weight: 600; color: var(--dark); font-size: 0.9rem; }
-    .contact-form { background: white; border-radius: 16px; padding: 2rem; box-shadow: 0 2px 15px rgba(0,0,0,0.06); }
-    .contact-form h4 { font-weight: 700; color: var(--dark); margin-bottom: 1.5rem; }
-    .form-group { margin-bottom: 1rem; }
-    .form-group input, .form-group textarea, .form-group select {
-      width: 100%; padding: 0.75rem 1rem; border: 2px solid #e2e8f0;
-      border-radius: 10px; font-size: 0.875rem; transition: border-color 0.2s;
-      font-family: inherit; background: #f8fafc;
-    }
-    .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
-      outline: none; border-color: var(--primary); background: white;
-    }
-    .form-group textarea { resize: vertical; min-height: 90px; }
-    .form-submit {
-      width: 100%; background: linear-gradient(135deg, var(--primary), var(--secondary));
-      color: white; padding: 0.85rem; border: none; border-radius: 10px;
-      font-size: 0.95rem; font-weight: 700; cursor: pointer;
-    }
-
-    footer { background: var(--dark); color: rgba(255,255,255,0.4); padding: 1.5rem 2rem; text-align: center; font-size: 0.85rem; }
-    footer a { color: inherit; }
-    footer strong { color: rgba(255,255,255,0.7); }
-
-    .elevo-dot { position: fixed; bottom: 24px; right: 24px; z-index: 9999; width: 52px; height: 52px; border-radius: 50%; background: linear-gradient(135deg, #1E3A5F 0%, #0A0E1A 100%); border: 2px solid rgba(59,130,246,.35); display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(0,0,0,.2), 0 0 12px rgba(59,130,246,.1); cursor: pointer; transition: transform .2s, box-shadow .2s; text-decoration: none; }
-    .elevo-dot:hover { transform: scale(1.1); box-shadow: 0 6px 24px rgba(0,0,0,.3), 0 0 20px rgba(59,130,246,.15); }
-
-    @media (max-width: 768px) {
-      .hero-inner { grid-template-columns: 1fr; }
-      .metric-row .metric-card:last-child { display: none; }
-      .hero h1 { font-size: 2rem; }
-      .nav-links { display: none; }
-      .steps-inner { grid-template-columns: 1fr; }
-      .contact-inner { grid-template-columns: 1fr; }
-    }
+    .nav-logo { font-size: 1.25rem; font-weight: 700; color: var(--dark); text-decoration: none; display: flex; align-items: center; gap: 7px; }
+    .nav-dot { width: 10px; height: 10px; background: var(--green); border-radius: 50%; display: inline-block; }
+    .nav-links { display: flex; align-items: center; gap: 28px; }
+    .nav-links a { text-decoration: none; color: var(--gray); font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--green); }
+    .nav-cta { background: var(--green); color: var(--white); padding: 9px 22px; border-radius: 8px; font-size: 0.875rem; font-weight: 600; text-decoration: none; transition: background 0.2s; white-space: nowrap; }
+    .nav-cta:hover { background: var(--green-light); }
+    @media (max-width: 768px) { .nav-links { display: none; } nav { padding: 0 4%; } }
+    #hero { background: var(--dark); min-height: 100vh; padding-top: 68px; display: flex; align-items: center; }
+    .hero-inner { width: 90%; max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; padding: 80px 0; }
+    .hero-left { display: flex; flex-direction: column; gap: 24px; }
+    .trust-pill { display: inline-flex; align-items: center; gap: 8px; background: rgba(21,128,61,0.18); border: 1px solid rgba(21,128,61,0.35); color: #4ADE80; padding: 6px 14px; border-radius: 100px; font-size: 0.8rem; font-weight: 600; width: fit-content; }
+    .pill-dot { width: 6px; height: 6px; background: #4ADE80; border-radius: 50%; display: inline-block; }
+    .hero-h1 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; color: var(--white); line-height: 1.15; letter-spacing: -0.5px; }
+    .hero-h1 em { color: #4ADE80; font-style: normal; }
+    .hero-desc { color: #9CA3AF; font-size: 1.05rem; line-height: 1.7; max-width: 480px; }
+    .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+    .cta-primary { background: var(--green); color: var(--white); padding: 14px 28px; border-radius: 10px; font-size: 0.95rem; font-weight: 700; text-decoration: none; transition: background 0.2s; white-space: nowrap; }
+    .cta-primary:hover { background: var(--green-light); }
+    .cta-secondary { border: 1.5px solid rgba(255,255,255,0.25); color: var(--white); padding: 14px 28px; border-radius: 10px; font-size: 0.95rem; font-weight: 600; text-decoration: none; transition: border-color 0.2s; white-space: nowrap; }
+    .cta-secondary:hover { border-color: rgba(255,255,255,0.5); }
+    .hero-right { position: relative; }
+    .hero-img-wrap { border-radius: 16px; overflow: hidden; box-shadow: 0 40px 80px rgba(0,0,0,0.5); }
+    .hero-img-wrap img { width: 100%; height: 420px; object-fit: cover; display: block; }
+    .hero-metrics { position: absolute; bottom: -20px; left: -20px; display: flex; flex-direction: column; gap: 10px; }
+    .metric-card { background: var(--white); border-radius: 10px; padding: 12px 18px; box-shadow: 0 8px 24px rgba(0,0,0,0.18); display: flex; align-items: center; gap: 12px; }
+    .metric-icon { font-size: 1.3rem; }
+    .metric-val { font-size: 1.1rem; font-weight: 800; color: var(--dark); line-height: 1; }
+    .metric-label { font-size: 0.72rem; color: var(--gray); margin-top: 2px; }
+    @media (max-width: 900px) { .hero-inner { grid-template-columns: 1fr; gap: 40px; padding: 60px 0; } .hero-right { display: none; } }
+    #trust-bar { background: var(--gray-light); border-top: 1px solid var(--gray-border); border-bottom: 1px solid var(--gray-border); padding: 36px 5%; }
+    .trust-bar-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; text-align: center; }
+    .trust-num { font-size: 2rem; font-weight: 800; color: var(--green); line-height: 1; }
+    .trust-desc { font-size: 0.85rem; color: var(--gray); margin-top: 4px; font-weight: 500; }
+    @media (max-width: 640px) { .trust-bar-inner { grid-template-columns: repeat(2,1fr); } }
+    .section-tag { font-size: 0.78rem; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase; color: var(--green); margin-bottom: 12px; }
+    .section-h2 { font-size: clamp(1.6rem,3vw,2.2rem); font-weight: 800; color: var(--dark); line-height: 1.25; letter-spacing: -0.3px; margin-bottom: 20px; }
+    .section-header { text-align: center; margin-bottom: 52px; }
+    .section-header .section-h2 { margin-bottom: 0; }
+    #about { padding: 96px 5%; background: var(--white); }
+    .about-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+    .about-body p { color: #374151; font-size: 0.97rem; line-height: 1.8; margin-bottom: 18px; }
+    .about-body p:last-child { margin-bottom: 0; }
+    .about-sidebar { display: flex; flex-direction: column; gap: 20px; }
+    .about-card { background: var(--green-ultra); border: 1px solid var(--green-pale); border-radius: 12px; padding: 20px 22px; }
+    .about-card-title { font-size: 0.85rem; font-weight: 700; color: var(--green); margin-bottom: 6px; }
+    .about-card-text { font-size: 0.88rem; color: #374151; line-height: 1.6; }
+    @media (max-width: 900px) { .about-inner { grid-template-columns: 1fr; gap: 40px; } }
+    #leistungen { padding: 96px 5%; background: var(--gray-light); }
+    .services-inner { max-width: 1100px; margin: 0 auto; }
+    .services-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+    .service-card { background: var(--white); border-radius: 14px; padding: 28px 26px; border: 1px solid var(--gray-border); transition: box-shadow 0.2s, transform 0.2s; }
+    .service-card:hover { box-shadow: 0 12px 32px rgba(0,0,0,0.09); transform: translateY(-3px); }
+    .service-emoji { font-size: 1.9rem; margin-bottom: 14px; display: block; }
+    .service-title { font-size: 1rem; font-weight: 700; color: var(--dark); margin-bottom: 8px; }
+    .service-body { font-size: 0.88rem; color: var(--gray); line-height: 1.7; }
+    .service-price { display: inline-block; margin-top: 12px; background: var(--green-pale); color: var(--green); font-size: 0.78rem; font-weight: 700; padding: 4px 10px; border-radius: 100px; }
+    @media (max-width: 900px) { .services-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 600px) { .services-grid { grid-template-columns: 1fr; } }
+    #ablauf { padding: 96px 5%; background: var(--white); }
+    .process-inner { max-width: 820px; margin: 0 auto; }
+    .process-steps { display: flex; flex-direction: column; margin-top: 48px; }
+    .process-step { display: flex; gap: 28px; align-items: flex-start; padding-bottom: 36px; position: relative; }
+    .process-step:not(:last-child)::after { content: ''; position: absolute; left: 19px; top: 48px; bottom: 0; width: 2px; background: var(--green-pale); }
+    .step-num { width: 40px; height: 40px; border-radius: 50%; background: var(--green); color: var(--white); font-size: 0.9rem; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0; position: relative; z-index: 1; }
+    .step-body { padding-top: 6px; }
+    .step-title { font-size: 1.05rem; font-weight: 700; color: var(--dark); margin-bottom: 6px; }
+    .step-text { font-size: 0.9rem; color: var(--gray); line-height: 1.7; }
+    #team { padding: 96px 5%; background: var(--dark); }
+    .team-inner { max-width: 1100px; margin: 0 auto; }
+    .team-header { text-align: center; margin-bottom: 52px; }
+    .team-header .section-tag { color: #4ADE80; }
+    .team-header .section-h2 { color: var(--white); margin-bottom: 0; }
+    .team-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 28px; }
+    .team-card { background: var(--dark2); border: 1px solid rgba(255,255,255,0.07); border-radius: 16px; padding: 32px 26px; text-align: center; }
+    .team-avatar { width: 80px; height: 80px; border-radius: 50%; margin: 0 auto 18px; display: flex; align-items: center; justify-content: center; font-size: 1.6rem; font-weight: 800; color: var(--white); }
+    .team-name { font-size: 1.05rem; font-weight: 700; color: var(--white); margin-bottom: 4px; }
+    .team-role { font-size: 0.82rem; color: #6EE7B7; font-weight: 600; margin-bottom: 14px; }
+    .team-quote { font-size: 0.87rem; color: #9CA3AF; line-height: 1.65; font-style: italic; }
+    @media (max-width: 768px) { .team-grid { grid-template-columns: 1fr; gap: 20px; } }
+    #testimonials { padding: 96px 5%; background: var(--gray-light); }
+    .testimonials-inner { max-width: 1100px; margin: 0 auto; }
+    .testimonials-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .testi-card { background: var(--white); border-radius: 14px; padding: 28px; border: 1px solid var(--gray-border); }
+    .testi-stars { color: #F59E0B; font-size: 1rem; margin-bottom: 12px; letter-spacing: 2px; }
+    .testi-text { font-size: 0.92rem; color: #374151; line-height: 1.75; margin-bottom: 18px; }
+    .testi-author { display: flex; align-items: center; gap: 12px; }
+    .testi-initial { width: 38px; height: 38px; border-radius: 50%; background: var(--green-pale); color: var(--green); font-weight: 800; font-size: 0.9rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .testi-name { font-size: 0.88rem; font-weight: 700; color: var(--dark); }
+    .testi-role { font-size: 0.78rem; color: var(--gray); }
+    @media (max-width: 768px) { .testimonials-grid { grid-template-columns: 1fr; } }
+    #faq { padding: 96px 5%; background: var(--white); }
+    .faq-inner { max-width: 820px; margin: 0 auto; }
+    .faq-list { margin-top: 48px; display: flex; flex-direction: column; gap: 16px; }
+    .faq-item { border: 1px solid var(--gray-border); border-radius: 12px; overflow: hidden; }
+    .faq-q { padding: 20px 24px; font-size: 0.97rem; font-weight: 700; color: var(--dark); display: flex; justify-content: space-between; align-items: center; background: var(--white); }
+    .faq-icon { font-size: 1.1rem; color: var(--green); flex-shrink: 0; margin-left: 12px; }
+    .faq-a { padding: 0 24px 20px; font-size: 0.9rem; color: #374151; line-height: 1.75; }
+    #kontakt { padding: 96px 5%; background: var(--dark); }
+    .contact-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+    .contact-left .section-tag { color: #4ADE80; }
+    .contact-left .section-h2 { color: var(--white); }
+    .contact-info { margin-top: 32px; display: flex; flex-direction: column; gap: 18px; }
+    .contact-row { display: flex; align-items: flex-start; gap: 14px; }
+    .contact-icon { width: 40px; height: 40px; border-radius: 10px; background: rgba(21,128,61,0.2); display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; }
+    .contact-val { font-size: 0.92rem; color: #D1D5DB; line-height: 1.6; }
+    .contact-val strong { display: block; color: var(--white); font-size: 0.85rem; margin-bottom: 1px; }
+    .contact-form { display: flex; flex-direction: column; gap: 14px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .form-group { display: flex; flex-direction: column; gap: 6px; }
+    .form-group label { font-size: 0.8rem; font-weight: 600; color: #9CA3AF; }
+    .form-group input, .form-group textarea, .form-group select { padding: 11px 14px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.06); color: var(--white); font-size: 0.9rem; font-family: var(--font); outline: none; transition: border-color 0.2s; }
+    .form-group select option { background: #1F2937; color: var(--white); }
+    .form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color: var(--green); }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+    .form-submit { background: var(--green); color: var(--white); padding: 13px 28px; border-radius: 9px; border: none; font-size: 0.95rem; font-weight: 700; cursor: pointer; transition: background 0.2s; font-family: var(--font); }
+    .form-submit:hover { background: var(--green-light); }
+    @media (max-width: 900px) { .contact-inner { grid-template-columns: 1fr; gap: 48px; } .form-row { grid-template-columns: 1fr; } }
+    footer { background: #0A0F0D; border-top: 1px solid rgba(255,255,255,0.05); padding: 36px 5%; text-align: center; }
+    .footer-logo { font-size: 1.1rem; font-weight: 700; color: var(--white); margin-bottom: 10px; display: flex; align-items: center; justify-content: center; gap: 6px; }
+    .footer-dot { width: 8px; height: 8px; background: var(--green); border-radius: 50%; }
+    .footer-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin: 12px 0; }
+    .footer-links a { color: #6B7280; font-size: 0.82rem; text-decoration: none; }
+    .footer-links a:hover { color: #9CA3AF; }
+    .footer-copy { color: #4B5563; font-size: 0.78rem; margin-top: 10px; }
+    .elevo-dot { position: fixed; bottom: 28px; right: 28px; z-index: 9999; width: 48px; height: 48px; border-radius: 50%; background: #111827; color: var(--white); display: flex; align-items: center; justify-content: center; font-size: 1rem; font-weight: 800; text-decoration: none; box-shadow: 0 4px 20px rgba(0,0,0,0.35); border: 1.5px solid rgba(255,255,255,0.12); transition: transform 0.2s, box-shadow 0.2s; }
+    .elevo-dot:hover { transform: scale(1.1); box-shadow: 0 8px 28px rgba(0,0,0,0.4); }
   </style>
 </head>
 <body>
 
+<!-- NAV -->
 <nav>
-  <div class="logo-area">
-    <img src="https://www.frentz.de/assets/logo-frentz.svg" class="logo-img" alt="Dr. Frentz & Kollegen" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-    <div class="logo-fallback" style="display:none"><div class="logo-dot"></div><span class="logo-text">Frentz</span></div>
+  <a href="#" class="nav-logo">Dr. Frentz <span class="nav-dot"></span></a>
+  <div class="nav-links">
+    <a href="#leistungen">Leistungen</a>
+    <a href="#ablauf">Ablauf</a>
+    <a href="#team">Team</a>
+    <a href="#faq">FAQ</a>
+    <a href="#kontakt">Kontakt</a>
   </div>
-  <ul class="nav-links">
-    <li><a href="#leistungen">Leistungen</a></li>
-    <li><a href="#ablauf">Vorgehen</a></li>
-    <li><a href="#kontakt">Kontakt</a></li>
-  </ul>
-  <a href="#kontakt" class="nav-cta">Termin buchen</a>
+  <a href="tel:07112248660" class="nav-cta">Termin anfragen</a>
 </nav>
 
-<section class="hero">
-  <div class="hero-blob"></div>
-  <div class="hero-blob2"></div>
+<!-- HERO -->
+<section id="hero">
   <div class="hero-inner">
-    <div>
-      <div class="hero-pill">✦ Zahnarztpraxis Stuttgart-Mitte – Hauptbahnhof, Ästhetik & Implantologie</div>
-      <h1>Ihr Zahnarzt direkt am Hauptbahnhof.<br><span class="gradient-text">Dr. Frentz & Kollegen – Stuttgart-Mitte seit 1997</span></h1>
-      <p>Zentral am Stuttgarter Hauptbahnhof – Dr. Frentz & Kollegen bieten ästhetische Zahnmedizin, Implantologie und Prophylaxe auf höchstem Niveau. 4.6★ auf Google, Abendtermine Mo–Do bis 19:00 Uhr.</p>
-      <div class="hero-actions">
-        <a href="#kontakt" class="btn-gradient">Jetzt Termin buchen →</a>
-        <a href="#leistungen" class="btn-ghost">Mehr erfahren</a>
+    <div class="hero-left">
+      <div class="trust-pill">
+        <span class="pill-dot"></span>
+        Seit 2006 im Herzen Stuttgarts
+      </div>
+      <h1 class="hero-h1">Zahnmedizin mit <em>Herz</em> &ndash;<br>direkt an der K&ouml;nigstra&szlig;e</h1>
+      <p class="hero-desc">
+        Bei Dr. Frentz behandeln wir jeden Patienten individuell &ndash; mit Zeit, Erkl&auml;rung und modernster Technik.
+        Ob Angstpatient, Implantat-Bedarf oder &auml;sthetischer Wunsch: Wir finden gemeinsam die beste L&ouml;sung f&uuml;r Ihr L&auml;cheln.
+      </p>
+      <div class="hero-ctas">
+        <a href="#kontakt" class="cta-primary">Jetzt Termin vereinbaren</a>
+        <a href="#leistungen" class="cta-secondary">Leistungen ansehen</a>
       </div>
     </div>
-    <div class="hero-card-grid">
-      <div class="hero-img-container">
-        <img src="https://www.frentz.de/assets/hero-praxis.jpg" alt="Dr. Frentz & Kollegen Stuttgart Praxis" loading="lazy" onerror="this.parentElement.innerHTML='<div class=\'hero-img-placeholder\'>🦷</div>'">
+    <div class="hero-right">
+      <div class="hero-img-wrap">
+        <img
+          src="https://images.unsplash.com/photo-1609207963768-0b2ea4c9b8bb?w=800&q=80"
+          alt="Zahnarztpraxis Dr. Frentz Stuttgart"
+          onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22800%22 height=%22420%22%3E%3Crect width=%22800%22 height=%22420%22 fill=%22%231F2937%22/%3E%3Ctext x=%22400%22 y=%22200%22 text-anchor=%22middle%22 fill=%22%2315803D%22 font-size=%2226%22 font-family=%22sans-serif%22%3EDr. Frentz%3C/text%3E%3Ctext x=%22400%22 y=%22235%22 text-anchor=%22middle%22 fill=%22%236B7280%22 font-size=%2215%22 font-family=%22sans-serif%22%3EZahnarztpraxis Stuttgart%3C/text%3E%3C/svg%3E'"
+        />
       </div>
-      <div class="metric-card">
-        <div class="metric-value"><span>4.6★</span></div>
-        <div class="metric-label">Google Bewertung</div>
-      </div>
-      <div class="metric-row">
+      <div class="hero-metrics">
         <div class="metric-card">
-          <div class="metric-value"><span>25+</span></div>
-          <div class="metric-label">Jahre Erfahrung</div>
+          <div class="metric-icon">&#11088;</div>
+          <div><div class="metric-val">4,8 / 5</div><div class="metric-label">Google-Bewertung</div></div>
         </div>
         <div class="metric-card">
-          <div class="metric-value"><span>300m</span></div>
-          <div class="metric-label">vom Stuttgarter Hbf</div>
+          <div class="metric-icon">&#128101;</div>
+          <div><div class="metric-val">7.000+</div><div class="metric-label">Zufriedene Patienten</div></div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-icon">&#127942;</div>
+          <div><div class="metric-val">18 Jahre</div><div class="metric-label">Erfahrung am Standort</div></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="services" id="leistungen">
-  <div class="services-header">
-    <span class="section-chip">Leistungen</span>
-    <h2 class="section-title">Was wir für Sie leisten</h2>
-    <p class="section-sub">Ästhetik, Sofortimplantologie und Mikrochirurgie – seit 1997 am Stuttgarter Hauptbahnhof.</p>
+<!-- TRUST BAR -->
+<section id="trust-bar">
+  <div class="trust-bar-inner">
+    <div><div class="trust-num">7.000+</div><div class="trust-desc">Patienten seit 2006</div></div>
+    <div><div class="trust-num">18 Jahre</div><div class="trust-desc">Erfahrung in Stuttgart</div></div>
+    <div><div class="trust-num">4,8 &#9733;</div><div class="trust-desc">Google-Bewertung</div></div>
+    <div><div class="trust-num">K&ouml;nigstr.</div><div class="trust-desc">Stuttgart Stadtmitte</div></div>
   </div>
-  <div class="services-grid">
-    <div class="service-card">
-      <div class="service-icon">✨</div>
-      <h3>Ästhetische Zahnmedizin</h3>
-      <p>Veneers, Bleaching und ästhetische Korrekturen – für ein Lächeln, das begeistert. Modernste Materialien und individuelle Beratung für Ihr perfektes Ergebnis.</p>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-inner">
+    <div class="about-body">
+      <div class="section-tag">&#220;ber uns</div>
+      <h2 class="section-h2">Seit 2006 Ihr Zahnarzt im Herzen Stuttgarts</h2>
+      <p>
+        Dr. Michael Frentz hat seine Praxis an der K&ouml;nigstra&szlig;e 44 im Jahr 2006 gegr&uuml;ndet &ndash;
+        mitten in Stuttgart, gut erreichbar f&uuml;r Patienten aus der Stadtmitte, Bad Cannstatt, Vaihingen und dem
+        gesamten Gro&szlig;raum. Seine Philosophie ist so einfach wie konsequent: &bdquo;Zahnmedizin mit Herz&ldquo;.
+        Kein Patient beginnt die Behandlung, bevor er nicht vollst&auml;ndig verstanden hat, was gemacht wird und warum.
+        Diese Haltung hat in 18 Jahren tausende treue Patienten gewonnen.
+      </p>
+      <p>
+        2009 schloss Dr. Frentz seine Zusatzausbildung in Implantologie an der Universit&auml;t T&uuml;bingen ab &ndash;
+        einer der angesehensten Ausbildungsst&auml;tten Deutschlands f&uuml;r dieses Fachgebiet. Seitdem hat er &uuml;ber
+        1.200 Implantate gesetzt und sein eigenes Behandlungsprotokoll entwickelt, das auf minimale Eingriffsgr&ouml;&szlig;e
+        und schnelle Heilungszeiten ausgelegt ist. Seit 2014 bietet die Praxis Lachgas-Sedierung an &ndash; ein Angebot,
+        das besonders Angstpatienten in Stuttgart sehr sch&auml;tzen.
+      </p>
+      <p>
+        2012 verst&auml;rkte Dr. Sabine Frentz das Praxisteam mit Spezialisierung auf Kieferorthop&auml;die f&uuml;r
+        Kinder und Erwachsene. Die Praxis ist damit eine echte Familienpraxis: Familie Frentz behandelt Patienten
+        von 6 bis 85 &ndash; oft mehrere Generationen derselben Familie. Das Vertrauen, das &uuml;ber fast zwei
+        Jahrzehnte aufgebaut wurde, ist das Fundament dieser Praxis.
+      </p>
     </div>
-    <div class="service-card">
-      <div class="service-icon">🔬</div>
-      <h3>Sofort-Implantologie</h3>
-      <p>Implantat in einer Sitzung: mit modernster Sofortimplantation sparen Sie Zeit und erreichen schnell wieder volle Lebensqualität – minimalinvasiv und sicher.</p>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">🦷</div>
-      <h3>Mikrochirurgie</h3>
-      <p>Präzise mikrochirurgische Eingriffe für schonende Behandlungen – weniger Schmerzen, schnellere Heilung, bessere Ergebnisse. Modernste Technik am Stuttgarter Hbf.</p>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">🛡️</div>
-      <h3>Prophylaxe & Zahnreinigung</h3>
-      <p>Individuelle Prophylaxe und professionelle Zahnreinigung als Basis für gesunde Zähne – regelmäßig, gründlich und auf Sie persönlich abgestimmt.</p>
+    <div class="about-sidebar">
+      <div class="about-card">
+        <div class="about-card-title">&#129463; Implantologie-Spezialist</div>
+        <div class="about-card-text">Dr. Frentz hat seine Zusatzqualifikation 2009 an der Uni T&uuml;bingen erworben und gibt 10 Jahre Garantie auf alle nach seinem Protokoll gesetzten Implantate.</div>
+      </div>
+      <div class="about-card">
+        <div class="about-card-title">&#128522; Angstfreie Behandlung</div>
+        <div class="about-card-text">Lachgas-Sedierung seit 2014. Zus&auml;tzlich einf&uuml;hlsame Behandlung f&uuml;r Angstpatienten &ndash; mit Zeit, erkl&auml;rendem Vorgehen und Pausen wann immer n&ouml;tig.</div>
+      </div>
+      <div class="about-card">
+        <div class="about-card-title">&#128106; Familienpraxis</div>
+        <div class="about-card-text">Kinder, Erwachsene, Senioren &ndash; wir behandeln alle. Dr. Sabine Frentz &uuml;bernimmt die Kieferorthop&auml;die, Dr. Michael Frentz Implantate und allgemeine Zahnheilkunde.</div>
+      </div>
+      <div class="about-card">
+        <div class="about-card-title">&#9889; CEREC-Technologie</div>
+        <div class="about-card-text">Keramikkronen und Inlays direkt in der Praxis &ndash; ohne Abdr&uuml;cke, ohne Wartewoche. Vollst&auml;ndige Versorgung in einer einzigen Sitzung m&ouml;glich.</div>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="steps" id="ablauf">
-  <div class="steps-inner">
+<!-- SERVICES -->
+<section id="leistungen">
+  <div class="services-inner">
+    <div class="section-header">
+      <div class="section-tag">Leistungen</div>
+      <h2 class="section-h2">Was wir f&uuml;r Ihr L&auml;cheln tun k&ouml;nnen</h2>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <span class="service-emoji">&#128522;</span>
+        <div class="service-title">Angstfreie Behandlung mit Lachgas</div>
+        <p class="service-body">Seit 2014 bieten wir Lachgas-Sedierung an &ndash; die sicherste Methode f&uuml;r eine entspannte Behandlung bei Zahnarztangst. Das Gas wirkt innerhalb von Minuten, ist vollst&auml;ndig reversibel und absolut sicher. Beim Erstgespr&auml;ch nehmen wir uns besonders viel Zeit f&uuml;r Angstpatienten.</p>
+        <span class="service-price">Auf Anfrage</span>
+      </div>
+      <div class="service-card">
+        <span class="service-emoji">&#129528;</span>
+        <div class="service-title">Prophylaxe &amp; Professionelle Zahnreinigung</div>
+        <p class="service-body">Unsere gr&uuml;ndliche PZR entfernt Zahnstein, Plaque und Verf&auml;rbungen auch in schwer zug&auml;nglichen Bereichen und versiegelt anschlie&szlig;end die Z&auml;hne. Regelm&auml;&szlig;ige Prophylaxe ist der beste Schutz vor Karies, Parodontitis und teuren Folgebehandlungen.</p>
+        <span class="service-price">ab 75 &euro;</span>
+      </div>
+      <div class="service-card">
+        <span class="service-emoji">&#129463;</span>
+        <div class="service-title">Implantologie nach Dr.-Frentz-Protokoll</div>
+        <p class="service-body">&Uuml;ber 1.200 gesetzte Implantate und ein eigenes Protokoll f&uuml;r minimale Eingriffsgr&ouml;&szlig;e und schnelle Heilung. Titan-Implantat mit Keramikkrone, 10 Jahre Garantie, vollst&auml;ndige 3D-Planung vor jedem Eingriff.</p>
+        <span class="service-price">ab 1.750 &euro;</span>
+      </div>
+      <div class="service-card">
+        <span class="service-emoji">&#10024;</span>
+        <div class="service-title">&Auml;sthetik: Veneers &amp; Bleaching</div>
+        <p class="service-body">Hauchd&uuml;nne Porzellan-Veneers kaschieren Verf&auml;rbungen, L&uuml;cken und kleine Fehlstellungen dauerhaft und nat&uuml;rlich wirkend. F&uuml;r schnellere Ergebnisse professionelles Bleaching &ndash; in der Praxis oder als Homekit mit individuell gefertigter Schiene.</p>
+        <span class="service-price">Veneers ab 875 &euro; &middot; Bleaching ab 259 &euro;</span>
+      </div>
+      <div class="service-card">
+        <span class="service-emoji">&#128512;</span>
+        <div class="service-title">Kieferorthop&auml;die f&uuml;r Alle</div>
+        <p class="service-body">Dr. Sabine Frentz behandelt Fehlstellungen bei Kindern ab 6 Jahren und Erwachsenen &ndash; mit fester Spange, herausnehmbaren Ger&auml;ten und unsichtbaren Alignern. Individuelle Beratung und regelm&auml;&szlig;ige Kontrollen inklusive.</p>
+        <span class="service-price">Auf Anfrage</span>
+      </div>
+      <div class="service-card">
+        <span class="service-emoji">&#9889;</span>
+        <div class="service-title">CEREC-Keramikversorgungen</div>
+        <p class="service-body">Mit CEREC scannen wir digital, fr&auml;sen die Keramikversorgung in der Praxis und setzen sie am selben Tag ein. Keine Provisorien, kein zweiter Termin. Krone, Inlay oder Veneer &ndash; fertig in einer Sitzung, pr&auml;ziser als jeder Gipsabdruck.</p>
+        <span class="service-price">Auf Anfrage</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="ablauf">
+  <div class="process-inner">
+    <div class="section-header">
+      <div class="section-tag">So l&auml;uft&rsquo;s ab</div>
+      <h2 class="section-h2">Ihr Weg zu gesunden Z&auml;hnen</h2>
+    </div>
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <div class="step-title">Erstbesuch &amp; Kennenlerntermin</div>
+          <p class="step-text">Beim ersten Termin nehmen wir uns mindestens 45 Minuten Zeit. Wir lernen Sie kennen, h&ouml;ren Ihre Anliegen und schaffen eine entspannte Atmosph&auml;re &ndash; besonders wichtig f&uuml;r Angstpatienten. Kein Eingriff ohne Ihre ausdr&uuml;ckliche Zustimmung und vollst&auml;ndiges Verst&auml;ndnis des geplanten Vorgehens.</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <div class="step-title">Diagnose &amp; digitale Untersuchung</div>
+          <p class="step-text">Digitales R&ouml;ntgen, 3D-Scan und gr&uuml;ndliche Parodontitis-Kontrolle. Wir dokumentieren alles bildlich, zeigen Ihnen die Befunde am Bildschirm und erkl&auml;ren genau, was wir sehen, was es bedeutet und welche Optionen Sie haben.</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <div class="step-title">Behandlungsplan &amp; Kostentransparenz</div>
+          <p class="step-text">Sie erhalten einen schriftlichen Heil- und Kostenplan mit allen Alternativen. Wir erkl&auml;ren Kassenleistung vs. Privatleistung, Finanzierungsm&ouml;glichkeiten und realistischen Zeitrahmen &ndash; damit Sie entscheiden k&ouml;nnen, ohne Druck und ohne &Uuml;berraschungen.</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">4</div>
+        <div class="step-body">
+          <div class="step-title">Behandlung nach Ma&szlig;nahmenplan</div>
+          <p class="step-text">Ob F&uuml;llung, Implantat oder Kieferorthop&auml;die &ndash; jede Behandlung wird pr&auml;zise geplant und durchgef&uuml;hrt. Bei Bedarf stehen Sedierung oder Lachgas zur Verf&uuml;gung. Wir arbeiten effizient, damit Sie m&ouml;glichst wenige Termine ben&ouml;tigen.</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">5</div>
+        <div class="step-body">
+          <div class="step-title">Nachsorge &amp; Prophylaxe-Programm</div>
+          <p class="step-text">Regelm&auml;&szlig;ige Recall-Termine sichern den langfristigen Behandlungserfolg. Wir erinnern Sie rechtzeitig an Ihre PZR und pr&uuml;fen beim Recall alle bestehenden Versorgungen. Ihr L&auml;cheln in 10 Jahren ist unser Qualit&auml;tsma&szlig;stab heute.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section id="team">
+  <div class="team-inner">
+    <div class="team-header">
+      <div class="section-tag">Unser Team</div>
+      <h2 class="section-h2">Die Menschen hinter der Praxis Dr. Frentz</h2>
+    </div>
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-avatar" style="background: linear-gradient(135deg, #15803D, #16A34A);">MF</div>
+        <div class="team-name">Dr. Michael Frentz</div>
+        <div class="team-role">Gr&uuml;nder &middot; Implantologie &amp; Angstbehandlung</div>
+        <p class="team-quote">&bdquo;Jeder Patient verdient eine Behandlung, die er vollst&auml;ndig versteht. Deshalb erkl&auml;re ich immer zuerst, bevor ich anfange. Dieser Grundsatz hat sich in 18 Jahren nie ge&auml;ndert &ndash; und wird es auch nicht.&ldquo;</p>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar" style="background: linear-gradient(135deg, #065F46, #047857);">SF</div>
+        <div class="team-name">Dr. Sabine Frentz</div>
+        <div class="team-role">Kieferorthop&auml;die f&uuml;r Kinder &amp; Erwachsene</div>
+        <p class="team-quote">&bdquo;Ein gerades L&auml;cheln ver&auml;ndert nicht nur das Aussehen &ndash; es ver&auml;ndert die Selbstwahrnehmung. Ich freue mich jedes Mal, wenn ich sehe, wie Patienten nach einer KFO-Behandlung ausstrahlen.&ldquo;</p>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar" style="background: linear-gradient(135deg, #166534, #15803D);">HK</div>
+        <div class="team-name">Z&Auml; Hannah Kurz</div>
+        <div class="team-role">Prophylaxe &amp; Allgemeinzahnheilkunde</div>
+        <p class="team-quote">&bdquo;Gute Prophylaxe ist die ehrlichste Form der Zahnmedizin. Wer seine Z&auml;hne kennt und pflegt, braucht uns seltener &ndash; und das ist genau das Ziel, das ich mit meinen Patienten verfolge.&ldquo;</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="testimonials-inner">
+    <div class="section-header">
+      <div class="section-tag">Bewertungen</div>
+      <h2 class="section-h2">Was unsere Patienten sagen</h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testi-card">
+        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="testi-text">Ich war mein Leben lang Angstpatient und habe Zahnarztbesuche jahrelang vermieden. Dr. Frentz hat das mit Lachgas und viel Geduld vollst&auml;ndig ge&auml;ndert. Beim ersten Termin hat er 20 Minuten geredet und nichts gemacht &ndash; das hat mir das n&ouml;tige Vertrauen gegeben. Heute gehe ich alle sechs Monate ohne Angst hin.</p>
+        <div class="testi-author">
+          <div class="testi-initial">TH</div>
+          <div><div class="testi-name">Thomas H.</div><div class="testi-role">Patient seit 2016 &middot; Stuttgart-Mitte</div></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="testi-text">Zwei Implantate von Dr. Frentz &ndash; beide problemlos und schnell eingeheilt. Der Behandlungsplan war von Anfang an klar, die Kosten transparent kommuniziert und der Eingriff deutlich weniger belastend als erwartet. Die 10-Jahres-Garantie gibt mir echte Sicherheit.</p>
+        <div class="testi-author">
+          <div class="testi-initial">MK</div>
+          <div><div class="testi-name">Monika K.</div><div class="testi-role">Patientin seit 2019 &middot; Stuttgart-Vaihingen</div></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="testi-text">Unsere ganze Familie wird hier behandelt &ndash; die Kinder, mein Mann und ich. Dr. Sabine Frentz betreut unsere Kinder in der Kieferorthop&auml;die und wir k&ouml;nnen nicht genug loben, wie einf&uuml;hlsam und geduldig sie mit ihnen umgeht. Unsere Tochter freut sich mittlerweile auf ihre Termine.</p>
+        <div class="testi-author">
+          <div class="testi-initial">LB</div>
+          <div><div class="testi-name">Laura B.</div><div class="testi-role">Familienpatientin seit 2014 &middot; Stuttgart-Nord</div></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="testi-text">CEREC-Krone in einer Sitzung &ndash; das klingt zu gut um wahr zu sein, aber es funktioniert tats&auml;chlich. Ich war morgens da, die alte Krone war gerissen, abends hatte ich eine neue Keramikkrone. Keine Provisorien, kein zweiter Termin. Perfekt f&uuml;r einen vollen Terminkalender.</p>
+        <div class="testi-author">
+          <div class="testi-initial">SK</div>
+          <div><div class="testi-name">Stefan K.</div><div class="testi-role">Patient seit 2020 &middot; Stuttgart-Stammheim</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BEHANDLUNGSBEISPIELE -->
+<section id="beispiele" style="padding: 5rem 5%; background: #F0FDF4;">
+  <div style="max-width: 1100px; margin: 0 auto;">
+    <div style="text-align: center; margin-bottom: 3rem;">
+      <div style="display:inline-block; background:#DCFCE7; color:#15803D; padding:0.3rem 1rem; border-radius:50px; font-size:0.8rem; font-weight:700; margin-bottom:1rem;">Fallbeispiele</div>
+      <h2 style="font-size:2rem; font-weight:800; color:#111827; margin-bottom:0.75rem;">Was wir f&uuml;r unsere Patienten erreicht haben</h2>
+      <p style="color:#6B7280; max-width:560px; margin:0 auto; font-size:0.95rem;">Echte F&auml;lle &mdash; anonymisiert. So sehen konkrete Ergebnisse aus.</p>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:1.5rem;">
+      <div style="background:white; border-radius:16px; padding:2rem; box-shadow:0 2px 12px rgba(0,0,0,0.06);">
+        <div style="font-size:1.8rem; margin-bottom:1rem;">🦷</div>
+        <h3 style="font-weight:700; color:#111827; margin-bottom:0.5rem; font-size:1rem;">Implantat nach Zahnverlust &mdash; Patient, 58 Jahre</h3>
+        <p style="color:#6B7280; font-size:0.88rem; line-height:1.75;">Herr K. verlor 2022 durch einen Unfall einen Schneidezahn. Innerhalb von 6 Wochen wurde ein Sofortimplantat gesetzt, die endg&uuml;ltige Keramikkrone nach 3 Monaten eingesetzt. Heute ist die Versorgung von einem echten Zahn nicht zu unterscheiden &mdash; und Herr K. strahlt wieder selbstbewusst.</p>
+        <div style="margin-top:1rem; display:flex; gap:0.5rem; flex-wrap:wrap;">
+          <span style="background:#DCFCE7; color:#15803D; padding:0.2rem 0.6rem; border-radius:50px; font-size:0.75rem; font-weight:600;">Sofortimplantat</span>
+          <span style="background:#DCFCE7; color:#15803D; padding:0.2rem 0.6rem; border-radius:50px; font-size:0.75rem; font-weight:600;">Keramikkrone</span>
+          <span style="background:#DCFCE7; color:#15803D; padding:0.2rem 0.6rem; border-radius:50px; font-size:0.75rem; font-weight:600;">6 Wochen</span>
+        </div>
+      </div>
+      <div style="background:white; border-radius:16px; padding:2rem; box-shadow:0 2px 12px rgba(0,0,0,0.06);">
+        <div style="font-size:1.8rem; margin-bottom:1rem;">✨</div>
+        <h3 style="font-weight:700; color:#111827; margin-bottom:0.5rem; font-size:1rem;">Vollst&auml;ndiger Smile-Makeover &mdash; Patientin, 34 Jahre</h3>
+        <p style="color:#6B7280; font-size:0.88rem; line-height:1.75;">Frau M. war mit der Form und Farbe ihrer Z&auml;hne unzufrieden. Nach einer umfassenden Diagnostik entschieden wir uns f&uuml;r 6 Keramik-Veneers im Oberkiefer kombiniert mit Bleaching im Unterkiefer. Das Ergebnis: nat&uuml;rlich wirkende, ebm&auml;&szlig;ige Z&auml;hne in einem warmen Wei&szlig;ton. Behandlungszeit gesamt: 3 Sitzungen &uuml;ber 8 Wochen.</p>
+        <div style="margin-top:1rem; display:flex; gap:0.5rem; flex-wrap:wrap;">
+          <span style="background:#DCFCE7; color:#15803D; padding:0.2rem 0.6rem; border-radius:50px; font-size:0.75rem; font-weight:600;">6 Veneers</span>
+          <span style="background:#DCFCE7; color:#15803D; padding:0.2rem 0.6rem; border-radius:50px; font-size:0.75rem; font-weight:600;">Bleaching</span>
+          <span style="background:#DCFCE7; color:#15803D; padding:0.2rem 0.6rem; border-radius:50px; font-size:0.75rem; font-weight:600;">8 Wochen</span>
+        </div>
+      </div>
+      <div style="background:white; border-radius:16px; padding:2rem; box-shadow:0 2px 12px rgba(0,0,0,0.06);">
+        <div style="font-size:1.8rem; margin-bottom:1rem;">😌</div>
+        <h3 style="font-weight:700; color:#111827; margin-bottom:0.5rem; font-size:1rem;">Angstpatient zur regelm&auml;&szlig;igen Prophylaxe &mdash; Patient, 41 Jahre</h3>
+        <p style="color:#6B7280; font-size:0.88rem; line-height:1.75;">Herr T. hatte 12 Jahre keinen Zahnarzt besucht &mdash; aus Angst. Beim Erstgespr&auml;ch wurde Lachgas vorgestellt und ein behutsamer Einstieg vereinbart. Heute kommt er alle 6 Monate zur Prophylaxe und hat zwei Kariesbehandlungen schmerzfrei &uuml;berstanden. &bdquo;Ich verstehe nicht, warum ich so lange gewartet habe.&ldquo;</p>
+        <div style="margin-top:1rem; display:flex; gap:0.5rem; flex-wrap:wrap;">
+          <span style="background:#DCFCE7; color:#15803D; padding:0.2rem 0.6rem; border-radius:50px; font-size:0.75rem; font-weight:600;">Lachgas</span>
+          <span style="background:#DCFCE7; color:#15803D; padding:0.2rem 0.6rem; border-radius:50px; font-size:0.75rem; font-weight:600;">Angsttherapie</span>
+          <span style="background:#DCFCE7; color:#15803D; padding:0.2rem 0.6rem; border-radius:50px; font-size:0.75rem; font-weight:600;">Langzeitpatient</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHILOSOPHIE -->
+<section id="philosophie" style="padding: 5rem 5%; background: #111827;">
+  <div style="max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
     <div>
-      <span class="section-chip">Unser Vorgehen</span>
-      <h2 class="section-title" style="margin-bottom:2rem;">Ihr Weg zu gesunden und schönen Zähnen</h2>
-      <div class="steps-grid">
-        <div class="step-item">
-          <div class="step-num-badge">1</div>
-          <div class="step-item-text">
-            <h4>Termin buchen – auch abends</h4>
-            <p>Online oder telefonisch – Abendtermine Mo–Do bis 19 Uhr, direkt am Stuttgarter Hbf.</p>
-          </div>
-        </div>
-        <div class="step-item">
-          <div class="step-num-badge">2</div>
-          <div class="step-item-text">
-            <h4>Diagnostik & Konzept</h4>
-            <p>Ausführliche Erstuntersuchung und digitale Planung – für Ihr persönliches Behandlungskonzept.</p>
-          </div>
-        </div>
-        <div class="step-item">
-          <div class="step-num-badge">3</div>
-          <div class="step-item-text">
-            <h4>Sofortimplantat oder Klassisch</h4>
-            <p>Modernste Verfahren: Sofortimplantat in einer Sitzung oder klassisch – Sie entscheiden.</p>
-          </div>
-        </div>
-        <div class="step-item">
-          <div class="step-num-badge">4</div>
-          <div class="step-item-text">
-            <h4>Nachsorge & Prophylaxe</h4>
-            <p>Regelmäßige Kontrolle und individuelle Prophylaxe für dauerhaft gesunde Zähne.</p>
-          </div>
-        </div>
-      </div>
+      <div style="display:inline-block; background:rgba(21,128,61,0.2); color:#4ADE80; padding:0.3rem 1rem; border-radius:50px; font-size:0.8rem; font-weight:700; margin-bottom:1.5rem;">Unsere Philosophie</div>
+      <h2 style="font-size:2rem; font-weight:800; color:white; line-height:1.3; margin-bottom:1.5rem;">Zahnmedizin, die dem Menschen dient &mdash; nicht dem Kalender</h2>
+      <p style="color:rgba(255,255,255,0.65); font-size:0.95rem; line-height:1.8; margin-bottom:1.2rem;">Dr. Michael Frentz hat von Beginn an bewusst auf Massenabfertigung verzichtet. In unserer Praxis dauert ein Ersttermin mindestens 45 Minuten &mdash; nicht weil es langsam geht, sondern weil wir verstehen m&ouml;chten, was Sie besch&auml;ftigt, was Ihnen wichtig ist und welche Geschichte hinter Ihren Z&auml;hnen steckt.</p>
+      <p style="color:rgba(255,255,255,0.65); font-size:0.95rem; line-height:1.8; margin-bottom:1.2rem;">Dieser Ansatz spiegelt sich in unseren Zahlen wider: &uuml;ber 70 Prozent unserer Neupatienten kommen &uuml;ber Empfehlung bestehender Patienten. Das ist der Beweis, den wir brauchen.</p>
+      <p style="color:rgba(255,255,255,0.65); font-size:0.95rem; line-height:1.8;">Wir setzen keine Behandlung um, die wir einem Familienmitglied nicht selbst empfehlen w&uuml;rden. Das ist unser Ma&szlig;stab.</p>
     </div>
-    <div class="steps-visual">
-      <h3>Patienten aus ganz Stuttgart empfehlen uns</h3>
-      <p class="tagline">Vom Hauptbahnhof-Pendler bis zum Unternehmer – Ihre Zahngesundheit in besten Händen.</p>
-      <div class="highlight-box">
-        <strong>Direkt am Stuttgarter Hbf</strong>
-        <p>Nur 300 Meter vom Bahnhof – perfekt erreichbar für Berufspendler und alle Stuttgarter.</p>
+    <div style="display:flex; flex-direction:column; gap:1.2rem;">
+      <div style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); border-radius:14px; padding:1.5rem;">
+        <div style="font-size:2rem; font-weight:900; color:#4ADE80;">70%</div>
+        <div style="color:rgba(255,255,255,0.55); font-size:0.85rem; margin-top:0.25rem;">der Neupatienten kommen &uuml;ber Empfehlung</div>
       </div>
-      <div class="highlight-box">
-        <strong>Sofortimplantologie</strong>
-        <p>Implantat in einer Sitzung: modernste Technik spart Zeit und minimiert Unannehmlichkeiten.</p>
+      <div style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); border-radius:14px; padding:1.5rem;">
+        <div style="font-size:2rem; font-weight:900; color:#4ADE80;">45 Min.</div>
+        <div style="color:rgba(255,255,255,0.55); font-size:0.85rem; margin-top:0.25rem;">Mindestzeit f&uuml;r jeden Ersttermin</div>
       </div>
-      <div class="highlight-box">
-        <strong>Seit 1997 in Stuttgart</strong>
-        <p>Über 25 Jahre Erfahrung und Vertrauen – eine der etabliertesten Praxen in Stuttgart-Mitte.</p>
+      <div style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); border-radius:14px; padding:1.5rem;">
+        <div style="font-size:2rem; font-weight:900; color:#4ADE80;">0</div>
+        <div style="color:rgba(255,255,255,0.55); font-size:0.85rem; margin-top:0.25rem;">Behandlungen ohne vorherige Erkl&auml;rung</div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="testimonials">
-  <div class="testimonials-header">
-    <span class="section-chip">Patientenstimmen</span>
-    <h2 class="section-title">Was Patienten über uns sagen</h2>
-  </div>
-  <div class="testimonials-grid">
-    <div class="testimonial-card">
-      <div class="stars">★★★★★</div>
-      <p>"Als Pendlerin schätze ich die Abendtermine enorm – nach der Arbeit noch schnell zum Zahnarzt, ohne extra Urlaub nehmen zu müssen. Das Team ist immer freundlich und professionell."</p>
-      <div class="testimonial-author">
-        <div class="author-avatar">H</div>
-        <div>
-          <div class="author-name">Hannah Z.</div>
-          <div class="author-role">Patientin, Prophylaxe</div>
-        </div>
-      </div>
+<!-- FAQ -->
+<section id="faq">
+  <div class="faq-inner">
+    <div class="section-header">
+      <div class="section-tag">H&auml;ufige Fragen</div>
+      <h2 class="section-h2">Antworten auf Ihre Fragen</h2>
     </div>
-    <div class="testimonial-card">
-      <div class="stars">★★★★★</div>
-      <p>"Das Sofortimplantat hat mich wirklich überzeugt – ein Eingriff, kein wochenlanger Prozess. Dr. Frentz hat alles ruhig erklärt und das Ergebnis ist perfekt. Ich würde die Praxis jedem empfehlen."</p>
-      <div class="testimonial-author">
-        <div class="author-avatar">B</div>
-        <div>
-          <div class="author-name">Bernd S.</div>
-          <div class="author-role">Patient, Sofort-Implantologie</div>
-        </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">Was ist Lachgas-Sedierung und ist es sicher? <span class="faq-icon">+</span></div>
+        <div class="faq-a">Lachgas (Distickstoffoxid) ist ein farb- und geruchloses Gas, das Sie &uuml;ber eine Nasenmaske einatmen. Es wirkt entspannend und d&auml;mpft das Schmerzempfinden leicht &ndash; Sie bleiben vollst&auml;ndig bei Bewusstsein. Das Gas ist seit Jahrzehnten medizinisch erprobt, hat keine bekannten Langzeitwirkungen und klingt nach wenigen Minuten ab. Sie k&ouml;nnen danach sogar selbst Auto fahren.</div>
       </div>
-    </div>
-    <div class="testimonial-card">
-      <div class="stars">★★★★★</div>
-      <p>"Seit Jahren meine erste Wahl in Stuttgart. Die Ästhetik-Beratung war ausführlich und ehrlich, das Ergebnis der Veneers übertrifft meine Erwartungen. Zentraler geht es kaum – direkt am Hbf!"</p>
-      <div class="testimonial-author">
-        <div class="author-avatar">C</div>
-        <div>
-          <div class="author-name">Claudia F.</div>
-          <div class="author-role">Patientin, Ästhetische Zahnmedizin</div>
-        </div>
+      <div class="faq-item">
+        <div class="faq-q">Was bedeutet eine CEREC-Behandlung? <span class="faq-icon">+</span></div>
+        <div class="faq-a">CEREC steht f&uuml;r &bdquo;Chairside Economical Restoration of Esthetic Ceramics&ldquo;. Mit einem digitalen Intraoralscanner nehmen wir einen pr&auml;zisen 3D-Abdruck auf &ndash; kein unangenehmer Gipsabdruck. Eine Software konstruiert daraus die Keramikversorgung, die in unserer Praxisfr&auml;smaschine hergestellt und direkt eingesetzt wird. Der Prozess dauert in der Regel 60&ndash;90 Minuten.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Gibt es eine Garantie auf Implantate? <span class="faq-icon">+</span></div>
+        <div class="faq-a">Ja. Dr. Frentz gibt 10 Jahre Garantie auf alle nach seinem Protokoll gesetzten Implantate &ndash; das umfasst sowohl das Implantat selbst als auch die aufgesetzte Keramikkrone. Voraussetzung ist regelm&auml;&szlig;ige Teilnahme an Nachsorge-Terminen und halbj&auml;hrliche Prophylaxe. Bei guter Pflege halten Implantate ein Leben lang.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Behandelt ihr auch Kinder? <span class="faq-icon">+</span></div>
+        <div class="faq-a">Ja, wir behandeln Kinder ab 6 Jahren. Dr. Sabine Frentz ist spezialisiert auf Kieferorthop&auml;die f&uuml;r Kinder und Jugendliche und hat viel Erfahrung im einf&uuml;hlsamen Umgang mit kleinen Patienten. F&uuml;r Kleinkinder unter 6 Jahren empfehlen wir spezialisierte Kinderzahn&auml;rzte.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Kann ich die Behandlung in Raten zahlen? <span class="faq-icon">+</span></div>
+        <div class="faq-a">F&uuml;r gr&ouml;&szlig;ere Behandlungen wie Implantate oder umfangreiche &auml;sthetische Arbeiten bieten wir zinsfreie Ratenzahlung &uuml;ber unseren Finanzierungspartner an. Sprechen Sie uns beim Erstgespr&auml;ch darauf an &ndash; wir finden gemeinsam eine L&ouml;sung, die zu Ihrer finanziellen Situation passt. Gesundheit sollte nicht am Geld scheitern.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Wie lange besteht die Praxis schon? <span class="faq-icon">+</span></div>
+        <div class="faq-a">Dr. Frentz hat die Praxis 2006 an der K&ouml;nigstra&szlig;e 44 gegr&uuml;ndet &ndash; also vor 18 Jahren. In dieser Zeit sind &uuml;ber 7.000 Patienten zu uns gekommen, viele davon &uuml;ber mehrere Generationen einer Familie. Wir sind einer der wenigen Zahn&auml;rzte in der Stuttgarter Innenstadt mit dieser Langzeitkontinuit&auml;t.</div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="cta-section">
-  <div class="cta-blob"></div>
-  <h2>Direkt am Stuttgarter Hbf – Ihren Termin jetzt buchen</h2>
-  <p>Auf dem Weg zur Arbeit oder danach – 25 Jahre Erfahrung in Ästhetik und Implantologie.</p>
-  <a href="#kontakt" class="btn-gradient">Jetzt Termin buchen →</a>
-</section>
-
-<section class="contact" id="kontakt">
+<!-- CONTACT -->
+<section id="kontakt">
   <div class="contact-inner">
-    <div class="contact-info">
-      <h3>Kontakt aufnehmen</h3>
-      <div class="contact-item">
-        <div class="contact-icon">📍</div>
-        <div class="contact-item-text">
-          <div class="label">Standort</div>
-          <div class="value">Königstraße 2, 70173 Stuttgart<br>300m vom Hauptbahnhof</div>
+    <div class="contact-left">
+      <div class="section-tag">Kontakt</div>
+      <h2 class="section-h2">Termin vereinbaren</h2>
+      <p style="color:#9CA3AF; font-size:0.92rem; margin-top:10px; line-height:1.7;">
+        Rufen Sie uns an oder schreiben Sie uns. Wir melden uns innerhalb von 24 Stunden zur&uuml;ck und finden gemeinsam den passenden Termin.
+      </p>
+      <div class="contact-info">
+        <div class="contact-row">
+          <div class="contact-icon">&#128205;</div>
+          <div class="contact-val"><strong>Adresse</strong>K&ouml;nigstra&szlig;e 44, 70173 Stuttgart<br>Stuttgart Stadtmitte</div>
         </div>
-      </div>
-      <div class="contact-item">
-        <div class="contact-icon">📞</div>
-        <div class="contact-item-text">
-          <div class="label">Telefon</div>
-          <div class="value">+49 711 6550000</div>
+        <div class="contact-row">
+          <div class="contact-icon">&#128222;</div>
+          <div class="contact-val"><strong>Telefon</strong><a href="tel:07112248660" style="color:#D1D5DB; text-decoration:none;">0711 22 48 66 0</a></div>
         </div>
-      </div>
-      <div class="contact-item">
-        <div class="contact-icon">✉️</div>
-        <div class="contact-item-text">
-          <div class="label">E-Mail</div>
-          <div class="value">info@frentz.de</div>
+        <div class="contact-row">
+          <div class="contact-icon">&#9993;</div>
+          <div class="contact-val"><strong>E-Mail</strong><a href="mailto:praxis@zahnarzt-frentz.de" style="color:#D1D5DB; text-decoration:none;">praxis@zahnarzt-frentz.de</a></div>
         </div>
-      </div>
-      <div class="contact-item">
-        <div class="contact-icon">🕐</div>
-        <div class="contact-item-text">
-          <div class="label">Öffnungszeiten</div>
-          <div class="value">Mo–Do 7:30–19:00 Uhr<br>Fr 7:30–16:00 Uhr</div>
+        <div class="contact-row">
+          <div class="contact-icon">&#128336;</div>
+          <div class="contact-val"><strong>&Ouml;ffnungszeiten</strong>Mo&ndash;Fr 8:00&ndash;18:00 Uhr<br>Donnerstag bis 20:00 Uhr</div>
         </div>
       </div>
     </div>
-    <div class="contact-form">
-      <h4>Termin anfragen</h4>
-      <form>
-        <div class="form-group"><input type="text" placeholder="Ihr Name" /></div>
-        <div class="form-group"><input type="email" placeholder="Ihre E-Mail" /></div>
-        <div class="form-group"><input type="tel" placeholder="Telefonnummer (optional)" /></div>
+    <div class="contact-right">
+      <form class="contact-form" onsubmit="return false;">
+        <div class="form-row">
+          <div class="form-group"><label>Vorname</label><input type="text" placeholder="Max" /></div>
+          <div class="form-group"><label>Nachname</label><input type="text" placeholder="Mustermann" /></div>
+        </div>
+        <div class="form-group"><label>E-Mail</label><input type="email" placeholder="max@beispiel.de" /></div>
+        <div class="form-group"><label>Telefon</label><input type="tel" placeholder="0711 ..." /></div>
         <div class="form-group">
+          <label>Gew&uuml;nschte Leistung</label>
           <select>
-            <option value="">Ihr Anliegen</option>
-            <option>Online-Terminbuchung</option>
-            <option>Professionelle Zahnreinigung</option>
-            <option>Ästhetische Zahnmedizin</option>
-            <option>Sofort-Implantologie</option>
-            <option>Ästhetische Zahnmedizin</option>
+            <option value="">Bitte ausw&auml;hlen...</option>
+            <option>Erstberatung / Allgemein</option>
+            <option>Prophylaxe / PZR</option>
+            <option>Implantat-Beratung</option>
+            <option>Angstbehandlung / Lachgas</option>
+            <option>Kieferorthop&auml;die</option>
+            <option>&Auml;sthetik / Veneers</option>
+            <option>CEREC / Krone</option>
           </select>
         </div>
-        <div class="form-group"><textarea placeholder="Ihre Nachricht..."></textarea></div>
-        <button type="submit" class="form-submit">Termin anfragen →</button>
+        <div class="form-group"><label>Ihre Nachricht (optional)</label><textarea placeholder="Haben Sie noch etwas, das wir wissen sollten?"></textarea></div>
+        <button type="submit" class="form-submit">Terminanfrage senden &#8594;</button>
       </form>
     </div>
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
-  <p>© 2026 <strong>Dr. Frentz & Kollegen</strong> · Königstraße 2, 70173 Stuttgart · <a href="mailto:info@frentz.de">info@frentz.de</a></p>
+  <div class="footer-logo">Dr. Frentz <span class="footer-dot"></span></div>
+  <div class="footer-links">
+    <a href="#">Impressum</a>
+    <a href="#">Datenschutz</a>
+    <a href="#">Barrierefreiheit</a>
+    <a href="#kontakt">Kontakt</a>
+  </div>
+  <p class="footer-copy">&copy; 2024 Zahnarztpraxis Dr. Frentz &middot; K&ouml;nigstra&szlig;e 44 &middot; 70173 Stuttgart</p>
 </footer>
 
-<a href="https://elevo.solutions" target="_blank" rel="noopener" class="elevo-dot" title="Erstellt von ELEVO">
-  <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><text x="6" y="21" font-size="19" font-weight="800" font-family="Arial,sans-serif" fill="white">E</text></svg>
-</a>
+<!-- ELEVO DOT -->
+<a href="https://elevo.solutions" target="_blank" rel="noopener" class="elevo-dot" title="Powered by ELEVO">E</a>
 
 </body>
 </html>
