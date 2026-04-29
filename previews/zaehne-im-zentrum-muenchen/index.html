@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zähne im Zentrum – Premium-Zahnmedizin an der Theatinerstraße München</title>
+  <style>
+    :root {
+      --primary: #4A2C2A;
+      --secondary: #B5855A;
+      --dark: #0f172a;
+      --mid: #1e293b;
+      --light: #f8fafc;
+      --text: #334155;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; color: var(--text); }
+
+    nav {
+      position: fixed; top: 0; width: 100%; z-index: 100;
+      background: rgba(255,255,255,0.97); backdrop-filter: blur(10px);
+      padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+    .logo-area { display: flex; align-items: center; gap: 0.5rem; }
+    .logo-img { height: 38px; max-width: 180px; object-fit: contain; display: block; }
+    .logo-fallback { display: flex; align-items: center; gap: 0.5rem; }
+    .logo-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--primary); }
+    .logo-text { font-size: 1.2rem; font-weight: 700; color: #0f172a; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { text-decoration: none; color: var(--text); font-size: 0.9rem; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--primary); }
+    .nav-cta {
+      background: var(--primary); color: white; padding: 0.55rem 1.3rem;
+      border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 0.875rem;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .nav-cta:hover { box-shadow: 0 4px 15px rgba(74,44,42,0.4); transform: translateY(-1px); }
+
+    .hero {
+      min-height: 100vh; padding-top: 80px;
+      background: var(--dark);
+      display: flex; align-items: center;
+      position: relative; overflow: hidden;
+    }
+    .hero-blob {
+      position: absolute; top: -200px; right: -200px;
+      width: 800px; height: 800px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(74,44,42,0.12) 0%, transparent 70%);
+    }
+    .hero-blob2 {
+      position: absolute; bottom: -300px; left: -100px;
+      width: 600px; height: 600px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(181,133,90,0.08) 0%, transparent 70%);
+    }
+    .hero-inner { max-width: 1200px; margin: 0 auto; padding: 4rem 2rem; position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+    .hero-pill {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      border: 1px solid rgba(181,133,90,0.4); color: var(--secondary);
+      background: rgba(74,44,42,0.08);
+      padding: 0.4rem 1rem; border-radius: 50px; font-size: 0.8rem; font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 { font-size: 3rem; font-weight: 800; color: white; line-height: 1.15; margin-bottom: 1.5rem; }
+    .hero h1 .gradient-text {
+      background: linear-gradient(135deg, var(--secondary), #d4a574);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .hero p { color: rgba(255,255,255,0.65); font-size: 1.1rem; line-height: 1.75; margin-bottom: 2.5rem; }
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn-gradient {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white; padding: 0.9rem 2rem; border-radius: 50px;
+      text-decoration: none; font-weight: 700; font-size: 0.95rem;
+      box-shadow: 0 4px 15px rgba(74,44,42,0.4);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .btn-gradient:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(74,44,42,0.5); }
+    .btn-ghost {
+      color: rgba(255,255,255,0.8); padding: 0.9rem 2rem; border-radius: 50px;
+      text-decoration: none; font-weight: 600; font-size: 0.95rem;
+      border: 1px solid rgba(255,255,255,0.2); transition: border-color 0.2s;
+    }
+    .btn-ghost:hover { border-color: rgba(255,255,255,0.5); }
+    .hero-card-grid { display: flex; flex-direction: column; gap: 1rem; }
+    .metric-card {
+      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px; padding: 1.5rem; backdrop-filter: blur(10px);
+      transition: background 0.2s;
+    }
+    .metric-card:hover { background: rgba(255,255,255,0.09); }
+    .metric-value { font-size: 2.5rem; font-weight: 900; color: white; }
+    .metric-value span {
+      background: linear-gradient(135deg, var(--secondary), #d4a574);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .metric-label { color: rgba(255,255,255,0.55); font-size: 0.85rem; margin-top: 0.2rem; }
+    .metric-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .hero-img-container {
+      border-radius: 16px; overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+      margin-bottom: 1rem; position: relative;
+    }
+    .hero-img-container img {
+      width: 100%; height: 220px; object-fit: cover; display: block;
+      filter: brightness(0.88);
+    }
+    .hero-img-placeholder {
+      width: 100%; height: 220px; background: linear-gradient(135deg, rgba(74,44,42,0.3), rgba(181,133,90,0.2));
+      display: flex; align-items: center; justify-content: center; font-size: 3rem;
+    }
+
+    .services { padding: 6rem 2rem; background: var(--light); }
+    .section-chip {
+      display: inline-block; background: rgba(74,44,42,0.1); color: var(--primary);
+      padding: 0.3rem 0.9rem; border-radius: 50px; font-size: 0.8rem; font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    .section-title { font-size: 2.2rem; font-weight: 800; color: var(--dark); margin-bottom: 0.8rem; }
+    .section-sub { color: #64748b; font-size: 1rem; max-width: 500px; }
+    .services-header { max-width: 1100px; margin: 0 auto 3rem; }
+    .services-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; }
+    .service-card {
+      background: white; border-radius: 16px; padding: 2rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 15px rgba(0,0,0,0.04);
+      transition: transform 0.2s, box-shadow 0.2s; position: relative; overflow: hidden;
+    }
+    .service-card::after {
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      transform: scaleX(0); transition: transform 0.3s; transform-origin: left;
+    }
+    .service-card:hover { transform: translateY(-4px); box-shadow: 0 4px 6px rgba(0,0,0,0.06), 0 10px 30px rgba(0,0,0,0.1); }
+    .service-card:hover::after { transform: scaleX(1); }
+    .service-icon {
+      width: 52px; height: 52px; border-radius: 12px;
+      background: linear-gradient(135deg, rgba(74,44,42,0.1), rgba(181,133,90,0.1));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem; margin-bottom: 1.2rem;
+    }
+    .service-card h3 { font-size: 1rem; font-weight: 700; color: var(--dark); margin-bottom: 0.6rem; }
+    .service-card p { color: #64748b; font-size: 0.875rem; line-height: 1.7; }
+
+    .steps { padding: 6rem 2rem; background: white; }
+    .steps-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+    .steps-grid { display: flex; flex-direction: column; gap: 1.5rem; }
+    .step-item { display: flex; gap: 1.2rem; align-items: flex-start; }
+    .step-num-badge {
+      width: 40px; height: 40px; border-radius: 10px; flex-shrink: 0;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white; display: flex; align-items: center; justify-content: center;
+      font-weight: 800; font-size: 0.9rem;
+    }
+    .step-item-text h4 { font-weight: 700; color: var(--dark); margin-bottom: 0.3rem; }
+    .step-item-text p { color: #64748b; font-size: 0.875rem; line-height: 1.6; }
+    .steps-visual {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      border-radius: 20px; padding: 3rem; color: white;
+    }
+    .steps-visual h3 { font-size: 1.5rem; font-weight: 800; margin-bottom: 0.5rem; }
+    .steps-visual .tagline { opacity: 0.85; font-size: 0.95rem; margin-bottom: 2rem; }
+    .highlight-box { background: rgba(255,255,255,0.15); border-radius: 10px; padding: 1.2rem; margin-bottom: 1rem; }
+    .highlight-box strong { font-size: 1.1rem; }
+    .highlight-box p { opacity: 0.85; font-size: 0.875rem; margin-top: 0.2rem; }
+
+    .testimonials { padding: 6rem 2rem; background: var(--light); }
+    .testimonials-header { max-width: 1000px; margin: 0 auto 3rem; }
+    .testimonials-grid { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+    .testimonial-card {
+      background: white; border-radius: 16px; padding: 2rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 15px rgba(0,0,0,0.04);
+    }
+    .stars { font-size: 1rem; margin-bottom: 1rem; color: #f59e0b; }
+    .testimonial-card p { color: #475569; font-size: 0.9rem; line-height: 1.7; font-style: italic; }
+    .testimonial-author { display: flex; gap: 0.8rem; align-items: center; margin-top: 1.2rem; padding-top: 1rem; border-top: 1px solid #f1f5f9; }
+    .author-avatar {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white; display: flex; align-items: center; justify-content: center; font-weight: 700;
+    }
+    .author-name { font-weight: 700; font-size: 0.85rem; color: var(--dark); }
+    .author-role { color: #94a3b8; font-size: 0.75rem; }
+
+    .cta-section { padding: 6rem 2rem; text-align: center; background: var(--dark); position: relative; overflow: hidden; }
+    .cta-blob { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(74,44,42,0.15) 0%, transparent 70%); }
+    .cta-section h2 { font-size: 2.5rem; font-weight: 800; color: white; margin-bottom: 1rem; position: relative; }
+    .cta-section p { color: rgba(255,255,255,0.65); font-size: 1.05rem; margin-bottom: 2.5rem; max-width: 450px; margin-left: auto; margin-right: auto; position: relative; }
+    .cta-section .btn-gradient { position: relative; }
+
+    .contact { padding: 5rem 2rem; background: var(--light); }
+    .contact-inner { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+    .contact-info h3 { font-size: 1.4rem; font-weight: 800; color: var(--dark); margin-bottom: 1.5rem; }
+    .contact-item { display: flex; gap: 1rem; margin-bottom: 1.2rem; align-items: flex-start; }
+    .contact-icon {
+      width: 42px; height: 42px; border-radius: 10px; flex-shrink: 0;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white; display: flex; align-items: center; justify-content: center; font-size: 1rem;
+    }
+    .contact-item-text .label { font-size: 0.75rem; color: #94a3b8; text-transform: uppercase; letter-spacing: 1px; }
+    .contact-item-text .value { font-weight: 600; color: var(--dark); font-size: 0.9rem; }
+    .contact-form { background: white; border-radius: 16px; padding: 2rem; box-shadow: 0 2px 15px rgba(0,0,0,0.06); }
+    .contact-form h4 { font-weight: 700; color: var(--dark); margin-bottom: 1.5rem; }
+    .form-group { margin-bottom: 1rem; }
+    .form-group input, .form-group textarea, .form-group select {
+      width: 100%; padding: 0.75rem 1rem; border: 2px solid #e2e8f0;
+      border-radius: 10px; font-size: 0.875rem; transition: border-color 0.2s;
+      font-family: inherit; background: #f8fafc;
+    }
+    .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+      outline: none; border-color: var(--primary); background: white;
+    }
+    .form-group textarea { resize: vertical; min-height: 90px; }
+    .form-submit {
+      width: 100%; background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white; padding: 0.85rem; border: none; border-radius: 10px;
+      font-size: 0.95rem; font-weight: 700; cursor: pointer;
+    }
+
+    footer { background: var(--dark); color: rgba(255,255,255,0.4); padding: 1.5rem 2rem; text-align: center; font-size: 0.85rem; }
+    footer a { color: inherit; }
+    footer strong { color: rgba(255,255,255,0.7); }
+
+    .elevo-dot { position: fixed; bottom: 24px; right: 24px; z-index: 9999; width: 52px; height: 52px; border-radius: 50%; background: linear-gradient(135deg, #1E3A5F 0%, #0A0E1A 100%); border: 2px solid rgba(59,130,246,.35); display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(0,0,0,.2), 0 0 12px rgba(59,130,246,.1); cursor: pointer; transition: transform .2s, box-shadow .2s; text-decoration: none; }
+    .elevo-dot:hover { transform: scale(1.1); box-shadow: 0 6px 24px rgba(0,0,0,.3), 0 0 20px rgba(59,130,246,.15); }
+
+    @media (max-width: 768px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .metric-row .metric-card:last-child { display: none; }
+      .hero h1 { font-size: 2rem; }
+      .nav-links { display: none; }
+      .steps-inner { grid-template-columns: 1fr; }
+      .contact-inner { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="logo-area">
+    <img src="https://www.zaehne-im-zentrum.de/assets/logo.svg" class="logo-img" alt="Zähne im Zentrum" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+    <div class="logo-fallback" style="display:none"><div class="logo-dot"></div><span class="logo-text">ZiZ</span></div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#leistungen">Leistungen</a></li>
+    <li><a href="#ablauf">Vorgehen</a></li>
+    <li><a href="#kontakt">Kontakt</a></li>
+  </ul>
+  <a href="#kontakt" class="nav-cta">Termin buchen</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-blob"></div>
+  <div class="hero-blob2"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-pill">✦ Premium-Zahnarztpraxis München Theatinerstraße – Ästhetik & Implantologie</div>
+      <h1>Höchste Ästhetik. Beste Lage.<br><span class="gradient-text">Zähne im Zentrum – Ihre Premium-Praxis an der Theatinerstraße</span></h1>
+      <p>Mitten in Münchens Herz – direkt an der Theatinerstraße: Premium-Zahnmedizin mit dem Fokus auf höchste Ästhetik, schonende Implantologie und persönliche Betreuung. Für Menschen, die das Beste verdienen.</p>
+      <div class="hero-actions">
+        <a href="#kontakt" class="btn-gradient">Jetzt Termin buchen →</a>
+        <a href="#leistungen" class="btn-ghost">Mehr erfahren</a>
+      </div>
+    </div>
+    <div class="hero-card-grid">
+      <div class="hero-img-container">
+        <img src="https://www.zaehne-im-zentrum.de/assets/hero-praxis.jpg" alt="Zähne im Zentrum München Praxis" loading="lazy" onerror="this.parentElement.innerHTML='<div class=\'hero-img-placeholder\'>✨</div>'">
+      </div>
+      <div class="metric-card">
+        <div class="metric-value"><span>Premium</span></div>
+        <div class="metric-label">Ästhetik & Implantologie</div>
+      </div>
+      <div class="metric-row">
+        <div class="metric-card">
+          <div class="metric-value"><span>Top-Lage</span></div>
+          <div class="metric-label">Theatinerstraße München</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value"><span>20+</span></div>
+          <div class="metric-label">Jahre Erfahrung</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="leistungen">
+  <div class="services-header">
+    <span class="section-chip">Leistungen</span>
+    <h2 class="section-title">Was wir für Sie leisten</h2>
+    <p class="section-sub">Premium-Ästhetik und schonende Implantologie in Münchens exklusivster Lage – an der Theatinerstraße.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">✨</div>
+      <h3>Ästhetische Zahnmedizin</h3>
+      <p>Veneers, Vollkeramik und hochwertiges Bleaching – wir schaffen Lächeln auf internationalem Niveau. Individuell gestaltet, perfekt auf Ihre Gesichtszüge abgestimmt.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🔬</div>
+      <h3>Implantologie</h3>
+      <p>Schonende Implantologie mit modernsten Methoden: von der Einzellücke bis zur Vollversorgung – sicher, präzise und langlebig für Ihre Lebensqualität.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🛡️</div>
+      <h3>Prophylaxe & Vorsorge</h3>
+      <p>Regelmäßige professionelle Zahnreinigung und individuelle Prophylaxe – Ihr Fundament für dauerhaft gesunde Zähne und ein strahlendes Lächeln.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">📱</div>
+      <h3>Online-Terminbuchung</h3>
+      <p>Komfortabel und unkompliziert: Buchen Sie Ihren Wunschtermin online – keine Warteschleife, persönliche Betreuung von Anfang an.</p>
+    </div>
+  </div>
+</section>
+
+<section class="steps" id="ablauf">
+  <div class="steps-inner">
+    <div>
+      <span class="section-chip">Unser Vorgehen</span>
+      <h2 class="section-title" style="margin-bottom:2rem;">Ihr Weg zu einem strahlenden Lächeln</h2>
+      <div class="steps-grid">
+        <div class="step-item">
+          <div class="step-num-badge">1</div>
+          <div class="step-item-text">
+            <h4>Premium-Termin buchen</h4>
+            <p>Online reservieren für Ihr erstes Gespräch – keine Warteschleife, persönliche Betreuung.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num-badge">2</div>
+          <div class="step-item-text">
+            <h4>Ausführliche Beratung</h4>
+            <p>Zeit nehmen, zuhören, beraten – kein Stundentakt, kein Fabrikbetrieb, nur Sie.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num-badge">3</div>
+          <div class="step-item-text">
+            <h4>Behandlung auf Topniveau</h4>
+            <p>Veneers, Vollkeramik und Implantologie auf internationalem Standard an der Theatinerstraße.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num-badge">4</div>
+          <div class="step-item-text">
+            <h4>Langfristige Partnerschaft</h4>
+            <p>Regelmäßige Prophylaxe und persönliche Betreuung – Ihr Lächeln bleibt immer gepflegt.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="steps-visual">
+      <h3>Patienten aus ganz München</h3>
+      <p class="tagline">Münchens Premium-Adresse für Ästhetik und Implantologie – an der Theatinerstraße.</p>
+      <div class="highlight-box">
+        <strong>Theatinerstraße</strong>
+        <p>Münchens exklusivste Adresse – direkt im Herzen der Innenstadt, beste Erreichbarkeit.</p>
+      </div>
+      <div class="highlight-box">
+        <strong>Premium Ästhetik</strong>
+        <p>Veneers und Vollkeramik auf internationalem Niveau – für ein Lächeln, das begeistert.</p>
+      </div>
+      <div class="highlight-box">
+        <strong>Persönliche Beratung</strong>
+        <p>Kein Massenabfertigungsbetrieb – Sie erhalten Zeit, Aufmerksamkeit und individuelle Lösungen.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials">
+  <div class="testimonials-header">
+    <span class="section-chip">Patientenstimmen</span>
+    <h2 class="section-title">Was Patienten über uns sagen</h2>
+  </div>
+  <div class="testimonials-grid">
+    <div class="testimonial-card">
+      <div class="stars">★★★★★</div>
+      <p>"Ich habe meine Veneers bei Zähne im Zentrum machen lassen und bin absolut begeistert. Die Beratung war ausführlich, das Ergebnis natürlich und wunderschön. Die Lage an der Theatinerstraße ist unschlagbar."</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">E</div>
+        <div>
+          <div class="author-name">Eva M.</div>
+          <div class="author-role">Patientin, Veneers</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <div class="stars">★★★★★</div>
+      <p>"Endlich ein Zahnarzt, der sich wirklich Zeit nimmt. Das Implantat sitzt perfekt und die gesamte Behandlung war deutlich angenehmer als erwartet. Höchste Empfehlung für alle, die Qualität schätzen."</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">C</div>
+        <div>
+          <div class="author-name">Christian R.</div>
+          <div class="author-role">Patient, Implantologie</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <div class="stars">★★★★★</div>
+      <p>"Als Ärztin weiß ich, worauf ich bei der Wahl meiner Zahnarztpraxis achte. Zähne im Zentrum überzeugt auf ganzer Linie: modernste Technik, exzellente Beratung und ein Team, dem ich voll vertraue."</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">M</div>
+        <div>
+          <div class="author-name">Dr. Monika K.</div>
+          <div class="author-role">Patientin, Ästhetische Zahnmedizin</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="cta-blob"></div>
+  <h2>Premium-Zahnmedizin an der Theatinerstraße</h2>
+  <p>Für Menschen, die das Beste verdienen – buchen Sie Ihr persönliches Beratungsgespräch.</p>
+  <a href="#kontakt" class="btn-gradient">Jetzt Termin buchen →</a>
+</section>
+
+<section class="contact" id="kontakt">
+  <div class="contact-inner">
+    <div class="contact-info">
+      <h3>Kontakt aufnehmen</h3>
+      <div class="contact-item">
+        <div class="contact-icon">📍</div>
+        <div class="contact-item-text">
+          <div class="label">Standort</div>
+          <div class="value">Theatinerstraße 3, 80333 München<br>Direkt in der Innenstadt</div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">📞</div>
+        <div class="contact-item-text">
+          <div class="label">Telefon</div>
+          <div class="value">+49 89 296777</div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">✉️</div>
+        <div class="contact-item-text">
+          <div class="label">E-Mail</div>
+          <div class="value">info@zaehne-im-zentrum.de</div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">🕐</div>
+        <div class="contact-item-text">
+          <div class="label">Öffnungszeiten</div>
+          <div class="value">Mo–Do 8:00–17:00 Uhr<br>Fr 8:00–14:30 Uhr</div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-form">
+      <h4>Termin anfragen</h4>
+      <form>
+        <div class="form-group"><input type="text" placeholder="Ihr Name" /></div>
+        <div class="form-group"><input type="email" placeholder="Ihre E-Mail" /></div>
+        <div class="form-group"><input type="tel" placeholder="Telefonnummer (optional)" /></div>
+        <div class="form-group">
+          <select>
+            <option value="">Ihr Anliegen</option>
+            <option>Online-Terminbuchung</option>
+            <option>Professionelle Zahnreinigung</option>
+            <option>Ästhetische Zahnmedizin / Veneers</option>
+            <option>Implantologie</option>
+            <option>Prophylaxe & Vorsorge</option>
+          </select>
+        </div>
+        <div class="form-group"><textarea placeholder="Ihre Nachricht..."></textarea></div>
+        <button type="submit" class="form-submit">Termin anfragen →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 <strong>Zähne im Zentrum</strong> · Theatinerstraße 3, 80333 München · <a href="mailto:info@zaehne-im-zentrum.de">info@zaehne-im-zentrum.de</a></p>
+</footer>
+
+<a href="https://elevo.solutions" target="_blank" rel="noopener" class="elevo-dot" title="Erstellt von ELEVO">
+  <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><text x="6" y="21" font-size="19" font-weight="800" font-family="Arial,sans-serif" fill="white">E</text></svg>
+</a>
+
+</body>
+</html>
