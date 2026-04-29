@@ -42,6 +42,15 @@
     .nav-links a:hover { color: var(--secondary); }
     .nav-cta { background: var(--secondary); color: var(--white); padding: 9px 22px; border-radius: 8px; font-size: 0.875rem; font-weight: 600; text-decoration: none; transition: background 0.2s; white-space: nowrap; }
     .nav-cta:hover { background: var(--secondary-light); }
+
+    /* ── SVG icon sizing ── */
+    .service-icon svg, .stat-icon svg, .tech-icon svg, .contact-icon svg,
+    .tech-card-icon svg, .direction-icon svg, .about-visual-icon svg,
+    .service-emoji svg, .anfahrt-icon svg, .metric-icon svg,
+    .stat-box svg, .about-card-title svg {
+      width: 32px;
+      height: 32px;
+    }
     @media (max-width: 768px) { .nav-links { display: none; } nav { padding: 0 4%; } }
 
     /* HERO */
@@ -303,15 +312,15 @@
       </div>
       <div class="hero-metrics">
         <div class="metric-card">
-          <div class="metric-icon">&#11088;</div>
+          <div class="metric-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
           <div><div class="metric-val">4,9 / 5</div><div class="metric-label">Google-Bewertung</div></div>
         </div>
         <div class="metric-card">
-          <div class="metric-icon">&#128101;</div>
+          <div class="metric-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
           <div><div class="metric-val">20+ Jahre</div><div class="metric-label">Erfahrung in &Auml;sthetik</div></div>
         </div>
         <div class="metric-card">
-          <div class="metric-icon">&#127776;</div>
+          <div class="metric-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
           <div><div class="metric-val">Vollkeramik</div><div class="metric-label">Spezialisierung</div></div>
         </div>
       </div>
@@ -323,22 +332,22 @@
 <section id="stats-banner">
   <div class="stats-banner-inner">
     <div class="stat-box">
-      <div class="stat-icon">&#10024;</div>
+      <div class="stat-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 7.2H22l-6 4.8 2.4 7.2L12 16.4l-6.4 4.8 2.4-7.2-6-4.8h7.6z"/></svg></div>
       <div class="stat-value">Premium-&Auml;sthetik</div>
       <div class="stat-label">H&ouml;chste Ansprüche an Materialien &amp; Ergebnis</div>
     </div>
     <div class="stat-box">
-      <div class="stat-icon">&#127963;</div>
+      <div class="stat-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M12 8v8"/><path d="M8 12h8"/></svg></div>
       <div class="stat-value">Top-Lage Theatinerstr.</div>
       <div class="stat-label">M&uuml;nchens feinste Einkaufsstra&szlig;e</div>
     </div>
     <div class="stat-box">
-      <div class="stat-icon">&#128337;</div>
+      <div class="stat-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
       <div class="stat-value">20+ Jahre</div>
       <div class="stat-label">Erfahrung in &auml;sthetischer Zahnmedizin</div>
     </div>
     <div class="stat-box">
-      <div class="stat-icon">&#128142;</div>
+      <div class="stat-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12l4 6-10 13L2 9z"/><path d="M2 9h20"/></svg></div>
       <div class="stat-value">Vollkeramik-Experten</div>
       <div class="stat-label">Metallfreie Versorgungen auf h&ouml;chstem Niveau</div>
     </div>
@@ -384,19 +393,19 @@
     </div>
     <div class="about-sidebar">
       <div class="about-card">
-        <div class="about-card-title">&#127963; Premium-Lage Theatinerstra&szlig;e</div>
+        <div class="about-card-title"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M12 8v8"/><path d="M8 12h8"/></svg> Premium-Lage Theatinerstra&szlig;e</div>
         <div class="about-card-text">Unsere Praxis liegt an M&uuml;nchens feinster Einkaufsstra&szlig;e &ndash; zwischen Odeonsplatz und Marienplatz. Zentral, diskret und auf h&ouml;chstem Niveau.</div>
       </div>
       <div class="about-card">
-        <div class="about-card-title">&#128142; Vollkeramik-Spezialisierung</div>
+        <div class="about-card-title"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12l4 6-10 13L2 9z"/><path d="M2 9h20"/></svg> Vollkeramik-Spezialisierung</div>
         <div class="about-card-text">Wir sind spezialisiert auf metallfreie Vollkeramik-Versorgungen &ndash; Veneers, Kronen und Br&uuml;cken in h&ouml;chster &auml;sthetischer Qualit&auml;t, gefertigt mit CEREC-Technologie.</div>
       </div>
       <div class="about-card">
-        <div class="about-card-title">&#128172; Pers&ouml;nliche Beratungskultur</div>
+        <div class="about-card-title"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg> Pers&ouml;nliche Beratungskultur</div>
         <div class="about-card-text">Keine Flie&szlig;bandmedizin. Wir nehmen uns f&uuml;r jeden Patienten die Zeit, die Ihre Behandlung verdient &ndash; mit individueller Beratung und transparenter Kommunikation.</div>
       </div>
       <div class="about-card">
-        <div class="about-card-title">&#128337; Seit 2002 in M&uuml;nchen</div>
+        <div class="about-card-title"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Seit 2002 in M&uuml;nchen</div>
         <div class="about-card-text">&Uuml;ber zwei Jahrzehnte Erfahrung in &auml;sthetischer Zahnmedizin. Tausende zufriedene Patienten vertrauen auf unsere Expertise und unser Qualit&auml;tsversprechen.</div>
       </div>
     </div>
@@ -412,37 +421,37 @@
     </div>
     <div class="services-grid">
       <div class="service-card">
-        <span class="service-emoji">&#10024;</span>
+        <span class="service-emoji"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 7.2H22l-6 4.8 2.4 7.2L12 16.4l-6.4 4.8 2.4-7.2-6-4.8h7.6z"/></svg></span>
         <div class="service-title">Veneers &amp; Vollkeramik-Versorgungen</div>
         <p class="service-body">Hauchd&uuml;nne Porzellan-Veneers und vollkeramische Kronen &ndash; metallfrei, biovertr&auml;glich und in nat&uuml;rlicher &Auml;sthetik. Gefertigt mit CEREC-Technologie f&uuml;r h&ouml;chste Passgenauigkeit und Haltbarkeit.</p>
         <span class="service-price">Individuelle Beratung</span>
       </div>
       <div class="service-card">
-        <span class="service-emoji">&#128247;</span>
+        <span class="service-emoji"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></span>
         <div class="service-title">Digital Smile Design</div>
         <p class="service-body">Wir analysieren Ihre Gesichtsproportionen und Zahnstellung digital &ndash; und erstellen eine fotorealistische Vorschau Ihres neuen L&auml;chelns. Sie sehen das Ergebnis, bevor die Behandlung beginnt.</p>
         <span class="service-price">Im Beratungsgespr&auml;ch inklusive</span>
       </div>
       <div class="service-card">
-        <span class="service-emoji">&#127775;</span>
+        <span class="service-emoji"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
         <div class="service-title">Smile Makeover</div>
         <p class="service-body">Ihre komplette Smile-Transformation: mehrere aufeinander abgestimmte Vollkeramik-Veneers, designed nach Ihren Gesichtsproportionen. Inklusive 3D-Planung, Farbauswahl und Keramik-Feinabstimmung.</p>
         <span class="service-price">Auf Anfrage</span>
       </div>
       <div class="service-card">
-        <span class="service-emoji">&#129463;</span>
+        <span class="service-emoji"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C9.5 2 7 4 7 7c0 3 1 5 1.5 8s.5 5 .5 7h6c0-2 0-4 .5-7S17 10 17 7c0-3-2.5-5-5-5z"/></svg></span>
         <div class="service-title">Implantologie</div>
         <p class="service-body">Hochwertige Implantate mit vollkeramischen Aufbauten &ndash; f&uuml;r einzelne fehlende Z&auml;hne oder umfassende Rekonstruktionen. Jede Implantation wird mit DVT-3D-Diagnostik pr&auml;zise geplant.</p>
         <span class="service-price">Auf Anfrage</span>
       </div>
       <div class="service-card">
-        <span class="service-emoji">&#9728;</span>
+        <span class="service-emoji"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></span>
         <div class="service-title">Professionelles Zahnbleaching</div>
         <p class="service-body">Schonendes In-Office-Bleaching oder individuelles Home-Bleaching-Set mit ma&szlig;gefertigter Schiene. F&uuml;r ein strahlendes L&auml;cheln, das zu Ihrem neuen Smile Design passt.</p>
         <span class="service-price">Preis auf Anfrage</span>
       </div>
       <div class="service-card">
-        <span class="service-emoji">&#128171;</span>
+        <span class="service-emoji"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
         <div class="service-title">Prophylaxe &amp; Zahnerhaltung</div>
         <p class="service-body">Professionelle Zahnreinigung, Parodontologie und individuelle Vorsorgeprogramme. Denn die beste &Auml;sthetik beginnt mit gesunden Z&auml;hnen und gesundem Zahnfleisch.</p>
         <span class="service-price">Regelm&auml;&szlig;ige Kontrolle</span>
@@ -480,27 +489,27 @@
     <div>
       <div class="ueber-checklist">
         <div class="check-item">
-          <div class="check-icon">&#10003;</div>
+          <div class="check-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
           <div class="check-text"><strong>Seit 2002 in M&uuml;nchen</strong><br>Zwei Jahrzehnte Erfahrung in &auml;sthetischer Zahnmedizin</div>
         </div>
         <div class="check-item">
-          <div class="check-icon">&#10003;</div>
+          <div class="check-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
           <div class="check-text"><strong>100% Vollkeramik</strong><br>Metallfreie, biovertr&auml;gliche Materialien h&ouml;chster Qualit&auml;t</div>
         </div>
         <div class="check-item">
-          <div class="check-icon">&#10003;</div>
+          <div class="check-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
           <div class="check-text"><strong>CEREC-Chairside-Fertigung</strong><br>Pr&auml;zise CAD/CAM-Versorgungen, oft in einer Sitzung</div>
         </div>
         <div class="check-item">
-          <div class="check-icon">&#10003;</div>
+          <div class="check-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
           <div class="check-text"><strong>Pers&ouml;nliche Beratungskultur</strong><br>Ausf&uuml;hrliche Gespr&auml;che ohne Zeitdruck</div>
         </div>
         <div class="check-item">
-          <div class="check-icon">&#10003;</div>
+          <div class="check-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
           <div class="check-text"><strong>DVT-3D-Diagnostik</strong><br>Dreidimensionale Bildgebung f&uuml;r pr&auml;zise Planung</div>
         </div>
         <div class="check-item">
-          <div class="check-icon">&#10003;</div>
+          <div class="check-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
           <div class="check-text"><strong>Premium-Lage Theatinerstra&szlig;e</strong><br>Zentral zwischen Odeonsplatz und Marienplatz</div>
         </div>
       </div>
@@ -564,32 +573,32 @@
     </div>
     <div class="tech-grid">
       <div class="tech-card">
-        <div class="tech-icon">&#9881;</div>
+        <div class="tech-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div>
         <div class="tech-title">CEREC-Vollkeramik</div>
         <p class="tech-desc">Computergest&uuml;tzte Fertigung von Vollkeramik-Versorgungen direkt in der Praxis. Kronen, Inlays und Veneers in h&ouml;chster Pr&auml;zision &ndash; oft in nur einer Sitzung, ohne Abdr&uuml;cke.</p>
       </div>
       <div class="tech-card">
-        <div class="tech-icon">&#128247;</div>
+        <div class="tech-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
         <div class="tech-title">3D-Smile-Design</div>
         <p class="tech-desc">Digitale Analyse Ihrer Gesichtsproportionen und dreidimensionale Simulation Ihres neuen L&auml;chelns. Sie sehen das Ergebnis vorab und k&ouml;nnen Feinheiten mitbestimmen, bevor die Behandlung beginnt.</p>
       </div>
       <div class="tech-card">
-        <div class="tech-icon">&#128187;</div>
+        <div class="tech-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
         <div class="tech-title">DVT-Diagnostik</div>
         <p class="tech-desc">Digitale Volumentomographie f&uuml;r dreidimensionale R&ouml;ntgenbilder. Pr&auml;zise Darstellung von Knochenstrukturen, Nervverl&auml;ufen und Zahnwurzeln &ndash; Grundlage f&uuml;r sichere Implantologie.</p>
       </div>
       <div class="tech-card">
-        <div class="tech-icon">&#127912;</div>
+        <div class="tech-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r="2"/><circle cx="17.5" cy="10.5" r="2"/><circle cx="8.5" cy="7.5" r="2"/><circle cx="6.5" cy="12.5" r="2"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.93 0 1.5-.75 1.5-1.5 0-.36-.15-.69-.38-.94-.23-.25-.37-.57-.37-.94 0-.75.63-1.37 1.37-1.37H16c3.31 0 6-2.69 6-6 0-5.5-4.5-9.75-10-9.75z"/></svg></div>
         <div class="tech-title">Digitale Farbbestimmung</div>
         <p class="tech-desc">Elektronische Zahnfarbmessung statt manueller Farbauswahl. Exakte Reproduktion Ihrer nat&uuml;rlichen Zahnfarbe f&uuml;r Vollkeramik-Versorgungen, die sich nahtlos einf&uuml;gen.</p>
       </div>
       <div class="tech-card">
-        <div class="tech-icon">&#128269;</div>
+        <div class="tech-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
         <div class="tech-title">Lupenbrille &amp; Mikroskopie</div>
         <p class="tech-desc">Alle &auml;sthetischen Behandlungen unter Vergr&ouml;&szlig;erung. Lupenbrillen und OP-Mikroskope erm&ouml;glichen pr&auml;ziseste Arbeit am Zahn &ndash; f&uuml;r perfekte R&auml;nder und Oberfl&auml;chen.</p>
       </div>
       <div class="tech-card">
-        <div class="tech-icon">&#128300;</div>
+        <div class="tech-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18h8"/><path d="M3 22h18"/><path d="M14 22a7 7 0 1 0 0-14h-1"/><path d="M9 14h2"/><path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2z"/></svg></div>
         <div class="tech-title">Intraoralscanner</div>
         <p class="tech-desc">Digitaler Abdruck ohne unangenehme Abdruckmasse. Der Intraoralscanner erstellt in wenigen Minuten ein pr&auml;zises 3D-Modell Ihrer Z&auml;hne &ndash; komfortabler und genauer als herk&ouml;mmliche Methoden.</p>
       </div>
@@ -680,22 +689,22 @@
     </div>
     <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem;">
       <div style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); border-radius:14px; padding:1.75rem;">
-        <div style="font-size:1.5rem; margin-bottom:0.75rem;">&#128142;</div>
+        <div style="font-size:1.5rem; margin-bottom:0.75rem;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12l4 6-10 13L2 9z"/><path d="M2 9h20"/></svg></div>
         <h4 style="color:white; font-weight:700; margin-bottom:0.5rem;">Nat&uuml;rliche &Auml;sthetik</h4>
         <p style="color:rgba(255,255,255,0.6); font-size:0.875rem; line-height:1.7;">Vollkeramik reflektiert Licht wie nat&uuml;rlicher Zahnschmelz. Die Transluzenz und Farbtiefe ist mit keinem anderen Material vergleichbar &ndash; kein dunkler Metallrand, keine k&uuml;nstliche Optik.</p>
       </div>
       <div style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); border-radius:14px; padding:1.75rem;">
-        <div style="font-size:1.5rem; margin-bottom:0.75rem;">&#129505;</div>
+        <div style="font-size:1.5rem; margin-bottom:0.75rem;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
         <h4 style="color:white; font-weight:700; margin-bottom:0.5rem;">Biovertr&auml;glichkeit</h4>
         <p style="color:rgba(255,255,255,0.6); font-size:0.875rem; line-height:1.7;">Metallfrei bedeutet: keine Korrosion, keine allergischen Reaktionen, keine Wechselwirkungen mit Speichel. Vollkeramik ist das biovertr&auml;glichste Zahnersatz-Material &uuml;berhaupt.</p>
       </div>
       <div style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); border-radius:14px; padding:1.75rem;">
-        <div style="font-size:1.5rem; margin-bottom:0.75rem;">&#128170;</div>
+        <div style="font-size:1.5rem; margin-bottom:0.75rem;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
         <h4 style="color:white; font-weight:700; margin-bottom:0.5rem;">Langlebigkeit</h4>
         <p style="color:rgba(255,255,255,0.6); font-size:0.875rem; line-height:1.7;">Moderne Hochleistungskeramiken wie Zirkonoxid und Lithiumdisilikat erreichen Festigkeitswerte, die mit Metallversorgungen vergleichbar sind &ndash; bei deutlich besserer &Auml;sthetik.</p>
       </div>
       <div style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); border-radius:14px; padding:1.75rem;">
-        <div style="font-size:1.5rem; margin-bottom:0.75rem;">&#9881;</div>
+        <div style="font-size:1.5rem; margin-bottom:0.75rem;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div>
         <h4 style="color:white; font-weight:700; margin-bottom:0.5rem;">CEREC-Pr&auml;zision</h4>
         <p style="color:rgba(255,255,255,0.6); font-size:0.875rem; line-height:1.7;">Computergest&uuml;tzte Fertigung mit CEREC bedeutet: mikrometergenauer Sitz, reproduzierbare Qualit&auml;t und k&uuml;rzere Behandlungszeiten. Viele Versorgungen sind in einer Sitzung m&ouml;glich.</p>
       </div>
@@ -788,7 +797,7 @@
     </div>
     <div class="anfahrt-grid">
       <div class="anfahrt-card">
-        <div class="anfahrt-icon">&#128647;</div>
+        <div class="anfahrt-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="16" rx="3"/><path d="M4 11h16"/><line x1="8" y1="15" x2="8.01" y2="15"/><line x1="16" y1="15" x2="16.01" y2="15"/><path d="M6 19l-2 3"/><path d="M18 19l2 3"/></svg></div>
         <div class="anfahrt-title">Mit der U-Bahn</div>
         <p class="anfahrt-text">
           <strong>U-Bahn Odeonsplatz</strong> (U3, U4, U5, U6) &ndash; ca. 2 Minuten Fu&szlig;weg s&uuml;dlich Richtung Theatinerstra&szlig;e.<br><br>
@@ -797,7 +806,7 @@
         </p>
       </div>
       <div class="anfahrt-card">
-        <div class="anfahrt-icon">&#128663;</div>
+        <div class="anfahrt-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17h14v-5l-2-6H7l-2 6z"/><circle cx="7.5" cy="17.5" r="1.5"/><circle cx="16.5" cy="17.5" r="1.5"/></svg></div>
         <div class="anfahrt-title">Mit dem Auto</div>
         <p class="anfahrt-text">
           Die Theatinerstra&szlig;e liegt in der Fu&szlig;g&auml;ngerzone &ndash; bitte nutzen Sie eines der umliegenden Parkh&auml;user:<br><br>
@@ -807,7 +816,7 @@
         </p>
       </div>
       <div class="anfahrt-card">
-        <div class="anfahrt-icon">&#128694;</div>
+        <div class="anfahrt-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="4" r="2"/><path d="M12 6v4"/><path d="M8 10h8"/><path d="M10 10l-2 12"/><path d="M14 10l2 12"/></svg></div>
         <div class="anfahrt-title">Zu Fu&szlig; vom Marienplatz</div>
         <p class="anfahrt-text">
           Vom Marienplatz gehen Sie n&ouml;rdlich durch die Weinstra&szlig;e in Richtung Theatinerstra&szlig;e. Nach ca. 5 Minuten erreichen Sie unsere Praxis auf der linken Seite.<br><br>
@@ -818,7 +827,7 @@
     </div>
     <div class="anfahrt-map-wrap">
       <div class="anfahrt-map-placeholder">
-        <span>&#128205;</span>
+        <span><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
         <div style="font-weight: 700; font-size: 1.05rem; color: var(--dark); margin-bottom: 4px;">Z&auml;hne im Zentrum</div>
         <div style="font-size: 0.9rem;">Theatinerstra&szlig;e 3, 80333 M&uuml;nchen</div>
         <div style="font-size: 0.82rem; margin-top: 4px;">Zwischen Odeonsplatz &amp; Marienplatz</div>
@@ -839,24 +848,24 @@
       </p>
       <div class="contact-info">
         <div class="contact-row">
-          <div class="contact-icon">&#128205;</div>
+          <div class="contact-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
           <div class="contact-val"><strong>Adresse</strong>Theatinerstra&szlig;e 3, 80333 M&uuml;nchen<br>Zwischen Odeonsplatz &amp; Marienplatz</div>
         </div>
         <div class="contact-row">
-          <div class="contact-icon">&#128222;</div>
+          <div class="contact-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
           <div class="contact-val"><strong>Telefon</strong><a href="tel:+4989296777" style="color:#D6D3D1; text-decoration:none;">+49 89 296777</a></div>
         </div>
         <div class="contact-row">
-          <div class="contact-icon">&#9993;</div>
+          <div class="contact-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4l-10 8L2 4"/></svg></div>
           <div class="contact-val"><strong>E-Mail</strong><a href="mailto:info@zaehne-im-zentrum.de" style="color:#D6D3D1; text-decoration:none;">info@zaehne-im-zentrum.de</a></div>
         </div>
         <div class="contact-row">
-          <div class="contact-icon">&#128336;</div>
+          <div class="contact-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
           <div class="contact-val"><strong>&Ouml;ffnungszeiten</strong>Mo&ndash;Do 8:00&ndash;17:00 Uhr<br>Fr 8:00&ndash;14:30 Uhr</div>
         </div>
       </div>
       <div class="contact-note">
-        <p class="contact-note-text">&#9888; Bitte vereinbaren Sie vorab telefonisch oder per E-Mail einen Termin. So k&ouml;nnen wir gen&uuml;gend Zeit f&uuml;r Ihre Beratung einplanen.</p>
+        <p class="contact-note-text"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> Bitte vereinbaren Sie vorab telefonisch oder per E-Mail einen Termin. So k&ouml;nnen wir gen&uuml;gend Zeit f&uuml;r Ihre Beratung einplanen.</p>
       </div>
     </div>
     <div class="contact-right">

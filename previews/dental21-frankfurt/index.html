@@ -39,6 +39,13 @@
     }
     .nav-cta:hover { box-shadow: 0 4px 15px rgba(28,95,168,0.4); transform: translateY(-1px); }
 
+    /* ── SVG icon sizing ── */
+    .service-icon svg, .stat-icon svg, .tech-icon svg, .contact-icon svg,
+    .tech-card-icon svg, .direction-icon svg, .about-visual-icon svg {
+      width: 32px;
+      height: 32px;
+    }
+
     /* ── Hero ── */
     .hero {
       min-height: 100vh; padding-top: 80px;
@@ -468,7 +475,7 @@
   <div class="hero-blob2"></div>
   <div class="hero-inner">
     <div>
-      <div class="hero-pill">&#10022; Modernes Zahnarzt-Netzwerk Frankfurt &ndash; Online-Buchung, 7 Tage</div>
+      <div class="hero-pill"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none" style="display:inline-block;vertical-align:middle;flex-shrink:0"><path d="M12 1l2.5 7.8H22l-6.4 4.7 2.4 7.7L12 16.5l-6 4.7 2.4-7.7L2 9.8h7.5z"/></svg> Modernes Zahnarzt-Netzwerk Frankfurt &ndash; Online-Buchung, 7 Tage</div>
       <h1>Moderne Zahnmedizin. Flexibel buchbar.<br><span class="gradient-text">Dental21 &ndash; Ihr Zahnarzt in Frankfurt Sachsenhausen</span></h1>
       <p>Dental21 in Frankfurt Sachsenhausen verbindet digitale Termintechnologie mit hochmoderner Zahnmedizin: Online-Buchung 24/7, &Auml;sthetik, Implantologie und Prophylaxe &ndash; alles in einer Praxis.</p>
       <div class="hero-actions">
@@ -478,7 +485,7 @@
     </div>
     <div class="hero-card-grid">
       <div class="hero-img-container">
-        <img src="https://www.dental21-sachsenhausen.de/img/hero-praxis.jpg" alt="Dental21 Frankfurt Sachsenhausen" loading="lazy" onerror="this.parentElement.innerHTML='<div class=\'hero-img-placeholder\'>&#x1F9B7;</div>'">
+        <img src="https://www.dental21-sachsenhausen.de/img/hero-praxis.jpg" alt="Dental21 Frankfurt Sachsenhausen" loading="lazy" onerror="this.parentElement.innerHTML='<div class=\'hero-img-placeholder\'><svg width=&quot;64&quot; height=&quot;64&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;white&quot; stroke-width=&quot;1.5&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;><path d=&quot;M12 2C9.5 2 7 4 7 7c0 3 1 5 1.5 8s.5 5 .5 7h6c0-2 0-4 .5-7S17 10 17 7c0-3-2.5-5-5-5z&quot;/></svg></div>'">
       </div>
       <div class="metric-card">
         <div class="metric-value"><span>Online</span></div>
@@ -529,22 +536,22 @@
   </div>
   <div class="services-grid">
     <div class="service-card">
-      <div class="service-icon">&#x1F4F1;</div>
+      <div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
       <h3>Online-Terminbuchung 24/7</h3>
       <p>Rund um die Uhr den Wunschtermin buchen &ndash; ohne Anruf, ohne Warteschleife. Digitale Terminbest&auml;tigung in Echtzeit.</p>
     </div>
     <div class="service-card">
-      <div class="service-icon">&#x2728;</div>
+      <div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 7.2H22l-6 4.8 2.4 7.2L12 16.4l-6.4 4.8 2.4-7.2-6-4.8h7.6z"/></svg></div>
       <h3>&Auml;sthetische Zahnmedizin</h3>
       <p>Bleaching, Veneers und professionelles Smile-Design &ndash; f&uuml;r ein L&auml;cheln, das begeistert, mit modernster Technik und Materialien.</p>
     </div>
     <div class="service-card">
-      <div class="service-icon">&#x1F52C;</div>
+      <div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18h8"/><path d="M3 22h18"/><path d="M14 22a7 7 0 1 0 0-14h-1"/><path d="M9 14h2"/><path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2z"/></svg></div>
       <h3>Implantologie</h3>
       <p>Hochpr&auml;zise Implantat-Behandlungen mit digitaler Planung &ndash; f&uuml;r dauerhaften Zahnersatz, der nat&uuml;rlich sitzt und aussieht.</p>
     </div>
     <div class="service-card">
-      <div class="service-icon">&#x1F6E1;&#xFE0F;</div>
+      <div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
       <h3>Prophylaxe</h3>
       <p>Professionelle Zahnreinigung und individuelle Vorsorge &ndash; digitaler Recall erinnert Sie automatisch an Ihre n&auml;chste Kontrolle.</p>
     </div>
@@ -560,17 +567,17 @@
       <p>Seit 2015 steht Dental21 f&uuml;r eine neue Generation der Zahnmedizin. Im Herzen von Frankfurt-Sachsenhausen, in der Dreieichstra&szlig;e&nbsp;59, verbinden wir digitale Innovation mit pers&ouml;nlicher Betreuung. Unser Team setzt auf modernste Behandlungstechnologien und einen vollst&auml;ndig digitalisierten Praxisablauf &ndash; von der Online-Buchung bis zur digitalen Nachsorge.</p>
       <p>Als Teil des Dental21-Netzwerks profitieren Sie von standardisierten Qualit&auml;tsprozessen und einem hohen Anspruch an Patientenerlebnis. Wir sind &uuml;berzeugt: Zahnmedizin muss sich dem Leben der Patienten anpassen &ndash; nicht umgekehrt.</p>
       <ul class="about-features">
-        <li><span class="check-icon">&#x2713;</span> Online-Buchung rund um die Uhr verf&uuml;gbar</li>
-        <li><span class="check-icon">&#x2713;</span> Lange &Ouml;ffnungszeiten Mo&ndash;Fr bis 20:00 Uhr</li>
-        <li><span class="check-icon">&#x2713;</span> Volldigitalisierte Patientenakte</li>
-        <li><span class="check-icon">&#x2713;</span> Papierloser Check-in vor Ort</li>
-        <li><span class="check-icon">&#x2713;</span> Zentrale Lage in Frankfurt-S&uuml;d</li>
-        <li><span class="check-icon">&#x2713;</span> Automatische Recall-Erinnerungen</li>
+        <li><span class="check-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span> Online-Buchung rund um die Uhr verf&uuml;gbar</li>
+        <li><span class="check-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span> Lange &Ouml;ffnungszeiten Mo&ndash;Fr bis 20:00 Uhr</li>
+        <li><span class="check-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span> Volldigitalisierte Patientenakte</li>
+        <li><span class="check-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span> Papierloser Check-in vor Ort</li>
+        <li><span class="check-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span> Zentrale Lage in Frankfurt-S&uuml;d</li>
+        <li><span class="check-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span> Automatische Recall-Erinnerungen</li>
       </ul>
     </div>
     <div class="about-visual">
       <div class="about-visual-header">
-        <div class="about-visual-icon">&#x1F3E5;</div>
+        <div class="about-visual-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M12 8v8"/><path d="M8 12h8"/></svg></div>
         <div>
           <h3>Praxis-Profil</h3>
           <p>Dental21 Frankfurt Sachsenhausen</p>
@@ -653,25 +660,25 @@
   </div>
   <div class="tech-grid">
     <div class="tech-card">
-      <div class="tech-card-icon">&#x26A1;</div>
+      <div class="tech-card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
       <h3>CEREC-Sofortversorgung</h3>
       <p>Keramischer Zahnersatz in nur einer Sitzung: Der CEREC-Scanner erfasst Ihren Zahn digital, die Restauration wird direkt vor Ort gefr&auml;st &ndash; kein Provisorium, kein zweiter Termin n&ouml;tig.</p>
       <span class="tech-badge">Same-Day Versorgung</span>
     </div>
     <div class="tech-card">
-      <div class="tech-card-icon">&#x1F50D;</div>
+      <div class="tech-card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
       <h3>3D-Intraoralscanner</h3>
       <p>Statt unangenehmer Abdruckmasse scannen wir Ihre Z&auml;hne ber&uuml;hrungslos in 3D. Die hochaufl&ouml;senden Daten erm&ouml;glichen eine exakte Planung und perfekte Passgenauigkeit.</p>
       <span class="tech-badge">Abdruckfrei</span>
     </div>
     <div class="tech-card">
-      <div class="tech-card-icon">&#x1F4BB;</div>
+      <div class="tech-card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
       <h3>Digitale Behandlungsplanung</h3>
       <p>Jede Behandlung wird vorab digital geplant und simuliert. Sie sehen das erwartete Ergebnis, bevor die Behandlung beginnt &ndash; Transparenz und Sicherheit f&uuml;r jeden Eingriff.</p>
       <span class="tech-badge">Vorhersagbar</span>
     </div>
     <div class="tech-card">
-      <div class="tech-card-icon">&#x1F4CB;</div>
+      <div class="tech-card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/></svg></div>
       <h3>Online-Patientenakte</h3>
       <p>Ihre gesamte Behandlungshistorie digital verf&uuml;gbar: Befunde, R&ouml;ntgenbilder und Therapiepl&auml;ne &ndash; jederzeit einsehbar, sicher gespeichert und DSGVO-konform verwaltet.</p>
       <span class="tech-badge">DSGVO-konform</span>
@@ -777,15 +784,15 @@
     </div>
     <div class="directions-grid">
       <div class="direction-card">
-        <div class="direction-icon">&#x1F687;</div>
+        <div class="direction-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="16" rx="3"/><path d="M4 11h16"/><line x1="8" y1="15" x2="8.01" y2="15"/><line x1="16" y1="15" x2="16.01" y2="15"/><path d="M6 19l-2 3"/><path d="M18 19l2 3"/></svg></div>
         <div><h4>Mit der U-/S-Bahn</h4><p>Haltestelle Schweizer Platz (U1, U2, U3, U8) &ndash; nur 3&nbsp;Gehminuten bis zur Praxis. Alternativ S-Bahn Lokalbahnhof.</p></div>
       </div>
       <div class="direction-card">
-        <div class="direction-icon">&#x1F697;</div>
+        <div class="direction-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17h14v-5l-2-6H7l-2 6z"/><circle cx="7.5" cy="17.5" r="1.5"/><circle cx="16.5" cy="17.5" r="1.5"/></svg></div>
         <div><h4>Mit dem Auto</h4><p>&Uuml;ber die B3 (Schweizer Stra&szlig;e) Richtung Sachsenhausen. Parkm&ouml;glichkeiten in den umliegenden Seitenstra&szlig;en und im Parkhaus Schweizer Platz.</p></div>
       </div>
       <div class="direction-card">
-        <div class="direction-icon">&#x1F6B4;</div>
+        <div class="direction-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="18.5" cy="17.5" r="3.5"/><path d="M15 6a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/><path d="M12 17.5V14l-3-3 4-3 2 3h3"/></svg></div>
         <div><h4>Mit dem Fahrrad</h4><p>Fahrradst&auml;nder direkt vor der Praxis verf&uuml;gbar. Gut erreichbar &uuml;ber den Mainradweg und die Dreieichstra&szlig;e.</p></div>
       </div>
     </div>
@@ -801,19 +808,19 @@
     <div class="contact-info">
       <h3>Kontakt aufnehmen</h3>
       <div class="contact-item">
-        <div class="contact-icon">&#x1F4CD;</div>
+        <div class="contact-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
         <div class="contact-item-text"><div class="label">Standort</div><div class="value">Dreieichstra&szlig;e 59, 60594 Frankfurt am Main</div></div>
       </div>
       <div class="contact-item">
-        <div class="contact-icon">&#x1F4DE;</div>
+        <div class="contact-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
         <div class="contact-item-text"><div class="label">Telefon</div><div class="value">069 61992356</div></div>
       </div>
       <div class="contact-item">
-        <div class="contact-icon">&#x2709;&#xFE0F;</div>
+        <div class="contact-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4l-10 8L2 4"/></svg></div>
         <div class="contact-item-text"><div class="label">E-Mail</div><div class="value">frankfurt-sachsenhausen@dental21.de</div></div>
       </div>
       <div class="contact-item">
-        <div class="contact-icon">&#x1F550;</div>
+        <div class="contact-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
         <div class="contact-item-text"><div class="label">&Ouml;ffnungszeiten</div><div class="value">Mo&ndash;Fr 8:00&ndash;20:00 Uhr</div></div>
       </div>
     </div>

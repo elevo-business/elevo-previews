@@ -39,6 +39,13 @@
     }
     .nav-cta:hover { box-shadow: 0 4px 15px rgba(43,75,140,0.4); transform: translateY(-1px); }
 
+    /* ── SVG icon sizing ── */
+    .service-icon svg, .stat-icon svg, .tech-icon svg, .contact-icon svg,
+    .tech-card-icon svg, .direction-icon svg, .about-visual-icon svg {
+      width: 32px;
+      height: 32px;
+    }
+
     /* ── Hero ── */
     .hero {
       min-height: 100vh; padding-top: 80px;
@@ -476,7 +483,7 @@
   <div class="hero-blob2"></div>
   <div class="hero-inner">
     <div>
-      <div class="hero-pill">&#10022; Dentalzentrum K&ouml;ln Innenstadt &ndash; 700m&sup2;, eigenes Labor, Mo&ndash;Sa ge&ouml;ffnet</div>
+      <div class="hero-pill"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none" style="display:inline-block;vertical-align:middle;flex-shrink:0"><path d="M12 1l2.5 7.8H22l-6.4 4.7 2.4 7.7L12 16.5l-6 4.7 2.4-7.7L2 9.8h7.5z"/></svg> Dentalzentrum K&ouml;ln Innenstadt &ndash; 700m&sup2;, eigenes Labor, Mo&ndash;Sa ge&ouml;ffnet</div>
       <h1>Zahnmedizin auf &uuml;ber 700&nbsp;m&sup2;.<br><span class="gradient-text">DENVITA &ndash; Ihr Dentalzentrum in K&ouml;lns Altstadt</span></h1>
       <p>DENVITA ist K&ouml;lns modernes Dentalzentrum direkt in der Altstadt-Nord: &uuml;ber 700&nbsp;Quadratmeter, praxiseigenes Labor, Implantologie, Oralchirurgie und Online-Buchung &ndash; Mo&ndash;Sa ge&ouml;ffnet.</p>
       <div class="hero-actions">
@@ -488,7 +495,7 @@
       <div class="hero-img-container">
         <img src="https://www.denvita.de/wp-content/uploads/hero-praxis-koeln.jpg"
              alt="DENVITA Dentalzentrum K&ouml;ln Praxisr&auml;ume" loading="lazy"
-             onerror="this.parentElement.innerHTML='<div class=\'hero-img-placeholder\'>&#x1F9B7;</div>'">
+             onerror="this.parentElement.innerHTML='<div class=\'hero-img-placeholder\'><svg width=&quot;64&quot; height=&quot;64&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;white&quot; stroke-width=&quot;1.5&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;><path d=&quot;M12 2C9.5 2 7 4 7 7c0 3 1 5 1.5 8s.5 5 .5 7h6c0-2 0-4 .5-7S17 10 17 7c0-3-2.5-5-5-5z&quot;/></svg></div>'">
       </div>
       <div class="metric-card">
         <div class="metric-value"><span>700m&sup2;</span></div>
@@ -543,22 +550,22 @@
   </div>
   <div class="services-grid">
     <div class="service-card">
-      <div class="service-icon">&#x1F52C;</div>
+      <div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18h8"/><path d="M3 22h18"/><path d="M14 22a7 7 0 1 0 0-14h-1"/><path d="M9 14h2"/><path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2z"/></svg></div>
       <h3>Eigenes Dentallabor</h3>
       <p>Unser praxiseigenes Labor erm&ouml;glicht schnellere Fertigung, perfekte Passform und h&ouml;chste Qualit&auml;t bei Kronen, Br&uuml;cken und Zahnersatz &ndash; alles aus einer Hand.</p>
     </div>
     <div class="service-card">
-      <div class="service-icon">&#x1F9B7;</div>
+      <div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C9.5 2 7 4 7 7c0 3 1 5 1.5 8s.5 5 .5 7h6c0-2 0-4 .5-7S17 10 17 7c0-3-2.5-5-5-5z"/></svg></div>
       <h3>Implantologie &amp; Oralchirurgie</h3>
       <p>Von der Sofortimplantation bis zu komplexen oralchirurgischen Eingriffen &ndash; unser erfahrenes Team begleitet Sie sicher durch jeden Schritt Ihrer Behandlung.</p>
     </div>
     <div class="service-card">
-      <div class="service-icon">&#x1F4F1;</div>
+      <div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
       <h3>Online-Terminbuchung</h3>
       <p>Buchen Sie Ihren Wunschtermin bequem online &ndash; rund um die Uhr, ohne Warteschleife. Einfach, schnell und unkompliziert direkt auf unserer Website.</p>
     </div>
     <div class="service-card">
-      <div class="service-icon">&#x2728;</div>
+      <div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 7.2H22l-6 4.8 2.4 7.2L12 16.4l-6.4 4.8 2.4-7.2-6-4.8h7.6z"/></svg></div>
       <h3>&Auml;sthetische Zahnmedizin</h3>
       <p>Veneers, Bleaching und &auml;sthetische Korrekturen &ndash; wir gestalten Ihr strahlendes L&auml;cheln mit modernsten Methoden und h&ouml;chstem &auml;sthetischen Anspruch.</p>
     </div>
@@ -576,17 +583,17 @@
       <p>Seit 2008 ist DENVITA das Dentalzentrum im Herzen von K&ouml;ln. Auf &uuml;ber 700&nbsp;Quadratmetern in der Antonsgasse&nbsp;1, direkt in der Altstadt-Nord, vereinen wir alle zahnmedizinischen Disziplinen unter einem Dach &ndash; von der Prophylaxe &uuml;ber Implantologie und Oralchirurgie bis zur &auml;sthetischen Zahnmedizin.</p>
       <p>Unser besonderer Vorteil: Ein hauseigenes Dentallabor, das Zahnersatz direkt vor Ort fertigt. Das bedeutet k&uuml;rzere Wartezeiten, perfekte Abstimmung zwischen Behandler und Techniker und eine Qualit&auml;t, die wir vollst&auml;ndig kontrollieren. Dazu kommen gro&szlig;z&uuml;gige &Ouml;ffnungszeiten von Montag bis Samstag.</p>
       <ul class="about-features">
-        <li><span class="check-icon">&#x2713;</span> Eigenes Dentallabor im Haus</li>
-        <li><span class="check-icon">&#x2713;</span> &Uuml;ber 700&nbsp;m&sup2; moderne Praxisfl&auml;che</li>
-        <li><span class="check-icon">&#x2713;</span> Mo&ndash;Fr 7:30&ndash;20:00, Sa 9:00&ndash;14:30</li>
-        <li><span class="check-icon">&#x2713;</span> Zentrale Lage in der K&ouml;lner Altstadt</li>
-        <li><span class="check-icon">&#x2713;</span> Alle Fachbereiche unter einem Dach</li>
-        <li><span class="check-icon">&#x2713;</span> &Uuml;ber 15 Jahre Erfahrung in K&ouml;ln</li>
+        <li><span class="check-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span> Eigenes Dentallabor im Haus</li>
+        <li><span class="check-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span> &Uuml;ber 700&nbsp;m&sup2; moderne Praxisfl&auml;che</li>
+        <li><span class="check-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span> Mo&ndash;Fr 7:30&ndash;20:00, Sa 9:00&ndash;14:30</li>
+        <li><span class="check-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span> Zentrale Lage in der K&ouml;lner Altstadt</li>
+        <li><span class="check-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span> Alle Fachbereiche unter einem Dach</li>
+        <li><span class="check-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span> &Uuml;ber 15 Jahre Erfahrung in K&ouml;ln</li>
       </ul>
     </div>
     <div class="about-visual">
       <div class="about-visual-header">
-        <div class="about-visual-icon">&#x1F3E5;</div>
+        <div class="about-visual-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M12 8v8"/><path d="M8 12h8"/></svg></div>
         <div>
           <h3>Praxis-Profil</h3>
           <p>DENVITA Dentalzentrum K&ouml;ln</p>
@@ -691,31 +698,31 @@
   </div>
   <div class="tech-grid">
     <div class="tech-card">
-      <div class="tech-card-icon">&#x1F52C;</div>
+      <div class="tech-card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18h8"/><path d="M3 22h18"/><path d="M14 22a7 7 0 1 0 0-14h-1"/><path d="M9 14h2"/><path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2z"/></svg></div>
       <h3>Hauseigenes Dentallabor</h3>
       <p>Kronen, Br&uuml;cken und Prothesen werden direkt in unserer Praxis gefertigt. Das garantiert k&uuml;rzeste Wartezeiten, perfekte Farbabstimmung und die direkte Kommunikation zwischen Behandler und Techniker.</p>
       <span class="tech-badge">Alles aus einer Hand</span>
     </div>
     <div class="tech-card">
-      <div class="tech-card-icon">&#x1F4E1;</div>
+      <div class="tech-card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12C2 6.5 6.5 2 12 2a10 10 0 0 1 8 4"/><path d="M5 19.5C5.5 18 7 16 9.5 14"/><circle cx="12" cy="12" r="2"/><path d="M2 20l7.5-7.5"/></svg></div>
       <h3>DVT 3D-R&ouml;ntgen</h3>
       <p>Dreidimensionale Aufnahmen des Kiefers f&uuml;r pr&auml;zise Diagnostik bei Implantationen und chirurgischen Eingriffen. Geringere Strahlenbelastung als herk&ouml;mmliches CT, h&ouml;here Aufl&ouml;sung.</p>
       <span class="tech-badge">3D-Diagnostik</span>
     </div>
     <div class="tech-card">
-      <div class="tech-card-icon">&#x26A1;</div>
+      <div class="tech-card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
       <h3>CEREC-System</h3>
       <p>Computergesteuerte Fertigung von Keramik-Restaurationen in einer Sitzung. Der digitale Scan ersetzt den Abdruck, das Ergebnis wird direkt vor Ort gefr&auml;st und eingesetzt.</p>
       <span class="tech-badge">Same-Day Versorgung</span>
     </div>
     <div class="tech-card">
-      <div class="tech-card-icon">&#x1F50D;</div>
+      <div class="tech-card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
       <h3>OP-Mikroskop</h3>
       <p>Bis zu 25-fache Vergr&ouml;&szlig;erung f&uuml;r h&ouml;chste Pr&auml;zision bei Wurzelbehandlungen und mikrochirurgischen Eingriffen. Bessere Sicht bedeutet schonendere Behandlung und bessere Ergebnisse.</p>
       <span class="tech-badge">Mikrochirurgie</span>
     </div>
     <div class="tech-card">
-      <div class="tech-card-icon">&#x1F4BB;</div>
+      <div class="tech-card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
       <h3>Digitale Abformung</h3>
       <p>Statt unangenehmer Abdruckmasse scannen wir Ihre Z&auml;hne ber&uuml;hrungslos in 3D. Die Daten gehen direkt ins hauseigene Labor &ndash; schneller, pr&auml;ziser, komfortabler f&uuml;r Sie.</p>
       <span class="tech-badge">Abdruckfrei</span>
@@ -863,21 +870,21 @@
     </div>
     <div class="directions-grid">
       <div class="direction-card">
-        <div class="direction-icon">&#x1F687;</div>
+        <div class="direction-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="16" rx="3"/><path d="M4 11h16"/><line x1="8" y1="15" x2="8.01" y2="15"/><line x1="16" y1="15" x2="16.01" y2="15"/><path d="M6 19l-2 3"/><path d="M18 19l2 3"/></svg></div>
         <div>
           <h4>Mit der Bahn</h4>
           <p>Haltestelle Dom/Hauptbahnhof (alle S-Bahn- und Regionallinien) oder Heumarkt (KVB-Linien 1, 5, 7, 9) &ndash; jeweils nur 5&nbsp;Gehminuten.</p>
         </div>
       </div>
       <div class="direction-card">
-        <div class="direction-icon">&#x1F697;</div>
+        <div class="direction-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17h14v-5l-2-6H7l-2 6z"/><circle cx="7.5" cy="17.5" r="1.5"/><circle cx="16.5" cy="17.5" r="1.5"/></svg></div>
         <div>
           <h4>Mit dem Auto</h4>
           <p>Parkh&auml;user am Dom und Gro&szlig; St.&nbsp;Martin in direkter N&auml;he. &Uuml;ber die A57 oder A4 Richtung K&ouml;ln-Zentrum, Ausfahrt Innenstadt.</p>
         </div>
       </div>
       <div class="direction-card">
-        <div class="direction-icon">&#x1F6B6;</div>
+        <div class="direction-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="4" r="2"/><path d="M12 6v4"/><path d="M8 10h8"/><path d="M10 10l-2 12"/><path d="M14 10l2 12"/></svg></div>
         <div>
           <h4>Zu Fu&szlig;</h4>
           <p>Vom K&ouml;lner Dom nur 4&nbsp;Minuten zu Fu&szlig; &uuml;ber die Hohe Stra&szlig;e und Antonsgasse. Vom Heumarkt &uuml;ber die Schildergasse in 3&nbsp;Minuten erreichbar.</p>
@@ -899,28 +906,28 @@
     <div class="contact-info">
       <h3>Kontakt aufnehmen</h3>
       <div class="contact-item">
-        <div class="contact-icon">&#x1F4CD;</div>
+        <div class="contact-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
         <div class="contact-item-text">
           <div class="label">Standort</div>
           <div class="value">Antonsgasse 1, 50667 K&ouml;ln<br>Altstadt-Nord</div>
         </div>
       </div>
       <div class="contact-item">
-        <div class="contact-icon">&#x1F4DE;</div>
+        <div class="contact-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
         <div class="contact-item-text">
           <div class="label">Telefon</div>
           <div class="value">0221 27243400</div>
         </div>
       </div>
       <div class="contact-item">
-        <div class="contact-icon">&#x2709;&#xFE0F;</div>
+        <div class="contact-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4l-10 8L2 4"/></svg></div>
         <div class="contact-item-text">
           <div class="label">E-Mail</div>
           <div class="value">info@denvita.de</div>
         </div>
       </div>
       <div class="contact-item">
-        <div class="contact-icon">&#x1F550;</div>
+        <div class="contact-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
         <div class="contact-item-text">
           <div class="label">&Ouml;ffnungszeiten</div>
           <div class="value">Mo&ndash;Fr 7:30&ndash;20:00 Uhr<br>Sa 9:00&ndash;14:30 Uhr</div>

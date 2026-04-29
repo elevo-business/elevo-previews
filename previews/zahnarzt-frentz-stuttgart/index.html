@@ -36,6 +36,14 @@
     .nav-links a:hover { color: var(--green); }
     .nav-cta { background: var(--green); color: var(--white); padding: 9px 22px; border-radius: 8px; font-size: 0.875rem; font-weight: 600; text-decoration: none; transition: background 0.2s; white-space: nowrap; }
     .nav-cta:hover { background: var(--green-light); }
+
+    /* ── SVG icon sizing ── */
+    .service-icon svg, .stat-icon svg, .tech-icon svg, .contact-icon svg,
+    .tech-card-icon svg, .direction-icon svg, .about-visual-icon svg,
+    .service-emoji svg, .anfahrt-card-icon svg, .metric-icon svg {
+      width: 32px;
+      height: 32px;
+    }
     @media (max-width: 768px) { .nav-links { display: none; } nav { padding: 0 4%; } }
     #hero { background: var(--dark); min-height: 100vh; padding-top: 68px; display: flex; align-items: center; }
     .hero-inner { width: 90%; max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; padding: 80px 0; }
@@ -254,15 +262,15 @@
       </div>
       <div class="hero-metrics">
         <div class="metric-card">
-          <div class="metric-icon">&#11088;</div>
+          <div class="metric-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
           <div><div class="metric-val">4,6 / 5</div><div class="metric-label">Google-Bewertung</div></div>
         </div>
         <div class="metric-card">
-          <div class="metric-icon">&#128101;</div>
+          <div class="metric-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
           <div><div class="metric-val">25+ Jahre</div><div class="metric-label">Erfahrung seit 1997</div></div>
         </div>
         <div class="metric-card">
-          <div class="metric-icon">&#127942;</div>
+          <div class="metric-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 22V18c-5-2-6-5-6-9V4h16v5c0 4-1 7-6 9v4"/></svg></div>
           <div><div class="metric-val">300m</div><div class="metric-label">vom Hauptbahnhof</div></div>
         </div>
       </div>
@@ -330,19 +338,19 @@
     </div>
     <div class="about-sidebar">
       <div class="about-card">
-        <div class="about-card-title">&#129463; Sofortimplantologie-Pionier</div>
+        <div class="about-card-title"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C9.5 2 7 4 7 7c0 3 1 5 1.5 8s.5 5 .5 7h6c0-2 0-4 .5-7S17 10 17 7c0-3-2.5-5-5-5z"/></svg> Sofortimplantologie-Pionier</div>
         <div class="about-card-text">Dr. Frentz war einer der ersten in Stuttgart, der Sofortimplantate routinem&auml;&szlig;ig setzte. &Uuml;ber 1.500 Implantate mit eigenem Protokoll f&uuml;r schnelle Einheilung und minimale Belastung.</div>
       </div>
       <div class="about-card">
-        <div class="about-card-title">&#128300; Mikrochirurgie unter Mikroskop</div>
+        <div class="about-card-title"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18h8"/><path d="M3 22h18"/><path d="M14 22a7 7 0 1 0 0-14h-1"/><path d="M9 14h2"/><path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2z"/></svg> Mikrochirurgie unter Mikroskop</div>
         <div class="about-card-text">Dank OP-Mikroskop arbeitet Dr. Frentz mit bis zu 25-facher Vergr&ouml;&szlig;erung. Das bedeutet: pr&auml;zisere Schnitte, weniger Gewebeverlust und schnellere Heilung f&uuml;r Sie.</div>
       </div>
       <div class="about-card">
-        <div class="about-card-title">&#128522; Angstfreie Behandlung</div>
+        <div class="about-card-title"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg> Angstfreie Behandlung</div>
         <div class="about-card-text">Lachgas-Sedierung und einf&uuml;hlsame Betreuung f&uuml;r Angstpatienten &ndash; mit Zeit, erkl&auml;rendem Vorgehen und Pausen wann immer n&ouml;tig.</div>
       </div>
       <div class="about-card">
-        <div class="about-card-title">&#9889; Digitale Praxis</div>
+        <div class="about-card-title"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg> Digitale Praxis</div>
         <div class="about-card-text">3D-DVT, navigierte Implantologie und Piezo-Chirurgie &ndash; modernste Technik f&uuml;r sichere Diagnostik und schonende Eingriffe.</div>
       </div>
     </div>
@@ -358,37 +366,37 @@
     </div>
     <div class="services-grid">
       <div class="service-card">
-        <span class="service-emoji">&#10024;</span>
+        <span class="service-emoji"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 7.2H22l-6 4.8 2.4 7.2L12 16.4l-6.4 4.8 2.4-7.2-6-4.8h7.6z"/></svg></span>
         <div class="service-title">&Auml;sthetische Zahnheilkunde</div>
         <p class="service-body">Hauchd&uuml;nne Porzellan-Veneers, professionelles Bleaching und vollkeramische Versorgungen f&uuml;r ein nat&uuml;rlich strahlendes L&auml;cheln. Individuelle Farbbestimmung und digitale Vorher-Nachher-Simulation inklusive.</p>
         <span class="service-price">Veneers ab 875 &euro; &middot; Bleaching ab 259 &euro;</span>
       </div>
       <div class="service-card">
-        <span class="service-emoji">&#129463;</span>
+        <span class="service-emoji"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C9.5 2 7 4 7 7c0 3 1 5 1.5 8s.5 5 .5 7h6c0-2 0-4 .5-7S17 10 17 7c0-3-2.5-5-5-5z"/></svg></span>
         <div class="service-title">Sofortimplantologie</div>
         <p class="service-body">Unser Spezialgebiet: Implantate am selben Tag der Extraktion. Dr. Frentz hat &uuml;ber 1.500 Implantate mit seinem eigenen Protokoll gesetzt &ndash; f&uuml;r minimale Eingriffsgr&ouml;&szlig;e, schnelle Einheilung und nat&uuml;rliche Ergebnisse. 3D-geplant und navigiert gesetzt.</p>
         <span class="service-price">ab 1.750 &euro;</span>
       </div>
       <div class="service-card">
-        <span class="service-emoji">&#128300;</span>
+        <span class="service-emoji"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18h8"/><path d="M3 22h18"/><path d="M14 22a7 7 0 1 0 0-14h-1"/><path d="M9 14h2"/><path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2z"/></svg></span>
         <div class="service-title">Mikrochirurgie</div>
         <p class="service-body">Chirurgische Eingriffe unter dem OP-Mikroskop mit bis zu 25-facher Vergr&ouml;&szlig;erung. Wurzelspitzenresektionen, Zysten-Entfernungen und Weichgewebskorrekturen mit maximaler Pr&auml;zision und minimaler Belastung.</p>
         <span class="service-price">Auf Anfrage</span>
       </div>
       <div class="service-card">
-        <span class="service-emoji">&#129528;</span>
+        <span class="service-emoji"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.8 2.3A.3.3 0 1 0 5 2H4a2 2 0 0 0-2 2v5a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6V4a2 2 0 0 0-2-2h-1a.2.2 0 1 0 .3.3"/><path d="M8 15v1a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6v-4"/><circle cx="20" cy="10" r="2"/></svg></span>
         <div class="service-title">Prophylaxe &amp; PZR</div>
         <p class="service-body">Unsere gr&uuml;ndliche professionelle Zahnreinigung entfernt Zahnstein, Plaque und Verf&auml;rbungen. Regelm&auml;&szlig;ige Prophylaxe ist der beste Schutz vor Karies, Parodontitis und teuren Folgebehandlungen. Recall-System inklusive.</p>
         <span class="service-price">ab 75 &euro;</span>
       </div>
       <div class="service-card">
-        <span class="service-emoji">&#128522;</span>
+        <span class="service-emoji"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></span>
         <div class="service-title">Angstfreie Behandlung</div>
         <p class="service-body">Lachgas-Sedierung, einf&uuml;hlsame Betreuung und ein Erstgespr&auml;ch mit mindestens 45 Minuten Zeit. Wir gehen auf Ihre Bed&uuml;rfnisse ein &ndash; mit Pausen, Erkl&auml;rungen und der Sicherheit, dass nichts ohne Ihre Zustimmung passiert.</p>
         <span class="service-price">Auf Anfrage</span>
       </div>
       <div class="service-card">
-        <span class="service-emoji">&#128171;</span>
+        <span class="service-emoji"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
         <div class="service-title">Allgemeine Zahnheilkunde</div>
         <p class="service-body">Von der Kariesbehandlung &uuml;ber Wurzelkanaltherapien bis zur Parodontitis-Behandlung: Unser Team deckt das gesamte Spektrum der modernen Zahnmedizin ab &ndash; digital unterst&uuml;tzt und minimal-invasiv.</p>
         <span class="service-price">Kassenleistung m&ouml;glich</span>
@@ -415,27 +423,27 @@
     </div>
     <div class="feature-checklist">
       <div class="feature-checklist-item">
-        <div class="feature-check">&#10003;</div>
+        <div class="feature-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
         <span>Sofortimplantate am Tag der Extraktion &ndash; Pionier seit &uuml;ber 20 Jahren</span>
       </div>
       <div class="feature-checklist-item">
-        <div class="feature-check">&#10003;</div>
+        <div class="feature-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
         <span>OP-Mikroskop f&uuml;r Mikrochirurgie mit 25-facher Vergr&ouml;&szlig;erung</span>
       </div>
       <div class="feature-checklist-item">
-        <div class="feature-check">&#10003;</div>
+        <div class="feature-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
         <span>3D-DVT &amp; navigierte Implantologie f&uuml;r maximale Sicherheit</span>
       </div>
       <div class="feature-checklist-item">
-        <div class="feature-check">&#10003;</div>
+        <div class="feature-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
         <span>Zentrale Lage: 300m vom Hauptbahnhof Stuttgart</span>
       </div>
       <div class="feature-checklist-item">
-        <div class="feature-check">&#10003;</div>
+        <div class="feature-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
         <span>Mo&ndash;Do 7:30&ndash;19:00 &amp; Fr 7:30&ndash;16:00 &ndash; auch fr&uuml;hmorgens erreichbar</span>
       </div>
       <div class="feature-checklist-item">
-        <div class="feature-check">&#10003;</div>
+        <div class="feature-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
         <span>Angstpatienten-Programm mit Lachgas &amp; einf&uuml;hlsamer Betreuung</span>
       </div>
     </div>
@@ -498,22 +506,22 @@
     </div>
     <div class="tech-grid">
       <div class="tech-card">
-        <div class="tech-icon">&#128300;</div>
+        <div class="tech-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18h8"/><path d="M3 22h18"/><path d="M14 22a7 7 0 1 0 0-14h-1"/><path d="M9 14h2"/><path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2z"/></svg></div>
         <div class="tech-title">OP-Mikroskop</div>
         <p class="tech-desc">Bis zu 25-fache Vergr&ouml;&szlig;erung f&uuml;r mikrochirurgische Eingriffe. Erm&ouml;glicht pr&auml;ziseste Schnitte bei Wurzelspitzenresektionen, Zysten-OPs und Weichgewebskorrekturen &ndash; mit minimaler Gewebebelastung und schnellerer Heilung.</p>
       </div>
       <div class="tech-card">
-        <div class="tech-icon">&#128225;</div>
+        <div class="tech-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
         <div class="tech-title">3D-DVT</div>
         <p class="tech-desc">Dreidimensionale digitale Volumentomographie f&uuml;r detaillierte Aufnahmen des Kiefers. Basis f&uuml;r sichere Implantat-Planung, Erkennung von Nervverl&auml;ufen und pr&auml;zise Diagnostik &ndash; bei deutlich reduzierter Strahlenbelastung gegen&uuml;ber herk&ouml;mmlichem CT.</p>
       </div>
       <div class="tech-card">
-        <div class="tech-icon">&#127919;</div>
+        <div class="tech-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
         <div class="tech-title">Navigierte Implantologie</div>
         <p class="tech-desc">Computergest&uuml;tzte Implantat-Setzung auf Basis der 3D-DVT-Daten. Eine individuelle Bohrschablone f&uuml;hrt das Implantat millimetergenau an die geplante Position &ndash; sicherer, schneller und schonender als freih&auml;ndiges Vorgehen.</p>
       </div>
       <div class="tech-card">
-        <div class="tech-icon">&#9889;</div>
+        <div class="tech-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
         <div class="tech-title">Piezo-Chirurgie</div>
         <p class="tech-desc">Ultraschallbasierte Knochenchirurgie, die ausschlie&szlig;lich Hartgewebe bearbeitet und Weichgewebe wie Nerven und Gef&auml;&szlig;e schont. Ideal f&uuml;r Sinuslift, Knochenaufbau und Extraktionen &ndash; weniger Schwellung, weniger Schmerzen, schnellere Regeneration.</p>
       </div>
@@ -605,7 +613,7 @@
     </div>
     <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:1.5rem;">
       <div style="background:white; border-radius:16px; padding:2rem; box-shadow:0 2px 12px rgba(0,0,0,0.06);">
-        <div style="font-size:1.8rem; margin-bottom:1rem;">&#129463;</div>
+        <div style="font-size:1.8rem; margin-bottom:1rem;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C9.5 2 7 4 7 7c0 3 1 5 1.5 8s.5 5 .5 7h6c0-2 0-4 .5-7S17 10 17 7c0-3-2.5-5-5-5z"/></svg></div>
         <h3 style="font-weight:700; color:#111827; margin-bottom:0.5rem; font-size:1rem;">Sofortimplantat nach Zahnverlust &mdash; Patient, 58 Jahre</h3>
         <p style="color:#6B7280; font-size:0.88rem; line-height:1.75;">Herr K. verlor durch einen Unfall einen Schneidezahn. Am selben Tag wurde ein Sofortimplantat gesetzt, die endg&uuml;ltige Keramikkrone nach 3 Monaten eingesetzt. Navigierte Implantologie mit 3D-DVT-Planung sicherte die millimetergenaue Positionierung. Heute ist die Versorgung von einem echten Zahn nicht zu unterscheiden.</p>
         <div style="margin-top:1rem; display:flex; gap:0.5rem; flex-wrap:wrap;">
@@ -615,7 +623,7 @@
         </div>
       </div>
       <div style="background:white; border-radius:16px; padding:2rem; box-shadow:0 2px 12px rgba(0,0,0,0.06);">
-        <div style="font-size:1.8rem; margin-bottom:1rem;">&#10024;</div>
+        <div style="font-size:1.8rem; margin-bottom:1rem;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 7.2H22l-6 4.8 2.4 7.2L12 16.4l-6.4 4.8 2.4-7.2-6-4.8h7.6z"/></svg></div>
         <h3 style="font-weight:700; color:#111827; margin-bottom:0.5rem; font-size:1rem;">Vollst&auml;ndiger Smile-Makeover &mdash; Patientin, 34 Jahre</h3>
         <p style="color:#6B7280; font-size:0.88rem; line-height:1.75;">Frau M. war mit der Form und Farbe ihrer Z&auml;hne unzufrieden. Nach einer umfassenden Diagnostik entschieden wir uns f&uuml;r 6 Keramik-Veneers im Oberkiefer kombiniert mit Bleaching im Unterkiefer. Das Ergebnis: nat&uuml;rlich wirkende, ebm&auml;&szlig;ige Z&auml;hne in einem warmen Wei&szlig;ton. Behandlungszeit gesamt: 3 Sitzungen &uuml;ber 8 Wochen.</p>
         <div style="margin-top:1rem; display:flex; gap:0.5rem; flex-wrap:wrap;">
@@ -625,7 +633,7 @@
         </div>
       </div>
       <div style="background:white; border-radius:16px; padding:2rem; box-shadow:0 2px 12px rgba(0,0,0,0.06);">
-        <div style="font-size:1.8rem; margin-bottom:1rem;">&#128300;</div>
+        <div style="font-size:1.8rem; margin-bottom:1rem;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18h8"/><path d="M3 22h18"/><path d="M14 22a7 7 0 1 0 0-14h-1"/><path d="M9 14h2"/><path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2z"/></svg></div>
         <h3 style="font-weight:700; color:#111827; margin-bottom:0.5rem; font-size:1rem;">Mikrochirurgische Wurzelbehandlung &mdash; Patient, 41 Jahre</h3>
         <p style="color:#6B7280; font-size:0.88rem; line-height:1.75;">Herr T. hatte eine chronische Entz&uuml;ndung an der Wurzelspitze eines Backenzahns. Unter dem OP-Mikroskop konnte Dr. Frentz die Wurzelspitze pr&auml;zise kappen und den Entz&uuml;ndungsherd vollst&auml;ndig entfernen &ndash; mit Piezo-Chirurgie f&uuml;r maximale Gewebeschonung. Der Zahn konnte erhalten werden.</p>
         <div style="margin-top:1rem; display:flex; gap:0.5rem; flex-wrap:wrap;">
@@ -666,19 +674,19 @@
   <div style="max-width: 1000px; margin: 0 auto; padding-top: 3rem;">
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem;">
       <div style="text-align: center; padding: 1rem;">
-        <div style="font-size: 1.3rem; font-weight: 800; color: rgba(255,255,255,0.9);">&#128336; Mo&ndash;Do</div>
+        <div style="font-size: 1.3rem; font-weight: 800; color: rgba(255,255,255,0.9);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Mo&ndash;Do</div>
         <div style="color: rgba(255,255,255,0.5); font-size: 0.82rem;">7:30 &ndash; 19:00 Uhr</div>
       </div>
       <div style="text-align: center; padding: 1rem;">
-        <div style="font-size: 1.3rem; font-weight: 800; color: rgba(255,255,255,0.9);">&#128336; Freitag</div>
+        <div style="font-size: 1.3rem; font-weight: 800; color: rgba(255,255,255,0.9);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Freitag</div>
         <div style="color: rgba(255,255,255,0.5); font-size: 0.82rem;">7:30 &ndash; 16:00 Uhr</div>
       </div>
       <div style="text-align: center; padding: 1rem;">
-        <div style="font-size: 1.3rem; font-weight: 800; color: rgba(255,255,255,0.9);">&#128222; Telefon</div>
+        <div style="font-size: 1.3rem; font-weight: 800; color: rgba(255,255,255,0.9);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg> Telefon</div>
         <div style="color: rgba(255,255,255,0.5); font-size: 0.82rem;">+49 711 6550000</div>
       </div>
       <div style="text-align: center; padding: 1rem;">
-        <div style="font-size: 1.3rem; font-weight: 800; color: rgba(255,255,255,0.9);">&#128205; Standort</div>
+        <div style="font-size: 1.3rem; font-weight: 800; color: rgba(255,255,255,0.9);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Standort</div>
         <div style="color: rgba(255,255,255,0.5); font-size: 0.82rem;">K&ouml;nigstra&szlig;e 2, 70173</div>
       </div>
     </div>
@@ -739,21 +747,21 @@
     </p>
     <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
       <a href="tel:+497116550000" style="background: var(--white); color: var(--primary); padding: 14px 32px; border-radius: 10px; font-size: 0.95rem; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: transform 0.2s;">
-        &#128222; +49 711 6550000
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg> +49 711 6550000
       </a>
       <a href="#kontakt" style="background: transparent; color: var(--white); padding: 14px 32px; border-radius: 10px; font-size: 0.95rem; font-weight: 700; text-decoration: none; border: 2px solid rgba(255,255,255,0.4); display: inline-flex; align-items: center; gap: 8px; transition: border-color 0.2s;">
-        &#9993; Online-Anfrage senden
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4l-10 8L2 4"/></svg> Online-Anfrage senden
       </a>
     </div>
     <div style="margin-top: 24px; display: flex; justify-content: center; gap: 32px; flex-wrap: wrap;">
       <div style="display: flex; align-items: center; gap: 8px; color: rgba(255,255,255,0.7); font-size: 0.82rem;">
-        <span style="color: #4ADE80;">&#10003;</span> Kostenlose Erstberatung
+        <span style="color: #4ADE80;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span> Kostenlose Erstberatung
       </div>
       <div style="display: flex; align-items: center; gap: 8px; color: rgba(255,255,255,0.7); font-size: 0.82rem;">
-        <span style="color: #4ADE80;">&#10003;</span> Notfalltermine verf&uuml;gbar
+        <span style="color: #4ADE80;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span> Notfalltermine verf&uuml;gbar
       </div>
       <div style="display: flex; align-items: center; gap: 8px; color: rgba(255,255,255,0.7); font-size: 0.82rem;">
-        <span style="color: #4ADE80;">&#10003;</span> Ratenzahlung m&ouml;glich
+        <span style="color: #4ADE80;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span> Ratenzahlung m&ouml;glich
       </div>
     </div>
   </div>
@@ -768,7 +776,7 @@
     </div>
     <div class="anfahrt-grid">
       <div class="anfahrt-card">
-        <div class="anfahrt-card-icon">&#128652;</div>
+        <div class="anfahrt-card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="16" rx="3"/><path d="M4 11h16"/><line x1="8" y1="15" x2="8.01" y2="15"/><line x1="16" y1="15" x2="16.01" y2="15"/><path d="M6 19l-2 3"/><path d="M18 19l2 3"/></svg></div>
         <div class="anfahrt-card-title">S-Bahn &amp; Stadtbahn</div>
         <p class="anfahrt-card-text">
           Vom <strong>Hauptbahnhof Stuttgart</strong> sind es nur ca. <strong>300 Meter zu Fu&szlig;</strong> (4 Min.) die K&ouml;nigstra&szlig;e entlang Richtung Schlossplatz.<br><br>
@@ -776,7 +784,7 @@
         </p>
       </div>
       <div class="anfahrt-card">
-        <div class="anfahrt-card-icon">&#128663;</div>
+        <div class="anfahrt-card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17h14v-5l-2-6H7l-2 6z"/><circle cx="7.5" cy="17.5" r="1.5"/><circle cx="16.5" cy="17.5" r="1.5"/></svg></div>
         <div class="anfahrt-card-title">Mit dem Auto</div>
         <p class="anfahrt-card-text">
           &Uuml;ber die <strong>B27</strong> oder <strong>B14</strong> Richtung Stuttgart-Mitte. N&auml;chstes Parkhaus: <strong>Parkhaus K&ouml;nigsbau</strong> (K&ouml;nigstra&szlig;e 28, ca. 200m entfernt) oder <strong>Parkhaus Zeppelin</strong> direkt am Hauptbahnhof.<br><br>
@@ -784,7 +792,7 @@
         </p>
       </div>
       <div class="anfahrt-card">
-        <div class="anfahrt-card-icon">&#128204;</div>
+        <div class="anfahrt-card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
         <div class="anfahrt-card-title">Adresse &amp; Zeiten</div>
         <p class="anfahrt-card-text">
           <strong>Dr. Frentz &amp; Kollegen</strong><br>
@@ -810,19 +818,19 @@
       </p>
       <div class="contact-info">
         <div class="contact-row">
-          <div class="contact-icon">&#128205;</div>
+          <div class="contact-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
           <div class="contact-val"><strong>Adresse</strong>K&ouml;nigstra&szlig;e 2, 70173 Stuttgart<br>300m vom Hauptbahnhof</div>
         </div>
         <div class="contact-row">
-          <div class="contact-icon">&#128222;</div>
+          <div class="contact-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
           <div class="contact-val"><strong>Telefon</strong><a href="tel:+497116550000" style="color:#D1D5DB; text-decoration:none;">+49 711 6550000</a></div>
         </div>
         <div class="contact-row">
-          <div class="contact-icon">&#9993;</div>
+          <div class="contact-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4l-10 8L2 4"/></svg></div>
           <div class="contact-val"><strong>E-Mail</strong><a href="mailto:info@frentz.de" style="color:#D1D5DB; text-decoration:none;">info@frentz.de</a></div>
         </div>
         <div class="contact-row">
-          <div class="contact-icon">&#128336;</div>
+          <div class="contact-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
           <div class="contact-val"><strong>&Ouml;ffnungszeiten</strong>Mo&ndash;Do 7:30&ndash;19:00 Uhr<br>Fr 7:30&ndash;16:00 Uhr</div>
         </div>
       </div>
