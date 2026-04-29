@@ -1,846 +1,854 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dental21 Sachsenhausen - Zahnarzt Frankfurt</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dental21 Frankfurt Sachsenhausen – Moderne Zahnmedizin, 24/7 buchbar</title>
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --primary: #DC2626;
-      --primary-dark: #B91C1C;
-      --secondary: #EF4444;
-      --text: #111827;
-      --muted: #6B7280;
-      --light: #F9FAFB;
-      --border: #E5E7EB;
-      --white: #FFFFFF;
+      --primary: #1C5FA8;
+      --secondary: #4A90D9;
+      --dark: #0f172a;
+      --mid: #1e293b;
+      --light: #f8fafc;
+      --text: #334155;
     }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; color: var(--text); line-height: 1.6; }
+    body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; color: var(--text); }
 
-    /* NAV */
+    /* ── Navigation ── */
     nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      position: fixed; top: 0; width: 100%; z-index: 100;
       background: rgba(255,255,255,0.97); backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--border); height: 68px;
-      display: flex; align-items: center;
+      padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
     }
-    .nav-inner {
-      max-width: 1200px; margin: 0 auto; padding: 0 24px; width: 100%;
-      display: flex; align-items: center; justify-content: space-between;
-    }
-    .nav-logo img { height: 36px; width: auto; }
-    .nav-logo-fallback { font-size: 22px; font-weight: 800; color: var(--primary); letter-spacing: -0.5px; }
-    .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
-    .nav-links a { text-decoration: none; color: var(--text); font-size: 14px; font-weight: 500; transition: color 0.2s; }
+    .logo-area { display: flex; align-items: center; gap: 0.5rem; }
+    .logo-img { height: 38px; max-width: 180px; object-fit: contain; display: block; }
+    .logo-fallback { display: flex; align-items: center; gap: 0.5rem; }
+    .logo-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--primary); }
+    .logo-text { font-size: 1.2rem; font-weight: 700; color: #0f172a; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { text-decoration: none; color: var(--text); font-size: 0.9rem; transition: color 0.2s; }
     .nav-links a:hover { color: var(--primary); }
-    .btn-nav {
-      background: var(--primary); color: white; border: none; border-radius: 8px;
-      padding: 10px 20px; font-size: 14px; font-weight: 600; cursor: pointer;
-      text-decoration: none; transition: background 0.2s;
+    .nav-cta {
+      background: var(--primary); color: white; padding: 0.55rem 1.3rem;
+      border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 0.875rem;
+      transition: box-shadow 0.2s, transform 0.2s;
     }
-    .btn-nav:hover { background: var(--primary-dark); }
+    .nav-cta:hover { box-shadow: 0 4px 15px rgba(28,95,168,0.4); transform: translateY(-1px); }
 
-    /* HERO */
+    /* ── Hero ── */
     .hero {
-      background: #0F172A; padding: 120px 24px 80px;
-      min-height: 100vh; display: flex; align-items: center;
+      min-height: 100vh; padding-top: 80px;
+      background: var(--dark);
+      display: flex; align-items: center;
+      position: relative; overflow: hidden;
+    }
+    .hero-blob {
+      position: absolute; top: -200px; right: -200px;
+      width: 800px; height: 800px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(28,95,168,0.12) 0%, transparent 70%);
+    }
+    .hero-blob2 {
+      position: absolute; bottom: -300px; left: -100px;
+      width: 600px; height: 600px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(74,144,217,0.08) 0%, transparent 70%);
     }
     .hero-inner {
-      max-width: 1200px; margin: 0 auto; width: 100%;
-      display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;
+      max-width: 1200px; margin: 0 auto; padding: 4rem 2rem;
+      position: relative; z-index: 1;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
     }
-    .hero-left { display: flex; flex-direction: column; gap: 28px; }
-    .trust-pill {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: rgba(220,38,38,0.15); border: 1px solid rgba(220,38,38,0.3);
-      border-radius: 50px; padding: 6px 16px; width: fit-content;
+    .hero-pill {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      border: 1px solid rgba(74,144,217,0.4); color: #4A90D9;
+      background: rgba(28,95,168,0.08);
+      padding: 0.4rem 1rem; border-radius: 50px; font-size: 0.8rem; font-weight: 600;
+      margin-bottom: 1.5rem;
     }
-    .trust-pill-dot {
-      width: 8px; height: 8px; border-radius: 50%; background: var(--primary);
-      animation: pulse 2s infinite;
-    }
-    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
-    .trust-pill span { color: rgba(255,255,255,0.85); font-size: 13px; font-weight: 500; }
-    .hero h1 {
-      font-size: clamp(36px, 5vw, 56px); font-weight: 800; color: white;
-      line-height: 1.1; letter-spacing: -1px;
-    }
-    .hero h1 em { color: var(--secondary); font-style: normal; }
-    .hero-desc { color: rgba(255,255,255,0.7); font-size: 17px; line-height: 1.7; max-width: 480px; }
-    .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; }
-    .btn-primary {
-      background: var(--primary); color: white; padding: 14px 28px; border-radius: 10px;
-      font-size: 15px; font-weight: 700; text-decoration: none; border: none; cursor: pointer;
-      transition: background 0.2s, transform 0.15s; display: inline-flex; align-items: center; gap: 8px;
-    }
-    .btn-primary:hover { background: var(--primary-dark); transform: translateY(-1px); }
-    .btn-outline {
-      background: transparent; color: white; padding: 14px 28px; border-radius: 10px;
-      font-size: 15px; font-weight: 600; text-decoration: none;
-      border: 1px solid rgba(255,255,255,0.25); cursor: pointer;
-      transition: border-color 0.2s, background 0.2s;
-    }
-    .btn-outline:hover { border-color: white; background: rgba(255,255,255,0.05); }
-    .hero-metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 8px; }
-    .metric-card {
-      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 12px; padding: 16px;
-    }
-    .metric-value { font-size: 26px; font-weight: 800; color: white; }
-    .metric-label { font-size: 12px; color: rgba(255,255,255,0.55); margin-top: 2px; }
-    .hero-right { position: relative; }
-    .hero-img-wrap {
-      border-radius: 20px; overflow: hidden;
-      box-shadow: 0 40px 80px rgba(0,0,0,0.5); position: relative;
-    }
-    .hero-img-wrap img { width: 100%; height: 480px; object-fit: cover; display: block; }
-    .hero-img-badge {
-      position: absolute; bottom: 20px; left: 20px;
-      background: white; border-radius: 12px; padding: 12px 16px;
-      display: flex; align-items: center; gap: 10px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
-    }
-    .badge-icon { font-size: 22px; }
-    .badge-text strong { display: block; font-size: 14px; font-weight: 700; color: var(--text); }
-    .badge-text span { font-size: 12px; color: var(--muted); }
-
-    /* TRUST BAR */
-    .trust-bar {
-      background: var(--light);
-      border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
-      padding: 48px 24px;
-    }
-    .trust-bar-inner {
-      max-width: 1200px; margin: 0 auto;
-      display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; text-align: center;
-    }
-    .trust-stat-value { font-size: 38px; font-weight: 800; color: var(--primary); line-height: 1; }
-    .trust-stat-label { font-size: 14px; color: var(--muted); margin-top: 6px; font-weight: 500; }
-
-    /* ABOUT */
-    .about { padding: 96px 24px; background: white; }
-    .about-inner {
-      max-width: 1100px; margin: 0 auto;
-      display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start;
-    }
-    .section-label {
-      font-size: 12px; font-weight: 700; letter-spacing: 2px;
-      color: var(--primary); text-transform: uppercase; margin-bottom: 12px;
-    }
-    .section-title {
-      font-size: clamp(28px, 4vw, 40px); font-weight: 800;
-      color: var(--text); line-height: 1.15; letter-spacing: -0.5px; margin-bottom: 24px;
-    }
-    .about-text p { font-size: 16px; color: #374151; line-height: 1.8; margin-bottom: 20px; }
-    .about-text p:last-child { margin-bottom: 0; }
-    .about-highlights { display: flex; flex-direction: column; gap: 16px; }
-    .highlight-item {
-      background: var(--light); border-left: 3px solid var(--primary);
-      border-radius: 0 10px 10px 0; padding: 16px 20px;
-    }
-    .highlight-item strong { display: block; font-size: 15px; font-weight: 700; color: var(--text); }
-    .highlight-item span { font-size: 14px; color: var(--muted); margin-top: 2px; display: block; }
-
-    /* SERVICES */
-    .services { padding: 96px 24px; background: var(--light); }
-    .services-inner { max-width: 1200px; margin: 0 auto; }
-    .section-header { text-align: center; margin-bottom: 56px; }
-    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-    .service-card {
-      background: white; border-radius: 16px; padding: 32px 28px;
-      border: 1px solid var(--border); transition: box-shadow 0.2s, transform 0.2s;
-    }
-    .service-card:hover { box-shadow: 0 12px 40px rgba(0,0,0,0.08); transform: translateY(-3px); }
-    .service-icon { font-size: 36px; margin-bottom: 16px; display: block; }
-    .service-card h3 { font-size: 18px; font-weight: 700; color: var(--text); margin-bottom: 12px; }
-    .service-card p { font-size: 14px; color: var(--muted); line-height: 1.7; margin-bottom: 12px; }
-    .service-price {
-      display: inline-block; background: rgba(220,38,38,0.08);
-      color: var(--primary); font-size: 13px; font-weight: 700;
-      padding: 4px 12px; border-radius: 50px;
-    }
-
-    /* PROCESS */
-    .process { padding: 96px 24px; background: white; }
-    .process-inner { max-width: 900px; margin: 0 auto; }
-    .process-steps { display: flex; flex-direction: column; gap: 0; margin-top: 48px; }
-    .process-step {
-      display: grid; grid-template-columns: 64px 1fr; gap: 24px;
-      align-items: start; padding-bottom: 40px; position: relative;
-    }
-    .process-step:not(:last-child)::after {
-      content: ''; position: absolute; left: 31px; top: 64px; bottom: 0;
-      width: 2px; background: var(--border);
-    }
-    .step-number {
-      width: 64px; height: 64px; border-radius: 50%;
-      background: var(--primary); color: white;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 22px; font-weight: 800; flex-shrink: 0; position: relative; z-index: 1;
-    }
-    .step-content h3 { font-size: 19px; font-weight: 700; color: var(--text); margin-bottom: 8px; padding-top: 16px; }
-    .step-content p { font-size: 15px; color: var(--muted); line-height: 1.7; }
-
-    /* TEAM */
-    .team { padding: 96px 24px; background: #0F172A; }
-    .team-inner { max-width: 1100px; margin: 0 auto; }
-    .team .section-label { color: rgba(239,68,68,0.9); }
-    .team .section-title { color: white; }
-    .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 48px; }
-    .team-card {
-      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 20px; padding: 36px 28px; text-align: center;
-    }
-    .team-avatar {
-      width: 80px; height: 80px; border-radius: 50%;
+    .hero h1 { font-size: 3rem; font-weight: 800; color: white; line-height: 1.15; margin-bottom: 1.5rem; }
+    .hero h1 .gradient-text {
       background: linear-gradient(135deg, var(--primary), var(--secondary));
-      display: flex; align-items: center; justify-content: center;
-      font-size: 28px; font-weight: 800; color: white; margin: 0 auto 20px;
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
     }
-    .team-card h3 { font-size: 18px; font-weight: 700; color: white; margin-bottom: 4px; }
-    .team-card .role { font-size: 13px; color: rgba(255,255,255,0.55); margin-bottom: 16px; }
-    .team-card .spec-tag {
-      display: inline-block; background: rgba(220,38,38,0.2);
-      color: rgba(255,120,120,0.95); font-size: 12px; font-weight: 600;
-      padding: 4px 12px; border-radius: 50px; margin-bottom: 20px;
-    }
-    .team-quote {
-      font-size: 14px; color: rgba(255,255,255,0.6); font-style: italic; line-height: 1.65;
-      border-top: 1px solid rgba(255,255,255,0.1); padding-top: 16px;
-    }
-
-    /* TESTIMONIALS */
-    .testimonials { padding: 96px 24px; background: var(--light); }
-    .testimonials-inner { max-width: 1100px; margin: 0 auto; }
-    .testimonials-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 48px; }
-    .testimonial-card {
-      background: white; border-radius: 16px; padding: 32px; border: 1px solid var(--border);
-    }
-    .stars { color: #F59E0B; font-size: 16px; margin-bottom: 16px; letter-spacing: 2px; }
-    .testimonial-text { font-size: 15px; color: #374151; line-height: 1.75; margin-bottom: 20px; font-style: italic; }
-    .testimonial-author { display: flex; align-items: center; gap: 12px; }
-    .author-avatar {
-      width: 42px; height: 42px; border-radius: 50%;
+    .hero p { color: rgba(255,255,255,0.65); font-size: 1.1rem; line-height: 1.75; margin-bottom: 2.5rem; }
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn-gradient {
       background: linear-gradient(135deg, var(--primary), var(--secondary));
-      display: flex; align-items: center; justify-content: center;
-      font-weight: 700; color: white; font-size: 14px; flex-shrink: 0;
-    }
-    .author-name { font-weight: 700; font-size: 14px; color: var(--text); }
-    .author-role { font-size: 12px; color: var(--muted); }
-
-    /* FAQ */
-    .faq { padding: 96px 24px; background: white; }
-    .faq-inner { max-width: 800px; margin: 0 auto; }
-    .faq-list { margin-top: 48px; display: flex; flex-direction: column; gap: 0; }
-    .faq-item { border-bottom: 1px solid var(--border); padding: 24px 0; }
-    .faq-item:first-child { border-top: 1px solid var(--border); }
-    .faq-question {
-      font-size: 16px; font-weight: 700; color: var(--text);
-      display: flex; justify-content: space-between; align-items: center;
-      cursor: pointer; gap: 16px;
-    }
-    .faq-icon {
-      width: 28px; height: 28px; border-radius: 50%;
-      background: var(--primary); color: white;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 16px; font-weight: 700; flex-shrink: 0; min-width: 28px;
-    }
-    .faq-answer { font-size: 15px; color: var(--muted); line-height: 1.75; margin-top: 12px; }
-
-    /* CONTACT */
-    .contact { padding: 96px 24px; background: var(--light); }
-    .contact-inner {
-      max-width: 1100px; margin: 0 auto;
-      display: grid; grid-template-columns: 1fr 1.2fr; gap: 64px; align-items: start;
-    }
-    .contact-info h2 { font-size: 34px; font-weight: 800; color: var(--text); margin-bottom: 12px; }
-    .contact-info > p { font-size: 16px; color: var(--muted); margin-bottom: 36px; line-height: 1.7; }
-    .contact-details { display: flex; flex-direction: column; gap: 20px; }
-    .contact-detail { display: flex; align-items: flex-start; gap: 14px; }
-    .contact-detail-icon {
-      width: 44px; height: 44px; border-radius: 10px;
-      background: rgba(220,38,38,0.1);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 18px; flex-shrink: 0;
-    }
-    .contact-detail-text strong { display: block; font-size: 14px; font-weight: 700; color: var(--text); }
-    .contact-detail-text span { font-size: 14px; color: var(--muted); line-height: 1.5; }
-    .contact-form {
-      background: white; border-radius: 20px; padding: 40px;
-      border: 1px solid var(--border); box-shadow: 0 4px 24px rgba(0,0,0,0.04);
-    }
-    .contact-form h3 { font-size: 20px; font-weight: 700; color: var(--text); margin-bottom: 24px; }
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    .form-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
-    .form-group label { font-size: 13px; font-weight: 600; color: var(--text); }
-    .form-group input, .form-group select, .form-group textarea {
-      border: 1px solid var(--border); border-radius: 8px;
-      padding: 12px 14px; font-size: 14px; color: var(--text);
-      background: white; transition: border-color 0.2s; font-family: inherit; outline: none;
-    }
-    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
-      border-color: var(--primary);
-    }
-    .form-group textarea { resize: vertical; min-height: 100px; }
-    .btn-submit {
-      width: 100%; background: var(--primary); color: white;
-      border: none; border-radius: 10px; padding: 15px; font-size: 16px; font-weight: 700;
-      cursor: pointer; transition: background 0.2s;
-    }
-    .btn-submit:hover { background: var(--primary-dark); }
-
-    /* FOOTER */
-    footer { background: #0F172A; color: rgba(255,255,255,0.6); padding: 48px 24px; text-align: center; }
-    .footer-inner { max-width: 1200px; margin: 0 auto; }
-    .footer-logo { font-size: 24px; font-weight: 800; color: white; margin-bottom: 12px; }
-    .footer-address { font-size: 14px; margin-bottom: 6px; }
-    .footer-links { display: flex; justify-content: center; gap: 24px; margin-top: 16px; flex-wrap: wrap; }
-    .footer-links a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 13px; }
-    .footer-links a:hover { color: white; }
-    .footer-copy { font-size: 13px; margin-top: 24px; color: rgba(255,255,255,0.35); }
-
-    /* ELEVO DOT */
-    .elevo-dot {
-      position: fixed; bottom: 28px; right: 28px; z-index: 9999;
-      width: 52px; height: 52px; border-radius: 50%;
-      background: linear-gradient(135deg, #6366F1, #8B5CF6);
-      display: flex; align-items: center; justify-content: center;
-      box-shadow: 0 4px 20px rgba(99,102,241,0.45); text-decoration: none;
+      color: white; padding: 0.9rem 2rem; border-radius: 50px;
+      text-decoration: none; font-weight: 700; font-size: 0.95rem;
+      box-shadow: 0 4px 15px rgba(28,95,168,0.4);
       transition: transform 0.2s, box-shadow 0.2s;
     }
-    .elevo-dot:hover { transform: scale(1.1); box-shadow: 0 6px 28px rgba(99,102,241,0.6); }
-    .elevo-dot-inner { font-size: 16px; font-weight: 900; color: white; }
-    .elevo-tooltip {
-      position: absolute; right: 62px; top: 50%; transform: translateY(-50%);
-      background: #1E293B; color: white; font-size: 12px; font-weight: 600;
-      padding: 6px 12px; border-radius: 8px; white-space: nowrap;
-      opacity: 0; pointer-events: none; transition: opacity 0.2s;
+    .btn-gradient:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(28,95,168,0.5); }
+    .btn-ghost {
+      color: rgba(255,255,255,0.8); padding: 0.9rem 2rem; border-radius: 50px;
+      text-decoration: none; font-weight: 600; font-size: 0.95rem;
+      border: 1px solid rgba(255,255,255,0.2); transition: border-color 0.2s;
     }
-    .elevo-dot:hover .elevo-tooltip { opacity: 1; }
+    .btn-ghost:hover { border-color: rgba(255,255,255,0.5); }
+    .hero-card-grid { display: flex; flex-direction: column; gap: 1rem; }
+    .metric-card {
+      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px; padding: 1.5rem; backdrop-filter: blur(10px);
+      transition: background 0.2s;
+    }
+    .metric-card:hover { background: rgba(255,255,255,0.09); }
+    .metric-value { font-size: 2.5rem; font-weight: 900; color: white; }
+    .metric-value span {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .metric-label { color: rgba(255,255,255,0.55); font-size: 0.85rem; margin-top: 0.2rem; }
+    .metric-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .hero-img-container {
+      border-radius: 16px; overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+      margin-bottom: 1rem; position: relative;
+    }
+    .hero-img-container img {
+      width: 100%; height: 220px; object-fit: cover; display: block;
+      filter: brightness(0.88);
+    }
+    .hero-img-placeholder {
+      width: 100%; height: 220px; display: flex; align-items: center; justify-content: center;
+      background: linear-gradient(135deg, rgba(28,95,168,0.4), rgba(74,144,217,0.2));
+      font-size: 3rem;
+    }
 
-    /* RESPONSIVE */
-    @media (max-width: 900px) {
-      .hero-inner { grid-template-columns: 1fr; gap: 40px; }
-      .hero-right { display: none; }
-      .about-inner { grid-template-columns: 1fr; gap: 40px; }
-      .services-grid { grid-template-columns: repeat(2, 1fr); }
-      .team-grid { grid-template-columns: 1fr; max-width: 360px; margin-left: auto; margin-right: auto; }
-      .testimonials-grid { grid-template-columns: 1fr; }
-      .contact-inner { grid-template-columns: 1fr; gap: 40px; }
-      .trust-bar-inner { grid-template-columns: repeat(2, 1fr); }
-      .nav-links { display: none; }
+    /* ── Stats Banner ── */
+    .stats-banner {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      padding: 2.5rem 2rem;
     }
-    @media (max-width: 580px) {
-      .services-grid { grid-template-columns: 1fr; }
-      .hero-metrics { grid-template-columns: 1fr 1fr; }
-      .form-row { grid-template-columns: 1fr; }
-      .contact-form { padding: 28px 20px; }
+    .stats-banner-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem;
+      text-align: center;
+    }
+    .stat-item { color: white; }
+    .stat-value { font-size: 1.8rem; font-weight: 900; margin-bottom: 0.3rem; }
+    .stat-label { font-size: 0.85rem; opacity: 0.85; font-weight: 500; }
+
+    /* ── Shared section styles ── */
+    .section-chip {
+      display: inline-block; background: rgba(28,95,168,0.1); color: var(--primary);
+      padding: 0.3rem 0.9rem; border-radius: 50px; font-size: 0.8rem; font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    .section-title { font-size: 2.2rem; font-weight: 800; color: var(--dark); margin-bottom: 0.8rem; }
+    .section-sub { color: #64748b; font-size: 1rem; max-width: 500px; }
+
+    /* ── Services ── */
+    .services { padding: 6rem 2rem; background: var(--light); }
+    .services-header { max-width: 1100px; margin: 0 auto 3rem; }
+    .services-grid {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem;
+    }
+    .service-card {
+      background: white; border-radius: 16px; padding: 2rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 15px rgba(0,0,0,0.04);
+      transition: transform 0.2s, box-shadow 0.2s; position: relative; overflow: hidden;
+    }
+    .service-card::after {
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      transform: scaleX(0); transition: transform 0.3s; transform-origin: left;
+    }
+    .service-card:hover { transform: translateY(-4px); box-shadow: 0 4px 6px rgba(0,0,0,0.06), 0 10px 30px rgba(0,0,0,0.1); }
+    .service-card:hover::after { transform: scaleX(1); }
+    .service-icon {
+      width: 52px; height: 52px; border-radius: 12px;
+      background: linear-gradient(135deg, rgba(28,95,168,0.1), rgba(74,144,217,0.1));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem; margin-bottom: 1.2rem;
+    }
+    .service-card h3 { font-size: 1rem; font-weight: 700; color: var(--dark); margin-bottom: 0.6rem; }
+    .service-card p { color: #64748b; font-size: 0.875rem; line-height: 1.7; }
+
+    /* ── About / Ueber die Praxis ── */
+    .about { padding: 6rem 2rem; background: white; }
+    .about-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
+    }
+    .about-text p { color: #64748b; font-size: 0.95rem; line-height: 1.8; margin-bottom: 1.5rem; }
+    .about-features { list-style: none; display: flex; flex-direction: column; gap: 0.8rem; }
+    .about-features li {
+      display: flex; align-items: center; gap: 0.75rem;
+      font-size: 0.9rem; font-weight: 600; color: var(--dark);
+    }
+    .about-features li .check-icon {
+      width: 28px; height: 28px; border-radius: 8px; flex-shrink: 0;
+      background: linear-gradient(135deg, rgba(28,95,168,0.1), rgba(74,144,217,0.1));
+      color: var(--primary); display: flex; align-items: center; justify-content: center;
+      font-size: 0.85rem; font-weight: 700;
+    }
+    .about-visual {
+      background: var(--light); border-radius: 20px; padding: 2.5rem;
+      border: 1px solid #e2e8f0;
+    }
+    .about-visual-header {
+      display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;
+    }
+    .about-visual-icon {
+      width: 56px; height: 56px; border-radius: 14px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white; display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem;
+    }
+    .about-visual-header h3 { font-size: 1.2rem; font-weight: 800; color: var(--dark); }
+    .about-visual-header p { font-size: 0.8rem; color: #64748b; }
+    .about-detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .about-detail {
+      background: white; border-radius: 12px; padding: 1.2rem;
+      border: 1px solid #e2e8f0;
+    }
+    .about-detail strong { font-size: 0.85rem; color: var(--dark); display: block; margin-bottom: 0.2rem; }
+    .about-detail span { font-size: 0.8rem; color: #64748b; }
+
+    /* ── Steps ── */
+    .steps { padding: 6rem 2rem; background: var(--light); }
+    .steps-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
+    }
+    .steps-grid { display: flex; flex-direction: column; gap: 1.5rem; }
+    .step-item { display: flex; gap: 1.2rem; align-items: flex-start; }
+    .step-num-badge {
+      width: 40px; height: 40px; border-radius: 10px; flex-shrink: 0;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white; display: flex; align-items: center; justify-content: center;
+      font-weight: 800; font-size: 0.9rem;
+    }
+    .step-item-text h4 { font-weight: 700; color: var(--dark); margin-bottom: 0.3rem; }
+    .step-item-text p { color: #64748b; font-size: 0.875rem; line-height: 1.6; }
+    .steps-visual {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      border-radius: 20px; padding: 3rem; color: white;
+    }
+    .steps-visual h3 { font-size: 1.5rem; font-weight: 800; margin-bottom: 0.5rem; }
+    .steps-visual .tagline { opacity: 0.85; font-size: 0.95rem; margin-bottom: 2rem; }
+    .highlight-box { background: rgba(255,255,255,0.15); border-radius: 10px; padding: 1.2rem; margin-bottom: 1rem; }
+    .highlight-box strong { font-size: 1.1rem; }
+    .highlight-box p { opacity: 0.85; font-size: 0.875rem; margin-top: 0.2rem; }
+
+    /* ── Technology ── */
+    .technology { padding: 6rem 2rem; background: white; }
+    .technology-header { max-width: 1100px; margin: 0 auto 3rem; }
+    .tech-grid {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem;
+    }
+    .tech-card {
+      background: var(--light); border-radius: 16px; padding: 2rem;
+      border: 1px solid #e2e8f0;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .tech-card:hover { transform: translateY(-4px); box-shadow: 0 8px 30px rgba(0,0,0,0.08); }
+    .tech-card-icon {
+      width: 52px; height: 52px; border-radius: 12px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white; display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem; margin-bottom: 1.2rem;
+    }
+    .tech-card h3 { font-size: 1rem; font-weight: 700; color: var(--dark); margin-bottom: 0.6rem; }
+    .tech-card p { color: #64748b; font-size: 0.875rem; line-height: 1.7; }
+    .tech-badge {
+      display: inline-block; margin-top: 1rem;
+      background: rgba(28,95,168,0.08); color: var(--primary);
+      padding: 0.25rem 0.7rem; border-radius: 50px; font-size: 0.75rem; font-weight: 600;
+    }
+
+    /* ── Testimonials ── */
+    .testimonials { padding: 6rem 2rem; background: var(--light); }
+    .testimonials-header { max-width: 1000px; margin: 0 auto 3rem; }
+    .testimonials-grid {
+      max-width: 1000px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;
+    }
+    .testimonial-card {
+      background: white; border-radius: 16px; padding: 2rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 15px rgba(0,0,0,0.04);
+    }
+    .stars { font-size: 1rem; margin-bottom: 1rem; color: #f59e0b; }
+    .testimonial-card p { color: #475569; font-size: 0.9rem; line-height: 1.7; font-style: italic; }
+    .testimonial-author {
+      display: flex; gap: 0.8rem; align-items: center;
+      margin-top: 1.2rem; padding-top: 1rem; border-top: 1px solid #f1f5f9;
+    }
+    .author-avatar {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white; display: flex; align-items: center; justify-content: center; font-weight: 700;
+    }
+    .author-name { font-weight: 700; font-size: 0.85rem; color: var(--dark); }
+    .author-role { color: #94a3b8; font-size: 0.75rem; }
+
+    /* ── FAQ ── */
+    .faq { padding: 6rem 2rem; background: white; }
+    .faq-inner { max-width: 800px; margin: 0 auto; }
+    .faq-header { margin-bottom: 3rem; }
+    .faq-item {
+      border: 1px solid #e2e8f0; border-radius: 16px;
+      margin-bottom: 1rem; overflow: hidden;
+      transition: box-shadow 0.2s;
+    }
+    .faq-item:hover { box-shadow: 0 4px 15px rgba(0,0,0,0.06); }
+    .faq-question {
+      width: 100%; padding: 1.3rem 1.5rem;
+      background: var(--light); border: none; cursor: pointer;
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 0.95rem; font-weight: 700; color: var(--dark);
+      font-family: inherit; text-align: left;
+      transition: background 0.2s;
+    }
+    .faq-question:hover { background: #eef2f7; }
+    .faq-icon {
+      width: 28px; height: 28px; border-radius: 50%; flex-shrink: 0;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white; display: flex; align-items: center; justify-content: center;
+      font-size: 1rem; font-weight: 700;
+      transition: transform 0.3s;
+    }
+    .faq-item.active .faq-icon { transform: rotate(45deg); }
+    .faq-answer {
+      max-height: 0; overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.35s ease;
+    }
+    .faq-item.active .faq-answer { max-height: 300px; }
+    .faq-answer-inner {
+      padding: 0 1.5rem 1.5rem;
+      color: #64748b; font-size: 0.9rem; line-height: 1.75;
+    }
+
+    /* ── CTA ── */
+    .cta-section {
+      padding: 6rem 2rem; text-align: center;
+      background: var(--dark); position: relative; overflow: hidden;
+    }
+    .cta-blob {
+      position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+      width: 600px; height: 600px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(28,95,168,0.15) 0%, transparent 70%);
+    }
+    .cta-section h2 { font-size: 2.5rem; font-weight: 800; color: white; margin-bottom: 1rem; position: relative; }
+    .cta-section p {
+      color: rgba(255,255,255,0.65); font-size: 1.05rem; margin-bottom: 2.5rem;
+      max-width: 450px; margin-left: auto; margin-right: auto; position: relative;
+    }
+    .cta-section .btn-gradient { position: relative; }
+
+    /* ── Directions ── */
+    .directions { padding: 5rem 2rem; background: var(--light); }
+    .directions-inner { max-width: 1100px; margin: 0 auto; }
+    .directions-header { margin-bottom: 3rem; }
+    .directions-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+    .direction-card {
+      background: white; border-radius: 16px; padding: 1.8rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 15px rgba(0,0,0,0.04);
+      display: flex; gap: 1rem; align-items: flex-start;
+    }
+    .direction-icon {
+      width: 44px; height: 44px; border-radius: 12px; flex-shrink: 0;
+      background: linear-gradient(135deg, rgba(28,95,168,0.1), rgba(74,144,217,0.1));
+      color: var(--primary); display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem;
+    }
+    .direction-card h4 { font-size: 0.9rem; font-weight: 700; color: var(--dark); margin-bottom: 0.3rem; }
+    .direction-card p { font-size: 0.85rem; color: #64748b; line-height: 1.6; }
+    .directions-map {
+      width: 100%; height: 280px; border-radius: 16px; overflow: hidden;
+      border: 1px solid #e2e8f0;
+    }
+    .directions-map iframe { width: 100%; height: 100%; border: 0; }
+
+    /* ── Contact ── */
+    .contact { padding: 5rem 2rem; background: white; }
+    .contact-inner { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+    .contact-info h3 { font-size: 1.4rem; font-weight: 800; color: var(--dark); margin-bottom: 1.5rem; }
+    .contact-item { display: flex; gap: 1rem; margin-bottom: 1.2rem; align-items: flex-start; }
+    .contact-icon {
+      width: 42px; height: 42px; border-radius: 10px; flex-shrink: 0;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white; display: flex; align-items: center; justify-content: center; font-size: 1rem;
+    }
+    .contact-item-text .label { font-size: 0.75rem; color: #94a3b8; text-transform: uppercase; letter-spacing: 1px; }
+    .contact-item-text .value { font-weight: 600; color: var(--dark); font-size: 0.9rem; }
+    .contact-form {
+      background: var(--light); border-radius: 16px; padding: 2rem;
+      box-shadow: 0 2px 15px rgba(0,0,0,0.06);
+    }
+    .contact-form h4 { font-weight: 700; color: var(--dark); margin-bottom: 1.5rem; }
+    .form-group { margin-bottom: 1rem; }
+    .form-group input, .form-group textarea, .form-group select {
+      width: 100%; padding: 0.75rem 1rem; border: 2px solid #e2e8f0;
+      border-radius: 10px; font-size: 0.875rem; transition: border-color 0.2s;
+      font-family: inherit; background: white;
+    }
+    .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+      outline: none; border-color: var(--primary); background: white;
+    }
+    .form-group textarea { resize: vertical; min-height: 90px; }
+    .form-submit {
+      width: 100%; background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white; padding: 0.85rem; border: none; border-radius: 10px;
+      font-size: 0.95rem; font-weight: 700; cursor: pointer;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .form-submit:hover { box-shadow: 0 4px 15px rgba(28,95,168,0.4); transform: translateY(-1px); }
+
+    /* ── Footer ── */
+    footer {
+      background: var(--dark); color: rgba(255,255,255,0.4);
+      padding: 1.5rem 2rem; text-align: center; font-size: 0.85rem;
+    }
+    footer a { color: inherit; }
+    footer strong { color: rgba(255,255,255,0.7); }
+
+    /* ── ELEVO Dot ── */
+    .elevo-dot {
+      position: fixed; bottom: 24px; right: 24px; z-index: 9999;
+      width: 52px; height: 52px; border-radius: 50%;
+      background: linear-gradient(135deg, #1E3A5F 0%, #0A0E1A 100%);
+      border: 2px solid rgba(59,130,246,.35);
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 16px rgba(0,0,0,.2), 0 0 12px rgba(59,130,246,.1);
+      cursor: pointer; transition: transform .2s, box-shadow .2s; text-decoration: none;
+    }
+    .elevo-dot:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 24px rgba(0,0,0,.3), 0 0 20px rgba(59,130,246,.15);
+    }
+
+    /* ── Mobile ── */
+    @media (max-width: 768px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .metric-row .metric-card:last-child { display: none; }
+      .hero h1 { font-size: 2rem; }
+      .nav-links { display: none; }
+      .stats-banner-inner { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+      .about-inner { grid-template-columns: 1fr; }
+      .steps-inner { grid-template-columns: 1fr; }
+      .tech-grid { grid-template-columns: 1fr; }
+      .contact-inner { grid-template-columns: 1fr; }
+      .directions-grid { grid-template-columns: 1fr; }
+      .cta-section h2 { font-size: 1.8rem; }
     }
   </style>
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav>
-    <div class="nav-inner">
-      <a href="#" class="nav-logo">
-        <img
-          src="https://www.dental21-sachsenhausen.de/img/logo-dental21.svg"
-          alt="Dental21"
-          onerror="this.style.display='none';this.nextElementSibling.style.display='block';"
-        />
-        <span class="nav-logo-fallback" style="display:none;">Dental21</span>
-      </a>
-      <ul class="nav-links">
-        <li><a href="#leistungen">Leistungen</a></li>
-        <li><a href="#ablauf">Ablauf</a></li>
-        <li><a href="#team">Team</a></li>
-        <li><a href="#faq">FAQ</a></li>
-        <li><a href="#kontakt">Kontakt</a></li>
+<!-- NAVIGATION -->
+<nav>
+  <div class="logo-area">
+    <img src="https://www.dental21-sachsenhausen.de/img/logo-dental21.svg" class="logo-img" alt="Dental21 Frankfurt Sachsenhausen" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+    <div class="logo-fallback" style="display:none"><div class="logo-dot"></div><span class="logo-text">Dental21</span></div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#leistungen">Leistungen</a></li>
+    <li><a href="#praxis">Praxis</a></li>
+    <li><a href="#ablauf">Vorgehen</a></li>
+    <li><a href="#technologie">Technologie</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#kontakt">Kontakt</a></li>
+  </ul>
+  <a href="#kontakt" class="nav-cta">Termin buchen</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-blob"></div>
+  <div class="hero-blob2"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-pill">&#10022; Modernes Zahnarzt-Netzwerk Frankfurt &ndash; Online-Buchung, 7 Tage</div>
+      <h1>Moderne Zahnmedizin. Flexibel buchbar.<br><span class="gradient-text">Dental21 &ndash; Ihr Zahnarzt in Frankfurt Sachsenhausen</span></h1>
+      <p>Dental21 in Frankfurt Sachsenhausen verbindet digitale Termintechnologie mit hochmoderner Zahnmedizin: Online-Buchung 24/7, &Auml;sthetik, Implantologie und Prophylaxe &ndash; alles in einer Praxis.</p>
+      <div class="hero-actions">
+        <a href="#kontakt" class="btn-gradient">Jetzt Termin buchen &rarr;</a>
+        <a href="#leistungen" class="btn-ghost">Mehr erfahren</a>
+      </div>
+    </div>
+    <div class="hero-card-grid">
+      <div class="hero-img-container">
+        <img src="https://www.dental21-sachsenhausen.de/img/hero-praxis.jpg" alt="Dental21 Frankfurt Sachsenhausen" loading="lazy" onerror="this.parentElement.innerHTML='<div class=\'hero-img-placeholder\'>&#x1F9B7;</div>'">
+      </div>
+      <div class="metric-card">
+        <div class="metric-value"><span>Online</span></div>
+        <div class="metric-label">Termin 24/7 buchbar</div>
+      </div>
+      <div class="metric-row">
+        <div class="metric-card">
+          <div class="metric-value"><span>Mo&ndash;Fr</span></div>
+          <div class="metric-label">8:00&ndash;20:00 ge&ouml;ffnet</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value"><span>4.5&#9733;</span></div>
+          <div class="metric-label">Patientenbewertung</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BANNER -->
+<section class="stats-banner">
+  <div class="stats-banner-inner">
+    <div class="stat-item">
+      <div class="stat-value">Online 24/7</div>
+      <div class="stat-label">Termine jederzeit buchbar</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">Mo&ndash;Fr bis 20 Uhr</div>
+      <div class="stat-label">Lange &Ouml;ffnungszeiten</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">4.5 &#9733;</div>
+      <div class="stat-label">Google Bewertung</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">Digital-First</div>
+      <div class="stat-label">Paperless Praxis seit 2015</div>
+    </div>
+  </div>
+</section>
+
+<!-- LEISTUNGEN -->
+<section class="services" id="leistungen">
+  <div class="services-header">
+    <span class="section-chip">Leistungen</span>
+    <h2 class="section-title">Was wir f&uuml;r Sie leisten</h2>
+    <p class="section-sub">Digitale Zahnmedizin in Frankfurt Sachsenhausen &ndash; 24/7 buchbar, moderne Technik, flexible &Ouml;ffnungszeiten.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">&#x1F4F1;</div>
+      <h3>Online-Terminbuchung 24/7</h3>
+      <p>Rund um die Uhr den Wunschtermin buchen &ndash; ohne Anruf, ohne Warteschleife. Digitale Terminbest&auml;tigung in Echtzeit.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">&#x2728;</div>
+      <h3>&Auml;sthetische Zahnmedizin</h3>
+      <p>Bleaching, Veneers und professionelles Smile-Design &ndash; f&uuml;r ein L&auml;cheln, das begeistert, mit modernster Technik und Materialien.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">&#x1F52C;</div>
+      <h3>Implantologie</h3>
+      <p>Hochpr&auml;zise Implantat-Behandlungen mit digitaler Planung &ndash; f&uuml;r dauerhaften Zahnersatz, der nat&uuml;rlich sitzt und aussieht.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">&#x1F6E1;&#xFE0F;</div>
+      <h3>Prophylaxe</h3>
+      <p>Professionelle Zahnreinigung und individuelle Vorsorge &ndash; digitaler Recall erinnert Sie automatisch an Ihre n&auml;chste Kontrolle.</p>
+    </div>
+  </div>
+</section>
+
+<!-- UEBER DIE PRAXIS -->
+<section class="about" id="praxis">
+  <div class="about-inner">
+    <div class="about-text">
+      <span class="section-chip">&Uuml;ber die Praxis</span>
+      <h2 class="section-title">Dental21 Frankfurt Sachsenhausen</h2>
+      <p>Seit 2015 steht Dental21 f&uuml;r eine neue Generation der Zahnmedizin. Im Herzen von Frankfurt-Sachsenhausen, in der Dreieichstra&szlig;e&nbsp;59, verbinden wir digitale Innovation mit pers&ouml;nlicher Betreuung. Unser Team setzt auf modernste Behandlungstechnologien und einen vollst&auml;ndig digitalisierten Praxisablauf &ndash; von der Online-Buchung bis zur digitalen Nachsorge.</p>
+      <p>Als Teil des Dental21-Netzwerks profitieren Sie von standardisierten Qualit&auml;tsprozessen und einem hohen Anspruch an Patientenerlebnis. Wir sind &uuml;berzeugt: Zahnmedizin muss sich dem Leben der Patienten anpassen &ndash; nicht umgekehrt.</p>
+      <ul class="about-features">
+        <li><span class="check-icon">&#x2713;</span> Online-Buchung rund um die Uhr verf&uuml;gbar</li>
+        <li><span class="check-icon">&#x2713;</span> Lange &Ouml;ffnungszeiten Mo&ndash;Fr bis 20:00 Uhr</li>
+        <li><span class="check-icon">&#x2713;</span> Volldigitalisierte Patientenakte</li>
+        <li><span class="check-icon">&#x2713;</span> Papierloser Check-in vor Ort</li>
+        <li><span class="check-icon">&#x2713;</span> Zentrale Lage in Frankfurt-S&uuml;d</li>
+        <li><span class="check-icon">&#x2713;</span> Automatische Recall-Erinnerungen</li>
       </ul>
-      <a href="#kontakt" class="btn-nav">Jetzt Termin buchen</a>
     </div>
-  </nav>
-
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-left">
-        <div class="trust-pill">
-          <div class="trust-pill-dot"></div>
-          <span>Teil des Dental21-Netzwerks &middot; 20+ Standorte in Deutschland</span>
-        </div>
-        <h1>Ihr Zahnarzt in<br><em>Frankfurt Sachsenhausen</em></h1>
-        <p class="hero-desc">
-          Dental21 Sachsenhausen vereint modernste Zahntechnologie mit echten Oeffnungszeiten fuer Berufstaetige. Online-Buchung rund um die Uhr, papierloser Check-in und ein erfahrenes Team &mdash; fuer eine Behandlung, die zu Ihrem Leben passt.
-        </p>
-        <div class="hero-ctas">
-          <a href="#kontakt" class="btn-primary">&#128197; Online Termin buchen</a>
-          <a href="tel:06996225440" class="btn-outline">069 96 22 54 40</a>
-        </div>
-        <div class="hero-metrics">
-          <div class="metric-card">
-            <div class="metric-value">4,5 &#9733;</div>
-            <div class="metric-label">Google-Bewertung</div>
-          </div>
-          <div class="metric-card">
-            <div class="metric-value">24/7</div>
-            <div class="metric-label">Online-Buchung</div>
-          </div>
-          <div class="metric-card">
-            <div class="metric-value">20+</div>
-            <div class="metric-label">Netzwerk-Standorte</div>
-          </div>
+    <div class="about-visual">
+      <div class="about-visual-header">
+        <div class="about-visual-icon">&#x1F3E5;</div>
+        <div>
+          <h3>Praxis-Profil</h3>
+          <p>Dental21 Frankfurt Sachsenhausen</p>
         </div>
       </div>
-      <div class="hero-right">
-        <div class="hero-img-wrap">
-          <img
-            src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=800&q=80"
-            alt="Dental21 Frankfurt Sachsenhausen"
-            onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22800%22 height=%22480%22%3E%3Crect fill=%22%231e293b%22 width=%22800%22 height=%22480%22/%3E%3Ctext fill=%22%23475569%22 x=%22400%22 y=%22245%22 text-anchor=%22middle%22 font-size=%2222%22 font-family=%22sans-serif%22%3EDental21 Frankfurt%3C/text%3E%3C/svg%3E'"
-          />
-          <div class="hero-img-badge">
-            <div class="badge-icon">&#127881;</div>
-            <div class="badge-text">
-              <strong>Deutschlands wachsendstes</strong>
-              <span>Zahnarzt-Netzwerk</span>
-            </div>
-          </div>
-        </div>
+      <div class="about-detail-grid">
+        <div class="about-detail"><strong>Gegr&uuml;ndet</strong><span>2015</span></div>
+        <div class="about-detail"><strong>Standort</strong><span>Frankfurt-Sachsenhausen</span></div>
+        <div class="about-detail"><strong>&Ouml;ffnungszeiten</strong><span>Mo&ndash;Fr 8:00&ndash;20:00</span></div>
+        <div class="about-detail"><strong>Bewertung</strong><span>4.5 &#9733; auf Google</span></div>
+        <div class="about-detail"><strong>Konzept</strong><span>Digital-First Praxis</span></div>
+        <div class="about-detail"><strong>Netzwerk</strong><span>Dental21 Gruppe</span></div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- TRUST BAR -->
-  <section class="trust-bar">
-    <div class="trust-bar-inner">
-      <div>
-        <div class="trust-stat-value">4.000+</div>
-        <div class="trust-stat-label">Patienten in Sachsenhausen</div>
-      </div>
-      <div>
-        <div class="trust-stat-value">20+</div>
-        <div class="trust-stat-label">Dental21-Standorte bundesweit</div>
-      </div>
-      <div>
-        <div class="trust-stat-value">4,5 &#9733;</div>
-        <div class="trust-stat-label">Google-Bewertung</div>
-      </div>
-      <div>
-        <div class="trust-stat-value">24/7</div>
-        <div class="trust-stat-label">Online-Terminbuchung</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section class="about" id="about">
-    <div class="about-inner">
-      <div class="about-text">
-        <div class="section-label">Ueber uns</div>
-        <h2 class="section-title">Zahnmedizin, die mit Ihrer Zeit mitgeht</h2>
-        <p>
-          Dental21 Sachsenhausen ist Teil des am schnellsten wachsenden Zahnarzt-Netzwerks in Deutschland. Mit mehr als 20 Standorten bundesweit steht hinter jedem Termin ein ausgereiftes System aus digitalen Prozessen, einheitlichen Qualitaetsstandards und kontinuierlicher Weiterbildung aller Behandler. Was das fuer Sie bedeutet: kuerzere Wartezeiten, verlae
-ssliche Ablauefe und ein Team, das stets auf dem neusten Stand der Zahnmedizin ist.
-        </p>
-        <p>
-          Die Praxis liegt im Herzen von Sachsenhausen &mdash; dem historischen Mainufer-Quartier Frankfurts, bekannt fuer seine Apfelweinlokale und das lebendige Stadtleben. Die Schweizer Strasse ist bequem zu Fuss, mit dem Fahrrad oder per OEPNV erreichbar. Unsere Oeffnungszeiten von Montag bis Freitag 8 bis 20 Uhr sowie samstags bis 14 Uhr wurden gezielt fuer Berufstaetige konzipiert, die keine Urlaubstage fuer einen Zahnarzttermin opfern moechten.
-        </p>
-        <p>
-          Geleitet wird die Frankfurter Niederlassung von Dr. Claudia Merz, die zuvor an der Zahnklinik der Goethe-Universitaet Frankfurt taetig war und sich auf aesthetische Zahnmedizin spezialisiert hat. Ihr Fokus liegt auf digitalem Workflow: von der papierlosen Anamnese ueber den digitalen Roentgenabgleich bis zur Terminbestaetigung per App. Bei Dental21 Sachsenhausen ist der Zahnarztbesuch endlich so unkompliziert, wie er sein sollte.
-        </p>
-      </div>
-      <div class="about-highlights">
-        <div class="highlight-item">
-          <strong>Papierloser Check-in</strong>
-          <span>Anamnese und Einwilligung digital ausfuellen &mdash; kein Klemmbrett mehr im Wartezimmer.</span>
+<!-- VORGEHEN -->
+<section class="steps" id="ablauf">
+  <div class="steps-inner">
+    <div>
+      <span class="section-chip">Unser Vorgehen</span>
+      <h2 class="section-title" style="margin-bottom:2rem;">So einfach wird Zahnmedizin bei Dental21</h2>
+      <div class="steps-grid">
+        <div class="step-item">
+          <div class="step-num-badge">1</div>
+          <div class="step-item-text">
+            <h4>24/7 Online buchen</h4>
+            <p>Rund um die Uhr den Wunschtermin sichern &ndash; auch nachts, ohne Warteschleife, direkt im Kalender best&auml;tigt.</p>
+          </div>
         </div>
-        <div class="highlight-item">
-          <strong>Online-Buchung rund um die Uhr</strong>
-          <span>Termin buchen, verschieben oder absagen &mdash; ganz ohne Anruf, auch um Mitternacht.</span>
+        <div class="step-item">
+          <div class="step-num-badge">2</div>
+          <div class="step-item-text">
+            <h4>Digitaler Check-in</h4>
+            <p>Papierloser Praxisbesuch: Anamnese online ausf&uuml;llen &ndash; kein Stress im Wartezimmer, sofort bereit f&uuml;r die Behandlung.</p>
+          </div>
         </div>
-        <div class="highlight-item">
-          <strong>Einheitliche Qualitaetssicherung</strong>
-          <span>Alle 20+ Dental21-Standorte unterliegen denselben Behandlungsprotokollen und Geraetekalibrierungen.</span>
+        <div class="step-item">
+          <div class="step-num-badge">3</div>
+          <div class="step-item-text">
+            <h4>Effiziente Behandlung</h4>
+            <p>Modernes Equipment, geschultes Team &ndash; Ihre Behandlung l&auml;uft p&uuml;nktlich und effizient, Ihre Zeit wird respektiert.</p>
+          </div>
         </div>
-        <div class="highlight-item">
-          <strong>Verlaengerte Oeffnungszeiten</strong>
-          <span>Mo&ndash;Fr bis 20:00 Uhr: kein Urlaubstag noetig fuer den Zahnarzttermin.</span>
-        </div>
-        <div class="highlight-item">
-          <strong>Sachsenhausen &mdash; zentral &amp; entspannt</strong>
-          <span>Mitten im beliebtesten Frankfurter Stadtteil, wenige Gehminuten von Mainufer und U-Bahn.</span>
+        <div class="step-item">
+          <div class="step-num-badge">4</div>
+          <div class="step-item-text">
+            <h4>Smart Recall</h4>
+            <p>Automatische digitale Erinnerungen halten Sie bei Ihrer Zahngesundheit auf dem Laufenden &ndash; kein Termin wird vergessen.</p>
+          </div>
         </div>
       </div>
     </div>
-  </section>
-
-  <!-- SERVICES -->
-  <section class="services" id="leistungen">
-    <div class="services-inner">
-      <div class="section-header">
-        <div class="section-label">Leistungen</div>
-        <h2 class="section-title">Was wir fuer Sie tun koennen</h2>
-        <p style="color:var(--muted);font-size:16px;max-width:540px;margin:0 auto;">Von der digitalen Terminbuchung bis zur Vollversorgung mit Implantaten &mdash; alles unter einem Dach.</p>
+    <div class="steps-visual">
+      <h3>Patienten buchen online</h3>
+      <p class="tagline">24/7 Terminbuchung &ndash; moderne Zahnmedizin, die sich Ihrem Leben anpasst.</p>
+      <div class="highlight-box">
+        <strong>Digitale Praxis</strong>
+        <p>Paperless von der Buchung bis zur Nachsorge &ndash; modernes Praxismanagement f&uuml;r ein reibungsloses Erlebnis.</p>
       </div>
-      <div class="services-grid">
-
-        <div class="service-card">
-          <span class="service-icon">&#128241;</span>
-          <h3>24/7 Online-Terminbuchung</h3>
-          <p>Buchen Sie Ihren Termin ueber unsere Website oder App &mdash; zu jeder Tages- und Nachtzeit, ohne Warteschleife. Bestaetigung und Erinnerung kommen automatisch per E-Mail oder SMS. Kein Anruf noetig.</p>
-        </div>
-
-        <div class="service-card">
-          <span class="service-icon">&#128187;</span>
-          <h3>Digitaler Check-in &amp; Papierlose Anamnese</h3>
-          <p>Fuellenl Sie Ihre Patientenunterlagen bequem von zuhause auf dem Smartphone oder Computer aus. Kein Klemmbrett, keine doppelten Angaben &mdash; Ihr Behandlungsteam ist bereits beim Eintreten vorbereitet.</p>
-        </div>
-
-        <div class="service-card">
-          <span class="service-icon">&#10024;</span>
-          <h3>Aesthetische Zahnmedizin</h3>
-          <p>Veneers fuer ein makelloses Laecheln und professionelles Bleaching fuer spuerbar hellere Zaehne &mdash; individuell geplant und praezise umgesetzt von unserer Spezialistin Dr. Claudia Merz.</p>
-          <span class="service-price">Veneers ab 890 &euro; &middot; Bleaching ab 269 &euro;</span>
-        </div>
-
-        <div class="service-card">
-          <span class="service-icon">&#129463;</span>
-          <h3>Implantologie mit 3D-Planung</h3>
-          <p>Fehlende Zaehne dauerhaft ersetzen mit Titanimplantaten, die durch digitale 3D-Roentgenplanung praezise positioniert werden. Wir begleiten Sie von der Beratung bis zur Abschlussversorgung mit Krone.</p>
-          <span class="service-price">ab 1.700 &euro;</span>
-        </div>
-
-        <div class="service-card">
-          <span class="service-icon">&#129529;</span>
-          <h3>Professionelle Zahnreinigung</h3>
-          <p>Gruendliche Entfernung von Zahnstein, Belegen und Verfaerbungen durch unsere geschulten Prophylaxefachkraefte. Regelmaessige PZR schuetzt vor Karies, Parodontitis und sorgt fuer frischen Atem.</p>
-          <span class="service-price">ab 89 &euro;</span>
-        </div>
-
-        <div class="service-card">
-          <span class="service-icon">&#128513;</span>
-          <h3>Aligner &amp; Invisalign-Therapie</h3>
-          <p>Zaehne richten ohne sichtbare Metall-Brackets &mdash; mit transparenten, herausnehmbaren Schienen, die im Berufsalltag kaum auffallen. Ideal fuer Erwachsene mit diskretem Erscheinungsbild.</p>
-        </div>
-
+      <div class="highlight-box">
+        <strong>Lange &Ouml;ffnungszeiten</strong>
+        <p>Mo&ndash;Fr bis 20 Uhr &ndash; Zahnmedizin, die sich Ihrem Arbeitsalltag anpasst, nicht umgekehrt.</p>
+      </div>
+      <div class="highlight-box">
+        <strong>Zentrum Frankfurt-S&uuml;d</strong>
+        <p>Sachsenhausen, direkt erreichbar &ndash; ideal f&uuml;r Berufst&auml;tige im Frankfurter S&uuml;den und der Innenstadt.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- PROCESS -->
-  <section class="process" id="ablauf">
-    <div class="process-inner">
-      <div style="margin-bottom:0;">
-        <div class="section-label">Ablauf</div>
-        <h2 class="section-title">Ihr Weg zu einem gesunden Laecheln</h2>
-      </div>
-      <div class="process-steps">
+<!-- TECHNOLOGIE -->
+<section class="technology" id="technologie">
+  <div class="technology-header">
+    <span class="section-chip">Technologie &amp; Ausstattung</span>
+    <h2 class="section-title">Digitale Zahnmedizin auf h&ouml;chstem Niveau</h2>
+    <p class="section-sub">Modernste Ger&auml;te und digitale Workflows f&uuml;r pr&auml;zisere Diagnostik, schnellere Behandlung und bessere Ergebnisse.</p>
+  </div>
+  <div class="tech-grid">
+    <div class="tech-card">
+      <div class="tech-card-icon">&#x26A1;</div>
+      <h3>CEREC-Sofortversorgung</h3>
+      <p>Keramischer Zahnersatz in nur einer Sitzung: Der CEREC-Scanner erfasst Ihren Zahn digital, die Restauration wird direkt vor Ort gefr&auml;st &ndash; kein Provisorium, kein zweiter Termin n&ouml;tig.</p>
+      <span class="tech-badge">Same-Day Versorgung</span>
+    </div>
+    <div class="tech-card">
+      <div class="tech-card-icon">&#x1F50D;</div>
+      <h3>3D-Intraoralscanner</h3>
+      <p>Statt unangenehmer Abdruckmasse scannen wir Ihre Z&auml;hne ber&uuml;hrungslos in 3D. Die hochaufl&ouml;senden Daten erm&ouml;glichen eine exakte Planung und perfekte Passgenauigkeit.</p>
+      <span class="tech-badge">Abdruckfrei</span>
+    </div>
+    <div class="tech-card">
+      <div class="tech-card-icon">&#x1F4BB;</div>
+      <h3>Digitale Behandlungsplanung</h3>
+      <p>Jede Behandlung wird vorab digital geplant und simuliert. Sie sehen das erwartete Ergebnis, bevor die Behandlung beginnt &ndash; Transparenz und Sicherheit f&uuml;r jeden Eingriff.</p>
+      <span class="tech-badge">Vorhersagbar</span>
+    </div>
+    <div class="tech-card">
+      <div class="tech-card-icon">&#x1F4CB;</div>
+      <h3>Online-Patientenakte</h3>
+      <p>Ihre gesamte Behandlungshistorie digital verf&uuml;gbar: Befunde, R&ouml;ntgenbilder und Therapiepl&auml;ne &ndash; jederzeit einsehbar, sicher gespeichert und DSGVO-konform verwaltet.</p>
+      <span class="tech-badge">DSGVO-konform</span>
+    </div>
+  </div>
+</section>
 
-        <div class="process-step">
-          <div class="step-number">1</div>
-          <div class="step-content">
-            <h3>Online-Termin buchen</h3>
-            <p>Waehlen Sie auf unserer Website oder per App Ihren Wunschtermin und die passende Behandlungskategorie. Das System zeigt freie Slots in Echtzeit &mdash; kein Warten, keine Warteschleife. Ihre Buchungsbestaetigung kommt innerhalb von Minuten per E-Mail.</p>
-          </div>
-        </div>
-
-        <div class="process-step">
-          <div class="step-number">2</div>
-          <div class="step-content">
-            <h3>Digitale Anamnese ausfuellen</h3>
-            <p>Per Link erhalten Sie Ihr persoenliches Patientenformular, das Sie bequem von zuhause auf dem Smartphone ausfuellen. Ihre Angaben werden sicher gespeichert und stehen unserem Team beim Betreten der Praxis direkt zur Verfuegung.</p>
-          </div>
-        </div>
-
-        <div class="process-step">
-          <div class="step-number">3</div>
-          <div class="step-content">
-            <h3>Entspannter Empfang in der Praxis</h3>
-            <p>Beim Eintreffen erkennt Sie unser Team sofort &mdash; Ihr Check-in ist bereits digital abgeschlossen. Sie nehmen kurz Platz, bevor Sie direkt ins Behandlungszimmer gebeten werden. Kein Formularausfuellen am Tresen.</p>
-          </div>
-        </div>
-
-        <div class="process-step">
-          <div class="step-number">4</div>
-          <div class="step-content">
-            <h3>Befund, Beratung &amp; Behandlung</h3>
-            <p>Dr. Merz und ihr Team nehmen sich Zeit fuer eine gruendliche Diagnostik. Roentgenbilder werden digital ausgewertet und verstaendlich erklaert. Alle Behandlungsoptionen &mdash; samt Kosten und Zeitrahmen &mdash; werden transparent besprochen, bevor Sie zustimmen.</p>
-          </div>
-        </div>
-
-        <div class="process-step">
-          <div class="step-number">5</div>
-          <div class="step-content">
-            <h3>Nachsorge &amp; Folgetermin</h3>
-            <p>Nach der Behandlung erhalten Sie digitale Pflegehinweise per E-Mail. Fuer aufwendigere Eingriffe vereinbaren wir automatisch einen Kontrolltermin. Rueckfragen beantworten wir per E-Mail &mdash; so sind Sie auch nachher gut betreut.</p>
-          </div>
-        </div>
-
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="testimonials-header">
+    <span class="section-chip">Patientenstimmen</span>
+    <h2 class="section-title">Was Patienten &uuml;ber uns sagen</h2>
+  </div>
+  <div class="testimonials-grid">
+    <div class="testimonial-card">
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p>&bdquo;Die Online-Buchung war so einfach &ndash; ich habe meinen Termin um 23 Uhr gebucht und morgens die Best&auml;tigung gehabt. Das Praxisteam war super professionell und die Behandlung absolut schmerzfrei.&ldquo;</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">D</div>
+        <div><div class="author-name">David K.</div><div class="author-role">Patient seit 2023</div></div>
       </div>
     </div>
-  </section>
-
-  <!-- TEAM -->
-  <section class="team" id="team">
-    <div class="team-inner">
-      <div class="section-label">Unser Team</div>
-      <h2 class="section-title">Die Menschen hinter Ihrer Behandlung</h2>
-      <div class="team-grid">
-
-        <div class="team-card">
-          <div class="team-avatar">CM</div>
-          <h3>Dr. Claudia Merz</h3>
-          <div class="role">Leitende Zahnaerztin Frankfurt</div>
-          <span class="spec-tag">Aesthetische Zahnmedizin</span>
-          <p class="team-quote">&#8222;Ich glaube, dass Zahnmedizin heute so unkompliziert sein kann wie eine App auf dem Smartphone. Genau das leben wir hier in Sachsenhausen taeglich.&#8220;</p>
-        </div>
-
-        <div class="team-card">
-          <div class="team-avatar">JB</div>
-          <h3>ZA Jonas Braun</h3>
-          <div class="role">Zahnarzt</div>
-          <span class="spec-tag">Implantologie</span>
-          <p class="team-quote">&#8222;Moderne 3D-Diagnostik macht Implantate planbarer und sicherer als je zuvor. Jeder Patient verdient eine Loesung, die wirklich zu seiner Anatomie passt.&#8220;</p>
-        </div>
-
-        <div class="team-card">
-          <div class="team-avatar">PN</div>
-          <h3>ZAe Priya Nair</h3>
-          <div class="role">Zahnaerztin</div>
-          <span class="spec-tag">Prophylaxe &amp; Parodontologie</span>
-          <p class="team-quote">&#8222;Gesunde Zaehne beginnen mit gesundem Zahnfleisch. Praevention ist keine Pflicht &mdash; sie ist eine Investition, die sich schnell bezahlt macht.&#8220;</p>
-        </div>
-
+    <div class="testimonial-card">
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p>&bdquo;Als Berufst&auml;tige sch&auml;tze ich die langen &Ouml;ffnungszeiten enorm. Endlich eine Praxis, die bis 20&nbsp;Uhr offen hat. Das Bleaching-Ergebnis ist fantastisch &ndash; ich bin begeistert von meinem neuen L&auml;cheln.&ldquo;</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">K</div>
+        <div><div class="author-name">Katrin L.</div><div class="author-role">Patientin seit 2022</div></div>
       </div>
     </div>
-  </section>
-
-  <!-- TESTIMONIALS -->
-  <section class="testimonials" id="bewertungen">
-    <div class="testimonials-inner">
-      <div class="section-header">
-        <div class="section-label">Stimmen unserer Patienten</div>
-        <h2 class="section-title">Was unsere Patienten sagen</h2>
-      </div>
-      <div class="testimonials-grid">
-
-        <div class="testimonial-card">
-          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="testimonial-text">&#8222;Ich habe noch nie so unkompliziert einen Zahnarzttermin gebucht. Abends um 22 Uhr einfach den freien Slot ausgewaehlt &mdash; und am naechsten Morgen war alles vorbereitet. Wirklich beeindruckend, wie modern das hier ablaeuft.&#8220;</p>
-          <div class="testimonial-author">
-            <div class="author-avatar">SK</div>
-            <div>
-              <div class="author-name">Sandra K.</div>
-              <div class="author-role">Patientin seit 2022 &middot; Frankfurt Sachsenhausen</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="testimonial-card">
-          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="testimonial-text">&#8222;Als Berufstaetiger war es fuer mich immer ein Problem, tagshueber einen Termin zu bekommen. Dental21 bietet Slots bis 20 Uhr an &mdash; das hat mir buchstaeblich Urlaubstage gespart. Ausserdem ein sehr freundliches und professionelles Team.&#8220;</p>
-          <div class="testimonial-author">
-            <div class="author-avatar">TM</div>
-            <div>
-              <div class="author-name">Thomas M.</div>
-              <div class="author-role">Patient seit 2023 &middot; Frankfurt Innenstadt</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="testimonial-card">
-          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
-          <p class="testimonial-text">&#8222;Ich war skeptisch wegen der Netzwerkstruktur &mdash; dachte, das wird zu unpersoenlich. Aber Dr. Merz hat sich wirklich Zeit genommen, meinen Befund in Ruhe zu erklaeren. Das Bleaching-Ergebnis war nach einer Sitzung schon sehr deutlich sichtbar.&#8220;</p>
-          <div class="testimonial-author">
-            <div class="author-avatar">LH</div>
-            <div>
-              <div class="author-name">Laura H.</div>
-              <div class="author-role">Patientin &middot; Sachsenhausen</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="testimonial-card">
-          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="testimonial-text">&#8222;Das Implantat wurde von Jonas Braun wirklich professionell geplant &mdash; die 3D-Planung wurde mir am Bildschirm genau erklaert, bevor irgendetwas gemacht wurde. Zwei Monate nach dem Eingriff fuehlt sich alles voellig natuerlich an.&#8220;</p>
-          <div class="testimonial-author">
-            <div class="author-avatar">RB</div>
-            <div>
-              <div class="author-name">Rainer B.</div>
-              <div class="author-role">Implantat-Patient &middot; Frankfurt</div>
-            </div>
-          </div>
-        </div>
-
+    <div class="testimonial-card">
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p>&bdquo;Der digitale Check-in hat mich &uuml;berrascht &ndash; einfach die Daten vorab eingeben und man kommt direkt dran. Keine l&auml;stigen Formulare im Wartezimmer. Sehr moderner und effizienter Ansatz.&ldquo;</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">T</div>
+        <div><div class="author-name">Thomas N.</div><div class="author-role">Patient seit 2024</div></div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- FAQ -->
-  <section class="faq" id="faq">
-    <div class="faq-inner">
-      <div style="margin-bottom:0;">
-        <div class="section-label">FAQ</div>
-        <h2 class="section-title">Haeufige Fragen</h2>
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="faq-inner">
+    <div class="faq-header">
+      <span class="section-chip">H&auml;ufige Fragen</span>
+      <h2 class="section-title">H&auml;ufig gestellte Fragen</h2>
+      <p class="section-sub">Alles Wichtige rund um Ihren Besuch bei Dental21 Frankfurt Sachsenhausen.</p>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+        Wie funktioniert die Online-Buchung bei Dental21?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer"><div class="faq-answer-inner">Unsere Online-Terminbuchung ist rund um die Uhr verf&uuml;gbar. Besuchen Sie einfach unsere Website, w&auml;hlen Sie Ihren Wunschtermin und die gew&uuml;nschte Behandlung aus. Sie erhalten sofort eine digitale Best&auml;tigung per E-Mail. Kein Anruf n&ouml;tig, keine Warteschleife &ndash; buchen Sie Ihren Zahnarzttermin so einfach wie ein Hotelzimmer.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+        Kann ich auch abends nach 18 Uhr einen Termin bekommen?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer"><div class="faq-answer-inner">Ja, wir haben von Montag bis Freitag bis 20:00 Uhr ge&ouml;ffnet. Damit bieten wir auch Berufst&auml;tigen die M&ouml;glichkeit, nach Feierabend zum Zahnarzt zu gehen. Abendtermine sind besonders beliebt &ndash; buchen Sie am besten fr&uuml;hzeitig online, um Ihren Wunschtermin zu sichern.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+        Ist Zahnersatz am selben Tag wirklich m&ouml;glich?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer"><div class="faq-answer-inner">Ja, dank unserer CEREC-Technologie k&ouml;nnen wir bestimmte keramische Restaurationen wie Inlays, Onlays und Einzelkronen in nur einer Sitzung anfertigen. Der Zahn wird digital gescannt, die Restauration am Computer konstruiert und direkt in der Praxis gefr&auml;st. In vielen F&auml;llen verlassen Sie die Praxis am selben Tag mit Ihrem fertigen Zahnersatz.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+        Nehmen Sie neue Patienten auf?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer"><div class="faq-answer-inner">Selbstverst&auml;ndlich! Neue Patienten sind bei uns jederzeit willkommen. Buchen Sie einfach online Ihren ersten Termin und f&uuml;llen Sie die digitale Anamnese vorab aus. So k&ouml;nnen wir uns beim ersten Besuch voll und ganz auf Sie konzentrieren. Sie ben&ouml;tigen keine &Uuml;berweisung &ndash; kommen Sie einfach direkt zu uns.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+        Was tun Sie f&uuml;r Patienten mit Zahnarztangst?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer"><div class="faq-answer-inner">Wir nehmen Zahnarztangst sehr ernst. Unser Team ist im einf&uuml;hlsamen Umgang mit Angstpatienten geschult. Wir arbeiten mit schonenden Behandlungsmethoden, nehmen uns extra Zeit f&uuml;r Beratungsgespr&auml;che und erkl&auml;ren jeden Schritt vorab. Auf Wunsch bieten wir auch beruhigende Ma&szlig;nahmen an. Sprechen Sie uns einfach an &ndash; gemeinsam finden wir den richtigen Weg f&uuml;r Sie.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-blob"></div>
+  <h2>Digital, flexibel, p&uuml;nktlich &ndash; Ihren Termin jetzt sichern</h2>
+  <p>24/7 online buchbar, Mo&ndash;Fr bis 20 Uhr &ndash; Zahnmedizin nach Ihrem Takt.</p>
+  <a href="#kontakt" class="btn-gradient">Jetzt Termin buchen &rarr;</a>
+</section>
+
+<!-- SO FINDEN SIE UNS -->
+<section class="directions" id="anfahrt">
+  <div class="directions-inner">
+    <div class="directions-header">
+      <span class="section-chip">Anfahrt</span>
+      <h2 class="section-title">So finden Sie uns</h2>
+      <p class="section-sub">Dental21 Frankfurt Sachsenhausen &ndash; zentral gelegen, bestens erreichbar.</p>
+    </div>
+    <div class="directions-grid">
+      <div class="direction-card">
+        <div class="direction-icon">&#x1F687;</div>
+        <div><h4>Mit der U-/S-Bahn</h4><p>Haltestelle Schweizer Platz (U1, U2, U3, U8) &ndash; nur 3&nbsp;Gehminuten bis zur Praxis. Alternativ S-Bahn Lokalbahnhof.</p></div>
       </div>
-      <div class="faq-list">
-
-        <div class="faq-item">
-          <div class="faq-question">
-            <span>Kann ich wirklich jederzeit online buchen?</span>
-            <div class="faq-icon">+</div>
-          </div>
-          <p class="faq-answer">Ja &mdash; unser Online-Buchungssystem ist 24 Stunden am Tag, 7 Tage die Woche verfuegbar. Sie koennen ueber unsere Website oder die Dental21-App Ihren Wunschtermin waehlen, verschieben oder stornieren &mdash; ohne jemals anrufen zu muessen. Die Bestaetigung erhalten Sie sofort per E-Mail.</p>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-question">
-            <span>Was ist ein digitaler Check-in?</span>
-            <div class="faq-icon">+</div>
-          </div>
-          <p class="faq-answer">Vor Ihrem Erstbesuch erhalten Sie per E-Mail einen Link zu Ihren Patientenunterlagen. Diese fuellen Sie bequem von zuhause auf dem Smartphone oder Computer aus. In der Praxis muessen Sie kein Formular mehr ausfuellen &mdash; alles ist bereits in unserem System gespeichert und fuer das Team abrufbar.</p>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-question">
-            <span>Wie viele Standorte hat Dental21?</span>
-            <div class="faq-icon">+</div>
-          </div>
-          <p class="faq-answer">Dental21 betreibt aktuell mehr als 20 Praxen in Deutschland, mit Schwerpunkten in Grossstaedten wie Frankfurt, Muenchen, Berlin und Hamburg. Als Netzwerkpatient profitieren Sie von einheitlichen Qualitaetsstandards und koennen bei Bedarf auch einen Termin an einem anderen Standort buchen.</p>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-question">
-            <span>Werden alle Krankenkassen akzeptiert?</span>
-            <div class="faq-icon">+</div>
-          </div>
-          <p class="faq-answer">Ja, wir behandeln Patienten aller gesetzlichen und privaten Krankenkassen. Die Grundversorgung wird im Rahmen der Kassenzahnaerztlichen Vereinigung abgerechnet. Fuer Leistungen wie Bleaching, Veneers oder Implantate erstellen wir vorab transparent einen Heil- und Kostenplan.</p>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-question">
-            <span>Was kostet Bleaching bei Dental21?</span>
-            <div class="faq-icon">+</div>
-          </div>
-          <p class="faq-answer">Unser professionelles In-Office-Bleaching beginnt bei 269 &euro;. Der genaue Preis haengt von der Ausgangssituation und der gewuenschten Aufhellung ab. In der Beratung zeigen wir Ihnen realistische Ergebnisse und besprechen, welche Methode &mdash; In-Office oder Homebleaching &mdash; fuer Ihre Zaehne besser geeignet ist.</p>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-question">
-            <span>Wie schnell bekomme ich einen Termin?</span>
-            <div class="faq-icon">+</div>
-          </div>
-          <p class="faq-answer">Dank verlaengerter Oeffnungszeiten (Mo&ndash;Fr 8&ndash;20 Uhr, Sa 9&ndash;14 Uhr) und Echtzeit-Online-Buchung sind in der Regel Termine innerhalb von 2&ndash;5 Werktagen verfuegbar. Bei akuten Zahnschmerzen bemuehen wir uns, Sie am selben oder naechsten Tag zu behandeln &mdash; bitte rufen Sie uns in diesem Fall direkt an.</p>
-        </div>
-
+      <div class="direction-card">
+        <div class="direction-icon">&#x1F697;</div>
+        <div><h4>Mit dem Auto</h4><p>&Uuml;ber die B3 (Schweizer Stra&szlig;e) Richtung Sachsenhausen. Parkm&ouml;glichkeiten in den umliegenden Seitenstra&szlig;en und im Parkhaus Schweizer Platz.</p></div>
+      </div>
+      <div class="direction-card">
+        <div class="direction-icon">&#x1F6B4;</div>
+        <div><h4>Mit dem Fahrrad</h4><p>Fahrradst&auml;nder direkt vor der Praxis verf&uuml;gbar. Gut erreichbar &uuml;ber den Mainradweg und die Dreieichstra&szlig;e.</p></div>
       </div>
     </div>
-  </section>
+    <div class="directions-map">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2559.5!2d8.683!3d50.101!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sDreieichstra%C3%9Fe+59%2C+60594+Frankfurt!5e0!3m2!1sde!2sde!4v1" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</section>
 
-  <!-- CONTACT -->
-  <section class="contact" id="kontakt">
-    <div class="contact-inner">
-      <div class="contact-info">
-        <div class="section-label">Kontakt</div>
-        <h2>Termin vereinbaren</h2>
-        <p>Schreiben Sie uns, rufen Sie an oder buchen Sie direkt online. Wir melden uns innerhalb eines Werktages &mdash; meistens noch schneller.</p>
-        <div class="contact-details">
-          <div class="contact-detail">
-            <div class="contact-detail-icon">&#128205;</div>
-            <div class="contact-detail-text">
-              <strong>Adresse</strong>
-              <span>Schweizer Strasse 71<br>60594 Frankfurt am Main (Sachsenhausen)</span>
-            </div>
-          </div>
-          <div class="contact-detail">
-            <div class="contact-detail-icon">&#128222;</div>
-            <div class="contact-detail-text">
-              <strong>Telefon</strong>
-              <span>069 96 22 54 40</span>
-            </div>
-          </div>
-          <div class="contact-detail">
-            <div class="contact-detail-icon">&#128140;</div>
-            <div class="contact-detail-text">
-              <strong>E-Mail</strong>
-              <span>sachsenhausen@dental21.de</span>
-            </div>
-          </div>
-          <div class="contact-detail">
-            <div class="contact-detail-icon">&#128336;</div>
-            <div class="contact-detail-text">
-              <strong>Oeffnungszeiten</strong>
-              <span>Mo&ndash;Fr 8:00&ndash;20:00 Uhr<br>Sa 9:00&ndash;14:00 Uhr</span>
-            </div>
-          </div>
-        </div>
+<!-- KONTAKT -->
+<section class="contact" id="kontakt">
+  <div class="contact-inner">
+    <div class="contact-info">
+      <h3>Kontakt aufnehmen</h3>
+      <div class="contact-item">
+        <div class="contact-icon">&#x1F4CD;</div>
+        <div class="contact-item-text"><div class="label">Standort</div><div class="value">Dreieichstra&szlig;e 59, 60594 Frankfurt am Main</div></div>
       </div>
-      <div class="contact-form">
-        <h3>Anfrage senden</h3>
-        <div class="form-row">
-          <div class="form-group">
-            <label>Vorname</label>
-            <input type="text" placeholder="Max" />
-          </div>
-          <div class="form-group">
-            <label>Nachname</label>
-            <input type="text" placeholder="Mustermann" />
-          </div>
-        </div>
+      <div class="contact-item">
+        <div class="contact-icon">&#x1F4DE;</div>
+        <div class="contact-item-text"><div class="label">Telefon</div><div class="value">069 61992356</div></div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">&#x2709;&#xFE0F;</div>
+        <div class="contact-item-text"><div class="label">E-Mail</div><div class="value">frankfurt-sachsenhausen@dental21.de</div></div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">&#x1F550;</div>
+        <div class="contact-item-text"><div class="label">&Ouml;ffnungszeiten</div><div class="value">Mo&ndash;Fr 8:00&ndash;20:00 Uhr</div></div>
+      </div>
+    </div>
+    <div class="contact-form">
+      <h4>Termin anfragen</h4>
+      <form>
+        <div class="form-group"><input type="text" placeholder="Ihr Name" /></div>
+        <div class="form-group"><input type="email" placeholder="Ihre E-Mail" /></div>
+        <div class="form-group"><input type="tel" placeholder="Telefonnummer (optional)" /></div>
         <div class="form-group">
-          <label>E-Mail-Adresse</label>
-          <input type="email" placeholder="max@beispiel.de" />
-        </div>
-        <div class="form-group">
-          <label>Telefonnummer</label>
-          <input type="tel" placeholder="069 ..." />
-        </div>
-        <div class="form-group">
-          <label>Gewuenschte Leistung</label>
           <select>
-            <option value="">Bitte waehlen...</option>
-            <option>Prophylaxe / Zahnreinigung</option>
-            <option>Aesthetische Beratung (Bleaching / Veneers)</option>
-            <option>Implantologie</option>
-            <option>Aligner / Invisalign</option>
-            <option>Allgemeine Untersuchung</option>
-            <option>Sonstiges</option>
+            <option value="">Ihr Anliegen</option>
+            <option>Online-Terminbuchung</option>
+            <option>Professionelle Zahnreinigung</option>
+            <option>&Auml;sthetische Zahnmedizin</option>
+            <option>Implantologie Beratung</option>
+            <option>Prophylaxe &amp; Vorsorge</option>
           </select>
         </div>
-        <div class="form-group">
-          <label>Ihre Nachricht (optional)</label>
-          <textarea placeholder="Haben Sie besondere Fragen oder Wuensche?"></textarea>
-        </div>
-        <button class="btn-submit">Anfrage absenden &#8594;</button>
-      </div>
+        <div class="form-group"><textarea placeholder="Ihre Nachricht..."></textarea></div>
+        <button type="submit" class="form-submit">Termin anfragen &rarr;</button>
+      </form>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-inner">
-      <div class="footer-logo">Dental21 Sachsenhausen</div>
-      <p class="footer-address">Schweizer Strasse 71 &middot; 60594 Frankfurt am Main</p>
-      <p class="footer-address">069 96 22 54 40 &middot; sachsenhausen@dental21.de</p>
-      <div class="footer-links">
-        <a href="#">Impressum</a>
-        <a href="#">Datenschutz</a>
-        <a href="#">Barrierefreiheit</a>
-        <a href="#">Karriere bei Dental21</a>
-      </div>
-      <p class="footer-copy">&copy; 2025 Dental21 GmbH &middot; Alle Rechte vorbehalten</p>
-    </div>
-  </footer>
+<!-- FOOTER -->
+<footer>
+  <p>&copy; 2026 <strong>Dental21 Frankfurt Sachsenhausen</strong> &middot; Dreieichstra&szlig;e 59, 60594 Frankfurt am Main &middot; <a href="mailto:frankfurt-sachsenhausen@dental21.de">frankfurt-sachsenhausen@dental21.de</a></p>
+</footer>
 
-  <!-- ELEVO DOT -->
-  <a href="https://elevo.solutions" target="_blank" rel="noopener noreferrer" class="elevo-dot" title="Website von ELEVO">
-    <span class="elevo-tooltip">Powered by ELEVO</span>
-    <span class="elevo-dot-inner">E</span>
-  </a>
+<!-- ELEVO Dot -->
+<a href="https://elevo.solutions" target="_blank" rel="noopener" class="elevo-dot" title="Erstellt von ELEVO">
+  <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><text x="6" y="21" font-size="19" font-weight="800" font-family="Arial,sans-serif" fill="white">E</text></svg>
+</a>
 
 </body>
 </html>
