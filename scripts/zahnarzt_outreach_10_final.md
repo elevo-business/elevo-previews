@@ -1,281 +1,279 @@
 # Zahnarzt-Outreach: 10 versandfertige E-Mails
 
-Stand: 2026-04-29 | Alle E-Mails copy-paste-ready.
+Stand: 2026-04-29 | Hormozi $100M Leads Framework | Alle E-Mails copy-paste-ready.
 
 ---
 
 ## E-Mail 1: Apollonia Praxisklinik
 
 **AN:** info@apollonia-praxisklinik.de
-**BETREFF:** Website-Entwurf für Apollonia Praxisklinik — kostenlos erstellt
+**BETREFF:** Apollonia — wir haben etwas für Sie gebaut
 
-Hallo,
+Sehr geehrter Herr Dr. Dann,
 
-wir haben uns die Website von Apollonia Praxisklinik angeschaut und einen konkreten Verbesserungsvorschlag als Website-Entwurf umgesetzt — kostenlos, ohne Verpflichtung.
+wir haben uns Ihre Praxis angeschaut und waren beeindruckt — 23 Zahnärzte, 160 Mitarbeiter, Implantologie und Ästhetik auf höchstem Niveau. Was uns aufgefallen ist: Die Website wird dem nicht ganz gerecht.
 
-Hier können Sie sich den Entwurf ansehen:
+Deshalb haben wir einfach mal einen neuen Entwurf gebaut — kostenlos, komplett auf Ihrem Branding:
+
 https://apollonia-preview.elevo.solutions
 
-Der Entwurf zeigt, wie Ihre Praxis online noch besser wirkt und Patienten einfacher Termine buchen. Alles basiert auf Ihrer bestehenden Website und Ihrem Branding.
+Kein Haken, keine Verpflichtung. Wenn es gefällt, sprechen wir gern 15 Minuten darüber. Wenn nicht, kein Problem.
 
-Wenn der Entwurf in die richtige Richtung geht, sprechen wir gern kurz darüber, wie eine Umsetzung aussehen könnte.
+https://termin.elevo.solutions
 
 Beste Grüße
-Team ELEVO
-www.elevo.solutions
+Mert Efe Celik
+ELEVO | elevo.solutions
+
+P.S. Der Entwurf ist live und nur für Apollonia gebaut — schauen Sie kurz rein, dauert 30 Sekunden.
 
 ---
 
 ## E-Mail 2: Zahnärzte Kö55
 
 **AN:** info@zahnaerztekoe.de
-**BETREFF:** Website-Entwurf für Zahnärzte Kö55 — kostenlos erstellt
+**BETREFF:** Kö55 — ein Entwurf, der zur Königsallee passt
 
-Hallo,
+Sehr geehrter Herr Dr. Einhoff,
 
-wir haben uns die Website von Zahnärzte Kö55 angeschaut und einen konkreten Verbesserungsvorschlag als Website-Entwurf umgesetzt — kostenlos, ohne Verpflichtung.
+zwei Standorte auf der Königsallee, ein starkes Team und lange Öffnungszeiten bis 20 Uhr — das ist eine klare Ansage. Nur: Auf der Website kommt das noch nicht so rüber.
 
-Hier können Sie sich den Entwurf ansehen:
+Wir haben einen Entwurf gebaut, der Kö55 so zeigt, wie es sich anfühlt:
+
 https://koe55-preview.elevo.solutions
 
-Der Entwurf zeigt, wie Ihre Praxis online noch besser wirkt und Patienten einfacher Termine buchen — für beide Standorte auf der Königsallee. Alles basiert auf Ihrer bestehenden Website und Ihrem Branding.
+Kostenlos, auf Ihrem Branding, ohne Verpflichtung. Einfach anschauen.
 
-Wenn der Entwurf in die richtige Richtung geht, sprechen wir gern kurz darüber, wie eine Umsetzung aussehen könnte.
+Falls es interessant ist — 15 Minuten reichen:
+https://termin.elevo.solutions
 
-Beste Grüße
-Team ELEVO
-www.elevo.solutions
+Viele Grüße
+Mert Efe Celik
+ELEVO | elevo.solutions
+
+P.S. Praxen mit einem starken Online-Auftritt bekommen bis zu 3x mehr Terminanfragen. Der Entwurf zeigt, wie das für Kö55 aussehen kann.
 
 ---
 
 ## E-Mail 3: Zahnarztpraxen im Stadttor
 
 **AN:** telefonie@za-stadttor.de
-**BETREFF:** Website-Entwurf für Zahnarztpraxen im Stadttor — kostenlos erstellt
+**BETREFF:** Stadttor — neuer Website-Entwurf für Ihre Praxis
 
-Hallo,
+Sehr geehrter Herr Dr. Sokolis,
 
-wir haben uns die Website von Zahnarztpraxen im Stadttor angeschaut und einen konkreten Verbesserungsvorschlag als Website-Entwurf umgesetzt — kostenlos, ohne Verpflichtung.
+Öffnungszeiten bis 22 Uhr, eigenes Dentallabor, Top-Lage im Medienhafen — das sind Argumente, die neue Patienten sofort überzeugen. Vorausgesetzt, sie sehen es auf der Website.
 
-Hier können Sie sich den Entwurf ansehen:
+Wir haben einen konkreten Entwurf gebaut, der genau das leistet:
+
 https://stadttor-preview.elevo.solutions
 
-Der Entwurf zeigt, wie Ihre Praxis online noch besser wirkt und Patienten einfacher Termine buchen. Alles basiert auf Ihrer bestehenden Website und Ihrem Branding.
+Komplett kostenlos, basierend auf Ihrem Branding. Kein Verkaufsgespräch, kein Kleingedrucktes.
 
-Wenn der Entwurf in die richtige Richtung geht, sprechen wir gern kurz darüber, wie eine Umsetzung aussehen könnte.
+Wenn der Entwurf passt, reden wir kurz:
+https://termin.elevo.solutions
 
 Beste Grüße
-Team ELEVO
-www.elevo.solutions
+Mert Efe Celik
+ELEVO | elevo.solutions
+
+P.S. Der Entwurf steht — einfach draufklicken und selbst beurteilen.
 
 ---
 
 ## E-Mail 4: LORA Zahnarztpraxis München
 
 **AN:** support@heylora.com
-**BETREFF:** Website-Entwurf für LORA Zahnarztpraxis — kostenlos erstellt
+**BETREFF:** LORA — ein Entwurf, der zum Konzept passt
 
-Hallo,
+Sehr geehrter Herr Wiens,
 
-wir haben uns die Website von LORA angeschaut und einen konkreten Verbesserungsvorschlag als Website-Entwurf umgesetzt — kostenlos, ohne Verpflichtung.
+LORA macht vieles richtig: digitale Buchung, modernes Konzept, starke Marke. Was uns aufgefallen ist — die Website transportiert das LORA-Gefühl noch nicht so, wie es könnte.
 
-Hier können Sie sich den Entwurf ansehen:
+Deshalb haben wir einen Entwurf gebaut:
+
 https://lora-zahnarzt-preview.elevo.solutions
 
-Der Entwurf greift das moderne Konzept Ihrer Praxis auf — Online-Buchung, ästhetische Zahnmedizin und das Wohlfühlgefühl, das LORA ausmacht — und macht das online noch klarer sichtbar.
+Basierend auf Ihrem Branding, Ihren Farben, Ihrem Konzept. Kostenlos, unverbindlich.
 
-Wenn der Entwurf in die richtige Richtung geht, sprechen wir gern kurz darüber, wie eine Umsetzung aussehen könnte.
+Falls interessant — kurzes Gespräch reicht:
+https://termin.elevo.solutions
 
-Beste Grüße
-Team ELEVO
-www.elevo.solutions
+Viele Grüße
+Mert Efe Celik
+ELEVO | elevo.solutions
+
+P.S. Über 1.000 Patienten allein am Flagship-Standort — mit der richtigen Website werden es deutlich mehr.
 
 ---
 
 ## E-Mail 5: Quarree Dental Hamburg
 
 **AN:** praxis@quarree-dental.de
-**BETREFF:** Website-Entwurf für Quarree Dental — kostenlos erstellt
+**BETREFF:** Quarree Dental — 30 Jahre, die man sofort sehen sollte
 
-Hallo,
+Sehr geehrter Herr Heiermann,
 
-wir haben uns die Website von Quarree Dental angeschaut und einen konkreten Verbesserungsvorschlag als Website-Entwurf umgesetzt — kostenlos, ohne Verpflichtung.
+inhabergeführt seit über 30 Jahren, drei Spezialisten für Implantologie, 5.0 Sterne auf Google — Quarree Dental hat eine Geschichte, die überzeugt. Auf der aktuellen Website geht das etwas unter.
 
-Hier können Sie sich den Entwurf ansehen:
+Wir haben einen Entwurf gebaut, der genau diese Stärken in den Vordergrund stellt:
+
 https://quarree-dental-preview.elevo.solutions
 
-Der Entwurf stellt das heraus, was Quarree Dental besonders macht: über 30 Jahre Erfahrung, inhabergeführte Kontinuität und die Implantologie-Expertise, die seit 1998 für sich spricht. Alles basiert auf Ihrer bestehenden Website und Ihrem Branding.
+Kostenlos, auf Ihrem Branding, keine Verpflichtung.
 
-Wenn der Entwurf in die richtige Richtung geht, sprechen wir gern kurz darüber, wie eine Umsetzung aussehen könnte.
+Wenn es passt, sprechen wir kurz:
+https://termin.elevo.solutions
 
 Beste Grüße
-Team ELEVO
-www.elevo.solutions
+Mert Efe Celik
+ELEVO | elevo.solutions
+
+P.S. Patienten entscheiden in 3 Sekunden, ob sie auf einer Website bleiben. Der Entwurf sorgt dafür, dass sie bleiben.
 
 ---
 
 ## E-Mail 6: ZahnWelt Berlin
 
 **AN:** implantologie@zahnwelt-berlin.com
-**BETREFF:** Website-Entwurf für ZahnWelt Berlin — kostenlos erstellt
+**BETREFF:** ZahnWelt Berlin — Ihre Stärken auf den Punkt gebracht
 
-Hallo,
+Sehr geehrter Herr Benthin,
 
-wir haben uns die Website von ZahnWelt Berlin angeschaut und einen konkreten Verbesserungsvorschlag als Website-Entwurf umgesetzt — kostenlos, ohne Verpflichtung.
+25 Jahre Implantologie-Erfahrung, Abendtermine bis 20 Uhr, beste Lage am Alexanderplatz — das sind drei Argumente, die neue Patienten sofort überzeugen. Wenn sie es sehen.
 
-Hier können Sie sich den Entwurf ansehen:
+Wir haben einen Entwurf gebaut, der genau das auf den Punkt bringt:
+
 https://zahnwelt-preview.elevo.solutions
 
-Der Entwurf macht Ihre Stärken — Implantologie mit 25 Jahren Spezialisierung, Abendtermine bis 20 Uhr und die zentrale Lage am Alexanderplatz — auf einen Blick sichtbar und überzeugend. Alles basiert auf Ihrer bestehenden Website und Ihrem Branding.
+Komplett kostenlos, auf Ihrem Branding basierend, ohne Verpflichtung.
 
-Wenn der Entwurf in die richtige Richtung geht, sprechen wir gern kurz darüber, wie eine Umsetzung aussehen könnte.
+Falls interessant — 15 Minuten reichen:
+https://termin.elevo.solutions
 
-Beste Grüße
-Team ELEVO
-www.elevo.solutions
+Viele Grüße
+Mert Efe Celik
+ELEVO | elevo.solutions
+
+P.S. Der Entwurf ist exklusiv für ZahnWelt gebaut. Einfach anschauen — dauert keine Minute.
 
 ---
 
 ## E-Mail 7: Dental21 Frankfurt Sachsenhausen
 
 **AN:** frankfurt-sachsenhausen@dental21.de
-**BETREFF:** Website-Entwurf für Dental21 Frankfurt — kostenlos erstellt
+**BETREFF:** Dental21 Frankfurt — ein Entwurf, der zum digitalen Anspruch passt
 
-Hallo,
+Sehr geehrte Frau Frost,
 
-wir haben uns die Website von Dental21 Frankfurt Sachsenhausen angeschaut und einen konkreten Verbesserungsvorschlag als Website-Entwurf umgesetzt — kostenlos, ohne Verpflichtung.
+Dental21 steht für digitale Zahnmedizin: 24/7-Buchung, lange Öffnungszeiten, modernes Konzept. Der Standort Frankfurt Sachsenhausen verdient eine Website, die das auch auf den ersten Blick zeigt.
 
-Hier können Sie sich den Entwurf ansehen:
+Wir haben einen Entwurf gebaut:
+
 https://dental21-preview.elevo.solutions
 
-Der Entwurf baut auf dem digitalen Ansatz von Dental21 auf: 24/7-Buchung, lange Öffnungszeiten bis 20 Uhr und ein klarer Online-First-Auftritt, der neue Patienten direkt überzeugt.
+Kostenlos, unverbindlich, auf dem bestehenden Dental21-Branding.
 
-Wenn der Entwurf in die richtige Richtung geht, sprechen wir gern kurz darüber, wie eine Umsetzung aussehen könnte.
+Wenn es passt, reden wir kurz:
+https://termin.elevo.solutions
 
 Beste Grüße
-Team ELEVO
-www.elevo.solutions
+Mert Efe Celik
+ELEVO | elevo.solutions
+
+P.S. Der Entwurf ist live — einfach draufklicken und selbst beurteilen.
 
 ---
 
 ## E-Mail 8: DENVITA Dentalzentrum Köln
 
 **AN:** info@denvita.de
-**BETREFF:** Website-Entwurf für DENVITA Dentalzentrum — kostenlos erstellt
+**BETREFF:** DENVITA — 700m², die man online sofort spüren sollte
 
-Hallo,
+Sehr geehrter Herr Dr. Skoulatos,
 
-wir haben uns die Website von DENVITA angeschaut und einen konkreten Verbesserungsvorschlag als Website-Entwurf umgesetzt — kostenlos, ohne Verpflichtung.
+über 700 Quadratmeter, eigenes Labor, Vollversorgung unter einem Dach, Samstagsöffnung — DENVITA ist kein normales Dentalzentrum. Genau das sollte auch die Website auf den ersten Blick vermitteln.
 
-Hier können Sie sich den Entwurf ansehen:
+Wir haben einen Entwurf gebaut, der das tut:
+
 https://denvita-preview.elevo.solutions
 
-Der Entwurf bringt auf den Punkt, was DENVITA von anderen unterscheidet: über 700 Quadratmeter, ein praxiseigenes Labor und die Vollversorgung von Prophylaxe bis Oralchirurgie — alles unter einem Dach in Kölns Altstadt. Basiert auf Ihrer bestehenden Website und Ihrem Branding.
+Kostenlos, auf Ihrem Branding, keine Verpflichtung.
 
-Wenn der Entwurf in die richtige Richtung geht, sprechen wir gern kurz darüber, wie eine Umsetzung aussehen könnte.
+Falls interessant — kurzes Gespräch reicht:
+https://termin.elevo.solutions
 
-Beste Grüße
-Team ELEVO
-www.elevo.solutions
+Viele Grüße
+Mert Efe Celik
+ELEVO | elevo.solutions
+
+P.S. Patienten googeln „Zahnarzt Köln" über 40.000 Mal im Monat. Der Entwurf zeigt, wie DENVITA dabei auffällt.
 
 ---
 
 ## E-Mail 9: Dr. Frentz & Kollegen Stuttgart
 
 **AN:** info@frentz.de
-**BETREFF:** Website-Entwurf für Dr. Frentz & Kollegen — kostenlos erstellt
+**BETREFF:** Dr. Frentz — ein Entwurf für die Königstraße
 
-Hallo,
+Sehr geehrte Frau Dr. Frentz,
 
-wir haben uns die Website von Dr. Frentz & Kollegen angeschaut und einen konkreten Verbesserungsvorschlag als Website-Entwurf umgesetzt — kostenlos, ohne Verpflichtung.
+300 Meter vom Hauptbahnhof, Sofortimplantologie, über 25 Jahre Erfahrung — Dr. Frentz & Kollegen haben eine Positionierung, um die viele Praxen Sie beneiden. Die Website könnte das noch stärker transportieren.
 
-Hier können Sie sich den Entwurf ansehen:
+Wir haben einen Entwurf gebaut:
+
 https://frentz-preview.elevo.solutions
 
-Der Entwurf hebt hervor, was Ihre Praxis auszeichnet: die einzigartige Lage direkt am Stuttgarter Hauptbahnhof, das Sofortimplantat-Verfahren und über 25 Jahre Erfahrung in Stuttgart-Mitte. Alles basiert auf Ihrer bestehenden Website und Ihrem Branding.
+Kostenlos, auf Ihrem Branding, unverbindlich. Einfach anschauen.
 
-Wenn der Entwurf in die richtige Richtung geht, sprechen wir gern kurz darüber, wie eine Umsetzung aussehen könnte.
+Wenn es in die richtige Richtung geht:
+https://termin.elevo.solutions
 
 Beste Grüße
-Team ELEVO
-www.elevo.solutions
+Mert Efe Celik
+ELEVO | elevo.solutions
+
+P.S. Stuttgarter suchen „Zahnarzt Hauptbahnhof" hundertfach pro Monat. Mit der richtigen Website landen diese Patienten bei Ihnen.
 
 ---
 
 ## E-Mail 10: Zähne im Zentrum München
 
 **AN:** info@zaehne-im-zentrum.de
-**BETREFF:** Website-Entwurf für Zähne im Zentrum — kostenlos erstellt
+**BETREFF:** Zähne im Zentrum — Premium, das man sofort sieht
 
-Hallo,
+Sehr geehrter Herr Odefey,
 
-wir haben uns die Website von Zähne im Zentrum angeschaut und einen konkreten Verbesserungsvorschlag als Website-Entwurf umgesetzt — kostenlos, ohne Verpflichtung.
+Theatinerstraße, höchste Ästhetik, über 20 Jahre Erfahrung — Zähne im Zentrum hat einen Premium-Anspruch, der selten ist. Die Frage ist: Sieht ein neuer Patient das in den ersten 3 Sekunden auf der Website?
 
-Hier können Sie sich den Entwurf ansehen:
+Wir haben einen Entwurf gebaut, bei dem die Antwort Ja ist:
+
 https://zaehne-zentrum-preview.elevo.solutions
 
-Der Entwurf spiegelt das wider, wofür Ihre Praxis steht: höchste Ästhetik, schonende Implantologie und der Premium-Anspruch, der zur Theatinerstraße gehört. Alles basiert auf Ihrer bestehenden Website und Ihrem Branding.
+Kostenlos, auf Ihrem Branding, ohne Verpflichtung.
 
-Wenn der Entwurf in die richtige Richtung geht, sprechen wir gern kurz darüber, wie eine Umsetzung aussehen könnte.
+Falls interessant — 15 Minuten reichen:
+https://termin.elevo.solutions
 
-Beste Grüße
-Team ELEVO
-www.elevo.solutions
+Viele Grüße
+Mert Efe Celik
+ELEVO | elevo.solutions
+
+P.S. Premium-Patienten wählen nach dem ersten Eindruck. Der Entwurf sorgt dafür, dass dieser stimmt.
 
 ---
 
 ## Übersicht: Alle 10 Empfänger
 
-| # | Praxis | Stadt | AN | Preview-URL |
-|---|--------|-------|----|------------|
-| 1 | Apollonia Praxisklinik | Düsseldorf | info@apollonia-praxisklinik.de | https://apollonia-preview.elevo.solutions |
-| 2 | Zahnärzte Kö55 | Düsseldorf | info@zahnaerztekoe.de | https://koe55-preview.elevo.solutions |
-| 3 | Zahnarztpraxen im Stadttor | Düsseldorf | telefonie@za-stadttor.de | https://stadttor-preview.elevo.solutions |
-| 4 | LORA Zahnarztpraxis | München | support@heylora.com | https://lora-zahnarzt-preview.elevo.solutions |
-| 5 | Quarree Dental | Hamburg | praxis@quarree-dental.de | https://quarree-dental-preview.elevo.solutions |
-| 6 | ZahnWelt Berlin | Berlin | implantologie@zahnwelt-berlin.com | https://zahnwelt-preview.elevo.solutions |
-| 7 | Dental21 Frankfurt | Frankfurt | frankfurt-sachsenhausen@dental21.de | https://dental21-preview.elevo.solutions |
-| 8 | DENVITA Dentalzentrum | Köln | info@denvita.de | https://denvita-preview.elevo.solutions |
-| 9 | Dr. Frentz & Kollegen | Stuttgart | info@frentz.de | https://frentz-preview.elevo.solutions |
-| 10 | Zähne im Zentrum | München | info@zaehne-im-zentrum.de | https://zaehne-zentrum-preview.elevo.solutions |
-
----
-
-## Deployment-Workflow (Coolify)
-
-Jede Preview ist eine eigene Coolify-App im Projekt "Kunden Previews":
-- **Repo:** `elevo-business/elevo-previews` (GitHub)
-- **Build Pack:** static
-- **Base Directory:** `/previews/{slug}`
-- **Domain:** `https://{name}-preview.elevo.solutions`
-
-### Neue Preview hinzufügen:
-1. HTML-Seite in `previews/{slug}/index.html` erstellen
-2. `git push origin main`
-3. Coolify-App erstellen via API:
-   ```
-   POST http://159.195.37.216:8000/api/v1/applications/public
-   {
-     "project_uuid": "vqem6h43k3pimdxapypmz6hf",
-     "environment_name": "production",
-     "server_uuid": "rg87l8f5009gy2yp665a2iyg",
-     "destination_uuid": "bona6q9oxd0j53n7c7jjttl6",
-     "name": "{Praxis Name}",
-     "git_repository": "https://github.com/elevo-business/elevo-previews",
-     "git_branch": "main",
-     "build_pack": "static",
-     "base_directory": "/previews/{slug}",
-     "publish_directory": "/",
-     "ports_exposes": "80"
-   }
-   ```
-4. Domain setzen: `PATCH /api/v1/applications/{uuid}` mit `{"domains": "https://{name}-preview.elevo.solutions"}`
-5. Deploy triggern: `POST /api/v1/applications/{uuid}/restart`
-
-## Checkliste vor Versand
-
-- [x] Alle 10 Coolify-Apps erstellt und Deployments gestartet
-- [ ] Jede Preview-URL im Browser testen (Desktop + Mobile)
-- [ ] E-Mail-Versand-Tool bereit (Gmail / Instantly / Pipedrive)
-- [ ] Absender festlegen (z.B. team@elevo.solutions)
-- [ ] E-Mails versenden und Antworten in CRM tracken
+| # | Praxis | GF/Inhaber | AN | Preview-URL |
+|---|--------|-----------|-----|------------|
+| 1 | Apollonia Praxisklinik | Dr. Philipp Dann | info@apollonia-praxisklinik.de | https://apollonia-preview.elevo.solutions |
+| 2 | Zahnärzte Kö55 | Dr. Ralf Einhoff | info@zahnaerztekoe.de | https://koe55-preview.elevo.solutions |
+| 3 | Zahnarztpraxen im Stadttor | Dr. Nektarios Sokolis | telefonie@za-stadttor.de | https://stadttor-preview.elevo.solutions |
+| 4 | LORA Zahnarztpraxis | Daniel Wiens | support@heylora.com | https://lora-zahnarzt-preview.elevo.solutions |
+| 5 | Quarree Dental | Jürgen Heiermann | praxis@quarree-dental.de | https://quarree-dental-preview.elevo.solutions |
+| 6 | ZahnWelt Berlin | Hartmut Benthin | implantologie@zahnwelt-berlin.com | https://zahnwelt-preview.elevo.solutions |
+| 7 | Dental21 Frankfurt | Julia Frost | frankfurt-sachsenhausen@dental21.de | https://dental21-preview.elevo.solutions |
+| 8 | DENVITA Dentalzentrum | Dr. Michail Skoulatos | info@denvita.de | https://denvita-preview.elevo.solutions |
+| 9 | Dr. Frentz & Kollegen | Dr. Heike Frentz | info@frentz.de | https://frentz-preview.elevo.solutions |
+| 10 | Zähne im Zentrum | Sören Odefey | info@zaehne-im-zentrum.de | https://zaehne-zentrum-preview.elevo.solutions |
