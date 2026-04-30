@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ZahnWelt Berlin Mitte am Gendarmenmarkt — moderne Zahnmedizin, mehrsprachiges Team. Implantate, Ästhetik, Vorsorge. Termin: 030 20 85 92 00.">
   <title>ZahnWelt Berlin Mitte – Moderne Zahnarztpraxis am Gendarmenmarkt</title>
   <style>
     :root {
@@ -14,7 +15,7 @@
       --gray-50: #F8FAFC;
       --gray-100: #F1F5F9;
       --gray-200: #E2E8F0;
-      --gray-400: #94A3B8;
+      --gray-400: #64748B;
       --gray-600: #475569;
       --gray-700: #334155;
       --gray-900: #0F172A;
@@ -88,7 +89,7 @@
       border-radius: 10px; padding: 16px 18px;
     }
     .metric-value { font-size: 1.6rem; font-weight: 800; color: var(--white); line-height: 1; }
-    .metric-label { font-size: 0.78rem; color: rgba(255,255,255,0.6); margin-top: 4px; }
+    .metric-label { font-size: 0.78rem; color: rgba(255,255,255,0.78); margin-top: 4px; }
     .hero-image-wrap { position: relative; }
     .hero-img { width: 100%; height: 420px; object-fit: cover; border-radius: 16px; box-shadow: 0 24px 64px rgba(0,0,0,0.4); }
     .hero-badge {
@@ -178,7 +179,7 @@
       box-shadow: 0 0 0 6px rgba(255,255,255,0.15);
     }
     .step-title { font-size: 0.88rem; font-weight: 700; color: var(--white); margin-bottom: 8px; }
-    .step-desc { font-size: 0.78rem; color: rgba(255,255,255,0.62); line-height: 1.55; }
+    .step-desc { font-size: 0.78rem; color: rgba(255,255,255,0.78); line-height: 1.55; }
 
     #team { background: var(--white); }
     .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
@@ -279,7 +280,7 @@
       border-radius: 100px; border: 1px solid rgba(124,58,237,0.2);
     }
 
-    footer { background: var(--gray-900); color: rgba(255,255,255,0.55); padding: 40px 0 24px; }
+    footer { background: var(--gray-900); color: rgba(255,255,255,0.78); padding: 40px 0 24px; }
     .footer-inner {
       display: flex; align-items: center; justify-content: space-between; gap: 24px;
       flex-wrap: wrap; padding-bottom: 24px; border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 20px;
@@ -287,7 +288,7 @@
     .footer-logo { display: flex; align-items: center; gap: 8px; font-size: 1.1rem; font-weight: 700; color: var(--white); }
     .footer-logo-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--accent); }
     .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
-    .footer-links a { font-size: 0.82rem; color: rgba(255,255,255,0.45); transition: color 0.2s; }
+    .footer-links a { font-size: 0.82rem; color: rgba(255,255,255,0.78); transition: color 0.2s; }
     .footer-links a:hover { color: var(--white); }
     .footer-copy { font-size: 0.78rem; text-align: center; }
 
@@ -345,6 +346,7 @@
   </div>
 </nav>
 
+<main>
 <!-- HERO -->
 <section id="hero">
   <div class="container">
@@ -913,8 +915,8 @@
           </div>
         </div>
         <div class="form-group">
-          <label>Bevorzugte Sprache</label>
-          <select>
+          <label for="zahnwelt-sprache">Bevorzugte Sprache</label>
+          <select id="zahnwelt-sprache">
             <option value="">Bitte wählen...</option>
             <option>Deutsch</option>
             <option>English</option>
@@ -922,8 +924,8 @@
           </select>
         </div>
         <div class="form-group">
-          <label>Leistung / Anliegen</label>
-          <select>
+          <label for="zahnwelt-leistung">Leistung / Anliegen</label>
+          <select id="zahnwelt-leistung">
             <option value="">Bitte wählen...</option>
             <option>Ersttermin / Allgemeine Kontrolle</option>
             <option>Prophylaxe &amp; Professionelle Zahnreinigung</option>
@@ -949,6 +951,7 @@
     </div>
   </div>
 </section>
+</main>
 
 <!-- FOOTER -->
 <footer>

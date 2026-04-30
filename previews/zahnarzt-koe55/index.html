@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Zahnärzte Kö55 an der Düsseldorfer Königsallee — Premium-Zahnmedizin, mehrsprachiges Team, Notfälle am selben Tag. Termin: 0211 8638-0.">
+  <link rel="preconnect" href="https://www.zahnaerztekoe55.de" crossorigin>
+  <link rel="preload" as="image" href="https://www.zahnaerztekoe55.de/wp-content/uploads/Zahnaerzte-Koe_Header-Mobil.jpg" fetchpriority="high">
   <title>Zahnärzte Kö55 Düsseldorf – Premium Zahnmedizin an der Königsallee</title>
   <style>
     *, *::before, *::after { box-sizing: border-box;
@@ -178,7 +181,7 @@
     line-height: 1;
     }
     .metric-label { font-size: 0.7rem;
-    color: rgba(255,255,255,0.45);
+    color: rgba(255,255,255,0.78);
     margin-top: 5px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -662,16 +665,16 @@
     gap: 10px;
     }
     .footer-copy { font-size: 0.8rem;
-    color: rgba(255,255,255,0.36);
+    color: rgba(255,255,255,0.72);
     }
     .footer-links { display: flex;
     gap: 18px;
     }
     .footer-links a { font-size: 0.8rem;
-    color: rgba(255,255,255,0.36);
+    color: rgba(255,255,255,0.72);
     transition: color 0.2s;
     }
-    .footer-links a:hover { color: rgba(255,255,255,0.65); }
+    .footer-links a:hover { color: rgba(255,255,255,0.92); }
 
     .elevo-dot { position: fixed;
     bottom: 24px;
@@ -700,9 +703,9 @@
     flex-wrap: wrap;
     margin-top: 16px;
     }
-    .lang-tag { background: rgba(26,92,58,0.12);
-    border: 1px solid rgba(26,92,58,0.25);
-    color: var(--primary);
+    .lang-tag { background: rgba(126,203,158,0.16);
+    border: 1px solid rgba(126,203,158,0.35);
+    color: #7ecb9e;
     padding: 4px 10px;
     border-radius: 100px;
     font-size: 0.72rem;
@@ -753,6 +756,7 @@
   </ul>
 </nav>
 
+<main>
 <!-- HERO -->
 <section id="hero">
   <div class="hero-left">
@@ -796,7 +800,7 @@
   </div>
   <div class="hero-right">
     <div class="hero-img-wrap">
-      <img src="https://www.zahnaerztekoe55.de/wp-content/uploads/Zahnaerzte-Koe_Header-Mobil.jpg" alt="Zahnärzte Kö55 Düsseldorf">
+      <img src="https://www.zahnaerztekoe55.de/wp-content/uploads/Zahnaerzte-Koe_Header-Mobil.jpg" alt="Zahnärzte Kö55 Düsseldorf" fetchpriority="high" decoding="async">
       <div class="img-badge">
         <strong>Königsallee 55a &amp; 60d</strong><br>
         40215 Düsseldorf &nbsp;&middot;&nbsp; Notfall noch heute
@@ -1074,8 +1078,8 @@
       <div class="form-group"><label>E-Mail-Adresse</label><input type="email" placeholder="anna@beispiel.de"></div>
       <div class="form-group"><label>Telefon</label><input type="tel" placeholder="0211 ..."></div>
       <div class="form-group">
-        <label>Gewünschter Standort</label>
-        <select>
+        <label for="koe55-standort">Gewünschter Standort</label>
+        <select id="koe55-standort">
           <option value="">Bitte wählen …</option>
           <option>Königsallee 55a (Hauptstandort)</option>
           <option>Königsallee 60d</option>
@@ -1083,8 +1087,8 @@
         </select>
       </div>
       <div class="form-group">
-        <label>Leistung / Anliegen</label>
-        <select>
+        <label for="koe55-leistung">Leistung / Anliegen</label>
+        <select id="koe55-leistung">
           <option value="">Bitte wählen …</option>
           <option>Prophylaxe / Zahnreinigung</option>
           <option>Veneers / Smile Design</option>
@@ -1096,12 +1100,13 @@
           <option>Allgemeine Untersuchung</option>
         </select>
       </div>
-      <div class="form-group"><label>Bevorzugte Sprache</label><select><option>Deutsch</option><option>English</option><option>Türkçe</option><option>Русский</option><option>عربي</option></select></div>
+      <div class="form-group"><label for="koe55-sprache">Bevorzugte Sprache</label><select id="koe55-sprache"><option>Deutsch</option><option>English</option><option>Türkçe</option><option>Русский</option><option>عربي</option></select></div>
       <div class="form-group"><label>Nachricht (optional)</label><textarea placeholder="Weitere Hinweise oder Wünsche …"></textarea></div>
       <button type="submit" class="form-submit">Termin anfragen &#8594;</button>
     </div>
   </div>
 </section>
+</main>
 
 <!-- FOOTER -->
 <footer>

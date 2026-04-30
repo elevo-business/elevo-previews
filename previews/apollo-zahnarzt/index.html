@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Apollonia Praxisklinik Düsseldorf — 23 Fachzahnärzte für alle Disziplinen unter einem Dach. Implantate, Kieferorthopädie, Ästhetik. Termin: 0211 2109 5000.">
   <title>Apollonia Praxisklinik Düsseldorf – Fachzahnärzte für alle Disziplinen</title>
   <style>
     *, *::before, *::after { box-sizing: border-box;
@@ -17,7 +18,7 @@
       --dark: #0d1117;
       --dark2: #161c26;
       --text: #1a1a2e;
-      --text-muted: #5a6478;
+      --text-muted: #475569;
       --border: #e2e8f0;
       --white: #ffffff;
       --gray-bg: #f7f8fa;
@@ -177,7 +178,7 @@
     line-height: 1;
     }
     .metric-label { font-size: 0.7rem;
-    color: rgba(255,255,255,0.45);
+    color: rgba(255,255,255,0.78);
     margin-top: 5px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -661,16 +662,16 @@
     gap: 10px;
     }
     .footer-copy { font-size: 0.8rem;
-    color: rgba(255,255,255,0.36);
+    color: rgba(255,255,255,0.72);
     }
     .footer-links { display: flex;
     gap: 18px;
     }
     .footer-links a { font-size: 0.8rem;
-    color: rgba(255,255,255,0.36);
+    color: rgba(255,255,255,0.72);
     transition: color 0.2s;
     }
-    .footer-links a:hover { color: rgba(255,255,255,0.65); }
+    .footer-links a:hover { color: rgba(255,255,255,0.92); }
 
     .elevo-dot { position: fixed;
     bottom: 24px;
@@ -739,6 +740,7 @@
   </ul>
 </nav>
 
+<main>
 <!-- HERO -->
 <section id="hero">
   <div class="hero-left">
@@ -1048,8 +1050,8 @@
       <div class="form-group"><label>E-Mail-Adresse</label><input type="email" placeholder="max@beispiel.de"></div>
       <div class="form-group"><label>Telefon</label><input type="tel" placeholder="0211 ..."></div>
       <div class="form-group">
-        <label>Leistung / Anliegen</label>
-        <select>
+        <label for="apollo-leistung">Leistung / Anliegen</label>
+        <select id="apollo-leistung">
           <option value="">Bitte wählen …</option>
           <option>Prophylaxe / Zahnreinigung</option>
           <option>Ästhetik / Veneers / Bleaching</option>
@@ -1065,6 +1067,7 @@
     </div>
   </div>
 </section>
+</main>
 
 <!-- FOOTER -->
 <footer>
