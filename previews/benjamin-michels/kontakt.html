@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Erstgespräch — Benjamin Michels</title>
+<meta name="description" content="Erstgespräch anfragen. Unverbindlich und ehrlich klären, ob ein Sparring passt.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="assets/logo.png"><link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="preview-ribbon">
+  <span class="preview-dot"></span>
+  Live-Vorschau · neu gedacht von <strong>ELEVO</strong> für benjamin-michels.de
+  <a href="#wizard" class="preview-ribbon-cta">Demo testen →</a>
+</div>
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<header class="header" id="header">
+  <div class="header-inner">
+    <a href="index.html" class="logo"><img src="assets/logo.png" alt="Benjamin Michels" class="logo-img"></a>
+    <nav class="nav">
+      <a href="index.html" class="nav-link">Start</a>
+      <a href="leistungen.html" class="nav-link">Leistungen</a>
+      <a href="ueber-mich.html" class="nav-link">Über mich</a>
+      <a href="kontakt.html" class="btn btn-primary btn-sm nav-cta active">Erstgespräch</a>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="Menü"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html">Start</a><a href="leistungen.html">Leistungen</a><a href="ueber-mich.html">Über mich</a>
+  <a href="kontakt.html" class="btn btn-primary">Erstgespräch buchen</a>
+</div>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="label light reveal">Erstgespräch</div>
+    <h1 class="reveal reveal-delay-1">Lass uns ehrlich klären, ob es passt.</h1>
+    <p class="reveal reveal-delay-2">Unverbindlich. In 3 kurzen Schritten. Du gehst mit einer klaren Einordnung raus &ndash; unabhängig davon, ob wir zusammenarbeiten.</p>
+  </div>
+</section>
+
+<section class="bg-light" id="wizard">
+  <div class="container">
+    <div class="wizard reveal">
+      <div class="wizard-bar"><span id="wbar"></span></div>
+      <div class="wizard-body">
+        <form id="leadForm" novalidate>
+          <!-- Step 1 -->
+          <div class="wstep active" data-step="1">
+            <div class="stepno">Schritt 1 von 3</div>
+            <h3>Welche Rolle beschreibt dich am besten?</h3>
+            <div class="opts" data-group="rolle">
+              <label class="opt"><input type="radio" name="rolle" value="Gesellschafter-Geschäftsführer" hidden> Gesellschafter-Geschäftsführer:in</label>
+              <label class="opt"><input type="radio" name="rolle" value="Geschäftsführer" hidden> Geschäftsführer:in (angestellt)</label>
+              <label class="opt"><input type="radio" name="rolle" value="C-Level" hidden> C-Level / Bereichsleitung</label>
+              <label class="opt"><input type="radio" name="rolle" value="Andere" hidden> Etwas anderes</label>
+            </div>
+            <div class="wizard-nav"><span></span><button type="button" class="btn btn-primary" data-next>Weiter</button></div>
+          </div>
+          <!-- Step 2 -->
+          <div class="wstep" data-step="2">
+            <div class="stepno">Schritt 2 von 3</div>
+            <h3>Wo steht dein Jahresumsatz aktuell?</h3>
+            <div class="opts" data-group="umsatz">
+              <label class="opt"><input type="radio" name="umsatz" value="<1 Mio" hidden> Unter 1&nbsp;Mio.&nbsp;€</label>
+              <label class="opt"><input type="radio" name="umsatz" value="1-5 Mio" hidden> 1&ndash;5&nbsp;Mio.&nbsp;€</label>
+              <label class="opt"><input type="radio" name="umsatz" value="5-10 Mio" hidden> 5&ndash;10&nbsp;Mio.&nbsp;€</label>
+              <label class="opt"><input type="radio" name="umsatz" value="10+ Mio" hidden> Über 10&nbsp;Mio.&nbsp;€</label>
+            </div>
+            <div class="wizard-nav"><button type="button" class="btn btn-ghost" style="background:var(--bg-alt);color:var(--ink);border:none" data-prev>Zurück</button><button type="button" class="btn btn-primary" data-next>Weiter</button></div>
+          </div>
+          <!-- Step 3 -->
+          <div class="wstep" data-step="3">
+            <div class="stepno">Schritt 3 von 3</div>
+            <h3>Wohin darf ich die Einordnung schicken?</h3>
+            <div class="field"><label>Name</label><input type="text" name="name" placeholder="Vor- und Nachname"></div>
+            <div class="field"><label>E-Mail</label><input type="email" name="email" placeholder="name@unternehmen.de"></div>
+            <div class="field"><label>Deine größte aktuelle Herausforderung (optional)</label><textarea name="msg" rows="3" placeholder="Worüber willst du sprechen?"></textarea></div>
+            <div class="wizard-nav"><button type="button" class="btn btn-ghost" style="background:var(--bg-alt);color:var(--ink);border:none" data-prev>Zurück</button><button type="submit" class="btn btn-primary">Erstgespräch anfragen</button></div>
+          </div>
+          <!-- Success -->
+          <div class="wsuccess" id="wsuccess">
+            <div class="check">✓</div>
+            <h3>Demo abgeschlossen</h3>
+            <p style="color:var(--text-muted);max-width:440px;margin:0 auto">In der Live-Version landet diese Anfrage direkt in Benjamins Kalender &ndash; inklusive automatischem Follow-up. <strong>In dieser Vorschau werden keine Daten übertragen oder gespeichert.</strong></p>
+          </div>
+        </form>
+      </div>
+      <div class="wizard-note">🔒 Vorschau-Demo &ndash; das Formular sendet nichts. Buchungslink wird mit Calendly / Cal.com / eigenem System verbunden.</div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-white">
+  <div class="container grid grid-3">
+    <div class="card reveal"><div class="card-kicker">E-Mail</div><h4>Direkt schreiben</h4><p><a href="mailto:kontakt@benjamin-michels.de" style="color:var(--gold-deep);font-weight:600">kontakt@benjamin-michels.de</a></p></div>
+    <div class="card reveal reveal-delay-1"><div class="card-kicker">Standort</div><h4>Hannover</h4><p>Vor Ort und remote in der gesamten DACH-Region.</p></div>
+    <div class="card reveal reveal-delay-2"><div class="card-kicker">Antwort</div><h4>Persönlich</h4><p>Jede Anfrage wird persönlich gesichtet &ndash; keine automatische Absage.</p></div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><img src="assets/logo.png" alt="Benjamin Michels" class="footer-logo"><p>Strategisches Sparring für Gesellschafter-Geschäftsführer und C-Level. Von Hannover in die DACH-Region.</p></div>
+      <div><h5>Seiten</h5><ul><li><a href="index.html">Start</a></li><li><a href="leistungen.html">Leistungen</a></li><li><a href="ueber-mich.html">Über mich</a></li><li><a href="kontakt.html">Kontakt</a></li></ul></div>
+      <div><h5>Kontakt</h5><ul><li><a href="mailto:kontakt@benjamin-michels.de">kontakt@benjamin-michels.de</a></li><li><a href="kontakt.html">Erstgespräch buchen</a></li><li>Hannover, Deutschland</li></ul></div>
+      <div><h5>Rechtliches</h5><ul><li><a href="#" data-placeholder="true">Impressum</a></li><li><a href="#" data-placeholder="true">Datenschutz</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© <span id="year"></span> Benjamin Michels</span><span class="footer-elevo">Vorschau gestaltet von <strong>ELEVO</strong> · unverbindlich, ohne Datenübertragung</span></div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
