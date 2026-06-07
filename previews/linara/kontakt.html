@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anfrage &amp; kostenlose Beratung — Linara</title>
+<meta name="description" content="Starten Sie Ihre unverbindliche Anfrage für eine 24-Stunden-Betreuung. In 3 kurzen Schritten zur kostenlosen, persönlichen Beratung.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="assets/logo.png"><link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="preview-ribbon"><span class="preview-dot"></span> Live-Vorschau · neu gedacht von <strong class="elevo">ELEVO</strong> für linara.de <a href="#wizard" class="preview-ribbon-cta">Demo testen →</a></div>
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<header class="header" id="header">
+  <div class="header-inner">
+    <a href="index.html" class="logo"><img src="assets/logo.png" alt="Linara" class="logo-img"></a>
+    <nav class="nav">
+      <a href="index.html" class="nav-link">Start</a>
+      <a href="leistungen.html" class="nav-link">Leistungen</a>
+      <a href="warum-linara.html" class="nav-link">Warum Linara</a>
+      <a href="tel:+4980012345" class="nav-phone">☎ Kostenlos beraten</a>
+      <a href="kontakt.html" class="btn btn-primary btn-sm nav-cta active">Anfrage</a>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="Menü"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html">Start</a><a href="leistungen.html">Leistungen</a><a href="warum-linara.html">Warum Linara</a><a href="tel:+4980012345">☎ Kostenlos beraten</a>
+  <a href="kontakt.html" class="btn btn-primary">Anfrage starten</a>
+</div>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="label reveal">Anfrage &amp; Beratung</div>
+    <h1 class="reveal reveal-delay-1">In 3 Schritten zur kostenlosen Beratung.</h1>
+    <p class="reveal reveal-delay-2">Erzählen Sie uns kurz von Ihrer Situation. Wir melden uns persönlich &ndash; unverbindlich, einfühlsam und ohne Verpflichtung.</p>
+  </div>
+</section>
+
+<section class="bg-soft" id="wizard">
+  <div class="container">
+    <div class="wizard reveal">
+      <div class="wizard-bar"><span id="wbar"></span></div>
+      <div class="wizard-body">
+        <form id="leadForm" novalidate>
+          <div class="wstep active" data-step="1">
+            <div class="stepno">Schritt 1 von 3</div>
+            <h3>Für wen suchen Sie Betreuung?</h3>
+            <div class="opts" data-group="fuerwen">
+              <label class="opt"><input type="radio" name="fuerwen" value="Mutter/Vater" hidden> Für meine Mutter / meinen Vater</label>
+              <label class="opt"><input type="radio" name="fuerwen" value="Partner" hidden> Für meine:n Partner:in</label>
+              <label class="opt"><input type="radio" name="fuerwen" value="Mich" hidden> Für mich selbst</label>
+              <label class="opt"><input type="radio" name="fuerwen" value="Andere" hidden> Für jemand anderen</label>
+            </div>
+            <div class="wizard-nav"><span></span><button type="button" class="btn btn-primary" data-next>Weiter</button></div>
+          </div>
+          <div class="wstep" data-step="2">
+            <div class="stepno">Schritt 2 von 3</div>
+            <h3>Gibt es bereits einen Pflegegrad?</h3>
+            <div class="opts" data-group="grad">
+              <label class="opt"><input type="radio" name="grad" value="kein" hidden> Noch keiner / unklar</label>
+              <label class="opt"><input type="radio" name="grad" value="1-2" hidden> Pflegegrad 1&ndash;2</label>
+              <label class="opt"><input type="radio" name="grad" value="3" hidden> Pflegegrad 3</label>
+              <label class="opt"><input type="radio" name="grad" value="4-5" hidden> Pflegegrad 4&ndash;5</label>
+            </div>
+            <div class="wizard-nav"><button type="button" class="btn btn-outline" data-prev>Zurück</button><button type="button" class="btn btn-primary" data-next>Weiter</button></div>
+          </div>
+          <div class="wstep" data-step="3">
+            <div class="stepno">Schritt 3 von 3</div>
+            <h3>Wie dürfen wir Sie erreichen?</h3>
+            <div class="field"><label>Name</label><input type="text" name="name" placeholder="Vor- und Nachname"></div>
+            <div class="field"><label>Telefon</label><input type="tel" name="tel" placeholder="Für den persönlichen Rückruf"></div>
+            <div class="field"><label>E-Mail (optional)</label><input type="email" name="email" placeholder="name@beispiel.de"></div>
+            <div class="wizard-nav"><button type="button" class="btn btn-outline" data-prev>Zurück</button><button type="submit" class="btn btn-primary">Kostenlose Beratung anfragen</button></div>
+          </div>
+          <div class="wsuccess" id="wsuccess">
+            <div class="check">✓</div>
+            <h3>Vielen Dank &ndash; Demo abgeschlossen</h3>
+            <p style="color:var(--text-muted);max-width:460px;margin:0 auto">In der Live-Version meldet sich Linara persönlich für die kostenlose Beratung, und die Anfrage landet direkt im System &ndash; inkl. automatischem Follow-up. <strong>In dieser Vorschau werden keine Daten übertragen oder gespeichert.</strong></p>
+          </div>
+        </form>
+      </div>
+      <div class="wizard-note">🔒 Vorschau-Demo &ndash; das Formular sendet nichts. Anbindung an Telefon/CRM erfolgt in der Live-Version.</div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-white">
+  <div class="container grid grid-3">
+    <div class="card reveal"><div class="card-ic">☎</div><h4>Telefonisch</h4><p>Lieber direkt sprechen? <a href="tel:+4980012345" style="color:var(--magenta);font-weight:600">Kostenlos anrufen</a> &ndash; wir nehmen uns Zeit.</p></div>
+    <div class="card reveal reveal-delay-1"><div class="card-ic">⏱️</div><h4>Schnelle Rückmeldung</h4><p>Wir melden uns zeitnah persönlich &ndash; keine Warteschleife, kein Callcenter.</p></div>
+    <div class="card reveal reveal-delay-2"><div class="card-ic">🤍</div><h4>Unverbindlich</h4><p>Die Beratung ist kostenlos und verpflichtet zu nichts.</p></div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><img src="assets/logo.png" alt="Linara" class="footer-logo"><p>Liebevolle 24-Stunden-Betreuung und Seniorenbetreuung zu Hause &ndash; in vertrauter Umgebung, mit erfahrenen Betreuungskräften.</p></div>
+      <div><h5>Seiten</h5><ul><li><a href="index.html">Start</a></li><li><a href="leistungen.html">Leistungen</a></li><li><a href="warum-linara.html">Warum Linara</a></li><li><a href="kontakt.html">Kontakt</a></li></ul></div>
+      <div><h5>Kontakt</h5><ul><li><a href="tel:+4980012345">☎ Kostenlose Beratung</a></li><li><a href="kontakt.html">Anfrage starten</a></li><li>Deutschlandweit</li></ul></div>
+      <div><h5>Rechtliches</h5><ul><li><a href="#" data-placeholder="true">Impressum</a></li><li><a href="#" data-placeholder="true">Datenschutz</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© <span id="year"></span> Linara</span><span class="footer-elevo">Vorschau gestaltet von <strong class="elevo">ELEVO</strong> · unverbindlich, ohne Datenübertragung</span></div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
