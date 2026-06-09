@@ -34,19 +34,21 @@
 
     /* ── Reset ─────────────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
     body {
       font-family: var(--font-sans);
       color: var(--clr-text);
       background: var(--clr-surface);
       line-height: 1.65;
       -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      max-width: 100%;
     }
     img { max-width: 100%; height: auto; display: block; }
     a { color: inherit; }
 
     /* ── Typography ────────────────────────────────── */
-    h1, h2, h3 { line-height: 1.2; letter-spacing: -.02em; }
+    h1, h2, h3 { line-height: 1.2; letter-spacing: -.02em; overflow-wrap: break-word; word-break: break-word; hyphens: auto; }
     h1 { font-family: var(--font-display); font-size: clamp(2.2rem, 5.5vw, 3.8rem); font-weight: 800; }
     h2 { font-family: var(--font-display); font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 700; }
     h3 { font-size: 1.1rem; font-weight: 600; }
@@ -355,6 +357,8 @@
     /* ── Responsive ────────────────────────────────── */
     @media (max-width: 640px) {
       :root { --section-py: 3.5rem; }
+      h1 { font-size: clamp(1.75rem, 7.5vw, 2.4rem); }
+      h2 { font-size: clamp(1.5rem, 6vw, 2rem); }
       .hero { min-height: 75vh; padding-top: 4rem; padding-bottom: 3rem; }
       .hero-actions { flex-direction: column; align-items: center; }
       .proof-strip-inner { gap: 1rem; }
