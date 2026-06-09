@@ -1,165 +1,650 @@
 <!DOCTYPE html>
-<html lang="de">
-<!-- PREVIEW für Stephanie Hollstein — unverbindliche Demo von ELEVO. Bilder + Branding aus https://stephanie-hollstein.de. -->
+<html lang="de" data-theme="light">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Stephanie Hollstein — Website-Vorschau von ELEVO</title>
-<meta name="description" content="Ihre Klient:innen investieren in Persönlichkeit und Veränderung — und treffen zuerst auf eine Seite, die wie ein Standard-Template aussieht.">
-<meta name="robots" content="noindex,nofollow">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
-<style>
-:root{--brand:#127D96;--brand-dk:#0B5567;--accent:#5FC8DE;
---ink:#14171C;--ink2:#1C2027;--bg:#FAF9F8;--bg2:#F1EFEC;--text:#1A1D22;--body:#4A525C;--muted:#7C8794;--line:rgba(20,23,28,.08);
---fh:'Manrope',sans-serif;--fb:'Outfit',sans-serif;--max:1180px;--rad:16px;--radlg:26px;--ease:cubic-bezier(.25,.46,.45,.94);
---sh:0 18px 50px rgba(20,23,28,.10);--shsm:0 6px 22px rgba(20,23,28,.06)}
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:84px}
-body{font-family:var(--fb);font-weight:300;color:var(--body);background:var(--bg);line-height:1.75;font-size:16.5px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-img{max-width:100%;height:auto;display:block}a{color:inherit;text-decoration:none}
-.wrap{max-width:var(--max);margin:0 auto;padding:0 28px}
-h1,h2,h3{font-family:var(--fh);color:var(--text);letter-spacing:-.025em;line-height:1.08}
-h1{font-size:clamp(36px,5.4vw,64px);font-weight:800}h2{font-size:clamp(27px,3.8vw,44px);font-weight:800}
-h3{font-size:clamp(18px,2.2vw,23px);font-weight:700;line-height:1.25}
-.eyebrow{font-family:var(--fb);font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--brand);display:inline-flex;align-items:center;gap:13px;margin-bottom:18px}
-.eyebrow::before{content:'';width:26px;height:1.5px;background:var(--brand)}
-.eyebrow.lt{color:var(--accent)}.eyebrow.lt::before{background:var(--accent)}
-.btn{display:inline-flex;align-items:center;gap:9px;font-family:var(--fb);font-size:15px;font-weight:600;padding:15px 32px;border-radius:100px;cursor:pointer;transition:.35s var(--ease);border:none;line-height:1}
-.btn-primary{background:var(--brand);color:#fff}.btn-primary:hover{background:var(--brand-dk);transform:translateY(-2px);box-shadow:0 14px 34px rgba(0,0,0,.22)}
-.btn-ghost{background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.30);backdrop-filter:blur(8px)}.btn-ghost:hover{background:rgba(255,255,255,.18);transform:translateY(-2px)}
-.btn-white{background:#fff;color:var(--brand);font-weight:700}.btn-white:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(0,0,0,.22)}
-.header{position:fixed;top:0;left:0;width:100%;z-index:1000;background:rgba(250,249,248,.82);backdrop-filter:blur(20px);border-bottom:1px solid transparent;transition:.4s var(--ease)}
-.header.scrolled{border-bottom-color:var(--line);box-shadow:0 4px 26px rgba(20,23,28,.05)}
-.header-in{display:flex;align-items:center;justify-content:space-between;max-width:var(--max);margin:0 auto;padding:17px 28px}
-.brand{font-family:var(--fh);font-weight:800;font-size:21px;color:var(--ink);letter-spacing:-.02em}.brand b{color:var(--brand)}
-.nav{display:flex;align-items:center;gap:4px}.nav a{font-size:14.5px;font-weight:500;color:var(--body);padding:8px 15px;border-radius:8px;transition:.3s}
-.nav a:hover{color:var(--brand);background:rgba(0,0,0,.03)}.nav .btn{margin-left:10px}
-.burger{display:none;background:none;border:none;cursor:pointer;padding:8px}.burger span{display:block;width:24px;height:2px;background:var(--ink);margin:5px 0;border-radius:2px}
-.hero{position:relative;min-height:100vh;display:flex;align-items:flex-end;overflow:hidden}
-.hero--gradient{background:linear-gradient(150deg,var(--brand) 0%,var(--brand-dk) 100%)}
-.hero-bg{position:absolute;inset:0;z-index:0}.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 28%}
-.hero-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(15,17,21,.55) 0%,rgba(15,17,21,.32) 40%,rgba(15,17,21,.74) 100%)}
-.hero-overlay--solid{background:radial-gradient(120% 80% at 80% 0,rgba(255,255,255,.12),transparent 60%)}
-.hero-in{position:relative;z-index:3;width:100%;padding-bottom:80px;padding-top:140px}
-.hero h1{color:#fff;max-width:900px;margin-bottom:22px}
-.hero-sub{font-size:20px;color:rgba(255,255,255,.84);max-width:620px;margin-bottom:32px;font-weight:300}
-.hero-cta{display:flex;gap:15px;flex-wrap:wrap;align-items:center}
-.hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:52px;max-width:780px}
-.stat-card{background:rgba(255,255,255,.10);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.18);border-radius:var(--rad);padding:20px 18px}
-.stat-card .num{font-family:var(--fh);font-size:27px;font-weight:800;color:#fff;line-height:1.05}
-.stat-card .lbl{font-size:12px;color:rgba(255,255,255,.62);margin-top:7px}
-section{padding:104px 0}
-.sec-head{max-width:700px;margin-bottom:52px}.sec-head.center{margin:0 auto 52px;text-align:center}
-.sec-head p{font-size:18px;color:var(--muted);margin-top:16px}
-.qw{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.wk-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.wk-card{padding:28px 26px;border:1px solid var(--line);border-left:4px solid #E0483B;border-radius:var(--rad);background:var(--bg)}
-.wk-ic{font-size:20px;margin-bottom:10px}.wk-card h3{font-size:18px;margin-bottom:9px}.wk-prob{font-size:14.5px;margin-bottom:14px}
-.wk-fix{background:#F0FAF2;border-left:3px solid #2BA84A;border-radius:8px;padding:12px 14px}
-.wk-fix span{font-weight:700;font-size:13px;color:#1C7A38;display:block;margin-bottom:4px}.wk-fix p{font-size:13.5px;color:#1C5E30}
-.bn-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
-.bn-card{padding:30px 28px;border:1px solid var(--line);border-radius:var(--radlg);background:#fff;transition:.35s var(--ease)}
-.bn-card:hover{transform:translateY(-4px);box-shadow:var(--shsm)}
-.bn-ic{font-size:26px;margin-bottom:14px}.bn-card h3{margin-bottom:8px}.bn-card p{font-size:15px}
-.split{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
-.split--noimg{grid-template-columns:1fr;max-width:780px}
-.split-img img{width:100%;border-radius:var(--radlg);box-shadow:var(--sh);object-fit:cover;aspect-ratio:4/5}
-.split-text h2{margin-bottom:20px}.split-text p{margin-bottom:16px;font-size:17px}
-.check{list-style:none;margin-top:24px;display:flex;flex-direction:column;gap:13px}
-.check li{display:flex;gap:12px;align-items:flex-start;font-size:15.5px;color:var(--text)}.check li::before{content:'✓';color:var(--brand);font-weight:800}
-.proc{background:var(--ink);color:#fff}.proc h2,.proc h3{color:#fff}.proc .sec-head p{color:rgba(255,255,255,.6)}
-.proc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
-.proc-step{padding:28px 24px;border:1px solid rgba(255,255,255,.10);border-radius:var(--rad);background:rgba(255,255,255,.02)}
-.proc-step .pn{font-family:var(--fh);font-size:14px;font-weight:800;color:var(--accent);width:36px;height:36px;border:1.5px solid rgba(255,255,255,.25);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:18px}
-.proc-step h3{font-size:18px;margin-bottom:9px}.proc-step p{font-size:14px;color:rgba(255,255,255,.62)}
-.band{position:relative;height:320px;overflow:hidden}.band img{width:100%;height:100%;object-fit:cover;object-position:center 35%}
-.band-ov{position:absolute;inset:0;background:linear-gradient(90deg,rgba(15,17,21,.78),rgba(15,17,21,.25));display:flex;align-items:center}
-.band-ov .wrap{position:relative;z-index:2}.band h2{color:#fff;max-width:600px}
-.proof{background:var(--bg2)}.proof-card{max-width:820px;margin:0 auto;text-align:center}
-.proof-card h2{margin-bottom:16px}.proof-card p{font-size:18px;color:var(--body)}
-.cta{background:linear-gradient(135deg,var(--brand) 0%,var(--brand-dk) 100%);color:#fff;text-align:center}
-.cta h2{color:#fff;max-width:720px;margin:0 auto 28px}
-.foot{background:var(--ink2);color:rgba(255,255,255,.55);padding:44px 0;font-size:14px}
-.foot-in{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;align-items:center}.foot a{color:rgba(255,255,255,.55)}.foot a:hover{color:#fff}
-.reveal{opacity:0;transform:translateY(32px);transition:opacity .7s var(--ease),transform .7s var(--ease)}.reveal.in{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}*{animation:none!important}}
-@media(max-width:900px){.nav a:not(.btn){display:none}.burger{display:block}
-.wk-grid,.bn-grid,.proc-grid{grid-template-columns:1fr}.split{grid-template-columns:1fr;gap:36px}
-.hero-stats{grid-template-columns:repeat(2,1fr)}section{padding:68px 0}}
-</style></head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Business — Ihre neue Website | Elevo Preview</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+  <style>
+    /* ── Design Tokens ──────────────────────────────── */
+    :root {
+      --clr-primary:     #1491AD;
+      --clr-primary-dk:  #00738F;
+      --clr-surface:     #ffffff;
+      --clr-surface-2:   #f8f9fc;
+      --clr-surface-3:   #eef1f6;
+      --clr-text:        #0f172a;
+      --clr-text-muted:  #64748b;
+      --clr-border:      #e2e8f0;
+      --font-sans:       'Inter', system-ui, sans-serif;
+      --font-display:    'Playfair Display', Georgia, serif;
+      --radius-sm:       6px;
+      --radius-md:       12px;
+      --radius-lg:       20px;
+      --shadow-sm:       0 1px 3px rgba(0,0,0,.08);
+      --shadow-md:       0 4px 16px rgba(0,0,0,.10);
+      --shadow-lg:       0 8px 32px rgba(0,0,0,.12);
+      --transition:      0.25s cubic-bezier(.4,0,.2,1);
+      --max-w:           1140px;
+      --section-py:      5rem;
+    }
+
+    /* ── Reset ─────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-sans);
+      color: var(--clr-text);
+      background: var(--clr-surface);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; }
+
+    /* ── Typography ────────────────────────────────── */
+    h1, h2, h3 { line-height: 1.2; letter-spacing: -.02em; }
+    h1 { font-family: var(--font-display); font-size: clamp(2.2rem, 5.5vw, 3.8rem); font-weight: 800; }
+    h2 { font-family: var(--font-display); font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 700; }
+    h3 { font-size: 1.1rem; font-weight: 600; }
+    .eyebrow {
+      display: inline-block;
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--clr-primary);
+      margin-bottom: .75rem;
+    }
+    p { color: var(--clr-text-muted); }
+
+    /* ── Layout helpers ────────────────────────────── */
+    .container { max-width: var(--max-w); margin: 0 auto; padding: 0 1.5rem; }
+    .section { padding: var(--section-py) 0; }
+    .section--alt { background: var(--clr-surface-2); }
+
+    /* ── Buttons ───────────────────────────────────── */
+    .btn {
+      display: inline-flex; align-items: center; gap: .4rem;
+      padding: .85rem 2rem;
+      border-radius: var(--radius-md);
+      font-weight: 700; font-size: .95rem;
+      text-decoration: none;
+      transition: var(--transition);
+      cursor: pointer; border: none;
+    }
+    .btn-primary {
+      background: var(--clr-primary); color: #fff;
+      box-shadow: 0 4px 14px rgba(0,0,0,.18);
+    }
+    .btn-primary:hover { background: var(--clr-primary-dk); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(0,0,0,.22); }
+    .btn-ghost {
+      background: rgba(255,255,255,.15); color: #fff;
+      border: 1.5px solid rgba(255,255,255,.5);
+      backdrop-filter: blur(4px);
+    }
+    .btn-ghost:hover { background: rgba(255,255,255,.25); }
+    .btn-outline {
+      background: transparent; color: var(--clr-primary);
+      border: 2px solid var(--clr-primary);
+    }
+    .btn-outline:hover { background: var(--clr-primary); color: #fff; }
+
+    /* ── Sticky Mobile CTA ─────────────────────────── */
+    .mobile-cta-bar {
+      display: none;
+      position: fixed; bottom: 0; left: 0; right: 0; z-index: 200;
+      background: var(--clr-surface);
+      border-top: 1px solid var(--clr-border);
+      padding: .75rem 1rem;
+      box-shadow: 0 -4px 20px rgba(0,0,0,.1);
+    }
+    .mobile-cta-bar .btn { width: 100%; justify-content: center; font-size: 1rem; padding: .9rem; }
+    @media (max-width: 768px) {
+      .mobile-cta-bar { display: block; }
+      body { padding-bottom: 80px; }
+    }
+
+    /* ── Header ────────────────────────────────────── */
+    .site-header {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255,255,255,.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--clr-border);
+      padding: 1rem 0;
+    }
+    .header-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 1rem;
+    }
+    .logo { height: 44px; width: auto; object-fit: contain; }
+    .logo-text { font-size: 1.3rem; font-weight: 800; color: var(--clr-primary); font-family: var(--font-display); }
+    .header-nav { display: flex; gap: 2rem; list-style: none; }
+    .header-nav a { font-size: .9rem; font-weight: 500; text-decoration: none; color: var(--clr-text-muted); transition: var(--transition); }
+    .header-nav a:hover { color: var(--clr-primary); }
+    .header-cta { margin-left: auto; }
+    @media (max-width: 768px) {
+      .header-nav { display: none; }
+      .header-cta { display: none; }
+    }
+
+    /* ── Hero ──────────────────────────────────────── */
+    .hero {
+      min-height: 88vh;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      text-align: center;
+      padding: 5rem 1.5rem 4rem;
+      color: #fff;
+      position: relative; overflow: hidden;
+      background-image: linear-gradient(160deg, rgba(0,0,0,0.52) 0%, rgba(0,0,0,0.3) 100%), url('assets/hero.jpg');background-size: cover; background-position: center top;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(255,255,255,.15);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,.3);
+      border-radius: 100px;
+      padding: .4rem 1.1rem;
+      font-size: .8rem; font-weight: 600;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+      color: rgba(255,255,255,.9);
+    }
+    .hero h1 { max-width: 820px; margin: 0 auto 1.5rem; color: #fff; text-shadow: 0 2px 12px rgba(0,0,0,.3); }
+    .hero-lead { font-size: 1.15rem; max-width: 580px; margin: 0 auto 2.5rem; opacity: .9; color: rgba(255,255,255,.9); }
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
+    .hero-scroll {
+      position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
+      animation: bounce 2s infinite;
+      opacity: .6;
+    }
+    @keyframes bounce { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(6px)} }
+
+    /* ── Social proof strip ────────────────────────── */
+    .proof-strip {
+      background: var(--clr-surface-3);
+      padding: 1.5rem 0;
+      border-bottom: 1px solid var(--clr-border);
+    }
+    .proof-strip-inner {
+      display: flex; align-items: center; justify-content: center;
+      gap: 2.5rem; flex-wrap: wrap;
+    }
+    .proof-item { display: flex; align-items: center; gap: .5rem; font-size: .875rem; font-weight: 600; color: var(--clr-text-muted); }
+    .proof-item span { color: var(--clr-primary); font-weight: 700; }
+
+    /* ── Benefits grid ─────────────────────────────── */
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .benefit-card {
+      background: var(--clr-surface);
+      border: 1px solid var(--clr-border);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      transition: var(--transition);
+    }
+    .benefit-card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); }
+    .benefit-icon { font-size: 2rem; margin-bottom: 1rem; }
+    .benefit-card h3 { margin-bottom: .5rem; }
+    .benefit-card p { font-size: .9rem; }
+
+    /* ── Alternating section ───────────────────────── */
+    .alt-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem; align-items: center;
+    }
+    .alt-grid--text-only {
+      grid-template-columns: 1fr 1fr;
+    }
+    .alt-image img {
+      border-radius: var(--radius-lg);
+      width: 100%;
+      object-fit: cover;
+      aspect-ratio: 4/3;
+      box-shadow: var(--shadow-lg);
+    }
+    .alt-content { display: flex; flex-direction: column; gap: 1.25rem; }
+    .alt-content p { font-size: 1.05rem; line-height: 1.7; }
+    .check-list { list-style: none; display: flex; flex-direction: column; gap: .75rem; }
+    .check-list li { display: flex; align-items: flex-start; gap: .6rem; font-size: .95rem; color: var(--clr-text-muted); }
+    .check-list li::before { content: "✓"; color: var(--clr-primary); font-weight: 700; flex-shrink: 0; }
+    @media (max-width: 768px) {
+      .alt-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .alt-image { order: -1; }
+    }
+
+    /* ── Process timeline ──────────────────────────── */
+    .timeline { display: flex; flex-direction: column; gap: 0; margin-top: 3rem; position: relative; }
+    .timeline::before {
+      content: "";
+      position: absolute; left: 28px; top: 0; bottom: 0; width: 2px;
+      background: linear-gradient(to bottom, var(--clr-primary), var(--clr-border));
+    }
+    .timeline-step { display: flex; gap: 2rem; padding-bottom: 3rem; position: relative; }
+    .timeline-step:last-child { padding-bottom: 0; }
+    .step-num {
+      flex-shrink: 0;
+      width: 56px; height: 56px;
+      border-radius: 50%;
+      background: var(--clr-primary);
+      color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 800; font-size: 1.1rem;
+      box-shadow: 0 0 0 4px var(--clr-surface-2), 0 0 0 6px var(--clr-primary);
+      position: relative; z-index: 1;
+    }
+    .step-content h3 { margin-bottom: .4rem; }
+    .step-content p { font-size: .9rem; }
+
+    /* ── Testimonials ──────────────────────────────── */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem; margin-top: 3rem;
+    }
+    .testimonial-card {
+      background: var(--clr-surface);
+      border: 1px solid var(--clr-border);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      position: relative;
+    }
+    .testimonial-card::before {
+      content: '“';
+      position: absolute; top: 1rem; left: 1.5rem;
+      font-family: var(--font-display);
+      font-size: 4rem; line-height: 1;
+      color: var(--clr-primary); opacity: .15;
+    }
+    .testimonial-text { font-style: italic; color: var(--clr-text); margin-bottom: 1.25rem; font-size: .95rem; }
+    .testimonial-author { font-weight: 700; font-size: .85rem; }
+    .testimonial-role { font-size: .8rem; color: var(--clr-text-muted); margin-top: .2rem; }
+    .stars { color: #f59e0b; font-size: 1rem; margin-bottom: .75rem; }
+
+    /* ── Value-Add / Quick-Wins ────────────────────── */
+    .weakness-grid { display: flex; flex-direction: column; gap: 1.5rem; margin-top: 3rem; }
+    .weakness-card {
+      background: var(--clr-surface);
+      border: 1px solid var(--clr-border);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      border-left: 4px solid #ef4444;
+    }
+    .weakness-icon { font-size: 1.5rem; margin-bottom: .5rem; }
+    .weakness-card h3 { color: var(--clr-text); margin-bottom: .5rem; font-size: 1rem; }
+    .weakness-problem { font-size: .9rem; margin-bottom: 1rem; }
+    .weakness-fix {
+      background: #f0fdf4;
+      border-radius: var(--radius-sm);
+      padding: .75rem 1rem;
+      border-left: 3px solid #22c55e;
+    }
+    .fix-label { font-weight: 700; font-size: .8rem; color: #16a34a; display: block; margin-bottom: .3rem; }
+    .weakness-fix p { font-size: .875rem; color: #166534; }
+
+    /* ── FAQ Accordion ─────────────────────────────── */
+    .faq { margin-top: 3rem; display: flex; flex-direction: column; gap: .75rem; }
+    .faq-item { border: 1px solid var(--clr-border); border-radius: var(--radius-md); overflow: hidden; }
+    .faq-question {
+      width: 100%; display: flex; align-items: center; justify-content: space-between;
+      padding: 1.25rem 1.5rem;
+      background: var(--clr-surface);
+      border: none; cursor: pointer;
+      font-family: var(--font-sans); font-size: .95rem; font-weight: 600;
+      text-align: left; color: var(--clr-text);
+      transition: var(--transition);
+    }
+    .faq-question:hover { background: var(--clr-surface-2); }
+    .faq-chevron { transition: transform var(--transition); flex-shrink: 0; }
+    .faq-item.open .faq-chevron { transform: rotate(180deg); }
+    .faq-answer {
+      max-height: 0; overflow: hidden;
+      transition: max-height .35s ease, padding .35s ease;
+      background: var(--clr-surface-2);
+    }
+    .faq-item.open .faq-answer { max-height: 400px; padding: 0 1.5rem 1.25rem; }
+    .faq-answer p { font-size: .9rem; padding-top: .75rem; }
+
+    /* ── CTA Section ───────────────────────────────── */
+    .cta-section {
+      background: linear-gradient(135deg, var(--clr-primary) 0%, var(--clr-primary-dk) 100%);
+      color: #fff; text-align: center; padding: 6rem 1.5rem;
+    }
+    .cta-section h2 { color: #fff; margin-bottom: 1rem; }
+    .cta-section p { color: rgba(255,255,255,.85); max-width: 560px; margin: 0 auto 2.5rem; font-size: 1.05rem; }
+    .btn-white { background: #fff; color: var(--clr-primary); }
+    .btn-white:hover { background: #f0f0f0; transform: translateY(-1px); }
+
+    /* ── Footer ────────────────────────────────────── */
+    .site-footer {
+      background: #0f172a; color: #94a3b8;
+      padding: 2.5rem 0;
+      font-size: .85rem;
+    }
+    .footer-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 1rem;
+    }
+    .footer-inner a { color: #94a3b8; text-decoration: none; }
+    .footer-inner a:hover { color: #fff; }
+
+    /* ── Scroll-Reveal ─────────────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .65s ease, transform .65s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+      * { animation: none !important; transition: none !important; }
+    }
+
+    /* ── Responsive ────────────────────────────────── */
+    @media (max-width: 640px) {
+      :root { --section-py: 3.5rem; }
+      .hero { min-height: 75vh; padding-top: 4rem; padding-bottom: 3rem; }
+      .hero-actions { flex-direction: column; align-items: center; }
+      .proof-strip-inner { gap: 1rem; }
+      .timeline::before { left: 24px; }
+      .step-num { width: 48px; height: 48px; font-size: 1rem; }
+    }
+  </style>
+</head>
 <body>
-<header class="header" id="hdr"><div class="header-in">
-  <a href="#top" class="brand">STEPHANIE<b> Hollstein</b></a>
-  <nav class="nav"><a href="#analyse">Analyse</a><a href="#leistungen">Leistungen</a><a href="#ueber">Hintergrund</a><a href="#kontakt" class="btn btn-primary">Erstgespräch</a>
-  <button class="burger" aria-label="Menü"><span></span><span></span><span></span></button></nav>
-</div></header>
 
-<section class="hero hero--photo" id="top">
-  <div class="hero-bg"><img src="assets/hero.jpg" alt="Stephanie Hollstein"></div><div class="hero-overlay"></div>
-  <div class="hero-in"><div class="wrap">
-    <span class="eyebrow lt">✦ Vorschau für Stephanie Hollstein</span>
-    <h1>Als Premium-Coach verkaufen Sie Vertrauen. Eine Jimdo-Baukastenseite verkauft genau das Gegenteil.</h1>
-    <p class="hero-sub">Ihre Klient:innen investieren in Persönlichkeit und Veränderung — und treffen zuerst auf eine Seite, die wie ein Standard-Template aussieht.</p>
-    <div class="hero-cta"><a href="#kontakt" class="btn btn-primary">Erstgespräch anfragen</a><a href="#analyse" class="btn btn-ghost">Schwächen der Ist-Seite ↓</a></div>
-    <div class="hero-stats"><div class="stat-card"><div class="num">Premium</div><div class="lbl">Coaching</div></div><div class="stat-card"><div class="num">1:1</div><div class="lbl">Persönlich</div></div><div class="stat-card"><div class="num">Düsseldorf</div><div class="lbl">&amp; online</div></div><div class="stat-card"><div class="num">Executive</div><div class="lbl">Fokus</div></div></div>
-  </div></div>
-</section>
+<!-- Sticky Mobile CTA -->
+<div class="mobile-cta-bar" role="complementary" aria-label="Schnellkontakt">
+  <a href="mailto:mert@elevo.solutions?subject=Preview+Business" class="btn btn-primary">
+    Kostenlose Beratung anfragen →
+  </a>
+</div>
 
-<section class="qw" id="analyse"><div class="wrap">
-  <div class="sec-head reveal"><span class="eyebrow">Kostenlose Analyse</span><h2>Was Stephanie Hollstein zwischen Erstkontakt und Buchung verliert</h2><p>Wir haben stephanie-hollstein.de angesehen. Drei Dinge stehen dem Premium-Anspruch im Weg:</p></div>
-  <div class="wk-grid"><div class="wk-card reveal"><div class="wk-ic">⚠</div><h3>Jimdo-Baukasten — sichtbar austauschbar</h3><p class="wk-prob">Jimdo-Vorlagen haben ein erkennbares Muster. Hochwertigen Klient:innen signalisiert das: hier wurde an der eigenen Außenwirkung gespart.</p><div class="wk-fix"><span>✓ Lösung in dieser Vorschau</span><p>Ein handgefertigtes Design ohne Template-Spuren — Typografie, Weißraum und Farben exakt auf Sie abgestimmt.</p></div></div><div class="wk-card reveal"><div class="wk-ic">⚠</div><h3>Die H1 ist ein Name, kein Nutzenversprechen</h3><p class="wk-prob">Die Hauptüberschrift zeigt nur den Namen statt zu sagen, was Klient:innen gewinnen. Besucher verstehen in 3 Sekunden nicht, warum sie bleiben sollten.</p><div class="wk-fix"><span>✓ Lösung in dieser Vorschau</span><p>Eine Hero-Headline, die das Ergebnis Ihres Coachings benennt — direkt above the fold.</p></div></div><div class="wk-card reveal"><div class="wk-ic">⚠</div><h3>Kein Call-to-Action — Interessenten verpuffen</h3><p class="wk-prob">Ohne sichtbaren CTA verlassen die meisten Besucher die Seite, ohne Kontakt aufzunehmen. Sie wissen schlicht nicht, was der nächste Schritt ist.</p><div class="wk-fix"><span>✓ Lösung in dieser Vorschau</span><p>Klare Erstgespräch-Buttons im Hero, nach der Methodik und im Footer — jeder mit konkretem Nutzen.</p></div></div></div>
-</div></section>
-
-<section id="leistungen"><div class="wrap">
-  <div class="sec-head reveal"><span class="eyebrow">Was Sie bekommen</span><h2>Eine Bühne für Ihre Persönlichkeit — und einen klaren Weg zum Gespräch</h2></div>
-  <div class="bn-grid"><div class="bn-card reveal"><div class="bn-ic">👤</div><h3>Ihre Person im Mittelpunkt</h3><p>Ein Hero mit echtem Portrait und persönlicher Ansprache statt Logo und Floskel — Premium-Coaching ist Beziehung.</p></div><div class="bn-card reveal"><div class="bn-ic">🎯</div><h3>Ein sichtbarer nächster Schritt</h3><p>Statt nur ein Portfolio: ein klarer Call-to-Action für das kostenlose Erstgespräch, oben und unten auf der Seite.</p></div><div class="bn-card reveal"><div class="bn-ic">🧠</div><h3>Methodik, die Sicherheit gibt</h3><p>Ein nachvollziehbarer Ablauf nimmt die Unsicherheit vor dem ersten teuren Schritt.</p></div><div class="bn-card reveal"><div class="bn-ic">✨</div><h3>Hochwertige Optik statt Baukasten</h3><p>Eigene Typografie, Weißraum und ruhige Farben, die zum Honorar passen.</p></div></div>
-</div></section>
-
-
-
-<section id="ueber"><div class="wrap">
-  <div class="split">
-    <div class="split-img reveal"><img src="assets/portrait.jpg" alt="Stephanie Hollstein"></div>
-    <div class="split-text reveal">
-      <span class="eyebrow">Worauf es ankommt</span>
-      <h2>Premium beginnt beim ersten Eindruck</h2>
-      <p>Im hochpreisigen Coaching entscheidet das Bauchgefühl. Eine Website, die Ruhe, Klarheit und Persönlichkeit ausstrahlt, rechtfertigt das Honorar, bevor das erste Wort gesprochen ist.</p>
+<!-- Header -->
+<header class="site-header">
+  <div class="container">
+    <div class="header-inner">
+      <span class="logo-text">Business</span>
+      <nav aria-label="Hauptnavigation">
+        <ul class="header-nav">
+          <li><a href="#leistungen">Leistungen</a></li>
+          <li><a href="#prozess">Vorgehen</a></li>
+          <li><a href="#stimmen">Referenzen</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </nav>
+      <div class="header-cta">
+        <a href="#kontakt" class="btn btn-primary" style="padding:.6rem 1.25rem;font-size:.875rem;">Gespräch anfragen</a>
+      </div>
     </div>
   </div>
-</div></section>
+</header>
 
-<section class="proc" id="vorgehen"><div class="wrap">
-  <div class="sec-head center reveal"><span class="eyebrow lt" style="justify-content:center">Vorgehen</span><h2>In 4 Schritten zu Ihrem persönlichen Auftritt</h2></div>
-  <div class="proc-grid">
-    <div class="proc-step reveal"><div class="pn">1</div><h3>Erstgespräch</h3><p>30 Minuten, kostenlos. Wir klären Ihr Anliegen — ohne Verpflichtung.</p></div>
-    <div class="proc-step reveal"><div class="pn">2</div><h3>Konzept</h3><p>Mockup mit Ihrem echten Branding, bevor eine Zeile Code entsteht.</p></div>
-    <div class="proc-step reveal"><div class="pn">3</div><h3>Umsetzung</h3><p>Umsetzung in ~2 Wochen, inkl. Feedback-Runden, Deploy auf Ihre Domain.</p></div>
-    <div class="proc-step reveal"><div class="pn">4</div><h3>Live & Optimierung</h3><p>Launch, Monitoring und laufende Conversion-Auswertung.</p></div>
+<!-- Hero -->
+<section class="hero" aria-label="Hero">
+  <div class="hero-badge">✦ Vorschau für Stephanie Hollstein</div>
+  <h1>Als Premium-Coach verkaufen Sie Vertrauen. Eine Jimdo-Baukastenseite verkauft genau das Gegenteil.</h1>
+  <p class="hero-lead">Herausforderungen meistern, Zukunft gestalten, Persönlichkeit entwickeln. Buchen Sie jetzt Ihr kostenfreies Vorgespräch. Als zertifizierter Coach unterstütze ich seit 15 Jahren Menschen bei beruflichen und persönlichen T</p>
+  <div class="hero-actions">
+    <a href="#kontakt" class="btn btn-primary">Kostenlose Vorschau aktivieren</a>
+    <a href="#quick-wins" class="btn btn-ghost">Aktuelle Schwächen sehen ↓</a>
   </div>
-</div></section>
+  <div class="hero-scroll" aria-hidden="true">
+    <svg width="24" height="24" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5"/></svg>
+  </div>
+</section>
 
-<section class="proof" id="referenzen"><div class="wrap"><div class="proof-card reveal">
-  <span class="eyebrow" style="justify-content:center">Individuell gebaut, keine erfundenen Zitate</span>
-  <h2>Ehrlich statt erfunden</h2>
-  <p>Diese Vorschau ist von Hand für Stephanie Hollstein gestaltet. ELEVO arbeitet ohne Templates; echte Referenzen besprechen wir persönlich.</p>
-</div></div></section>
+<!-- Social Proof Strip -->
+<div class="proof-strip">
+  <div class="container">
+    <div class="proof-strip-inner">
+      <div class="proof-item">📱 <span>Mobile-first</span> — Lighthouse &gt; 90</div>
+      <div class="proof-item">⚡ <span>&lt; 1,5 s</span> Ladezeit</div>
+      <div class="proof-item">🔒 <span>HTTPS</span> + DSGVO-konform</div>
+      <div class="proof-item">✋ <span>Kein Template</span> — handgefertigt</div>
+    </div>
+  </div>
+</div>
 
-<section class="cta" id="kontakt"><div class="wrap">
-  <span class="eyebrow lt" style="justify-content:center;color:rgba(255,255,255,.8)">Nächster Schritt</span>
-  <h2>Sehen Sie Ihren Auftritt auf Premium-Niveau</h2>
-  <a href="mailto:mert@elevo.solutions?subject=Vorschau%20Stephanie%20Hollstein" class="btn btn-white">Kostenloses Gespräch anfragen →</a>
-</div></section>
+<!-- Middle sections (bespoke order per prospect) -->
 
-<footer class="foot"><div class="wrap foot-in">
-  <span>Vorschau erstellt von <a href="https://elevo.solutions">ELEVO</a> für Stephanie Hollstein — unverbindliche Demo.</span>
-  <a href="https://stephanie-hollstein.de" target="_blank" rel="noopener">Aktuelle Website →</a>
-  <span>Impressum: ELEVO Solutions · mert@elevo.solutions</span>
-</div></footer>
+<section class="section section--alt alt-section reveal" id="ueber">
+  <div class="container">
+    <div class="alt-grid">
+      <div class="alt-content">
+        <span class="eyebrow">Worauf es ankommt</span>
+        <h2>Premium beginnt beim ersten Eindruck</h2>
+        <p>Im hochpreisigen Coaching entscheidet das Bauchgefühl. Eine Website, die Ruhe, Klarheit und Persönlichkeit ausstrahlt, rechtfertigt das Honorar, bevor das erste Wort gesprochen ist.</p>
+        <a href="#kontakt" class="btn btn-primary">Gespräch vereinbaren →</a>
+      </div>
+      <div class="alt-image">
+        <img src="assets/portrait.jpg" alt="Business" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section section--alt" id="quick-wins">
+  <div class="container">
+    <span class="eyebrow">Kostenlose Analyse</span>
+    <h2>Was Stephanie Hollstein zwischen Erstkontakt und Buchung verliert</h2>
+    <p style="max-width:640px;margin-bottom:0">Wir haben stephanie-hollstein.de angesehen. Drei Dinge stehen dem Premium-Anspruch im Weg:</p>
+    <div class="weakness-grid">
+      
+      <div class="weakness-card reveal">
+        <div class="weakness-icon">⚠</div>
+        <h3>Jimdo-Baukasten — sichtbar austauschbar</h3>
+        <p class="weakness-problem">Jimdo-Vorlagen haben ein erkennbares Muster. Hochwertigen Klient:innen signalisiert das: hier wurde an der eigenen Außenwirkung gespart.</p>
+        <div class="weakness-fix">
+          <span class="fix-label">✓ Vorschau-Lösung:</span>
+          <p>Ein handgefertigtes Design ohne Template-Spuren — Typografie, Weißraum und Farben exakt auf Sie abgestimmt.</p>
+        </div>
+      </div>
+      <div class="weakness-card reveal">
+        <div class="weakness-icon">⚠</div>
+        <h3>Die H1 ist ein Name, kein Nutzenversprechen</h3>
+        <p class="weakness-problem">Die Hauptüberschrift zeigt nur den Namen statt zu sagen, was Klient:innen gewinnen. Besucher verstehen in 3 Sekunden nicht, warum sie bleiben sollten.</p>
+        <div class="weakness-fix">
+          <span class="fix-label">✓ Vorschau-Lösung:</span>
+          <p>Eine Hero-Headline, die das Ergebnis Ihres Coachings benennt — direkt above the fold.</p>
+        </div>
+      </div>
+      <div class="weakness-card reveal">
+        <div class="weakness-icon">⚠</div>
+        <h3>Kein Call-to-Action — Interessenten verpuffen</h3>
+        <p class="weakness-problem">Ohne sichtbaren CTA verlassen die meisten Besucher die Seite, ohne Kontakt aufzunehmen. Sie wissen schlicht nicht, was der nächste Schritt ist.</p>
+        <div class="weakness-fix">
+          <span class="fix-label">✓ Vorschau-Lösung:</span>
+          <p>Klare Erstgespräch-Buttons im Hero, nach der Methodik und im Footer — jeder mit konkretem Nutzen.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section" id="leistungen">
+  <div class="container">
+    <span class="eyebrow reveal">Was Sie bekommen</span>
+    <h2 class="reveal">Eine Bühne für Ihre Persönlichkeit — und einen klaren Weg zum Gespräch</h2>
+    <p class="reveal" style="max-width:600px">Kein Template, kein Baukasten — maßgeschneidert für Business.</p>
+    <div class="benefits-grid">
+      
+      <div class="benefit-card reveal">
+        <div class="benefit-icon">👤</div>
+        <h3>Ihre Person im Mittelpunkt</h3>
+        <p>Ein Hero mit echtem Portrait und persönlicher Ansprache statt Logo und Floskel — Premium-Coaching ist Beziehung.</p>
+      </div>
+      <div class="benefit-card reveal">
+        <div class="benefit-icon">🎯</div>
+        <h3>Ein sichtbarer nächster Schritt</h3>
+        <p>Statt nur ein Portfolio: ein klarer Call-to-Action für das kostenlose Erstgespräch, oben und unten auf der Seite.</p>
+      </div>
+      <div class="benefit-card reveal">
+        <div class="benefit-icon">🧠</div>
+        <h3>Methodik, die Sicherheit gibt</h3>
+        <p>Ein nachvollziehbarer Ablauf nimmt die Unsicherheit vor dem ersten teuren Schritt.</p>
+      </div>
+      <div class="benefit-card reveal">
+        <div class="benefit-icon">✨</div>
+        <h3>Hochwertige Optik statt Baukasten</h3>
+        <p>Eigene Typografie, Weißraum und ruhige Farben, die zum Honorar passen.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Process Timeline -->
+<section class="section" id="prozess">
+  <div class="container">
+    <span class="eyebrow reveal">Unser Vorgehen</span>
+    <h2 class="reveal">In 4 Schritten zu Ihrem persönlichen Auftritt</h2>
+    <p class="reveal" style="max-width:560px">Transparent, schnell, ohne Überraschungen. Von der ersten Idee zur live Website in unter 3 Wochen.</p>
+    <div class="timeline">
+      <div class="timeline-step reveal">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h3>Strategie-Call (30 min)</h3>
+          <p>Wir verstehen Ihre Zielgruppe, Ihr Angebot und was Ihre Website bisher blockiert — kostenlos, unverbindlich.</p>
+        </div>
+      </div>
+      <div class="timeline-step reveal">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h3>Design-Konzept in 48 h</h3>
+          <p>Mockups mit Ihrem echten Branding — bevor eine Zeile Code geschrieben wird. Sie sehen das Ergebnis zuerst.</p>
+        </div>
+      </div>
+      <div class="timeline-step reveal">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <h3>Umsetzung & Review</h3>
+          <p>Umsetzung in 2 Wochen. 2 Feedback-Runden inkludiert. Deploy auf Ihre Domain oder unserer Infrastruktur.</p>
+        </div>
+      </div>
+      <div class="timeline-step reveal">
+        <div class="step-num">4</div>
+        <div class="step-content">
+          <h3>Live + laufende Optimierung</h3>
+          <p>Launch, Monitoring, monatliche Conversion-Auswertung — Ihre Website wird besser, je länger sie läuft.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Honest proof block (replaces fabricated testimonials) -->
+
+<section class="section" id="stimmen">
+  <div class="container">
+    <span class="eyebrow reveal">Über diese Vorschau</span>
+    <h2 class="reveal">Individuell gebaut, keine erfundenen Zitate</h2>
+    <p class="reveal" style="max-width:640px">Diese Vorschau ist von Hand für Stephanie Hollstein gestaltet. ELEVO arbeitet ohne Templates; echte Referenzen besprechen wir persönlich.</p>
+    <p class="reveal" style="max-width:640px;margin-top:1rem">
+      Mehr über ELEVO: <a href="https://elevo.solutions" rel="noopener" style="color:var(--clr-primary);font-weight:600;">elevo.solutions</a>
+    </p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section section--alt" id="faq">
+  <div class="container">
+    <span class="eyebrow reveal">FAQ</span>
+    <h2 class="reveal">Häufige Fragen</h2>
+    <div class="faq" role="list">
+      <div class="faq-item reveal" role="listitem">
+        <button class="faq-question" aria-expanded="false">
+          Wie lange dauert die Umsetzung?
+          <svg class="faq-chevron" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-answer" role="region"><p>Typisch 2–3 Wochen vom Strategie-Call bis zum Live-Launch. Für einfache Seiten auch schneller — wir richten uns nach Ihrem Tempo.</p></div>
+      </div>
+      <div class="faq-item reveal" role="listitem">
+        <button class="faq-question" aria-expanded="false">
+          Was kostet die neue Website?
+          <svg class="faq-chevron" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-answer" role="region"><p>Einmalig ab 1.490 € inkl. Design, Umsetzung und einem Jahr Hosting. Kein laufendes CMS-Abo, keine versteckten Kosten. Exaktes Angebot nach dem Erstgespräch.</p></div>
+      </div>
+      <div class="faq-item reveal" role="listitem">
+        <button class="faq-question" aria-expanded="false">
+          Kann ich die Seite selbst bearbeiten?
+          <svg class="faq-chevron" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-answer" role="region"><p>Ja — wir bauen ein einfaches CMS-Interface auf Wunsch. Alternativ übernehmen wir alle Änderungen für Sie (üblicherweise 24 h Reaktionszeit).</p></div>
+      </div>
+      <div class="faq-item reveal" role="listitem">
+        <button class="faq-question" aria-expanded="false">
+          Ist diese Preview eine Verpflichtung?
+          <svg class="faq-chevron" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-answer" role="region"><p>Nein. Die Preview wurde speziell für Business gebaut — kostenlos, ohne Vertrag. Sie können sie anschauen, teilen und uns danach einfach fragen, ob Sie mehr sehen wollen.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Final CTA -->
+<section class="cta-section" id="kontakt">
+  <div class="container">
+    <span class="eyebrow" style="color:rgba(255,255,255,.7)">Nächster Schritt</span>
+    <h2>Sehen Sie Ihren Auftritt auf Premium-Niveau</h2>
+    <p>Diese Preview wurde exklusiv für Business gebaut. Kein Auftrag nötig, keine Verpflichtung. Ein 30-Minuten-Gespräch zeigt, was möglich ist.</p>
+    <a href="mailto:mert@elevo.solutions?subject=Preview+Anfrage+Business&body=Hallo%2C%0A%0Aich+habe+die+Preview+f%C3%BCr+Business+gesehen+und+m%C3%B6chte+mehr+erfahren." class="btn btn-white">
+      Jetzt kostenloses Gespräch anfragen →
+    </a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-inner">
+      <span>Diese Preview wurde von <a href="https://elevo.solutions" rel="noopener">Elevo</a> für Demonstrationszwecke erstellt.</span>
+      <a href="https://stephanie-hollstein.de" target="_blank" rel="noopener noreferrer">Zur aktuellen Website von Business →</a>
+      <span>Impressum: Elevo Solutions · mert@elevo.solutions</span>
+    </div>
+  </div>
+</footer>
+
 <script>
-var h=document.getElementById('hdr');addEventListener('scroll',function(){h.classList.toggle('scrolled',scrollY>20)});
-var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -50px 0px'});
-document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
-document.querySelector('.burger').addEventListener('click',function(){document.querySelectorAll('.nav a:not(.btn)').forEach(function(a){a.style.display=a.style.display==='block'?'':'block'})});
+  // Scroll-Reveal
+  (function() {
+    var els = document.querySelectorAll('.reveal');
+    if (!els.length) return;
+    var io = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    els.forEach(function(el) { io.observe(el); });
+  })();
+
+  // FAQ Accordion
+  document.querySelectorAll('.faq-question').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var item = btn.closest('.faq-item');
+      var isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(function(o) {
+        o.classList.remove('open');
+        o.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen) {
+        item.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
 </script>
-</body></html>
+
+</body>
+</html>
