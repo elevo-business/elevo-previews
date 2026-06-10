@@ -1,84 +1,72 @@
 <!DOCTYPE html>
-<html lang="de">
-<!--
-  PREVIEW für Redplane (Oliver Wuntsch) — unverbindliche Demo von ELEVO.
-  Bilder + Branding aus der bestehenden Website (redplane.de) übernommen.
-  Kundenstimmen + Terminlink sind Platzhalter bis zur Freigabe.
--->
+<html lang="de" data-theme="light">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Redplane — Business Coaching & Sparring für Unternehmer | Düsseldorf</title>
-<meta name="description" content="Business Coaching und Sparring für Unternehmer, Führungskräfte und Selbstständige. Oliver Wuntsch, DBVC-zertifiziert, Medienhafen Düsseldorf & online.">
-<meta name="robots" content="noindex,nofollow">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
-<style>
-@keyframes fadeUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
-@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
-:root{
-  --red:#C8102E;--red-dark:#9E0C24;--ink:#14171C;--ink-2:#1C2027;
-  --bg:#FAF9F8;--bg-alt:#F1EFEC;--white:#fff;
-  --text:#1A1D22;--body:#4A525C;--muted:#7C8794;--line:rgba(20,23,28,.08);
-  --font-h:'Manrope',-apple-system,sans-serif;--font-b:'Outfit',-apple-system,sans-serif;
-  --max:1180px;--rad:16px;--rad-lg:26px;--ease:cubic-bezier(.25,.46,.45,.94);
-  --shadow:0 18px 50px rgba(20,23,28,.10);--shadow-sm:0 6px 22px rgba(20,23,28,.06);
-}
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:84px}
-body{font-family:var(--font-b);font-weight:300;color:var(--body);background:var(--bg);line-height:1.75;font-size:16.5px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-img{max-width:100%;height:auto;display:block}
-a{color:inherit;text-decoration:none}
-.wrap{max-width:var(--max);margin:0 auto;padding:0 28px}
-h1,h2,h3,h4{font-family:var(--font-h);color:var(--text);letter-spacing:-.025em;line-height:1.08}
-h1{font-size:clamp(38px,5.8vw,68px);font-weight:800}
-h2{font-size:clamp(28px,4vw,46px);font-weight:800}
-h3{font-size:clamp(19px,2.4vw,25px);font-weight:700;line-height:1.25}
-.eyebrow{font-family:var(--font-b);font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--red);display:inline-flex;align-items:center;gap:13px;margin-bottom:20px}
-.eyebrow::before{content:'';width:26px;height:1.5px;background:var(--red)}
-.eyebrow.light{color:#FF6B81}.eyebrow.light::before{background:#FF6B81}
-.btn{display:inline-flex;align-items:center;gap:9px;font-family:var(--font-b);font-size:15px;font-weight:600;padding:15px 32px;border-radius:100px;cursor:pointer;transition:all .35s var(--ease);border:none;line-height:1}
-.btn-primary{background:var(--red);color:#fff}
-.btn-primary:hover{background:var(--red-dark);transform:translateY(-2px);box-shadow:0 14px 34px rgba(200,16,46,.32)}
-.btn-ghost{background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.28);backdrop-filter:blur(8px)}
-.btn-ghost:hover{background:rgba(255,255,255,.16);transform:translateY(-2px)}
-.btn-outline{background:transparent;color:var(--red);border:1.5px solid var(--red)}
-.btn-outline:hover{background:var(--red);color:#fff}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Business Coaching — Ihre neue Website | Elevo Preview</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+  <style>
+    /* ── Design Tokens ──────────────────────────────── */
+    :root {
+      --clr-primary:     #BF1637;
+      --clr-primary-dk:  #A10019;
+      --clr-surface:     #ffffff;
+      --clr-surface-2:   #f8f9fc;
+      --clr-surface-3:   #eef1f6;
+      --clr-text:        #0f172a;
+      --clr-text-muted:  #64748b;
+      --clr-border:      #e2e8f0;
+      --font-sans:       'Inter', system-ui, sans-serif;
+      --font-display:    'Playfair Display', Georgia, serif;
+      --radius-sm:       6px;
+      --radius-md:       12px;
+      --radius-lg:       20px;
+      --shadow-sm:       0 1px 3px rgba(0,0,0,.08);
+      --shadow-md:       0 4px 16px rgba(0,0,0,.10);
+      --shadow-lg:       0 8px 32px rgba(0,0,0,.12);
+      --transition:      0.25s cubic-bezier(.4,0,.2,1);
+      --max-w:           1140px;
+      --section-py:      5rem;
+    }
 
-/* HEADER */
-.header{position:fixed;top:0;left:0;width:100%;z-index:1000;background:rgba(250,249,248,.82);backdrop-filter:blur(20px);border-bottom:1px solid transparent;transition:.4s var(--ease)}
-.header.scrolled{border-bottom-color:var(--line);box-shadow:0 4px 26px rgba(20,23,28,.05)}
-.header-in{display:flex;align-items:center;justify-content:space-between;max-width:var(--max);margin:0 auto;padding:17px 28px}
-.brand{font-family:var(--font-h);font-weight:800;font-size:22px;color:var(--ink);letter-spacing:-.02em}
-.brand b{color:var(--red)}
-.nav{display:flex;align-items:center;gap:4px}
-.nav a{font-size:14.5px;font-weight:500;color:var(--body);padding:8px 15px;border-radius:8px;transition:.3s}
-.nav a:hover{color:var(--red);background:rgba(200,16,46,.05)}
-.nav .btn{margin-left:10px}
-.burger{display:none;background:none;border:none;cursor:pointer;padding:8px}
-.burger span{display:block;width:24px;height:2px;background:var(--ink);margin:5px 0;border-radius:2px;transition:.3s}
+    /* ── Reset ─────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
+    body {
+      font-family: var(--font-sans);
+      color: var(--clr-text);
+      background: var(--clr-surface);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      max-width: 100%;
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; }
 
-/* HERO */
-.hero{position:relative;min-height:100vh;display:flex;align-items:flex-end;overflow:hidden}
-.hero-bg{position:absolute;inset:0;z-index:0}
-.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 30%}
-.hero-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(20,23,28,.55) 0%,rgba(20,23,28,.30) 38%,rgba(20,23,28,.72) 100%)}
-.hero-in{position:relative;z-index:3;width:100%;padding-bottom:84px;padding-top:140px}
-.hero h1{color:#fff;max-width:880px;margin-bottom:22px}
-.hero h1 em{font-style:normal;color:#FF6B81}
-.hero-sub{font-size:20px;color:rgba(255,255,255,.82);max-width:600px;margin-bottom:34px;font-weight:300}
-.hero-cta{display:flex;gap:15px;flex-wrap:wrap;align-items:center}
-.hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:54px;max-width:760px}
-.stat-card{background:rgba(255,255,255,.10);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.18);border-radius:var(--rad);padding:22px 20px}
-.stat-card .num{font-family:var(--font-h);font-size:34px;font-weight:800;color:#fff;line-height:1}
-.stat-card .lbl{font-size:12px;color:rgba(255,255,255,.62);margin-top:7px;letter-spacing:.02em}
+    /* ── Typography ────────────────────────────────── */
+    h1, h2, h3 { line-height: 1.2; letter-spacing: -.02em; overflow-wrap: break-word; word-break: break-word; hyphens: auto; }
+    h1 { font-family: var(--font-display); font-size: clamp(2.2rem, 5.5vw, 3.8rem); font-weight: 800; }
+    h2 { font-family: var(--font-display); font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 700; }
+    h3 { font-size: 1.1rem; font-weight: 600; }
+    .eyebrow {
+      display: inline-block;
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--clr-primary);
+      margin-bottom: .75rem;
+    }
+    p { color: var(--clr-text-muted); }
 
-/* SECTIONS */
-section{padding:108px 0}
-.sec-head{max-width:680px;margin-bottom:56px}
-.sec-head.center{margin-left:auto;margin-right:auto;text-align:center}
-.sec-head p{font-size:18px;color:var(--muted);margin-top:18px;line-height:1.7}
+    /* ── Layout helpers ────────────────────────────── */
+    .container { max-width: var(--max-w); margin: 0 auto; padding: 0 1.5rem; }
+    .section { padding: var(--section-py) 0; }
+    .section--alt { background: var(--clr-surface-2); }
 
 /* PAIN */
 .pain{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
@@ -89,113 +77,318 @@ section{padding:108px 0}
 .pain-card h3{margin-bottom:10px}
 .pain-card p{font-size:15.5px}
 
-/* SPLIT (image + text) */
-.split{display:grid;grid-template-columns:1fr 1fr;gap:66px;align-items:center}
-.split.rev .split-text{order:2}
-.split-img{position:relative}
-.split-img img{width:100%;border-radius:var(--rad-lg);box-shadow:var(--shadow);object-fit:cover;aspect-ratio:4/5}
-.split-img .badge{position:absolute;bottom:-22px;right:-18px;background:#fff;border-radius:var(--rad);box-shadow:var(--shadow);padding:16px 20px;display:flex;align-items:center;gap:13px;max-width:230px}
-.split-img .badge img{width:46px;height:46px;border-radius:8px;aspect-ratio:auto}
-.split-img .badge .bt{font-family:var(--font-h);font-weight:700;font-size:14px;color:var(--ink);line-height:1.25}
-.split-img .badge .bs{font-size:12px;color:var(--muted)}
-.split-text h2{margin-bottom:22px}
-.split-text p{margin-bottom:18px;font-size:17px}
-.check{list-style:none;margin-top:26px;display:flex;flex-direction:column;gap:14px}
-.check li{display:flex;gap:13px;align-items:flex-start;font-size:16px;color:var(--text)}
-.check li::before{content:'✓';color:var(--red);font-weight:800;flex-shrink:0}
+    /* ── Sticky Mobile CTA ─────────────────────────── */
+    .mobile-cta-bar {
+      display: none;
+      position: fixed; bottom: 0; left: 0; right: 0; z-index: 200;
+      background: var(--clr-surface);
+      border-top: 1px solid var(--clr-border);
+      padding: .75rem 1rem;
+      box-shadow: 0 -4px 20px rgba(0,0,0,.1);
+    }
+    .mobile-cta-bar .btn { width: 100%; justify-content: center; font-size: 1rem; padding: .9rem; }
+    @media (max-width: 768px) {
+      .mobile-cta-bar { display: block; }
+      body { padding-bottom: 80px; }
+    }
 
-/* PROCESS */
-.proc{background:var(--ink);color:#fff}
-.proc h2,.proc h3{color:#fff}
-.proc .sec-head p{color:rgba(255,255,255,.6)}
-.proc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
-.proc-step{padding:30px 26px;border:1px solid rgba(255,255,255,.10);border-radius:var(--rad);background:rgba(255,255,255,.02);position:relative}
-.proc-step .pn{font-family:var(--font-h);font-size:15px;font-weight:800;color:var(--red);width:38px;height:38px;border:1.5px solid rgba(200,16,46,.5);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:20px}
-.proc-step h3{font-size:19px;margin-bottom:10px}
-.proc-step p{font-size:14.5px;color:rgba(255,255,255,.62)}
+    /* ── Header ────────────────────────────────────── */
+    .site-header {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255,255,255,.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--clr-border);
+      padding: 1rem 0;
+    }
+    .header-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 1rem;
+    }
+    .logo { height: 44px; width: auto; object-fit: contain; }
+    .logo-text { font-size: 1.3rem; font-weight: 800; color: var(--clr-primary); font-family: var(--font-display); }
+    .header-nav { display: flex; gap: 2rem; list-style: none; }
+    .header-nav a { font-size: .9rem; font-weight: 500; text-decoration: none; color: var(--clr-text-muted); transition: var(--transition); }
+    .header-nav a:hover { color: var(--clr-primary); }
+    .header-cta { margin-left: auto; }
+    @media (max-width: 768px) {
+      .header-nav { display: none; }
+      .header-cta { display: none; }
+    }
 
-/* GALLERY band */
-.band{padding:0;position:relative;height:340px;overflow:hidden}
-.band img{width:100%;height:100%;object-fit:cover;object-position:center 35%}
-.band .band-ov{position:absolute;inset:0;background:linear-gradient(90deg,rgba(20,23,28,.78),rgba(20,23,28,.25));display:flex;align-items:center}
-.band .wrap{position:relative;z-index:2}
-.band h2{color:#fff;max-width:560px}
-.band p{color:rgba(255,255,255,.8);margin-top:14px;max-width:480px;font-size:17px}
+    /* ── Hero ──────────────────────────────────────── */
+    .hero {
+      min-height: 88vh;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      text-align: center;
+      padding: 5rem 1.5rem 4rem;
+      color: #fff;
+      position: relative; overflow: hidden;
+      background-image: linear-gradient(160deg, rgba(0,0,0,0.52) 0%, rgba(0,0,0,0.3) 100%), url('assets/hero.png');background-size: cover; background-position: center top;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(255,255,255,.15);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,.3);
+      border-radius: 100px;
+      padding: .4rem 1.1rem;
+      font-size: .8rem; font-weight: 600;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+      color: rgba(255,255,255,.9);
+    }
+    .hero h1 { max-width: 820px; margin: 0 auto 1.5rem; color: #fff; text-shadow: 0 2px 12px rgba(0,0,0,.3); }
+    .hero-lead { font-size: 1.15rem; max-width: 580px; margin: 0 auto 2.5rem; opacity: .9; color: rgba(255,255,255,.9); }
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
+    .hero-scroll {
+      position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
+      animation: bounce 2s infinite;
+      opacity: .6;
+    }
+    @keyframes bounce { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(6px)} }
 
-/* TESTIMONIAL */
-.quote{background:var(--bg-alt)}
-.quote-card{max-width:840px;margin:0 auto;text-align:center}
-.quote-card .q{font-family:var(--font-h);font-size:clamp(22px,3vw,32px);font-weight:700;color:var(--text);line-height:1.4;letter-spacing:-.02em}
-.quote-card .q::before{content:'“';color:var(--red);font-size:60px;line-height:0;vertical-align:-22px;margin-right:6px}
-.quote-meta{margin-top:28px;font-size:15px;color:var(--muted)}
-.quote-meta b{color:var(--text);font-weight:600}
-.ph{font-size:12px;color:var(--muted);letter-spacing:.04em;margin-top:10px;opacity:.7}
+    /* ── Social proof strip ────────────────────────── */
+    .proof-strip {
+      background: var(--clr-surface-3);
+      padding: 1.5rem 0;
+      border-bottom: 1px solid var(--clr-border);
+    }
+    .proof-strip-inner {
+      display: flex; align-items: center; justify-content: center;
+      gap: 2.5rem; flex-wrap: wrap;
+    }
+    .proof-item { display: flex; align-items: center; gap: .5rem; font-size: .875rem; font-weight: 600; color: var(--clr-text-muted); }
+    .proof-item span { color: var(--clr-primary); font-weight: 700; }
 
-/* CTA */
-.cta{background:linear-gradient(135deg,var(--red) 0%,var(--red-dark) 100%);color:#fff;text-align:center}
-.cta h2{color:#fff;max-width:680px;margin:0 auto 18px}
-.cta p{color:rgba(255,255,255,.86);max-width:560px;margin:0 auto 34px;font-size:18px}
-.btn-white{background:#fff;color:var(--red);font-weight:700}
-.btn-white:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(0,0,0,.22)}
+    /* ── Benefits grid ─────────────────────────────── */
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .benefit-card {
+      background: var(--clr-surface);
+      border: 1px solid var(--clr-border);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      transition: var(--transition);
+    }
+    .benefit-card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); }
+    .benefit-icon { font-size: 2rem; margin-bottom: 1rem; }
+    .benefit-card h3 { margin-bottom: .5rem; }
+    .benefit-card p { font-size: .9rem; }
 
-/* FOOTER */
-.foot{background:var(--ink-2);color:rgba(255,255,255,.55);padding:46px 0;font-size:14px}
-.foot-in{display:flex;justify-content:space-between;flex-wrap:wrap;gap:18px;align-items:center}
-.foot a{color:rgba(255,255,255,.55)}.foot a:hover{color:#fff}
+    /* ── Alternating section ───────────────────────── */
+    .alt-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem; align-items: center;
+    }
+    .alt-grid--text-only {
+      grid-template-columns: 1fr 1fr;
+    }
+    .alt-image img {
+      border-radius: var(--radius-lg);
+      width: 100%;
+      object-fit: cover;
+      aspect-ratio: 4/3;
+      box-shadow: var(--shadow-lg);
+    }
+    .alt-content { display: flex; flex-direction: column; gap: 1.25rem; }
+    .alt-content p { font-size: 1.05rem; line-height: 1.7; }
+    .check-list { list-style: none; display: flex; flex-direction: column; gap: .75rem; }
+    .check-list li { display: flex; align-items: flex-start; gap: .6rem; font-size: .95rem; color: var(--clr-text-muted); }
+    .check-list li::before { content: "✓"; color: var(--clr-primary); font-weight: 700; flex-shrink: 0; }
+    @media (max-width: 768px) {
+      .alt-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .alt-image { order: -1; }
+    }
 
-/* REVEAL */
-.reveal{opacity:0;transform:translateY(34px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
-.reveal.in{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}*{animation:none!important}}
+    /* ── Process timeline ──────────────────────────── */
+    .timeline { display: flex; flex-direction: column; gap: 0; margin-top: 3rem; position: relative; }
+    .timeline::before {
+      content: "";
+      position: absolute; left: 28px; top: 0; bottom: 0; width: 2px;
+      background: linear-gradient(to bottom, var(--clr-primary), var(--clr-border));
+    }
+    .timeline-step { display: flex; gap: 2rem; padding-bottom: 3rem; position: relative; }
+    .timeline-step:last-child { padding-bottom: 0; }
+    .step-num {
+      flex-shrink: 0;
+      width: 56px; height: 56px;
+      border-radius: 50%;
+      background: var(--clr-primary);
+      color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 800; font-size: 1.1rem;
+      box-shadow: 0 0 0 4px var(--clr-surface-2), 0 0 0 6px var(--clr-primary);
+      position: relative; z-index: 1;
+    }
+    .step-content h3 { margin-bottom: .4rem; }
+    .step-content p { font-size: .9rem; }
 
-/* MOBILE */
-@media(max-width:900px){
-  .nav a:not(.btn){display:none}.burger{display:block}
-  .split{grid-template-columns:1fr;gap:40px}.split.rev .split-text{order:0}
-  .split-img .badge{position:static;margin-top:18px;max-width:none}
-  .pain-grid,.proc-grid{grid-template-columns:1fr}
-  .hero-stats{grid-template-columns:repeat(2,1fr)}
-  section{padding:72px 0}
-  .hero-in{padding-bottom:56px}
-}
-</style>
+    /* ── Testimonials ──────────────────────────────── */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem; margin-top: 3rem;
+    }
+    .testimonial-card {
+      background: var(--clr-surface);
+      border: 1px solid var(--clr-border);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      position: relative;
+    }
+    .testimonial-card::before {
+      content: '“';
+      position: absolute; top: 1rem; left: 1.5rem;
+      font-family: var(--font-display);
+      font-size: 4rem; line-height: 1;
+      color: var(--clr-primary); opacity: .15;
+    }
+    .testimonial-text { font-style: italic; color: var(--clr-text); margin-bottom: 1.25rem; font-size: .95rem; }
+    .testimonial-author { font-weight: 700; font-size: .85rem; }
+    .testimonial-role { font-size: .8rem; color: var(--clr-text-muted); margin-top: .2rem; }
+    .stars { color: #f59e0b; font-size: 1rem; margin-bottom: .75rem; }
+
+    /* ── Value-Add / Quick-Wins ────────────────────── */
+    .weakness-grid { display: flex; flex-direction: column; gap: 1.5rem; margin-top: 3rem; }
+    .weakness-card {
+      background: var(--clr-surface);
+      border: 1px solid var(--clr-border);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      border-left: 4px solid #ef4444;
+    }
+    .weakness-icon { font-size: 1.5rem; margin-bottom: .5rem; }
+    .weakness-card h3 { color: var(--clr-text); margin-bottom: .5rem; font-size: 1rem; }
+    .weakness-problem { font-size: .9rem; margin-bottom: 1rem; }
+    .weakness-fix {
+      background: #f0fdf4;
+      border-radius: var(--radius-sm);
+      padding: .75rem 1rem;
+      border-left: 3px solid #22c55e;
+    }
+    .fix-label { font-weight: 700; font-size: .8rem; color: #16a34a; display: block; margin-bottom: .3rem; }
+    .weakness-fix p { font-size: .875rem; color: #166534; }
+
+    /* ── FAQ Accordion ─────────────────────────────── */
+    .faq { margin-top: 3rem; display: flex; flex-direction: column; gap: .75rem; }
+    .faq-item { border: 1px solid var(--clr-border); border-radius: var(--radius-md); overflow: hidden; }
+    .faq-question {
+      width: 100%; display: flex; align-items: center; justify-content: space-between;
+      padding: 1.25rem 1.5rem;
+      background: var(--clr-surface);
+      border: none; cursor: pointer;
+      font-family: var(--font-sans); font-size: .95rem; font-weight: 600;
+      text-align: left; color: var(--clr-text);
+      transition: var(--transition);
+    }
+    .faq-question:hover { background: var(--clr-surface-2); }
+    .faq-chevron { transition: transform var(--transition); flex-shrink: 0; }
+    .faq-item.open .faq-chevron { transform: rotate(180deg); }
+    .faq-answer {
+      max-height: 0; overflow: hidden;
+      transition: max-height .35s ease, padding .35s ease;
+      background: var(--clr-surface-2);
+    }
+    .faq-item.open .faq-answer { max-height: 400px; padding: 0 1.5rem 1.25rem; }
+    .faq-answer p { font-size: .9rem; padding-top: .75rem; }
+
+    /* ── CTA Section ───────────────────────────────── */
+    .cta-section {
+      background: linear-gradient(135deg, var(--clr-primary) 0%, var(--clr-primary-dk) 100%);
+      color: #fff; text-align: center; padding: 6rem 1.5rem;
+    }
+    .cta-section h2 { color: #fff; margin-bottom: 1rem; }
+    .cta-section p { color: rgba(255,255,255,.85); max-width: 560px; margin: 0 auto 2.5rem; font-size: 1.05rem; }
+    .btn-white { background: #fff; color: var(--clr-primary); }
+    .btn-white:hover { background: #f0f0f0; transform: translateY(-1px); }
+
+    /* ── Footer ────────────────────────────────────── */
+    .site-footer {
+      background: #0f172a; color: #94a3b8;
+      padding: 2.5rem 0;
+      font-size: .85rem;
+    }
+    .footer-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 1rem;
+    }
+    .footer-inner a { color: #94a3b8; text-decoration: none; }
+    .footer-inner a:hover { color: #fff; }
+
+    /* ── Scroll-Reveal ─────────────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .65s ease, transform .65s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+      * { animation: none !important; transition: none !important; }
+    }
+
+    /* ── Responsive ────────────────────────────────── */
+    @media (max-width: 640px) {
+      :root { --section-py: 3.5rem; }
+      h1 { font-size: clamp(1.75rem, 7.5vw, 2.4rem); }
+      h2 { font-size: clamp(1.5rem, 6vw, 2rem); }
+      .hero { min-height: 75vh; padding-top: 4rem; padding-bottom: 3rem; }
+      .hero-actions { flex-direction: column; align-items: center; }
+      .proof-strip-inner { gap: 1rem; }
+      .timeline::before { left: 24px; }
+      .step-num { width: 48px; height: 48px; font-size: 1rem; }
+    }
+  </style>
 </head>
 <body>
 
-<header class="header" id="hdr">
-  <div class="header-in">
-    <a href="#top" class="brand">RED<b>PLANE</b></a>
-    <nav class="nav">
-      <a href="#angebot">Angebot</a>
-      <a href="#ueber">Über Oliver</a>
-      <a href="#vorgehen">Vorgehen</a>
-      <a href="#stimmen">Stimmen</a>
-      <a href="#kontakt" class="btn btn-primary">Erstgespräch</a>
-      <button class="burger" aria-label="Menü"><span></span><span></span><span></span></button>
-    </nav>
+<!-- Sticky Mobile CTA -->
+<div class="mobile-cta-bar" role="complementary" aria-label="Schnellkontakt">
+  <a href="mailto:mert@elevo.solutions?subject=Preview+Business%20Coaching" class="btn btn-primary">
+    Kostenlose Beratung anfragen →
+  </a>
+</div>
+
+<!-- Header -->
+<header class="site-header">
+  <div class="container">
+    <div class="header-inner">
+      <span class="logo-text">Business Coaching</span>
+      <nav aria-label="Hauptnavigation">
+        <ul class="header-nav">
+          <li><a href="#leistungen">Leistungen</a></li>
+          <li><a href="#prozess">Vorgehen</a></li>
+          <li><a href="#stimmen">Referenzen</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </nav>
+      <div class="header-cta">
+        <a href="#kontakt" class="btn btn-primary" style="padding:.6rem 1.25rem;font-size:.875rem;">Gespräch anfragen</a>
+      </div>
+    </div>
   </div>
 </header>
 
-<!-- HERO -->
-<section class="hero" id="top">
-  <div class="hero-bg"><img src="assets/coach-medienhafen-2.webp" alt="Oliver Wuntsch, Business Coach im Medienhafen Düsseldorf"></div>
-  <div class="hero-overlay"></div>
-  <div class="hero-in">
-    <div class="wrap">
-      <span class="eyebrow light">Business Coaching & Sparring · Düsseldorf</span>
-      <h1>An der Spitze wird es einsam.<br><em>Gut, einen Sparringspartner zu haben.</em></h1>
-      <p class="hero-sub">Für Unternehmer und Führungskräfte, die Entscheidungen nicht länger allein abwägen wollen — ein erfahrener Partner auf Augenhöhe. Vertraulich, klar, wirksam.</p>
-      <div class="hero-cta">
-        <a href="#kontakt" class="btn btn-primary">Erstgespräch anfragen</a>
-        <a href="#ueber" class="btn btn-ghost">So arbeite ich →</a>
-      </div>
-      <div class="hero-stats">
-        <div class="stat-card"><div class="num">15+</div><div class="lbl">Jahre Erfahrung</div></div>
-        <div class="stat-card"><div class="num">DBVC</div><div class="lbl">Zertifiziert</div></div>
-        <div class="stat-card"><div class="num">1:1</div><div class="lbl">Vertraulich</div></div>
-        <div class="stat-card"><div class="num">2</div><div class="lbl">Düsseldorf & online</div></div>
-      </div>
-    </div>
+<!-- Hero -->
+<section class="hero" aria-label="Hero">
+  <div class="hero-badge">✦ Vorschau für Redplane</div>
+  <h1>Ein Onepager mit Stock-Hero sagt alles — und nichts. Zeit für einen Auftritt, der nach Ihnen klingt.</h1>
+  <p class="hero-lead">Business Coaching ist eine Investition ins Gelingen. Jetzt informieren!</p>
+  <div class="hero-actions">
+    <a href="#kontakt" class="btn btn-primary">Kostenlose Vorschau aktivieren</a>
+    <a href="#quick-wins" class="btn btn-ghost">Aktuelle Schwächen sehen ↓</a>
+  </div>
+  <div class="hero-scroll" aria-hidden="true">
+    <svg width="24" height="24" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5"/></svg>
   </div>
 </section>
 
@@ -212,88 +405,235 @@ section{padding:108px 0}
       <div class="pain-card reveal"><div class="pc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><path d="M5 7h14"/><path d="m5 7-3 6a3 3 0 0 0 6 0z"/><path d="m19 7-3 6a3 3 0 0 0 6 0z"/><path d="M7 21h10"/></svg></div><h3>Balance & Klarheit</h3><p>Wenn Tempo und Verantwortung an die Substanz gehen. Ein Raum, um Druck rauszunehmen und mit klarem Kopf weiterzugehen.</p></div>
     </div>
   </div>
-</section>
-
-<!-- ÜBER / SPLIT -->
-<section id="ueber">
-  <div class="wrap">
-    <div class="split">
-      <div class="split-img reveal">
-        <img src="assets/coach-portrait.webp" alt="Oliver Wuntsch, Business Coach Redplane">
-        <div class="badge"><img src="assets/dbvc-badge.webp" alt="DBVC"><div><div class="bt">DBVC-zertifiziert</div><div class="bs">Deutscher Bundesverband Coaching</div></div></div>
-      </div>
-      <div class="split-text reveal">
-        <span class="eyebrow">Ihr Sparringspartner</span>
-        <h2>Oliver Wuntsch</h2>
-        <p>Seit über 15 Jahren begleite ich Unternehmer, Geschäftsführer und Führungskräfte in genau den Fragen, die sich nicht delegieren lassen. Kein Methodenkoffer von der Stange — sondern ein klares, vertrauliches Gegenüber, das mitdenkt und auch unbequeme Fragen stellt.</p>
-        <ul class="check">
-          <li>Eigene unternehmerische Erfahrung — ich kenne die Einsamkeit der Spitze aus erster Hand.</li>
-          <li>DBVC-zertifiziert, gebunden an klare ethische Standards.</li>
-          <li>Vor Ort im Medienhafen Düsseldorf oder ortsunabhängig online.</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- BAND -->
-<div class="band reveal">
-  <img src="assets/group-coaching.webp" alt="Business Coaching Gruppe Redplane">
-  <div class="band-ov"><div class="wrap"><h2>Auch im Team wirksam</h2><p>Workshops und Sparring für Führungsteams — wenn nicht nur eine Person, sondern eine ganze Ebene Klarheit braucht.</p></div></div>
 </div>
 
-<!-- VORGEHEN -->
-<section class="proc" id="vorgehen">
-  <div class="wrap">
-    <div class="sec-head center reveal">
-      <span class="eyebrow light" style="justify-content:center">Vorgehen</span>
-      <h2>Vom ersten Gespräch zur klaren Entscheidung</h2>
-      <p>Unverbindlich starten, schnell Substanz spüren. Kein langer Vorlauf, kein Paket, das Sie nicht brauchen.</p>
+<!-- Middle sections (bespoke order per prospect) -->
+
+<section class="section section--alt" id="quick-wins">
+  <div class="container">
+    <span class="eyebrow">Kostenlose Analyse</span>
+    <h2>Warum der Redplane-Onepager zu wenig hängenbleibt</h2>
+    <p style="max-width:640px;margin-bottom:0">Wir haben redplane.de geprüft. Drei Punkte machen den Auftritt beliebig:</p>
+    <div class="weakness-grid">
+      
+      <div class="weakness-card reveal">
+        <div class="weakness-icon">⚠</div>
+        <h3>Generischer Hero — austauschbar</h3>
+        <p class="weakness-problem">Ein Stock-Hero mit Standard-Claim könnte zu jedem Coach gehören. Besucher merken sich nichts.</p>
+        <div class="weakness-fix">
+          <span class="fix-label">✓ Vorschau-Lösung:</span>
+          <p>Ein eigenständiger Hero mit klarer Botschaft und passendem Bild, das nur zu Redplane gehört.</p>
+        </div>
+      </div>
+      <div class="weakness-card reveal">
+        <div class="weakness-icon">⚠</div>
+        <h3>Onepager zu dünn für Vertrauen</h3>
+        <p class="weakness-problem">25 kB Inhalt reichen nicht, um Angebot, Methode und Glaubwürdigkeit zu vermitteln.</p>
+        <div class="weakness-fix">
+          <span class="fix-label">✓ Vorschau-Lösung:</span>
+          <p>Eine strukturierte Seite, die jedem Aspekt genug Raum gibt, ohne überladen zu wirken.</p>
+        </div>
+      </div>
+      <div class="weakness-card reveal">
+        <div class="weakness-icon">⚠</div>
+        <h3>Kein klarer CTA-Pfad</h3>
+        <p class="weakness-problem">Ohne eindeutigen nächsten Schritt bleibt es bei einem flüchtigen Besuch.</p>
+        <div class="weakness-fix">
+          <span class="fix-label">✓ Vorschau-Lösung:</span>
+          <p>Ein durchgängiger Weg zum Erstgespräch mit CTAs an den richtigen Stellen.</p>
+        </div>
+      </div>
     </div>
-    <div class="proc-grid">
-      <div class="proc-step reveal"><div class="pn">1</div><h3>Erstgespräch</h3><p>30 Minuten, kostenlos. Wir klären Ihr Anliegen und ob die Chemie stimmt — ohne Verpflichtung.</p></div>
-      <div class="proc-step reveal"><div class="pn">2</div><h3>Fokus setzen</h3><p>Gemeinsam definieren wir, woran wir arbeiten und woran Sie Fortschritt erkennen.</p></div>
-      <div class="proc-step reveal"><div class="pn">3</div><h3>Sparring</h3><p>Regelmäßige Sessions, vor Ort oder online. Vertraulich, fokussiert, auf Augenhöhe.</p></div>
-      <div class="proc-step reveal"><div class="pn">4</div><h3>Wirkung</h3><p>Sie entscheiden klarer und schneller — und haben einen Partner, der mitdenkt, wenn es zählt.</p></div>
+  </div>
+</section>
+<section class="section section--alt alt-section reveal" id="ueber">
+  <div class="container">
+    <div class="alt-grid">
+      <div class="alt-content">
+        <span class="eyebrow">Der Kern</span>
+        <h2>Ein generischer Hero verkauft niemanden</h2>
+        <p>Stock-Bilder und Standard-Claims erzeugen keine Bindung. Ein Auftritt, der die eigene Haltung und Methode zeigt, gibt Interessenten einen Grund zu bleiben — und Kontakt aufzunehmen.</p>
+        <a href="#kontakt" class="btn btn-primary">Gespräch vereinbaren →</a>
+      </div>
+      <div class="alt-image">
+        <img src="assets/portrait.webp" alt="Business Coaching" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section" id="leistungen">
+  <div class="container">
+    <span class="eyebrow reveal">Was Sie bekommen</span>
+    <h2 class="reveal">Aus austauschbar wird unverwechselbar</h2>
+    <p class="reveal" style="max-width:600px">Kein Template, kein Baukasten — maßgeschneidert für Business Coaching.</p>
+    <div class="benefits-grid">
+      
+      <div class="benefit-card reveal">
+        <div class="benefit-icon">🪪</div>
+        <h3>Eigenständiger Hero mit Story</h3>
+        <p>Eine Headline und ein Bild, die nur zu Redplane passen — kein Stock-Material.</p>
+      </div>
+      <div class="benefit-card reveal">
+        <div class="benefit-icon">📰</div>
+        <h3>Mehr Tiefe als ein Onepager</h3>
+        <p>Angebot, Methode und Vertrauen bekommen Raum, statt auf 25 kB gequetscht zu werden.</p>
+      </div>
+      <div class="benefit-card reveal">
+        <div class="benefit-icon">🎯</div>
+        <h3>Klare Angebote</h3>
+        <p>Was genau Redplane anbietet — verständlich und mit Nutzen, nicht in einem Satz.</p>
+      </div>
+      <div class="benefit-card reveal">
+        <div class="benefit-icon">📨</div>
+        <h3>Ein klarer Buchungs-Pfad</h3>
+        <p>Ein sichtbarer Weg zum Erstgespräch statt eines einzelnen Kontaktlinks.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- STIMMEN -->
-<section class="quote" id="stimmen">
-  <div class="wrap">
-    <div class="quote-card reveal">
-      <div class="q">Endlich jemand, der die Themen versteht, die ich mit niemandem im Unternehmen besprechen kann — und der mich nicht schont, sondern weiterbringt.</div>
-      <div class="quote-meta"><b>Geschäftsführer, Mittelstand</b> · Düsseldorf</div>
-      <div class="ph">Platzhalter-Stimme — echte Referenz wird nach Ihrer Freigabe eingesetzt.</div>
+<!-- Process Timeline -->
+<section class="section" id="prozess">
+  <div class="container">
+    <span class="eyebrow reveal">Unser Vorgehen</span>
+    <h2 class="reveal">In 4 Schritten zum unverwechselbaren Auftritt</h2>
+    <p class="reveal" style="max-width:560px">Transparent, schnell, ohne Überraschungen. Von der ersten Idee zur live Website in unter 3 Wochen.</p>
+    <div class="timeline">
+      <div class="timeline-step reveal">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h3>Strategie-Call (30 min)</h3>
+          <p>Wir verstehen Ihre Zielgruppe, Ihr Angebot und was Ihre Website bisher blockiert — kostenlos, unverbindlich.</p>
+        </div>
+      </div>
+      <div class="timeline-step reveal">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h3>Design-Konzept in 48 h</h3>
+          <p>Mockups mit Ihrem echten Branding — bevor eine Zeile Code geschrieben wird. Sie sehen das Ergebnis zuerst.</p>
+        </div>
+      </div>
+      <div class="timeline-step reveal">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <h3>Umsetzung & Review</h3>
+          <p>Umsetzung in 2 Wochen. 2 Feedback-Runden inkludiert. Deploy auf Ihre Domain oder unserer Infrastruktur.</p>
+        </div>
+      </div>
+      <div class="timeline-step reveal">
+        <div class="step-num">4</div>
+        <div class="step-content">
+          <h3>Live + laufende Optimierung</h3>
+          <p>Launch, Monitoring, monatliche Conversion-Auswertung — Ihre Website wird besser, je länger sie läuft.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- CTA -->
-<section class="cta" id="kontakt">
-  <div class="wrap">
-    <span class="eyebrow light" style="justify-content:center;color:rgba(255,255,255,.8)">Nächster Schritt</span>
-    <h2>Ein Gespräch, das nichts kostet — außer 30 Minuten</h2>
-    <p>Finden Sie heraus, wie es ist, eine Entscheidung einmal wirklich mit jemandem durchzudenken, der nichts will außer Ihrem Erfolg.</p>
-    <a href="mailto:coaching@redplane.de?subject=Erstgespräch%20Redplane" class="btn btn-white">Erstgespräch anfragen →</a>
+<!-- Honest proof block (replaces fabricated testimonials) -->
+
+<section class="section" id="stimmen">
+  <div class="container">
+    <span class="eyebrow reveal">Über diese Vorschau</span>
+    <h2 class="reveal">Individuell gebaut, keine Vorlage</h2>
+    <p class="reveal" style="max-width:640px">Diese Vorschau wurde eigens für Redplane gestaltet. ELEVO arbeitet ohne Templates; Referenzen zeigen wir gerne persönlich.</p>
+    <p class="reveal" style="max-width:640px;margin-top:1rem">
+      Mehr über ELEVO: <a href="https://elevo.solutions" rel="noopener" style="color:var(--clr-primary);font-weight:600;">elevo.solutions</a>
+    </p>
   </div>
 </section>
 
-<footer class="foot">
-  <div class="wrap foot-in">
-    <span>Vorschau erstellt von <a href="https://elevo.solutions">ELEVO</a> für Redplane — unverbindliche Demo.</span>
-    <a href="https://redplane.de" target="_blank" rel="noopener">Aktuelle Website von Redplane →</a>
-    <span>Impressum: ELEVO Solutions · mert@elevo.solutions</span>
+<!-- FAQ -->
+<section class="section section--alt" id="faq">
+  <div class="container">
+    <span class="eyebrow reveal">FAQ</span>
+    <h2 class="reveal">Häufige Fragen</h2>
+    <div class="faq" role="list">
+      <div class="faq-item reveal" role="listitem">
+        <button class="faq-question" aria-expanded="false">
+          Wie lange dauert die Umsetzung?
+          <svg class="faq-chevron" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-answer" role="region"><p>Typisch 2–3 Wochen vom Strategie-Call bis zum Live-Launch. Für einfache Seiten auch schneller — wir richten uns nach Ihrem Tempo.</p></div>
+      </div>
+      <div class="faq-item reveal" role="listitem">
+        <button class="faq-question" aria-expanded="false">
+          Was kostet die neue Website?
+          <svg class="faq-chevron" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-answer" role="region"><p>Einmalig ab 1.490 € inkl. Design, Umsetzung und einem Jahr Hosting. Kein laufendes CMS-Abo, keine versteckten Kosten. Exaktes Angebot nach dem Erstgespräch.</p></div>
+      </div>
+      <div class="faq-item reveal" role="listitem">
+        <button class="faq-question" aria-expanded="false">
+          Kann ich die Seite selbst bearbeiten?
+          <svg class="faq-chevron" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-answer" role="region"><p>Ja — wir bauen ein einfaches CMS-Interface auf Wunsch. Alternativ übernehmen wir alle Änderungen für Sie (üblicherweise 24 h Reaktionszeit).</p></div>
+      </div>
+      <div class="faq-item reveal" role="listitem">
+        <button class="faq-question" aria-expanded="false">
+          Ist diese Preview eine Verpflichtung?
+          <svg class="faq-chevron" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-answer" role="region"><p>Nein. Die Preview wurde speziell für Business Coaching gebaut — kostenlos, ohne Vertrag. Sie können sie anschauen, teilen und uns danach einfach fragen, ob Sie mehr sehen wollen.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Final CTA -->
+<section class="cta-section" id="kontakt">
+  <div class="container">
+    <span class="eyebrow" style="color:rgba(255,255,255,.7)">Nächster Schritt</span>
+    <h2>Sehen Sie Redplane mit eigener Handschrift</h2>
+    <p>Diese Preview wurde exklusiv für Business Coaching gebaut. Kein Auftrag nötig, keine Verpflichtung. Ein 30-Minuten-Gespräch zeigt, was möglich ist.</p>
+    <a href="mailto:mert@elevo.solutions?subject=Preview+Anfrage+Business%20Coaching&body=Hallo%2C%0A%0Aich+habe+die+Preview+f%C3%BCr+Business%20Coaching+gesehen+und+m%C3%B6chte+mehr+erfahren." class="btn btn-white">
+      Jetzt kostenloses Gespräch anfragen →
+    </a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-inner">
+      <span>Diese Preview wurde von <a href="https://elevo.solutions" rel="noopener">Elevo</a> für Demonstrationszwecke erstellt.</span>
+      <a href="https://redplane.de" target="_blank" rel="noopener noreferrer">Zur aktuellen Website von Business Coaching →</a>
+      <span>Impressum: Elevo Solutions · mert@elevo.solutions</span>
+    </div>
   </div>
 </footer>
 
 <script>
-  var hdr=document.getElementById('hdr');
-  addEventListener('scroll',function(){hdr.classList.toggle('scrolled',scrollY>20)});
-  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -50px 0px'});
-  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
-  document.querySelector('.burger').addEventListener('click',function(){document.querySelectorAll('.nav a:not(.btn)').forEach(function(a){a.style.display=a.style.display==='block'?'':'block'})});
+  // Scroll-Reveal
+  (function() {
+    var els = document.querySelectorAll('.reveal');
+    if (!els.length) return;
+    var io = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    els.forEach(function(el) { io.observe(el); });
+  })();
+
+  // FAQ Accordion
+  document.querySelectorAll('.faq-question').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var item = btn.closest('.faq-item');
+      var isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(function(o) {
+        o.classList.remove('open');
+        o.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen) {
+        item.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
 </script>
+
 </body>
 </html>
